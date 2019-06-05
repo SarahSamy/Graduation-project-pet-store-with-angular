@@ -1,0 +1,52 @@
+.banner-image {
+    background-image: url(../images/resources-slide.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: $banner-length;
+    &__banner-content {
+        .title{
+            margin: auto;
+        }
+       .paragraph-1 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 4rem;
+        letter-spacing: 0.05rem;
+        color: #ffffff;
+        line-height: $banner-length;
+        text-transform: capitalize;
+         
+        }}
+
+}
+.blog-path{
+
+    li{  
+      font-weight: 600;
+      display: inline-block;
+      font-size: 0.8rem;
+    list-style: none;
+    a{
+        color: #94c13d;
+        font-size: 1.1rem;
+        font-weight: 100;
+        text-transform: capitalize;
+        color: #94c13d;
+        line-height: 1.5rem;
+  
+    .fa{
+        margin-right: 0.2rem;
+        font-size: 1.5rem;
+    }}
+}
+.new{
+    font-size: 1.1rem;
+    font-weight: 100;
+    text-transform: capitalize;
+    color: #555;
+    line-height: 1.1rem;   
+}
+   
+    background: #f7f9f3;
+
+}

@@ -1,0 +1,12 @@
+.form-control
+{
+	font-size: 1.6rem; 
+	line-height: 1.85; 
+&:focus , &:active
+{
+ outline:none;
+ border-color:$color-primary;
+ box-shadow: 0 0 0 .1px $color-primary; 
+}  
+
+}

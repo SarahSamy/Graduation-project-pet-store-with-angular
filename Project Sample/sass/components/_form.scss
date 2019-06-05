@@ -1,0 +1,38 @@
+.form-group{
+
+    textarea{
+      height: 12rem;
+    display: block;
+    width: 100%;
+   
+    font-size: 1rem;
+    color: #888888;
+    line-height: 24px;
+    padding: 12px 20px;
+    font-weight: 400;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+}
+#reply{
+    margin-top: 2rem;
+    height: 4rem; 
+}
+button{
+    line-height: 1.8rem;
+    color: #ffffff;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: #94c13d;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+    border: 2px solid #94c13d;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 0.1rem;
+    padding: 11px 40px;
+    border-color: #94c13d;
+    border-radius: 25px;
+}
+}

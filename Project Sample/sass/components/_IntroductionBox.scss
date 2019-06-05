@@ -1,0 +1,24 @@
+.Introduction--Box{
+
+    // background-color: #EDEDED ;
+    height: 100%;
+    
+    &--info{
+        // background-color: red;
+        &__paragraph{
+            line-height: 1.444;
+            font-size: $IntroductionParagraphSize;
+            font-family: 'Varela Round', sans-serif;
+            color: #666;
+     
+        }
+        &__Question{
+            color: $color-primary;
+            font-size:$IntroductionTextSize;
+            line-height: 1.25;
+            font-weight: bold;
+            margin: 1em 0;
+        }
+    }
+    
+    }

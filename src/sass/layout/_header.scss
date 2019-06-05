@@ -1,0 +1,8 @@
+.nav-cont{
+a{
+    color:black !important;
+    &:hover{
+        color:$color-primary !important;
+    }
+}
+}

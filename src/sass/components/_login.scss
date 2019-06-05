@@ -1,0 +1,99 @@
+// body{
+//     background-image: url('../images/testImg.jpg');
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+// }
+.login-form{
+   
+    &__two-sides{
+        height: 100%;
+       
+        &__advices{
+            height: 100%; 
+           border-radius: 3rem 0rem 0rem 3rem;
+            background-color: $color-primary;
+            &__advices-header{
+                color: $color-white;
+                font-family:arial,helvetica,sans-serif;
+                margin-top: 7rem;
+                font-size: 2.4rem;
+               
+            }
+            &__adv-list{
+                color: $color-white;
+                font-size: 1.3rem;
+                padding-left: 5rem;
+                li{
+                    padding-bottom: 2rem;
+                }
+            }
+        }
+        &__inputs{
+            background-color: $color-gray-white;
+            border-radius: 0rem 3rem 3rem 0rem;
+            &__exit{
+                p{
+                    text-align: center;
+                    i{
+                        font-size: 3rem;
+                    } 
+                }
+                
+            }
+            &__header{
+                text-align: center;
+                margin-top: 2rem;
+                color: $color-primary;
+                font-size: 2.4rem;
+                font-family:arial,helvetica,sans-serif;
+            }
+            &__form{
+                margin-left: 0.5rem;
+                input{
+                    height: 4rem;
+                    font-size: 1.3rem;
+                    margin-bottom: 2rem;
+                    &:hover{
+                        border: 1px solid $color-primary;
+                    }
+                    &:focus{
+                        box-shadow: 0px 1px 1px $color-primary;
+                    }
+                }
+                button{
+                    width: 100%;
+                    margin-top: 1.5rem;
+                }
+            }
+            &__forget{
+                margin-top: 1.5rem;
+                
+                a{
+                    color: $color-primary;
+                    font-size: 1.3rem;
+                    font-weight: 700;
+                    
+                    &:hover{
+                        color: $color-gray-light;
+                    }
+                }
+                p{
+                    color: $color-primary;
+                    font-size: 1.3rem;
+                    font-weight: 700;
+                    
+                }
+                button{
+                    width: 100%;
+                    margin-top: 1.2rem;
+                }
+            }
+            &__sperator{
+                height: 0.05rem;
+                background-color: #a59b9b;
+            }
+        }
+    }
+ 
+}

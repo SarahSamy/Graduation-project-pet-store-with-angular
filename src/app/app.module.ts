@@ -17,6 +17,7 @@ import { RegisterComponent } from './features/register/register.component';
 import { HomeComponent } from './features/home/home.component';
 import { PetService } from './_services/pet.service';
 import { FiltringListComponent } from './shared/filtring-list/filtring-list.component';
+import { PaginationComponent } from './shared/pagination/pagination.component';
 
 
 
@@ -33,6 +34,7 @@ import { FiltringListComponent } from './shared/filtring-list/filtring-list.comp
     RegisterComponent,
     HomeComponent,
     FiltringListComponent,
+    PaginationComponent,
    
   ],
   imports: [

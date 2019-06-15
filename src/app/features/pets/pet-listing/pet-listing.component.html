@@ -33,7 +33,34 @@
 </div>
 </div>
 
+<!--------------------pagination----------------------->
+<pagination></pagination>
 
+<!-----------------------image-break-------------------->
+<div class="container-fluid no-gutters my-5">
+    <div class="row ">
+      <div class="col-md-12 bg-cont">
+        <div class="bg-overlay-1 text-center "></div>
+      </div>
+    </div>
+  </div>
+
+
+ <!--Recently viewed pets -->
+
+ <div class="container justify-content-center">
+    <div class="row justify-content-center mb-4">
+        <h1 class="add-Green row-title add-Bold">Recently Viewed Pets</h1>
+      </div>
+    <div class="row  justify-content-center mb-4">
+    
+        <div *ngFor="let newpet of data "   class="col-md-3  "  >
+        
+          <pet-item  [pet]= 'newpet'></pet-item>
+        
+      </div>
+      </div>
+ </div>
 
 <!--------------------------------------------------------------------------------------------->
   <!-- <div class="row my-5">

@@ -1,3 +1,90 @@
-<p>
-  pet-listing works!
-</p>
+<!-- <div *ngFor="let newpet of data "     >
+      
+  <pet-item  [pet]= 'newpet'></pet-item>
+</div> -->
+
+
+
+<div class="container">
+  <div class="row my-5">
+    <div class="col-md-3">
+        <filtring-list></filtring-list>
+    </div>
+    <div class="col-md-9">
+        <div class="row ">
+    
+            <div *ngFor="let newpet of data "   class="col-md-3  "  >
+            
+              <pet-item  [pet]= 'newpet'></pet-item>
+            
+          </div>
+          </div>
+
+          <div class="row ">
+    
+              <div *ngFor="let newpet of data "   class="col-md-3  "  >
+              
+                <pet-item  [pet]= 'newpet'></pet-item>
+              
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+
+
+<!--------------------------------------------------------------------------------------------->
+  <!-- <div class="row my-5">
+    
+      <div *ngFor="let newpet of data "   class="col-md-3  "  >
+      
+        <pet-item  [pet]= 'newpet'></pet-item>
+      
+    </div>
+    <div class="row my-5">
+    
+        <div *ngFor="let newpet of data "   class="col-md-3 mx-3 "  >
+        
+          <pet-item  [pet]= 'newpet'></pet-item>
+        
+      </div>
+  </div>
+</div> -->
+    <!-- <div class="col-md-3 card  mx-3">
+      <div class="container-of-image ">
+        <img src="./images/cat1.jpg" alt="Avatar" class="image" />
+        <div class="overlay"></div>
+      </div>
+      <div class="card-body text-center">
+        <h2 class="add-Green add-Bold">Bossy</h2>
+        <h4>Female , Adult</h4>
+        <h4>Classic Persian</h4>
+        <a class="show" href="#"><i class="fa fa-eye "></i></a>
+        <a class="edit" href="#"><i class="fa fa-edit "></i></a>
+      </div>
+    </div>
+    <div class="col-md-3 card  mx-3">
+      <div class="container-of-image ">
+        <img src="./images/cat2.jpg" alt="Avatar" class="image" />
+        <div class="overlay"></div>
+      </div>
+      <div class="card-body text-center">
+        <h2 class="add-Green add-Bold">Meshmesh</h2>
+        <h4>Male , Kitty</h4>
+        <h4>Ragamuffin</h4>
+        <a class="show" href="#"><i class="fa fa-eye "></i></a>
+        <a class="edit" href="#"><i class="fa fa-edit "></i></a>
+      </div>
+    </div> -->
+  
+  <!-- <div class="row my-5 ">
+    
+      <div *ngFor="let newpet of data "     >
+        <div class="col-md-12 card  ">
+        <pet-item  [pet]= 'newpet'></pet-item>
+      </div>
+    </div>
+   
+  </div> -->

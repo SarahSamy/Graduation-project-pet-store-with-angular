@@ -1,0 +1,62 @@
+<div class="container-fluid">
+  <div class="row no-gutters">
+      <div class="col-12">
+          <div class="row justify-content-center bottom_nav ">
+            
+
+              <nav class="col-12">
+                  <label for="drop" class="toggle"><i class="fas fa-bars hamburger"></i></label>
+                  <input type="checkbox" id="drop" />
+
+
+                  <ul class="menu">
+                      <li class="navbar__logo">PetStore</li>
+                      <li><a [routerLink]="'Home'">Home</a></li>
+                      <li>
+                          <!-- First Tier Drop Down -->
+                          <label for="drop-1" class="toggle">Dog Care +</label>
+                          <a href="#">Dog Care</a>
+                          <input type="checkbox" id="drop-1" />
+                          <ul>
+                              <li><a href="#">Dog Adoption</a></li>
+                              <li><a href="#">Dog Breeds</a></li>
+                              <li><a href="#">Bringing A Dog Home</a></li>
+                          </ul>
+
+                      </li>
+                      <li>
+
+                          <!-- First Tier Drop Down -->
+                          <label for="drop-2" class="toggle">Cat Care +</label>
+                          <a href="#">Cat Care</a>
+                          <input type="checkbox" id="drop-2" />
+                          <ul>
+                              <li><a href="#">Cat Adoption</a></li>
+                              <li><a href="#">Cat Breeds</a></li>
+                              <li><a href="#">Bringing A Cat Home</a></li>
+                              <!-- Second Tier Drop Down -->
+                              <!-- <li>
+
+                              
+                              <label for="drop-3" class="toggle">Tutorials +</label>
+                              <a href="#">Tutorials</a>
+                              <input type="checkbox" id="drop-3" />
+
+                              <ul>
+                                  <li><a href="#">HTML/CSS</a></li>
+                                  <li><a href="#">jQuery</a></li>
+                                  <li><a href="#">Other</a></li>
+                              </ul>
+                          </li> -->
+                          </ul>
+                      </li>
+                      <li><a href="#">Graphic Design</a></li>
+                      <li><a href="#">Inspiration</a></li>
+                      <li><a href="#">Contact</a></li>
+                      <li><a href="#">About</a></li>
+                  </ul>
+              </nav>
+          </div>
+      </div>
+  </div>
+</div>

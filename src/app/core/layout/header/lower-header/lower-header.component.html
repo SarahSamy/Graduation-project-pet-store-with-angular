@@ -54,6 +54,55 @@
                       <li><a href="#">Inspiration</a></li>
                       <li><a href="#">Contact</a></li>
                       <li><a href="#">About</a></li>
+
+                      <!--------------drop down-------------------->
+                      <li>
+                      <app-dropdown>
+                            <!-- header -->
+                            <ng-container class="header" >
+                                    <!-- <a href="#" > -->
+                                <i class="fa fa-bars  link "  style="font-size:2.4rem"></i>
+                                    <!-- </a> -->
+                            </ng-container>
+    
+                            <!-- items -->
+                             <!-- to open dropdown dropdown--opened -->
+                            <ng-container class="body">
+                                <ul class="dropdown__items list ">
+                                    <li class="dropdown__item list__item">
+                                        <a href="#" class="link">
+                                            <img class="flag flag-us" src="" alt="">
+                                            Manage Pets
+                                        </a>
+                                    </li>
+                                    <li class="dropdown__item list__item">
+                                        <a href="#" class="link">
+                                            <img class="flag flag-es" src="" alt="">
+                                            Account Profile
+                                        </a>
+                                    </li>
+                                    <li class="dropdown__item list__item">
+                                        <a href="#" class="link">
+                                            <img class="flag flag-fr" src="" alt="">
+                                            Settings
+                                        </a>
+                                    </li>
+                                    <li class="dropdown__item list__item">
+                                        <a href="#" class="link">
+                                            <img class="flag flag-fr" src="" alt="">
+                                            Choose Pet
+                                        </a>
+                                    </li>
+                                    <li class="dropdown__item list__item">
+                                        <a href="#" class="link">
+                                            <img class="flag flag-fr" src="" alt="">
+                                            Logout
+                                        </a>
+                                    </li>
+                                </ul>
+                            </ng-container>
+                        </app-dropdown>
+                    </li>
                   </ul>
               </nav>
           </div>

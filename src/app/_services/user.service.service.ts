@@ -34,5 +34,17 @@ export class UserService {
     const i = this.data.findIndex(p => p.id === id);
     this.data.splice(id, 1);
   }
+
+  login(currentUser?:User):boolean{
+    let result:boolean;
+    if(currentUser){
+      result=true;
+      
+    }
+    else{
+      result= false;
+    }
+    return result;
+  }
 }
 

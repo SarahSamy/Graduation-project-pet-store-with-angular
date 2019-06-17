@@ -19,6 +19,8 @@ import { PetService } from './_services/pet.service';
 import { FiltringListComponent } from './shared/filtring-list/filtring-list.component';
 import { PaginationComponent } from './shared/pagination/pagination.component';
 import { DropdownComponent } from './shared/dropdown/dropdown.component';
+import { MainSliderComponent } from './shared/main-slider/main-slider.component';
+import { FourItemsSliderComponent } from './shared/four-items-slider/four-items-slider.component';
 
 
 
@@ -37,6 +39,8 @@ import { DropdownComponent } from './shared/dropdown/dropdown.component';
     FiltringListComponent,
     PaginationComponent,
     DropdownComponent,
+    MainSliderComponent,
+    FourItemsSliderComponent,
    
   ],
   imports: [

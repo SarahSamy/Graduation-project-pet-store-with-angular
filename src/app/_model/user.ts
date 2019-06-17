@@ -1,4 +1,5 @@
-import { Pet } from './pet';
+import { Pet } from './Pet';
+import { userGroup } from './userGroup';
 
 export interface User{
     id?: number ;
@@ -9,6 +10,8 @@ export interface User{
     birthDate?:string;
     gender?: string;
     pets?:Pet[];
+    userGroup?:userGroup;
+    userGroupId:number;
     image?:string;
     
 }

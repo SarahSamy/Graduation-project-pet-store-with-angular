@@ -1,4 +1,4 @@
-import { Pet } from '../_model/pet';
+import { Pet } from '../_model/Pet';
 
 export class PetService {
     data: Pet[];

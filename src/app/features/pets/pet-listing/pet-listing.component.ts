@@ -9,12 +9,18 @@ import { PetService } from 'src/app/_services/pet.service';
 })
 export class PetListingComponent implements OnInit {
   @Input() data: Pet[]
+  // id:Number
+  
   constructor(private petService: PetService) { }
 
   ngOnInit() {
     if(!this.data){
       this.data= this.petService.getAll();
     }
+    
   }
 
+  getId(id){
+    this.data.filter(a=>a.id==id)
+  }
 }

@@ -25,7 +25,7 @@ export class AddAnimalFormComponent implements OnInit {
 
   ngOnInit() {
     this.categories = this.CategoryService.getAll();
-    this.dog_types = this.TypeService.getAllDogTypes();
+    this.dog_types = this.TypeService.getAllTypes();
 
   }
 

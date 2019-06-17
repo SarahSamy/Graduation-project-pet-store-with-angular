@@ -7,6 +7,7 @@ export interface Pet {
     image: string;
     category?: Category;
     categoryId:number;
+    categoryName?:string;
     isAdapt:boolean;
     medicalCondition?:string;
     notes?:string;

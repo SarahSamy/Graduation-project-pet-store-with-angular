@@ -1,0 +1,103 @@
+.navbar{
+   
+    &__logo{
+        font-family: 'Satisfy', cursive;
+        color: $color-white;
+        font-size: 3.2rem;
+        padding-right: 6rem;
+            font-weight: bold;
+           // margin-left: 4rem;
+    }
+    &__sign-in{
+       &__p{
+           margin: 0;
+       }
+      
+        &__user{
+font-size: 1.6rem; 
+color: $color-primary; 
+&:hover{
+    color: $color-gray-light;
+   
+}
+        }
+        &__text{
+            p{
+                margin: 0;
+                color: $color-gray-light;
+                a{
+                    &:hover{
+                        color: $color-primary;
+                    }
+                    color: black;
+                    font-size: 1.3rem;
+                    font-weight: 500;
+                }
+            }
+            font-size: 1.5rem;
+          
+        }
+    }
+    &__search{
+       &__input{
+           .form-group{
+               margin: 0;
+              // display: none;
+           }
+           input{
+            color: white;
+           
+               height: 4rem;
+            border-radius: 124rem/103rem;
+            box-shadow: 0px 2px 2px $color-primary;
+           
+            &:hover{
+                border: 1px solid $color-primary;
+                box-shadow: 0px 1px 1px $color-primary;
+            }
+            &:focus{
+                color: $color-primary;
+                box-shadow: 0px 1px 1px $color-primary;
+            }
+           }
+       }
+        &__icon{
+            i{
+              color: $color-primary; 
+            font-size: 2.5rem;
+        line-height: 4rem;
+     
+    }
+        }
+    }
+}
+.bottom_nav{
+    height: 8rem;
+  & ul{
+    padding-top: 3rem; 
+    &.menu{
+        padding-top: 3rem;
+        padding-left: 11rem;
+    } 
+  }
+  
+    & .hamburger{
+padding-top: 2rem;
+    }
+}
+@media all and (max-width: 992px) {
+    .bottom_nav{
+       
+      & ul{
+        padding-top: 3rem; 
+        &.menu{
+            padding-top: 3rem;
+            padding-left: 0rem;
+        } 
+      }
+
+}}
+
+
+
+

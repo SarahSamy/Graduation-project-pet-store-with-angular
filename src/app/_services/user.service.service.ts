@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {User} from '../_model/user';
+import {User} from '../_model/User';
 import {PetService} from '../_services/pet.service';
 
 @Injectable({

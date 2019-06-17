@@ -18,6 +18,10 @@ import { HomeComponent } from './features/home/home.component';
 import { PetService } from './_services/pet.service';
 import { FiltringListComponent } from './shared/filtring-list/filtring-list.component';
 import { PaginationComponent } from './shared/pagination/pagination.component';
+import { AnimalTypesComponent } from './features/animal-types/animal-types.component';
+import { AddAnimalFormComponent } from './features/pets/add-animal-form/add-animal-form.component';
+import { TypeService } from './_services/type.service';
+import { CategoryService } from './_services/category.service';
 import { DropdownComponent } from './shared/dropdown/dropdown.component';
 import { MainSliderComponent } from './shared/main-slider/main-slider.component';
 import { FourItemsSliderComponent } from './shared/four-items-slider/four-items-slider.component';
@@ -38,6 +42,9 @@ import { FourItemsSliderComponent } from './shared/four-items-slider/four-items-
     HomeComponent,
     FiltringListComponent,
     PaginationComponent,
+    AnimalTypesComponent,
+    AddAnimalFormComponent,
+
     DropdownComponent,
     MainSliderComponent,
     FourItemsSliderComponent,
@@ -50,19 +57,26 @@ import { FourItemsSliderComponent } from './shared/four-items-slider/four-items-
     RouterModule.forRoot([{
       path: 'Login', component: LoginComponent
     },
-      {
-        path: 'Register', component: RegisterComponent
-      },
-      {
-        path: 'Home', component: HomeComponent
-      },
-      { path: 'pet-listing', component: PetListingComponent },
-        // ,{
-        //   path:'**',component:NotFoundErrorComponent
-        // }
-      ]),
+    {
+      path: 'Register', component: RegisterComponent
+    },
+    {
+      path: 'Home', component: HomeComponent
+    },
+    { path: 'pet-listing', component: PetListingComponent },
+    { path: 'Animal-Types', component: AnimalTypesComponent },
+    { path: 'Add-Animal', component: AddAnimalFormComponent },
+
+      // ,{
+      //   path:'**',component:NotFoundErrorComponent
+      // }
+    ]),
   ],
-  providers: [PetService],
+  providers: [
+    PetService,
+    TypeService,
+    CategoryService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

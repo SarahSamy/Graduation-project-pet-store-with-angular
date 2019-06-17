@@ -8,6 +8,7 @@
 @import "base/typography";
 @import "base/utilites";
 
+
 @import "components/AnimalBanner";
 @import "components/AnimalTypesBox";
 @import "components/FAQ";
@@ -20,7 +21,6 @@
 @import "components/leftSidebar";
 @import "components/taglisting"; 
 @import "components/post";
-@import "components/btn";
 @import "components/badge";
 @import "components/pagination";
 @import "components/archiveListing";
@@ -33,8 +33,15 @@
 @import "components/search-box";
 
 @import 'components/banner-image';
+
+@import 'components/post';
 @import 'components/comments';
-@import 'components/form';
+@import 'components/button';
+@import 'components/text-area';
+@import "components/login";
+
+
+
 @import 'components/cards-slider';
 @import 'components/burger-dropdown';
 @import 'components/post';
@@ -45,9 +52,9 @@
 @import 'components/dropdown'; 
 @import 'components/form-control'; 
 @import "components/postListing";
-@import 'components/button';
-@import 'components/text-area';
-@import "components/login";
+
+
+
 @import "components/text-card";
 
 @import "base/animation";
@@ -58,6 +65,8 @@
 
 @import "layout/_footer.scss";
 @import "layout/header";
+@import "layout/nav-bar";
+
 
 
 @import "pages/userProfile";

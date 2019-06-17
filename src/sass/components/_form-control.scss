@@ -4,9 +4,11 @@
 	line-height: 1.85; 
 &:focus , &:active
 {
- outline:none;
- border-color:$color-primary;
- box-shadow: 0 0 0 .1px $color-primary; 
+color: #495057;
+background-color: #fff;
+border-color:  #94C13D;
+outline: 0;
+box-shadow: 0 0 0 0.2rem rgba(148, 193, 61,.5);
 }  
 
-}
+} 

@@ -1,13 +1,13 @@
 <div class="card">
-  <div class="container-of-image " >
-    <img src="{{pet.image}}" alt="Avatar" class="image"  />
+  <div class="container-of-image ">
+    <img src="{{pet.image}}" alt="Avatar" class="image" />
     <!-- <div [ngStyle]="{'background-image':'url('+pet.image +')'}" class="image"></div> -->
     <div class="overlay"></div>
   </div>
   <div class="card-body text-center">
     <h2 class="add-Green add-Bold">{{pet.name}}</h2>
-    <h4>{{pet.gender}}, {{pet.type}}</h4>
-    <h4>{{pet.category}}</h4>
+    <h4>{{pet.gender}}, {{pet.type.name}}</h4>
+    <h4>{{pet.category.name}}</h4>
     <a class="show" href="#"><i class="fa fa-eye "></i></a>
     <a class="edit" href="#"><i class="fa fa-edit "></i></a>
   </div>

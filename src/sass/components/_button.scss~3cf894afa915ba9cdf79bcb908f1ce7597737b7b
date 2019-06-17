@@ -1,5 +1,6 @@
-.form-group button,.button{
-    
+.form-group{
+
+    button{
         line-height: 1.8rem;
         color: #ffffff;
         text-align: center;
@@ -17,4 +18,4 @@
         background: #94c13d;
         border-color: #94c13d;
         border-radius: 25px;
-    }
+    }}

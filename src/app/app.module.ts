@@ -23,6 +23,8 @@ import { AddAnimalFormComponent } from './features/pets/add-animal-form/add-anim
 import { TypeService } from './_services/type.service';
 import { CategoryService } from './_services/category.service';
 import { DropdownComponent } from './shared/dropdown/dropdown.component';
+import { MainSliderComponent } from './shared/main-slider/main-slider.component';
+import { FourItemsSliderComponent } from './shared/four-items-slider/four-items-slider.component';
 
 
 
@@ -44,7 +46,9 @@ import { DropdownComponent } from './shared/dropdown/dropdown.component';
     AddAnimalFormComponent,
 
     DropdownComponent,
-
+    MainSliderComponent,
+    FourItemsSliderComponent,
+   
   ],
   imports: [
     BrowserModule,

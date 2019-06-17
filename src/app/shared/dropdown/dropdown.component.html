@@ -1,15 +1,33 @@
-
-<div class="dropdown "  [ngClass]= "{'dropdown--opened': isOpened}"  (click)="isOpened = !isOpened">
+<!-- 
+<div class="dropdown "  [ngClass]= "{'dropdown--opened': isOpened}"  (click)="isOpened = !isOpened"> -->
     <!-- header -->
-    <div class="dropdown__header ">
+    <!-- <div class="dropdown__header ">
       
        <ng-content select=".header"></ng-content>
        
-    </div>
+    </div> -->
   
     <!-- items -->
-    <div class="dropdown__body" >
+    <!-- <div class="dropdown__body" >
      
       <ng-content select=".body"></ng-content>
     </div>
-  </div>
+  </div> -->
+
+
+  <div class="row">
+      <div class="col m-auto">
+        <div ngbDropdown class="d-inline-block">
+          <button class="btn " id="dropdownBasic1" ngbDropdownToggle> <i class="fa fa-bars  link "  style="font-size:2.4rem"></i></button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button ngbDropdownItem> Manage Pets</button>
+            <button ngbDropdownItem>Account Profile</button>
+            <button ngbDropdownItem>Choose Pet</button>
+            <button ngbDropdownItem>Logout</button>
+            
+          </div>
+        </div>
+      </div>
+    
+      
+    </div>

@@ -22,6 +22,7 @@ import { AnimalTypesComponent } from './features/animal-types/animal-types.compo
 import { AddAnimalFormComponent } from './features/pets/add-animal-form/add-animal-form.component';
 import { TypeService } from './_services/type.service';
 import { CategoryService } from './_services/category.service';
+import { DropdownComponent } from './shared/dropdown/dropdown.component';
 
 
 
@@ -41,6 +42,8 @@ import { CategoryService } from './_services/category.service';
     PaginationComponent,
     AnimalTypesComponent,
     AddAnimalFormComponent,
+
+    DropdownComponent,
 
   ],
   imports: [

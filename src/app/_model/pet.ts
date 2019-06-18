@@ -6,10 +6,11 @@ export interface Pet {
     gender: string;
     image: string;
     category?: Category;
-    categoryId:number;
+    categoryId?:number;
     categoryName?:string;
     isAdapt:boolean;
     medicalCondition?:string;
     notes?:string;
+    views?:Number;
 
 }

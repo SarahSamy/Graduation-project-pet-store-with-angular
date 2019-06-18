@@ -1,0 +1,115 @@
+.owl-carousel {
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  &.owl-loaded {
+    display: block;
+    clear: both;
+  }
+  & .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    margin-top: -0.7rem;
+  }
+
+  & .border-irregular2 {
+    border-radius: 7.5rem 12.5rem 4.5rem 15.5rem/15.5rem 1.5rem 15.5rem 1.5rem;
+  }
+}
+
+.owl-prev,
+.owl-next {
+  border-radius: 50%;
+  background-color: $color-black !important;
+  & i {
+    border-radius: 50%;
+    color: $color-white !important;
+    font-size: 1.8rem;
+    width: 1.9rem;
+  }
+}
+
+.owl-next {
+  position: absolute;
+  border-radius: 50%;
+  text-align: center;
+  top: -3rem;
+}
+
+.custom-link {
+  font-family: "Quicksand", sans-serif;
+  margin-top: 20px;
+  background: $color-primary;
+  display: inline-block;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 20px;
+
+  & a {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: $color-white !important;
+    text-decoration: none;
+    &:hover {
+      background: $color-gray;
+      color: $color-primary !important;
+      text-decoration: none !important;
+    }
+  }
+  &:hover {
+    background: $color-gray;
+    color: $color-primary !important;
+    text-decoration: none !important;
+  }
+}
+
+.bg-light-custom {
+  background: $light;
+}
+.block-padding {
+  padding-top: 7rem;
+  padding-bottom: 2rem;
+  margin-top: 1vw;
+}
+
+.owl-nav {
+  margin: 0 auto;
+  top: -2rem;
+  left: 50%;
+}
+
+.border-irregular1 {
+  border-radius: 15.5rem 4.5rem 22.5rem 7.5rem/1.5rem 12.5rem 1.5rem 15.5rem !important;
+}
+
+.owl-carousel .owl-item {
+  float: left;
+}
+.top-centered-nav .owl-nav {
+  position: absolute;
+}
+.owl-nav {
+  margin: 0 auto;
+  top: -2rem;
+  left: 50%;
+}
+
+.owl-prev {
+  position: absolute;
+  left: -5.2rem;
+  top: -3rem;
+}
+.top-centered-nav .owl-prev {
+  left: -6rem !important;
+}
+
+// ///////////////////////////////////////
+
+.section-heading:before {
+  color: $color-primary;
+}
+
+.about-title {
+  font-size: 2.7rem;
+  color: $color-gray-light;
+}

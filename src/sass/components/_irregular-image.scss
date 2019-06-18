@@ -1,0 +1,7 @@
+.irregular-image .img-fluid {
+  width: $irregular-size;
+  border-radius: 15.5rem 4.5rem 22.5rem 7.5rem/1.5rem 12.5rem 1.5rem 15.5rem !important;
+  &:hover {
+    border-radius: 0rem;
+  }
+}

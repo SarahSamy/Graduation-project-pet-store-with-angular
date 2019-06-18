@@ -8,7 +8,6 @@
 @import "base/typography";
 @import "base/utilites";
 
-
 @import "components/AnimalBanner";
 @import "components/AnimalTypesBox";
 @import "components/FAQ";
@@ -19,7 +18,7 @@
 @import "components/searchHeader";
 @import "components/checkbox";
 @import "components/leftSidebar";
-@import "components/taglisting"; 
+@import "components/taglisting";
 @import "components/post";
 @import "components/badge";
 @import "components/pagination";
@@ -32,28 +31,28 @@
 @import "components/crud-actions";
 @import "components/search-box";
 
-@import 'components/banner-image';
+@import "components/banner-image";
 
-@import 'components/post';
-@import 'components/comments';
-@import 'components/button';
-@import 'components/text-area';
+@import "components/post";
+@import "components/comments";
+@import "components/button";
+@import "components/text-area";
 @import "components/login";
 
+@import "components/our-pet-profile";
+@import "components/irregular-image";
 
-
-@import 'components/cards-slider';
-@import 'components/burger-dropdown';
-@import 'components/post';
-@import 'components/slider';
-@import 'components/custom-form';
-@import 'components/lable';
-@import 'components/textbox'; 
-@import 'components/dropdown'; 
-@import 'components/form-control'; 
+@import "components/cards-slider";
+@import "components/burger-dropdown";
+@import "components/post";
+@import "components/slider";
+@import "components/custom-form";
+@import "components/lable";
+@import "components/textbox";
+@import "components/dropdown";
+@import "components/form-control";
 @import "components/postListing";
-
-
+@import "components/btn";
 
 @import "components/text-card";
 
@@ -66,7 +65,5 @@
 @import "layout/_footer.scss";
 @import "layout/header";
 @import "layout/nav-bar";
-
-
 
 @import "pages/userProfile";

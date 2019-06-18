@@ -1,20 +1,19 @@
 import { Injectable } from '@angular/core';
-import {User} from '../_model/User';
-import {PetService} from '../_services/pet.service';
+import { User } from '../_model/User';
+import { PetService } from '../_services/pet.service';
 
 @Injectable({
   providedIn: 'root',
-  
+
 })
 export class UserService {
-  data : User[];
-  constructor(private PetService:PetService) {
-    this.data=[
-    {id:1,firstName:"alaa",lastName:"ibrahim",email : "alaa.ibrahim@aaa.com",password:1234,gender:"female",pets:[PetService.data[0],PetService.data[2]]},
-    {id:2,firstName:"sarah",lastName:"refaat",email : "sarah.refaat@aaa.com",password:12345,gender:"female",pets:[PetService.data[1],PetService.data[2]]},
-  ]
+  data: User[];
+  constructor(private PetService: PetService) {
+    this.data = [
 
-   }
+    ]
+
+  }
   getAll(): User[] {
     return this.data;
   }
@@ -35,14 +34,14 @@ export class UserService {
     this.data.splice(id, 1);
   }
 
-  login(currentUser?:User):boolean{
-    let result:boolean;
-    if(currentUser){
-      result=true;
-      
+  login(currentUser?: User): boolean {
+    let result: boolean;
+    if (currentUser) {
+      result = true;
+
     }
-    else{
-      result= false;
+    else {
+      result = false;
     }
     return result;
   }

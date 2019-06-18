@@ -5,9 +5,9 @@ export class CategoryService {
 	categories: Category[];
 	constructor() {
 		this.categories = [
-			{ id: 1, name: "Dog" },
-			{ id: 2, name: "Cat" },
-			{ id: 3, name: "Others" }
+			// { id: 1, name: "Dog" },
+			// { id: 2, name: "Cat" },
+			// { id: 3, name: "Others" }
 		]
 	}
 	getAll(): Category[] {

@@ -6,9 +6,8 @@ export interface Pet {
     gender: string;
     image: string;
     category?: Category;
-    categoryId:number;
-    isAdapt:boolean;
-    medicalCondition?:string;
-    notes?:string;
-
+    categoryId: number;
+    isAdapt: boolean;
+    medicalCondition?: string;
+    notes?: string;
 }

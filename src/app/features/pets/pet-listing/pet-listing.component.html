@@ -8,13 +8,20 @@
 <div class="container">
   <div class="row my-5">
     <div class="col-md-3">
-        <filtring-list (catClick)="getCats()" (dogClick)="getDogs()" (birdClick)="getBirds()"   (othersClick)="getOthers()" (allClick)="getAll()"   ></filtring-list>
+        <!-- (catClick)="getCats()" (dogClick)="getDogs()" (birdClick)="getBirds()"   (othersClick)="getOthers()" -->
+        <filtring-list  (allClick)="getAllTypes()" 
+        (catClick)="getByPetType(1)" 
+        (dogClick)="getByPetType(2)" 
+        (birdClick)="getByPetType(3)"   
+        (othersClick)="getOthers()"  >
+      </filtring-list>
     </div>
     <div class="col-md-9">
         <div class="row ">
     
-            <div *ngFor="let newpet of  data"    class="col-md-4  "  >
-            
+            <div *ngFor="let newpet of  data "   class="col-md-4  " >
+                <!-- |slice: (page-1) * pageSize : (page-1) * pageSize + pageSize" -->
+                <!-- (pageClick)="nextPage()" -->
               <pet-item  [pet]= 'newpet'></pet-item>
             
           </div>
@@ -34,7 +41,7 @@
 </div>
 
 <!--------------------pagination----------------------->
-<pagination></pagination>
+<pagination ></pagination>
 
 <!-----------------------image-break-------------------->
 <div class="container-fluid no-gutters my-5">

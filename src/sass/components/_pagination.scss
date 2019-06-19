@@ -18,7 +18,7 @@
       }
     }
     & .pagination li .active {
-      background: $color-primary;
+      background: $color-primary !important;
       color: $color-white;
     }
   }

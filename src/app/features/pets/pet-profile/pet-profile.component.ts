@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PetService } from 'src/app/_services/pet.service';
 
 @Component({
   selector: 'app-pet-profile',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PetProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private petService:PetService) {
+
+   }
 
   ngOnInit() {
   }

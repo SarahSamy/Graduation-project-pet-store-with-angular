@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'pagination',
@@ -6,8 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pagination.component.scss']
 })
 export class PaginationComponent implements OnInit {
+  page = 4;
+  
+  @Output() pageClick = new EventEmitter<any>();
 
-  constructor() { }
+  constructor() {
+    
+   }
 
   ngOnInit() {
   }

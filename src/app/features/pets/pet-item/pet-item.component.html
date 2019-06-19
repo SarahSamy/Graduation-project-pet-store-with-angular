@@ -9,7 +9,7 @@
     <h4>{{pet.gender}}</h4>
     <!-- , {{pet.category.type}} -->
     <h4 *ngIf= "pet.category.name">     {{pet.category.name}}</h4>
-    <a class="show" href="#"><i class="fa fa-eye "></i></a>
+    <a class="show" [routerLink]="['/pet-profile']"><i class="fa fa-eye "></i></a>
     <a class="edit" href="#"><i class="fa fa-edit "></i></a>
   </div>
 </div>

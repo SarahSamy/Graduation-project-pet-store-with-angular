@@ -54,7 +54,26 @@ export class PetService {
 
         return this.data.filter(t => t.category.type.id > 3)
     }
+    getByType(typeId: number): Pet[] {
+        return this.data.filter(t => t.category.type.id == typeId)
+    }
+
     getMostViews() {
         return this.data.filter(p => p.views > 3)
     }
 }
+
+//--------------------------------------------------------------
+
+    // getAllCats(): Pet[]{
+
+	// 	return this.data.filter(t=>t.category.type.id==1)
+    // }
+    // getAllDogs(): Pet[]{
+
+	// 	return this.data.filter(t=>t.category.type.id==2)
+    // }
+    // getAllBirds(): Pet[]{
+
+	// 	return this.data.filter(t=>t.category.type.id==3)
+    // }

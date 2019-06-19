@@ -12,52 +12,52 @@ export class PetListingComponent implements OnInit {
   @Input() data: Pet[]
   @Input() mostViewed: Pet[]
   // id:Number
-  
+
   constructor(private petService: PetService) { }
 
   ngOnInit() {
-    if(!this.data){
-      this.data= this.petService.getAll().filter(p=>p.category.type.id<4);
+    if (!this.data) {
+      this.data = this.petService.getAll().filter(p => p.category.fkTypeId < 4);
     }
-    if(!this.mostViewed){
-      this.mostViewed=this.petService.getMostViews();
+    if (!this.mostViewed) {
+      this.mostViewed = this.petService.getMostViews();
     }
-    
+
   }
-  getCats(){
-    this.data=this.petService.getAllCats();
+  getCats() {
+    this.data = this.petService.getAllCats();
     // alert("cattttttt");
     return this.petService.getAllCats();
   }
-  getDogs(){
-    this.data=this.petService.getAllDogs();
+  getDogs() {
+    this.data = this.petService.getAllDogs();
     return this.petService.getAllDogs();
   }
-  getBirds(){
-    this.data=this.petService.getAllBirds();
+  getBirds() {
+    this.data = this.petService.getAllBirds();
     return this.petService.getAllBirds();
   }
-  getOthers(){
-    this.data=this.petService.getAllOthers();
+  getOthers() {
+    this.data = this.petService.getAllOthers();
     return this.petService.getAllOthers();
   }
-  getAll(){
-    this.data= this.petService.getAll();
+  getAll() {
+    this.data = this.petService.getAll();
     return this.petService.getAll();
   }
-  getMostViews(){
-    this.mostViewed=this.petService.getMostViews();
+  getMostViews() {
+    this.mostViewed = this.petService.getMostViews();
     return this.mostViewed;
   }
-myalert(text:string){
-  alert(text);
-}
+  myalert(text: string) {
+    alert(text);
+  }
   // getId(range:number[]){
   //   for(let i=0;i<range.length;i++){
   //     return this.data.find((p) => p.id === i);
   //   }
-    
+
   // }
- 
-  
+
+
 }

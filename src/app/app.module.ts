@@ -62,6 +62,7 @@ import { PostListingComponent } from "./features/blog/post-listing/post-listing.
     PostListingComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule.forRoot(),
@@ -91,4 +92,4 @@ import { PostListingComponent } from "./features/blog/post-listing/post-listing.
   providers: [PetService, TypeService, CategoryService],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

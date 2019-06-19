@@ -4,13 +4,14 @@ export interface Pet {
     name: string;
     age: number;
     gender: string;
-    image: string;
+    image?: string;
     category?: Category;
-    categoryId?: number;
+    fkCategoryId?: number;
     categoryName?: string;
-    isAdapt: boolean;
+    parentHistoryAndType?: string;
+    food?: string;
+    isToAdapted?: boolean;
     medicalCondition?: string;
     notes?: string;
     views?: Number;
-
 }

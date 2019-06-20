@@ -6,7 +6,7 @@ export class PetService {
     constructor() {
         this.data = [
 
-            { id: 1, name: "Bondok", image: "assets/images/dog1.jpg", gender: "male", isToAdapted: true, age: 2, category: { categoryId: 1, name: "Siamese", fkTypeId: 2, type: { id: 2, name: "dog" } }, views: 2 },
+            { id: 1, name: "Bondok", image: "assets/images/dog1.jpg", gender: "male", isToAdapted: true, age: 2, category: { categoryId: 5, name: "Beagle", fkTypeId: 2, type: { id: 2, name: "dog" } }, views: 2 },
             { id: 1, name: "kpkp", image: "assets/images/dog1.jpg", gender: "male", isToAdapted: true, age: 2, category: { categoryId: 1, name: "Siamese", fkTypeId: 2, type: { id: 2, name: "dog" } }, views: 2 },
             { id: 1, name: "lolo", image: "assets/images/dog1.jpg", gender: "female", isToAdapted: true, age: 2, category: { categoryId: 1, name: "Haski", fkTypeId: 2, type: { id: 2, name: "dog" } }, views: 2 },
             { id: 1, name: "Bon", image: "assets/images/dog1.jpg", gender: "male", isToAdapted: true, age: 2, category: { categoryId: 1, name: "Haski", fkTypeId: 2, type: { id: 2, name: "dog" } }, views: 2 },
@@ -43,18 +43,18 @@ export class PetService {
         const i = this.data.findIndex(p => p.id === id);
         this.data.splice(id, 1);
     }
-    getAllCats(): Pet[] {
+    // getAllCats(): Pet[] {
 
-        return this.data.filter(t => t.category.type.id == 1)
-    }
-    getAllDogs(): Pet[] {
+    //     return this.data.filter(t => t.category.type.id == 1)
+    // }
+    // getAllDogs(): Pet[] {
 
-        return this.data.filter(t => t.category.type.id == 2)
-    }
-    getAllBirds(): Pet[] {
+    //     return this.data.filter(t => t.category.type.id == 2)
+    // }
+    // getAllBirds(): Pet[] {
 
-        return this.data.filter(t => t.category.type.id == 3)
-    }
+    //     return this.data.filter(t => t.category.type.id == 3)
+    // }
     getAllOthers(): Pet[] {
 
         return this.data.filter(t => t.category.type.id > 3)

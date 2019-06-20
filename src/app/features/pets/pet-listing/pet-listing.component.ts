@@ -26,26 +26,27 @@ export class PetListingComponent implements OnInit {
 
   ngOnInit() {
     if (!this.data) {
-      this.data = this.petService.getAll().filter(p => p.category.fkTypeId < 4);
+      this.data = this.petService.getAll()
+      // .filter(p => p.category.fkTypeId < 4);
     }
     if (!this.mostViewed) {
       this.mostViewed = this.petService.getMostViews();
     }
 
   }
-  getCats() {
-    this.data = this.petService.getAllCats();
-    // alert("cattttttt");
-    return this.petService.getAllCats();
-  }
-  getDogs() {
-    this.data = this.petService.getAllDogs();
-    return this.petService.getAllDogs();
-  }
-  getBirds() {
-    this.data = this.petService.getAllBirds();
-    return this.petService.getAllBirds();
-  }
+  // getCats() {
+  //   this.data = this.petService.getAllCats();
+  //   // alert("cattttttt");
+  //   return this.petService.getAllCats();
+  // }
+  // getDogs() {
+  //   this.data = this.petService.getAllDogs();
+  //   return this.petService.getAllDogs();
+  // }
+  // getBirds() {
+  //   this.data = this.petService.getAllBirds();
+  //   return this.petService.getAllBirds();
+  // }
   // getOthers() {
   //   this.data = this.petService.getAllOthers();
   //   return this.petService.getAllOthers();
@@ -54,10 +55,10 @@ export class PetListingComponent implements OnInit {
     this.data = this.petService.getAllOthers();
     return this.data;
   }
-  getAll() {
-    this.data = this.petService.getAll();
-    return this.petService.getAll();
-  }
+  // getAll() {
+  //   this.data = this.petService.getAll();
+  //   return this.petService.getAll();
+  // }
   // getMostViews() {
   //   this.mostViewed = this.petService.getMostViews();
   //   return this.mostViewed;

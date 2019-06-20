@@ -76,8 +76,8 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
   imports: [
     ReactiveFormsModule,
     BrowserModule,
-    FormsModule,
-    NgxPaginationModule,
+     FormsModule,
+     NgxPaginationModule,
     AppRoutingModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
@@ -103,6 +103,7 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
       { path: "Animal-Types", component: AnimalTypesComponent },
       { path: "Add-Animal", component: AddAnimalFormComponent },
       { path: "pet-profile", component: PetProfileComponent },
+      { path: "pet-profile/:id", component: PetProfileComponent },
       { path: "Blog", component: PostListingComponent },
       { path: "Blog/Post-details", component: PostDetailsComponent },
       { path: "Blog/add-post", component: AddPostComponent }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-add-post',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-post.component.scss']
 })
 export class AddPostComponent implements OnInit {
-
+addPostForm:  FormGroup
   constructor() { }
 
   ngOnInit() {

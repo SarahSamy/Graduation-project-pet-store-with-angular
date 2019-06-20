@@ -21,7 +21,8 @@
                     <div class="col-md-12 irregular-image">
                       <!-- image -->
                       <a href="../../../../assets/images/adopt.jpg" title="your caption here">
-                        <img src="../../../../assets/images/adopt.jpg" class="border-irregular2 img-fluid hover-opacity" alt="" />
+                        <!-- <img src="../../../../assets/images/adopt.jpg" class="border-irregular2 img-fluid hover-opacity" alt="" /> -->
+                        <img src={{data.image}} class="border-irregular2 img-fluid hover-opacity" alt="" />
                       </a>
                     </div>
                   </div>
@@ -40,18 +41,21 @@
             <!-- /owl-carousel -->
           </div>
           <div class="col-lg-4 res-margin mt-5 text-xs-center">
-            <h2 class="mb-4"><strong>Pet name:</strong> Fluffy</h2>
+            <!-- <h2 class="mb-4"><strong>Pet name:</strong> Fluffy</h2> -->
+            <h2 class="mb-4"><strong>Pet name:</strong> {{data.name}}</h2>
             <div class="row">
               <div class="col-sm-6">
                 <ul class="list-unstyled pet-adopt-info">
                   <li>
-                    <h5>Gender: <span>female</span></h5>
+                    <!-- <h5>Gender: <span>female</span></h5> -->
+                    <h5>Gender: <span>{{data.gender}}</span></h5>
                   </li>
                   <li>
-                    <h5>Age: <span>2 years</span></h5>
+                    <h5>Age: <span>{{data.age}} years</span></h5>
                   </li>
                   <li>
-                    <h5>Breed: <span>Poodle</span></h5>
+                    <!-- <h5>Breed: <span>Poodle</span></h5> -->
+                    <h5>Breed: <span>{{data.category.name}}</span></h5>
                   </li>
                 </ul>
               </div>
@@ -69,13 +73,13 @@
                 </ul>
               </div>
             </div>
-            <p class="font-weight-bold pet-caption">Fluffy is a very sweet and active dog, she is ready for a new home!</p>
+            <p class="font-weight-bold pet-caption">{{data.name}} is a very sweet and active dog, she is ready for a new home!</p>
             <a href="#" class="btn btn--irregular mt-5" data-aos="zoom-in">Adopt now!</a>
           </div>
         </div>
 
         <div class="col-md-12 mt-5">
-          <h2 class="about-title">About Fluffy</h2>
+          <h2 class="about-title">About {{data.name}}</h2>
           <ul class="custom list-inline font-weight-bold">
             <li class="list-inline-item "><i class="fas fa-paw add-Green"></i> Friendly to other dogs</li>
             <li class="list-inline-item ml-2"><i class="fas fa-paw add-Green"></i> Good for Apartments</li>

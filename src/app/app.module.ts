@@ -32,6 +32,10 @@ import { TagListingComponent } from "./features/blog/tags/tag-listing/tag-listin
 import { TagItemComponent } from "./features/blog/tags/tag-item/tag-item.component";
 import { PostItemComponent } from "./features/blog/post-item/post-item.component";
 import { PostListingComponent } from "./features/blog/post-listing/post-listing.component";
+import { SidebarComponent } from './features/blog/sidebar/sidebar.component';
+import { PostsService } from './_services/Posts.service';
+import { PostDetailsComponent } from './features/blog/post-details/post-details.component';
+import { AddPostComponent } from './features/blog/add-post/add-post.component';
 
 @NgModule({
   declarations: [
@@ -59,11 +63,15 @@ import { PostListingComponent } from "./features/blog/post-listing/post-listing.
     TagListingComponent,
     TagItemComponent,
     PostItemComponent,
-    PostListingComponent
+    PostListingComponent,
+    SidebarComponent,
+    PostDetailsComponent,
+    AddPostComponent
   ],
   imports: [
     ReactiveFormsModule,
     BrowserModule,
+    // FormsModule,
     AppRoutingModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
@@ -79,18 +87,27 @@ import { PostListingComponent } from "./features/blog/post-listing/post-listing.
         path: "Home",
         component: HomeComponent
       },
+      {
+        path: "",
+        redirectTo:'/Home', pathMatch: 'full'
+       
+      
+      },
       { path: "pet-listing", component: PetListingComponent },
       { path: "Animal-Types", component: AnimalTypesComponent },
       { path: "Add-Animal", component: AddAnimalFormComponent },
       { path: "pet-profile", component: PetProfileComponent },
-      { path: "pet-profile/:id", component: PetProfileComponent }
+      { path: "pet-profile/:id", component: PetProfileComponent },
+      { path: "Blog", component: PostListingComponent },
+      { path: "Blog/Post-details", component: PostDetailsComponent },
+      { path: "Blog/add-post", component: AddPostComponent }
 
       // ,{
       //   path:'**',component:NotFoundErrorComponent
       // }
     ])
   ],
-  providers: [PetService, TypeService, CategoryService],
+  providers: [PetService, TypeService, CategoryService,PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

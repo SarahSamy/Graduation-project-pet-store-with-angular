@@ -1,3 +1,23 @@
-<p>
-  post-listing works!
-</p>
+<section>
+  <div class="container-fliud no-gutters">
+    <div class="row no-gutters">
+      <div class="col-sm-12 col-md-12 col-lg-2 pl-5">
+        <app-sidebar></app-sidebar>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-8 ml-5">
+        <div class="blog-posts-container mt-3">
+          <h1 class="title text-center">Our Blog</h1>
+        
+         <app-post-item *ngFor="let post of data" [post]='post'></app-post-item>
+         <pagination></pagination>
+        </div>
+      </div>
+      <div class="col-sm-1 mt-5" align="center" >
+          <div class="form-group">
+              <button class="theme-btn btn-style-one" type=" submit"
+                 name="submit-form"><a [routerLink]="'add-post'">Add Post</a></button> </div>
+        <!-- <button class="btn btn--primary add-post__btn m-4"><a [routerLink]="'add-post'">Add Post</a></button> -->
+      </div>
+    </div>
+  </div>
+</section>

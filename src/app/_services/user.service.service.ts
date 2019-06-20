@@ -9,10 +9,11 @@ import { PetService } from '../_services/pet.service';
 export class UserService {
   data: User[];
 
-  constructor(private PetService: PetService) {
+  constructor() {
     this.data = [
-      // {id:1,firstName:"alaa",lastName:"ibrahim",email : "alaa.ibrahim@aaa.com",password:1234,gender:"female",pets:[PetService.data[0],PetService.data[2]]},
-      // {id:2,firstName:"sarah",lastName:"refaat",email : "sarah.refaat@aaa.com",password:12345,gender:"female",pets:[PetService.data[1],PetService.data[2]]},
+      {id:1,firstName:"alaa",lastName:"ibrahim",email : "alaa.ibrahim@aaa.com",password:123456,userGroupId:1},
+      {id:2,firstName:"sara",lastName:"refaat",email : "sara.refaat@aaa.com",password:123456,userGroupId:2},
+
     ]
 
   }

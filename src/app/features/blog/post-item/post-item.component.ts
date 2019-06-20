@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, HostBinding, HostListener, Input } from '@angular/core';
+import { Post } from '../../../_model/Post';
+import { UserService } from 'src/app/_services/user.service.service';
+import { User } from 'src/app/_model/User';
+import { Tag } from 'src/app/_model/Tag';
+import { TagService } from 'src/app/_services/Tag.service';
 
 @Component({
   selector: 'app-post-item',
@@ -6,10 +11,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post-item.component.scss']
 })
 export class PostItemComponent implements OnInit {
-
-  constructor() { }
-
+  @Input()post:Post;
+  username:string;
+  postUser:User;
+  // postTags:Tag[];
+  // tagService:TagService;
+  userService: UserService;
+  constructor(test:UserService) {
+   this.userService=test;
+ 
+  }
   ngOnInit() {
+    this.postUser=this.userService.getById(this.post.userId);
+    this.username=this.postUser.firstName;
+  //   this.postTags=this.tagService.getTagsByPostId(this.post.id);
+  // console.log(this.postTags);
   }
 
 }

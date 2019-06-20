@@ -6,8 +6,8 @@ export class TagService {
     constructor() {
         this.data = [
        {id:1,name:"cat care",postId:[1,2]},
-       {id:1,name:"dog care",postId:[1,2]},
-       {id:1,name:"bird care",postId:[1,2]}
+       {id:1,name:"dog care",postId:[1,2,3]},
+       {id:1,name:"bird care",postId:[1,2,4]}
         ]
     }
     getAll(): Tag[] {

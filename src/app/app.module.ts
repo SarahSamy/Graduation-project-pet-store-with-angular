@@ -36,6 +36,10 @@ import { SidebarComponent } from './features/blog/sidebar/sidebar.component';
 import { PostsService } from './_services/Posts.service';
 import { PostDetailsComponent } from './features/blog/post-details/post-details.component';
 import { AddPostComponent } from './features/blog/add-post/add-post.component';
+import { TagService } from './_services/Tag.service';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { NotFoundComponent } from './shared/not-found/not-found.component';
+
 
 @NgModule({
   declarations: [
@@ -66,12 +70,14 @@ import { AddPostComponent } from './features/blog/add-post/add-post.component';
     PostListingComponent,
     SidebarComponent,
     PostDetailsComponent,
-    AddPostComponent
+    AddPostComponent,
+    NotFoundComponent
   ],
   imports: [
     ReactiveFormsModule,
     BrowserModule,
     FormsModule,
+    NgxPaginationModule,
     AppRoutingModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
@@ -101,12 +107,12 @@ import { AddPostComponent } from './features/blog/add-post/add-post.component';
       { path: "Blog/Post-details", component: PostDetailsComponent },
       { path: "Blog/add-post", component: AddPostComponent }
 
-      // ,{
-      //   path:'**',component:NotFoundErrorComponent
-      // }
+      ,{
+        path:'**',component:NotFoundComponent
+      }
     ])
   ],
-  providers: [PetService, TypeService, CategoryService,PostsService],
+  providers: [PetService, TypeService, CategoryService,PostsService,TagService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

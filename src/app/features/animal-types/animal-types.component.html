@@ -17,17 +17,16 @@
               <div class="col-md-4">
                 <div class="form-group ">
                   <!-- iller -->
-                  <select id=" select " class=" select form-control ">
+                  <select id=" select " class=" select form-control" (change)="displayCategoryPets($event)">
                     <option value="" disabled selected>Select Breed</option>
-                    <option>Affenpinscher</option>
-                    <option>Afghan Hound</option>
-                    <option>Akita</option>
-                    <option>Alaskan Malamute</option>
+                    <option *ngFor=" let category of selectedTypeCategories" [value]="category.categoryId"
+                      (change)="displayCategoryPets(category.categoryId)">
+                      {{category.name}}</option>
                   </select>
                 </div>
               </div>
               <!--select dropDown-->
-              <div class="col-md-4">
+              <div class=" col-md-4">
                 <div class="form-group ">
                   <!-- ilceler -->
                   <select id=" select" class="select form-control ">
@@ -84,11 +83,11 @@
   <div class="container  Introduction--Box--info ">
     <div class="row ">
       <div class="col-md-auto justify-content-md-center  ">
-        <h1 class=" Introduction--Box--info__paragraph   text-center">We have a range of pet advice
+        <h1 class=" Introduction--Box--info__paragraph   text-center">We have a range of pet
           information to help you look after your pet which you can download or read online. If you can’t
           find what you are looking for or you are concerned about your pet, we always recommend that you
           contact your vet. Your pet might be entitled to veterinary services through Blue Cross.</h1>
-        <h2 class="Introduction--Box--info__Question text-center">What animal are you seeking advice for?
+        <h2 class="Introduction--Box--info__Question text-center">What animal are you seeking information for?
         </h2>
       </div>
 
@@ -105,79 +104,12 @@
         <div class="row justify-content-md-center ">
 
           <!--Animcal rounded Photo Crad-->
-          <div class="col-lg-2 col-md-3 col-sm-4 col-6 pets--box--catalog--info text-center  mb-5">
-            <img class=" rounded-circle pets--box--catalog--info__photo  " src="../../assets/images/discover//dog1.jpg">
-            <h4 class="">Affenpinscher</h4>
+          <div *ngFor="let category of selectedTypeCategories"
+            class="col-lg-2 col-md-3 col-sm-4 col-6 pets--box--catalog--info text-center  mb-5">
+            <img class=" rounded-circle pets--box--catalog--info__photo" [attr.src]="category.image">
+            <h4 class="">{{category.name}}</h4>
           </div>
 
-          <!--Animcal rounded Photo Crad-->
-          <div class="col-lg-2 col-md-3 col-sm-4 col-6 pets--box--catalog--info text-center  mb-5">
-            <img class=" rounded-circle pets--box--catalog--info__photo  " src="../../assets/images/discover//dog2.jpg">
-            <h4 class="">Afghan Hound</h4>
-          </div>
-
-          <!--Animal rounded Photo Crad-->
-          <div class="col-lg-2 col-md-3 col-sm-4 col-6 pets--box--catalog--info text-center mb-5 ">
-            <img class=" rounded-circle pets--box--catalog--info__photo  " src="../../assets/images/discover//dog3.jpg">
-            <h4 class="">Airedale Terrier</h4>
-          </div>
-
-          <!--Animal rounded Photo Crad-->
-          <div class="col-lg-2 col-md-3 col-sm-4 col-6 pets--box--catalog--info text-center  mb-5">
-            <img class=" rounded-circle pets--box--catalog--info__photo  " src="../../assets/images/discover//dog4.jpg">
-            <h4 class="">Akita</h4>
-          </div>
-
-          <!--Animal rounded Photo Crad-->
-          <div class="col-lg-2 col-md-3 col-sm-4 col-6 pets--box--catalog--info text-center mb-5 ">
-            <img class=" rounded-circle pets--box--catalog--info__photo  " src="../../assets/images/discover//dog5.jpg">
-            <h4 class="">Alaskan Malamute</h4>
-          </div>
-
-          <!--Animal rounded Photo Crad-->
-          <div class="col-lg-2 col-md-3 col-sm-4 col-6 pets--box--catalog--info text-center mb-5 ">
-            <img class=" rounded-circle pets--box--catalog--info__photo  " src="../../assets/images/discover//dog6.jpg">
-            <h4 class="">American English Coonhound</h4>
-          </div>
-
-          <!--Animal rounded Photo Crad-->
-          <div class="col-lg-2 col-md-3 col-sm-4 col-6 pets--box--catalog--info text-center  mb-5">
-            <img class=" rounded-circle pets--box--catalog--info__photo  " src="../../assets/images/discover//dog7.jpg">
-            <h4 class="">American Eskimo Dog</h4>
-          </div>
-
-          <!--Animal rounded Photo Crad-->
-          <div class="col-lg-2 col-md-3 col-sm-4 col-6 pets--box--catalog--info text-center mb-5 ">
-            <img class=" rounded-circle pets--box--catalog--info__photo  " src="../../assets/images/discover//dog8.jpg">
-            <h4 class="">American Foxhound</h4>
-          </div>
-
-          <!--Animal rounded Photo Crad-->
-          <div class="col-lg-2 col-md-3 col-sm-4 col-6 pets--box--catalog--info text-center mb-5 ">
-            <img class=" rounded-circle pets--box--catalog--info__photo  " src="../../assets/images/discover//dog9.jpg">
-            <h4 class="">American Staffordshire Terrier</h4>
-          </div>
-
-          <!--Animal rounded Photo Crad-->
-          <div class="col-lg-2 col-md-3 col-sm-4 col-6 pets--box--catalog--info text-center mb-5 ">
-            <img class=" rounded-circle pets--box--catalog--info__photo  "
-              src="../../assets/images/discover//dog10.jpg">
-            <h4 class="">American Water Spaniel</h4>
-          </div>
-
-          <!--Animal rounded Photo Crad-->
-          <div class="col-lg-2 col-md-3 col-sm-4 col-6 pets--box--catalog--info text-center mb-5 ">
-            <img class="  rounded-circle pets--box--catalog--info__photo pets--box--catalog--info__photo  "
-              src="../../assets/images/discover//dog11.jpg">
-            <h4 class="">Anatolian Shepherd Dog</h4>
-          </div>
-
-          <!--Animal rounded Photo Crad-->
-          <div class="col-lg-2 col-md-3 col-sm-4 col-6 pets--box--catalog--info text-center mb-5 ">
-            <img class=" rounded-circle pets--box--catalog--info__photo  "
-              src="../../assets/images/discover//dog12.jpg">
-            <h4 class="">Australian Cattle Dog</h4>
-          </div>
         </div>
       </div>
     </div>

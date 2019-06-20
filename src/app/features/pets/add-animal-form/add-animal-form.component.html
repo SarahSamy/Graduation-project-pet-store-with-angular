@@ -1,5 +1,5 @@
 <div class=" container form-container">
-  <form [formGroup]="addAnimalForm" class="custom-form " id="add-animal-form" name="" action="">
+  <form [formGroup]="addAnimalForm" (ngSubmit)="onSubmit()" class="custom-form" id="add-animal-form">
     <div class="row">
       <div class="col-4">
       </div>
@@ -16,7 +16,7 @@
           <div class="row ">
             <div class="col-sm-12 col-md-6">
               <div class="form-group  ">
-                <input [formControl]="id" class=" form-control text-box" type="hidden" name="id" id="" />
+                <input [formControlName]="'animalId'" class="form-control text-box" type="hidden" />
               </div>
             </div>
           </div>
@@ -24,13 +24,13 @@
             <div class="col-sm-12 col-md-6">
               <div class="form-group  ">
                 <label class="lable" for="">Name</label>
-                <input [formControlName]="'name'" class=" form-control text-box" type="text" name="name" id="" />
+                <input [formControlName]="'name'" class="form-control text-box" type="text" />
               </div>
             </div>
             <div class=" col-sm-12 col-md-6">
               <div class="form-group   ">
                 <label class="lable" for="">Age</label>
-                <input [formControlName]="'age'" class=" form-control text-box" type="text" name="age" id="" />
+                <input [formControlName]="'age'" class=" form-control text-box" type="text" />
               </div>
             </div>
           </div>
@@ -51,7 +51,7 @@
                 <label class="lable" for="">Category</label>
                 <select [formControlName]="'categoryId'" class=" form-control custom-select mb-3 form-drop_down"
                   name="category_name" id="">
-                  <option *ngFor="let Category of categories" [value]="Category.id">{{Category.category_name}}</option>
+                  <option *ngFor="let Category of categories" [value]="Category.categoryId">{{Category.name}}</option>
                 </select>
 
               </div>
@@ -77,15 +77,14 @@
                 </div>
                 <div class="">
                   <div class="form-check">
-                    <input [formControlName]="'gender'" class="form-check-input" type="radio" name="gender"
-                      id="gridRadios1" [value]="'male'" checked>
-                    <label class="  form-check-label">
+                    <input [formControlName]="'gender'" class="form-check-input" type="radio" [value]="'male'"
+                      [checked]="true">
+                    <label class="form-check-label">
                       Male
                     </label>
                   </div>
                   <div class="form-check">
-                    <input [formControlName]="'gender'" class="form-check-input" type="radio" name="gender"
-                      id="gridRadios2" [value]="'female'">
+                    <input [formControlName]="'gender'" class="form-check-input" type="radio" [value]="'female'">
                     <label class="form-check-label">
                       Female
                     </label>
@@ -100,15 +99,15 @@
                 </div>
                 <div class="">
                   <div class="form-check">
-                    <input [formControlName]="'isToAdapted'" class="form-check-input" type="radio" name="isToAdapted"
-                      id="gridRadios1" [value]="true" checked>
-                    <label class="  form-check-label">
+                    <input [formControlName]="'isToAdapted'" class="form-check-input" type="radio" id="gridRadios1"
+                      [value]="true" [checked]="true">
+                    <label class="form-check-label">
                       Yes
                     </label>
                   </div>
                   <div class="form-check">
-                    <input [formControlName]="'isToAdapted'" class="form-check-input" type="radio" name="isToAdapted"
-                      id="gridRadios2" [value]="false">
+                    <input [formControlName]="'isToAdapted'" class="form-check-input" type="radio" id="gridRadios2"
+                      [value]="false">
                     <label class="form-check-label">
                       No
                     </label>
@@ -122,20 +121,19 @@
           <div class="form-group form-row ">
             <div class="col-sm-12 col-md-6">
               <label class="lable" for="">Medical Condition</label>
-              <textarea [formControlName]="'medicalCondition'" class="form-control" name="" id="" cols="30"
-                rows="4"></textarea>
+              <textarea [formControlName]="'medicalCondition'" class="form-control" cols="30" rows="4"></textarea>
             </div>
             <div class="col-sm-12 col-md-6">
               <label class="lable" for="">Notes</label>
-              <textarea [formControlName]="'notes'" class="form-control" name="" id="" cols="30" rows="4"></textarea>
+              <textarea [formControlName]="'notes'" class="form-control" cols="30" rows="4"></textarea>
             </div>
           </div>
         </div>
         <div class="form-group row justify-content-end ">
           <div class="col-auto">
-            <button href="#" id="button--cancel" class="  co-md-4">Cancel</button>
+            <button id="button--cancel" class="  co-md-4">Cancel</button>
           </div>
-          <button href="#" class=" " (click)="onSubmit()">Save</button>
+          <button type="submit" class="">Save</button>
           <div class="col-auto"> </div>
 
         </div>

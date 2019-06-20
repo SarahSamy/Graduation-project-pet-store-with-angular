@@ -34,13 +34,13 @@ export class AddAnimalFormComponent implements OnInit {
 
   ngOnInit() {
     this.addAnimalForm = new FormGroup({
-      id: new FormControl(this.id),
-      name: new FormControl("bata"),
-      age: new FormControl(25),
+      animalId: new FormControl(this.id),
+      name: new FormControl(),
+      age: new FormControl(),
       image: new FormControl("assets/images/animal-19-512.png"),
       category: new FormGroup({
-        categoryId: new FormControl(1),
-        fkTypeId: new FormControl(3),
+        categoryId: new FormControl(),
+        fkTypeId: new FormControl(),
       }),
       parentHistoryAndType: new FormControl(),
       food: new FormControl(),
@@ -48,15 +48,19 @@ export class AddAnimalFormComponent implements OnInit {
       isToAdapted: new FormControl(),
       medicalCondition: new FormControl(),
       notes: new FormControl(),
-    })
+    });
 
     this.categories = this.CategoryService.getAll();
     this.types = this.TypeService.getAllTypes();
+    console.log(this.categories);
+    console.log(this.types);
     // this.category_name = (this.addAnimalForm.controls.category as FormGroup).value.category_name;
     // this.fkTypeId=this.addAnimalForm.controls.category.value.fkTypeId;
     // console.log(this.addAnimalForm.controls.category.value.category_name);
   }
   onSubmit() {
+    console.log(this.addAnimalForm.value);
+    console.log(this.addAnimalForm.getRawValue());
     console.log(this.addAnimalForm);
     this.pet = this.addAnimalForm.value;
     console.log(this.pet);

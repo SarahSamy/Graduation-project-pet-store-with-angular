@@ -82,7 +82,8 @@ import { PostListingComponent } from "./features/blog/post-listing/post-listing.
       { path: "pet-listing", component: PetListingComponent },
       { path: "Animal-Types", component: AnimalTypesComponent },
       { path: "Add-Animal", component: AddAnimalFormComponent },
-      { path: "pet-profile", component: PetProfileComponent }
+      { path: "pet-profile", component: PetProfileComponent },
+      { path: "pet-profile/:id", component: PetProfileComponent }
 
       // ,{
       //   path:'**',component:NotFoundErrorComponent

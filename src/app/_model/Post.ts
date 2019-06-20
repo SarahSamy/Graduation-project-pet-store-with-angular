@@ -9,4 +9,7 @@ export interface Post {
     userId:number;
     Tags?:Tag[];
     TagsId:number[];
+    image:string;
+    time?:string;
+    date?:string;
 }

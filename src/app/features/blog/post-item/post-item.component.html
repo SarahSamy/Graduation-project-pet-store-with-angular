@@ -1,3 +1,20 @@
-<p>
-  post-item works!
-</p>
+<div class="blog-posts-container__post post mt-5">
+  <h4 class="post__header mb-3"><a [routerLink]="'Post-details'">{{post.title}}</a></h4>
+  <div class="post__meta">
+    <ul>
+      <li><i class="fa fa-user"></i> {{username}}</li>
+      <li><i class="fa fa-clock-o"></i> {{post.time}}</li>
+      <li><i class="fa fa-calendar"></i>{{post.date}}</li>
+    </ul>
+  </div>
+  <a href="">
+    <img class="post__image" [src]="post.image" alt="" />
+  </a>
+  <p class="post__title">
+   {{post.body}}
+  </p>
+
+  <span class="badge badge-primary post-tag mr-2">Dog</span>
+  <span class="badge badge-primary post-tag mr-2">Care</span>
+  <span class="badge badge-primary post-tag mr-2">Vitamins</span>
+</div>

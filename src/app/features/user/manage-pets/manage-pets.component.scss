@@ -1,0 +1,21 @@
+.user-profile{
+background-image: url(../../../../assets/images/bg.jpg);
+//    border-bottom : solid 0.5rem  #94c13d;
+
+}
+.user-profile__col{
+    background-color: white;
+    
+}
+.user-profile__name,.user-profile__settings{
+color: black;
+font-weight: bold;
+font-size: 2.5rem;
+font-family: 'Satisfy', cursive;
+
+
+}
+.user-profile__settings{
+    font-size: 1.5rem;
+}
+

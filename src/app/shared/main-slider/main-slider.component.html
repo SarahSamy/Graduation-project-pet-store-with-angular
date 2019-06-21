@@ -8,23 +8,12 @@
               <div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
                   <div class="carousel-inner my-pets-slider">
                   
-                      <ngb-carousel *ngIf="images" >
-                          <ng-template ngbSlide>
-                            <img [src]="images[0]" class="d-block w-100 " width="1260px" height="400px" alt="pet">
-                            
-                          </ng-template>
-                          <ng-template ngbSlide>
-                            <img [src]="images[1]" class="d-block w-100 " width="1260px" height="400px" alt="pet">
-                           
-                          </ng-template>
-                          <ng-template ngbSlide>
-                            <img [src]="images[2]" class="d-block w-100 " width="1260px" height="400px" alt="pet">
-                            
-                          </ng-template>
-                        </ngb-carousel>
+                    <ng-content></ng-content>
                   </div>
                  
               </div>
           </div>
       </div>
   </div> 
+
+

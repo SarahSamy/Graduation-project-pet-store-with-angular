@@ -65,7 +65,11 @@ export class PetListingComponent implements OnInit {
   // }
   getOthers() {
     this.data = this.petService.getAllOthers();
-    //return this.data;
+    this.config = {
+      itemsPerPage: 3,
+      currentPage: 1,
+      totalItems: this.data.length
+    }
   }
   // getAll() {
   //   this.data = this.petService.getAll();

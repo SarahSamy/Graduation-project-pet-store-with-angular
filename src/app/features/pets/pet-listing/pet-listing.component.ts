@@ -10,29 +10,41 @@ import { TypeService } from 'src/app/_services/type.service';
 })
 export class PetListingComponent implements OnInit {
   @Input() data: Pet[]
-  @Input() mostViewed: Pet[]
+  @Input() mostViewed: Pet[];
+  petService: PetService;
+  config: any;
   // id:Number
   page: number;
   pageSize: number;
   collectionSize: number;
   showed: number;
 
-  constructor(private petService: PetService) {
+  constructor( test: PetService) {
     this.page = 1;
     this.pageSize = 4;
     this.collectionSize = 9;
     this.showed = 4;
-  }
-
-  ngOnInit() {
+    this.petService = test;
     if (!this.data) {
-      this.data = this.petService.getAll()
-      // .filter(p => p.category.fkTypeId < 4);
+      this.data = this.petService.getAll();
     }
     if (!this.mostViewed) {
       this.mostViewed = this.petService.getMostViews();
     }
+    this.config = {
+      itemsPerPage: 3,
+      currentPage: 1,
+      // totalItems: this.data.length
+    }
 
+  }
+  pageChanged(event){
+    this.config.currentPage = event;
+    
+  }
+ 
+  ngOnInit() {
+    
   }
   // getCats() {
   //   this.data = this.petService.getAllCats();
@@ -53,7 +65,11 @@ export class PetListingComponent implements OnInit {
   // }
   getOthers() {
     this.data = this.petService.getAllOthers();
-    return this.data;
+    this.config = {
+      itemsPerPage: 3,
+      currentPage: 1,
+      totalItems: this.data.length
+    }
   }
   // getAll() {
   //   this.data = this.petService.getAll();
@@ -75,13 +91,21 @@ export class PetListingComponent implements OnInit {
 
   getAllTypes() {
     this.data = this.petService.getAll();
-    return this.data;
+    this.config = {
+      itemsPerPage: 3,
+      currentPage: 1,
+      totalItems: this.data.length
+    }
   }
 
   getByPetType(typeId: number) {
     this.data = this.petService.getByType(typeId);
-
-    return this.data;
+    this.config = {
+      itemsPerPage: 3,
+      currentPage: 1,
+      totalItems: this.data.length
+    }
+    //return this.data;
   }
 
 

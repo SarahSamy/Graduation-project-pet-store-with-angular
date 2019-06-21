@@ -1,0 +1,75 @@
+<!-------profile photo------------->
+<div class="container-fluid user-profile">
+<div class="row ">
+<div class="col-lg-2 col-md-3 col-sm-4 col-6 text-center  user-profile__col  mx-4">
+
+<div class="  pets--box--catalog--info text-center  my-5">
+  <img class=" rounded-circle pets--box--catalog--info__photo  " src="../../../../assets/images/girl.jpg">
+  
+</div>
+<a><h3 class="user-profile__name ">Emilia</h3></a>
+<!-- <a><h3 class="user-profile__settings">Edit Profile</h3></a> -->
+</div>
+<div class="col-md-2">
+
+</div>
+<div class="col-md-4  ">
+  <!-- <app-main-slider *ngIf="images">
+    <ngb-carousel   >
+      <ng-template ngbSlide  *ngFor="let img of images">
+        <img [src]="img" class="d-block w-100 " width="1260px" height="400px" alt="pet">
+        
+      </ng-template> -->
+      <!-- <ng-template ngbSlide>
+        <img [src]="images[1]" class="d-block w-100 " width="1260px" height="400px" alt="pet">
+       
+      </ng-template>
+      <ng-template ngbSlide>
+        <img [src]="images[2]" class="d-block w-100 " width="1260px" height="400px" alt="pet">
+        
+      </ng-template> -->
+    <!-- </ngb-carousel>
+  </app-main-slider>  -->
+</div>
+
+</div>
+</div>
+
+
+
+
+
+<!--------user pets-------------->
+<div class="container">
+    <div class="row justify-content-center my-4">
+         <h2 class=" row-title add-Bold"><i class="fas fa-paw add-Green"></i>  Your Pets  <i class="fas fa-paw add-Green"></i></h2>
+      </div>
+  <div class="row">
+    <div class="col-md-3 col-sm-3 my-4 profile-options ">
+      <h3 ><a ><i class="fas fa-paw add-Green"></i>  Edit Profile</a></h3>
+      <h3 > <a ><i class="fas fa-paw add-Green"></i>  Add Pet</a></h3>
+      
+    </div>
+<div class="col-md-9 text-center m-auto">
+  
+  <div class="row ">
+
+      <div *ngFor="let newpet of  data | paginate: config"  class="col-md-4  " >
+        
+        <pet-item  [pet]= 'newpet'></pet-item>
+      
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!--------------------pagination----------------------->
+<div class="row mt-5">
+    <div class="col-12" align="center">
+   <pagination-controls class="my-pagination" (pageChange)="pageChanged($event)"></pagination-controls>
+  </div>
+</div>
+
+

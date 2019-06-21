@@ -39,6 +39,9 @@ import { AddPostComponent } from './features/blog/add-post/add-post.component';
 import { TagService } from './_services/Tag.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
+import { ManagePetsComponent } from './features/user/manage-pets/manage-pets.component';
+import { CommentService } from './_services/Comment.service';
+import { CommentItemComponent } from './features/blog/comment-item/comment-item.component';
 
 
 @NgModule({
@@ -71,7 +74,9 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
     SidebarComponent,
     PostDetailsComponent,
     AddPostComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ManagePetsComponent,
+    CommentItemComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -105,16 +110,17 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
       { path: "Edit-Animal/:id", component: AddAnimalFormComponent },
       { path: "pet-profile", component: PetProfileComponent },
       { path: "pet-profile/:id", component: PetProfileComponent },
+      { path: "manage-pets", component: ManagePetsComponent },
       { path: "Blog", component: PostListingComponent },
-      { path: "Blog/Post-details", component: PostDetailsComponent },
+      { path: "Blog/Post-details/:id", component: PostDetailsComponent },
       { path: "Blog/add-post", component: AddPostComponent }
 
-      , {
-        path: '**', component: NotFoundComponent
-      }
+      // , {
+      //   path: '**', component: NotFoundComponent
+      // }
     ])
   ],
-  providers: [PetService, TypeService, CategoryService, PostsService, TagService],
+  providers: [PetService, TypeService, CategoryService, PostsService, TagService,CommentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

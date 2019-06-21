@@ -1,10 +1,10 @@
 <div class="blog-posts-container__post post mt-5">
-  <h4 class="post__header mb-3"><a [routerLink]="'Post-details'">{{post.title}}</a></h4>
+  <h4 class="post__header mb-3"><a [routerLink]="['Post-details',post.id]">{{post.title}}</a></h4>
   <div class="post__meta">
     <ul>
       <li><i class="fa fa-user"></i> {{username}}</li>
       <li><i class="fa fa-clock-o"></i> {{post.time}}</li>
-      <li><i class="fa fa-calendar"></i>{{post.date}}</li>
+      <li><i class="fa fa-calendar"></i>{{post.day}} {{post.month}} {{post.year}} </li>
     </ul>
   </div>
   <a href="">

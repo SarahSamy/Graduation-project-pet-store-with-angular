@@ -11,20 +11,14 @@ import { ActivatedRoute } from "@angular/router";
 export class PetProfileComponent implements OnInit {
   @Input() pet : Pet;
   @Input() data
-  queryId:string
-  animal
   petId
 
 
   constructor(private petService:PetService , private route: ActivatedRoute) {
-    // this.route.snapshot.queryParamMap
-  
+
    }
 
   ngOnInit() {
-    // this.animal = this.route.snapshot.paramMap.get("animal")
-    // this.queryId = this.route.snapshot.queryParamMap.get("paramId")
-    // console.log(this.queryId)
     this.route.params.subscribe(paramsId => {
       this.petId = paramsId;
   });
@@ -35,12 +29,5 @@ export class PetProfileComponent implements OnInit {
      return this.data
     }
   }
-  // getById(id){
-    
-  //   this.petId=Number(id)
-  //   // this.data=this.petService.getById(this.petId)
-  //   console.log(this.petId)
-  //   console.log(this.data)
-  //   return this.data;
-  // }
+
 }

@@ -11,5 +11,8 @@ export interface Post {
     TagsId:number[];
     image:string;
     time?:string;
-    date?:string;
+    day?:string;
+    month?:string;
+    year?:string;
+  
 }

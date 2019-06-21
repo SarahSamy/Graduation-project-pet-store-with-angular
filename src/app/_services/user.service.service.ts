@@ -11,8 +11,8 @@ export class UserService {
 
   constructor() {
     this.data = [
-      {id:1,firstName:"alaa",lastName:"ibrahim",email : "alaa.ibrahim@aaa.com",password:123456,userGroupId:1},
-      {id:2,firstName:"sara",lastName:"refaat",email : "sara.refaat@aaa.com",password:123456,userGroupId:2},
+      {id:1,firstName:"alaa",lastName:"ibrahim",email : "alaa.ibrahim@aaa.com",password:123456,userGroupId:1,image:"../../../../assets/images/comments/John-Amaechi-OBE_portraitfeatured.jpg"},
+      {id:2,firstName:"sara",lastName:"refaat",email : "sara.refaat@aaa.com",password:123456,userGroupId:2,image:'../../../../assets/images/comments/images (1).jpg'},
 
     ]
 

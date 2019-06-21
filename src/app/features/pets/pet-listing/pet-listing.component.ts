@@ -34,7 +34,7 @@ export class PetListingComponent implements OnInit {
     this.config = {
       itemsPerPage: 3,
       currentPage: 1,
-      totalItems: this.data.length
+      // totalItems: this.data.length
     }
 
   }

@@ -73,7 +73,7 @@
                 </ul>
               </div>
             </div>
-            <p class="font-weight-bold pet-caption">{{data.name}} is a very sweet and active dog, she is ready for a new home!</p>
+            <p class="font-weight-bold pet-caption">{{data.name}} is a very sweet and active {{data.category.type.name}}, she is ready for a new home!</p>
             <a href="#" class="btn btn--irregular mt-5" data-aos="zoom-in">Adopt now!</a>
           </div>
         </div>
@@ -104,7 +104,7 @@
             </p>
           </div>
 
-          <p class="custom-link"><a>« Go back to adoption gallery</a></p>
+          <p class="custom-link"><a [routerLink]="['/pet-listing']">« Go back to adoption gallery</a></p>
         </div>
       </div>
     </div>

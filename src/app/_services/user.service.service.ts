@@ -11,9 +11,16 @@ export class UserService {
 
   constructor() {
     this.data = [
-      {id:1,firstName:"alaa",lastName:"ibrahim",email : "alaa.ibrahim@aaa.com",password:123456,userGroupId:1},
-      {id:2,firstName:"sara",lastName:"refaat",email : "sara.refaat@aaa.com",password:123456,userGroupId:2},
-
+      { id: 1, firstName: "alaa", lastName: "ibrahim", email: "alaa.ibrahim@aaa.com", password: 123456, userGroupId: 1 },
+      {
+        id: 2, firstName: "sara", lastName: "refaat", email: "sara.refaat@aaa.com", password: 123456, userGroupId: 2,
+        pets: [
+          { id: 1, name: "Bondok", image: "assets/images/dog1.jpg", gender: "male", isToAdapted: true, age: 2, category: { categoryId: 5, name: "Beagle", fkTypeId: 2, type: { id: 2, name: "dog" } }, views: 2 },
+          { id: 5, name: "Browny", image: "assets/images/cat4.jpg", gender: "female", isToAdapted: true, age: 2, category: { categoryId: 3, name: "Scottish Fold", fkTypeId: 1, type: { id: 1, name: "Cat" } }, views: 5 },
+          { id: 9, name: "Gamil", image: "assets/images/turtle.jpg", gender: "male", isToAdapted: true, age: 2, category: { categoryId: 12, name: " Eastern", fkTypeId: 4, type: { id: 4, name: "Turtle" } }, views: 2 },
+        ]
+      },
+      
     ]
 
   }
@@ -48,5 +55,9 @@ export class UserService {
     }
     return result;
   }
+
+
+
+  
 }
 

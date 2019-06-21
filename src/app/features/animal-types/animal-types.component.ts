@@ -16,7 +16,7 @@ export class AnimalTypesComponent implements OnInit {
   allCategories: Category[];
   selectedTypeCategories: Category[];
   // @Input()
-  selectedTypeId: Number;
+  selectedTypeId: number;
   selectedCategoryPets: Pet[];
 
 

@@ -5,7 +5,9 @@ import { Type } from 'src/app/_model/Type';
 import { PetService } from 'src/app/_services/pet.service';
 import { CategoryService } from 'src/app/_services/category.service';
 import { TypeService } from 'src/app/_services/type.service';
-import { FormGroup, FormControl, FormControlName, AbstractControl } from '@angular/forms';
+import { FormGroup, FormControl, FormControlName, AbstractControl, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-add-animal-form',
@@ -15,57 +17,85 @@ import { FormGroup, FormControl, FormControlName, AbstractControl } from '@angul
 export class AddAnimalFormComponent implements OnInit {
 
   pet: Pet;
+  editedPet: Pet;
   categories: Category[];
   types: Type[];
   addAnimalForm: FormGroup;
-  // fkTypeId: number;
-  // category_name: string;
   id: number;
 
 
   constructor(private PetService: PetService,
     private CategoryService: CategoryService,
-    private TypeService: TypeService) {
-
+    private TypeService: TypeService, private router: Router,
+    private activatedroute: ActivatedRoute
+  ) {
     this.id = this.PetService.getAll().length + 1;
-
   }
 
 
   ngOnInit() {
     this.addAnimalForm = new FormGroup({
       animalId: new FormControl(this.id),
-      name: new FormControl(),
-      age: new FormControl(),
+      name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(10), Validators.pattern(/^[A-Za-z]+(?:[_-][A-Za-z]+)*$/)]),
+      age: new FormControl('', [Validators.required, Validators.max(100), Validators.pattern(/^[0-9]*$/)]),
       image: new FormControl("assets/images/animal-19-512.png"),
       category: new FormGroup({
-        categoryId: new FormControl(),
-        fkTypeId: new FormControl(),
+        categoryId: new FormControl('', Validators.required),
+        fkTypeId: new FormControl('', Validators.required),
       }),
-      parentHistoryAndType: new FormControl(),
-      food: new FormControl(),
-      gender: new FormControl(),
-      isToAdapted: new FormControl(),
-      medicalCondition: new FormControl(),
-      notes: new FormControl(),
+      parentHistoryAndType: new FormControl('', Validators.required),
+      food: new FormControl('', Validators.required),
+      gender: new FormControl('male', Validators.required),
+      isToAdapted: new FormControl(false, Validators.required),
+      medicalCondition: new FormControl('', Validators.required),
+      notes: new FormControl('', Validators.required),
     });
 
     this.categories = this.CategoryService.getAll();
     this.types = this.TypeService.getAllTypes();
-    console.log(this.categories);
-    console.log(this.types);
-    // this.category_name = (this.addAnimalForm.controls.category as FormGroup).value.category_name;
-    // this.fkTypeId=this.addAnimalForm.controls.category.value.fkTypeId;
-    // console.log(this.addAnimalForm.controls.category.value.category_name);
+
+    this.activatedroute.paramMap.subscribe(params => {
+      const petId = +params.get('id')
+      if (petId) {
+        this.getPet(petId)
+      }
+    })
+
   }
+  getPet(petId: number) {
+    this.editedPet = this.PetService.getById(petId);
+    this.editPet(this.editedPet);
+  }
+  editPet(Pet: Pet) {
+    this.addAnimalForm.patchValue({
+      name: Pet.name,
+      age: Pet.age,
+      image: Pet.image,
+      category: {
+        categoryId: Pet.fkCategoryId,
+        fkTypeId: Pet.category.fkTypeId,
+      },
+      parentHistoryAndType: Pet.parentHistoryAndType,
+      food: Pet.food,
+      gender: Pet.gender,
+      isToAdapted: Pet.isToAdapted,
+      notes: Pet.notes,
+      medicalCondition: Pet.medicalCondition,
+    })
+  }
+
   onSubmit() {
-    console.log(this.addAnimalForm.value);
-    console.log(this.addAnimalForm.getRawValue());
-    console.log(this.addAnimalForm);
-    this.pet = this.addAnimalForm.value;
-    console.log(this.pet);
-    this.PetService.addPet(this.pet);
-    console.log(this.PetService.getAll())
+    if (this.addAnimalForm.valid) {
+
+      this.pet = this.addAnimalForm.value;
+      this.PetService.addPet(this.pet);
+      this.addAnimalForm.reset();
+      // this.router.navigate(['/pet-listing']);//in future work
+      console.log(this.pet);
+      console.log(this.addAnimalForm.value);
+      console.log(this.addAnimalForm.getRawValue());
+      console.log(this.addAnimalForm);
+    }
   }
 
 }

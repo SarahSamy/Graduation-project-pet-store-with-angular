@@ -37,7 +37,7 @@ import { PostsService } from './_services/Posts.service';
 import { PostDetailsComponent } from './features/blog/post-details/post-details.component';
 import { AddPostComponent } from './features/blog/add-post/add-post.component';
 import { TagService } from './_services/Tag.service';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 
 
@@ -76,8 +76,8 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
   imports: [
     ReactiveFormsModule,
     BrowserModule,
-     FormsModule,
-     NgxPaginationModule,
+    FormsModule,
+    NgxPaginationModule,
     AppRoutingModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
@@ -95,25 +95,26 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
       },
       {
         path: "",
-        redirectTo:'/Home', pathMatch: 'full'
-       
-      
+        redirectTo: '/Home', pathMatch: 'full'
+
+
       },
       { path: "pet-listing", component: PetListingComponent },
       { path: "Animal-Types", component: AnimalTypesComponent },
       { path: "Add-Animal", component: AddAnimalFormComponent },
+      { path: "Edit-Animal/:id", component: AddAnimalFormComponent },
       { path: "pet-profile", component: PetProfileComponent },
       { path: "pet-profile/:id", component: PetProfileComponent },
       { path: "Blog", component: PostListingComponent },
       { path: "Blog/Post-details", component: PostDetailsComponent },
       { path: "Blog/add-post", component: AddPostComponent }
 
-      ,{
-        path:'**',component:NotFoundComponent
+      , {
+        path: '**', component: NotFoundComponent
       }
     ])
   ],
-  providers: [PetService, TypeService, CategoryService,PostsService,TagService],
+  providers: [PetService, TypeService, CategoryService, PostsService, TagService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

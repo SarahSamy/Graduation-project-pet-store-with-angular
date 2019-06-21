@@ -62,7 +62,7 @@ export class PetService {
     getByType(typeId: number): Pet[] {
         return this.data.filter(t => t.category.type.id == typeId)
     }
-    getByCategory(categoryId: Number): Pet[] {
+    getByCategory(categoryId: number): Pet[] {
         return this.data.filter(t => t.category.type.id == categoryId)
     }
 

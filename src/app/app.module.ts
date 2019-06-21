@@ -89,13 +89,14 @@ import { AddPostComponent } from './features/blog/add-post/add-post.component';
       },
       {
         path: "",
-        redirectTo:'/Home', pathMatch: 'full'
-       
-      
+        redirectTo: '/Home', pathMatch: 'full'
+
+
       },
       { path: "pet-listing", component: PetListingComponent },
       { path: "Animal-Types", component: AnimalTypesComponent },
       { path: "Add-Animal", component: AddAnimalFormComponent },
+      { path: "Edit-Animal/:id", component: AddAnimalFormComponent },
       { path: "pet-profile", component: PetProfileComponent },
       { path: "Blog", component: PostListingComponent },
       { path: "Blog/Post-details", component: PostDetailsComponent },
@@ -106,7 +107,7 @@ import { AddPostComponent } from './features/blog/add-post/add-post.component';
       // }
     ])
   ],
-  providers: [PetService, TypeService, CategoryService,PostsService],
+  providers: [PetService, TypeService, CategoryService, PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

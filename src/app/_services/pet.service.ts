@@ -7,21 +7,19 @@ export class PetService {
         this.data = [
 
             { id: 1, name: "Bondok", image: "assets/images/dog1.jpg", gender: "male", isToAdapted: true, age: 2, category: { categoryId: 5, name: "Beagle", fkTypeId: 2, type: { id: 2, name: "dog" } }, views: 2 },
-            { id: 1, name: "kpkp", image: "assets/images/dog1.jpg", gender: "male", isToAdapted: true, age: 2, category: { categoryId: 1, name: "Siamese", fkTypeId: 2, type: { id: 2, name: "dog" } }, views: 2 },
-            { id: 1, name: "lolo", image: "assets/images/dog1.jpg", gender: "female", isToAdapted: true, age: 2, category: { categoryId: 1, name: "Haski", fkTypeId: 2, type: { id: 2, name: "dog" } }, views: 2 },
-            { id: 1, name: "Bon", image: "assets/images/dog1.jpg", gender: "male", isToAdapted: true, age: 2, category: { categoryId: 1, name: "Haski", fkTypeId: 2, type: { id: 2, name: "dog" } }, views: 2 },
-            { id: 1, name: "rose", image: "assets/images/dog1.jpg", gender: "male", isToAdapted: true, age: 2, category: { categoryId: 1, name: "Haski", fkTypeId: 2, type: { id: 2, name: "dog" } }, views: 2 },
-            { id: 1, name: "jack", image: "assets/images/dog1.jpg", gender: "female", isToAdapted: true, age: 2, category: { categoryId: 1, name: "Siamese", fkTypeId: 2, type: { id: 2, name: "dog" } }, views: 2 },
-            { id: 2, name: "Bossy", image: "assets/images/cat1.jpg", gender: "female", isToAdapted: true, age: 2, category: { categoryId: 2, name: "Classic Persian", fkTypeId: 1, type: { id: 1, name: "Cat" } }, views: 5 },
-            { id: 3, name: "Meshmesh", image: "assets/images/cat2.jpg", gender: "male", isToAdapted: true, age: 2, category: { categoryId: 4, name: "Ragamuffin", fkTypeId: 1, type: { id: 1, name: "Cat" } }, views: 3 },
-            { id: 4, name: "ScuppyDo", image: "assets/images/dog2.jpg", gender: "male", isToAdapted: true, age: 2, category: { categoryId: 6, name: "Haski", fkTypeId: 2, type: { id: 2, name: "Dog" } }, views: 5 },
-            { id: 5, name: "Browny", image: "assets/images/cat4.jpg", gender: "female", isToAdapted: true, age: 2, category: { categoryId: 3, name: "Scottish Fold", fkTypeId: 1, type: { id: 1, name: "Cat" } }, views: 5 },
-            { id: 6, name: "Tuka", image: "assets/images/cat5.jpg", gender: "female", isToAdapted: true, age: 2, category: { categoryId: 3, name: "Scottish Fold", fkTypeId: 1, type: { id: 1, name: "Cat" } }, views: 2 },
-            { id: 7, name: "Lely", image: "assets/images/bird2.jpg", gender: "female", isToAdapted: true, age: 2, category: { categoryId: 11, name: "Finches ", fkTypeId: 3, type: { id: 3, name: "Bird" } }, views: 6 },
-            { id: 8, name: "Loz", image: "assets/images/parrot3.jpg", gender: "male", isToAdapted: true, age: 2, category: { categoryId: 10, name: "Parrot ", fkTypeId: 3, type: { id: 3, name: "Bird" } }, views: 2 },
-            { id: 9, name: "Gamil", image: "assets/images/turtle.jpg", gender: "male", isToAdapted: true, age: 2, category: { categoryId: 12, name: " Eastern", fkTypeId: 4, type: { id: 4, name: "Turtle" } }, views: 2 },
-
-
+            { id: 2, name: "kpkp", image: "assets/images/dog1.jpg", gender: "male", isToAdapted: true, age: 2, category: { categoryId: 1, name: "Siamese", fkTypeId: 2, type: { id: 2, name: "dog" } }, views: 2 },
+            { id: 3, name: "lolo", image: "assets/images/dog1.jpg", gender: "female", isToAdapted: true, age: 2, category: { categoryId: 1, name: "Haski", fkTypeId: 2, type: { id: 2, name: "dog" } }, views: 2 },
+            { id: 7, name: "Bon", image: "assets/images/dog1.jpg", gender: "male", isToAdapted: true, age: 2, category: { categoryId: 1, name: "Haski", fkTypeId: 2, type: { id: 2, name: "dog" } }, views: 2 },
+            { id: 5, name: "rose", image: "assets/images/dog1.jpg", gender: "male", isToAdapted: true, age: 2, category: { categoryId: 1, name: "Haski", fkTypeId: 2, type: { id: 2, name: "dog" } }, views: 2 },
+            { id: 6, name: "jack", image: "assets/images/dog1.jpg", gender: "female", isToAdapted: true, age: 2, category: { categoryId: 1, name: "Siamese", fkTypeId: 2, type: { id: 2, name: "dog" } }, views: 2 },
+            { id: 7, name: "Bossy", image: "assets/images/cat1.jpg", gender: "female", isToAdapted: true, age: 2, category: { categoryId: 2, name: "Classic Persian", fkTypeId: 1, type: { id: 1, name: "Cat" } }, views: 5 },
+            { id: 8, name: "Meshmesh", image: "assets/images/cat2.jpg", gender: "male", isToAdapted: true, age: 2, category: { categoryId: 4, name: "Ragamuffin", fkTypeId: 1, type: { id: 1, name: "Cat" } }, views: 3 },
+            { id: 9, name: "ScuppyDo", image: "assets/images/dog2.jpg", gender: "male", isToAdapted: true, age: 2, category: { categoryId: 6, name: "Haski", fkTypeId: 2, type: { id: 2, name: "Dog" } }, views: 5 },
+            { id: 10, name: "Browny", image: "assets/images/cat4.jpg", gender: "female", isToAdapted: true, age: 2, category: { categoryId: 3, name: "Scottish Fold", fkTypeId: 1, type: { id: 1, name: "Cat" } }, views: 5 },
+            { id: 11, name: "Tuka", image: "assets/images/cat5.jpg", gender: "female", isToAdapted: true, age: 2, category: { categoryId: 3, name: "Scottish Fold", fkTypeId: 1, type: { id: 1, name: "Cat" } }, views: 2 },
+            { id: 12, name: "Lely", image: "assets/images/bird2.jpg", gender: "female", isToAdapted: true, age: 2, category: { categoryId: 11, name: "Finches ", fkTypeId: 3, type: { id: 3, name: "Bird" } }, views: 6 },
+            { id: 13, name: "Loz", image: "assets/images/parrot3.jpg", gender: "male", isToAdapted: true, age: 2, category: { categoryId: 10, name: "Parrot ", fkTypeId: 3, type: { id: 3, name: "Bird" } }, views: 2 },
+            { id: 14, name: "Gamil", image: "assets/images/turtle.jpg", gender: "male", isToAdapted: true, age: 2, category: { categoryId: 12, name: " Eastern", fkTypeId: 4, type: { id: 4, name: "Turtle" } }, views: 2 },
         ]
     }
     getAll(): Pet[] {

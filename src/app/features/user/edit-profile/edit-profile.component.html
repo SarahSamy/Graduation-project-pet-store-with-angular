@@ -1,0 +1,108 @@
+<div class="container">
+    <form [formGroup]="" class="custom-form" action="">
+      <div class="row no-gutters justify-content-end">
+        <div class="col-2 login-form__two-sides__inputs__exit">
+          
+        </div>
+      </div>
+      <div class="row mx-4">
+  
+        <div class="col-sm-4  ml-md-4  form-left-side">
+          <div class="row justify-content-center">
+            <div class="col-11 text-center">
+                <!-- <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-center  user-profile__col  mx-4"> -->
+
+                    <div class="  pets--box--catalog--info text-center  my-5">
+                      <img class=" rounded-circle pets--box--catalog--info__photo  " src="../../../../assets/images/girl.jpg">
+                      
+                    </div>
+                    <a><h3 class="user-profile__name text-center">Emilia</h3></a>
+                    <!-- <a><h3 class="user-profile__settings">Edit Profile</h3></a> -->
+                    <!-- </div> -->
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-6">
+  
+          <div class="form-controls ">
+              <div class="form-group row        ">
+                  <label class="lable  " for="">Upload photo</label>
+                  <p class="">Clear fontal photos are an important way for hosts and guests to learn about each other.
+                    Please upload a photo thatclearly shows your face.
+
+                  </p>
+                  <!-- <input type="file" name="pic" accept="image/*" class=" form-control text-box" type="text" placeholder="Upload photo" name="" id="">
+                  <input type="submit"> -->
+                  <!-- <img [src]="url" height="200"> <br/> -->
+                  <input type='file' (change)="onSelectFile($event)">
+                </div>
+                <!-- <div class="user-name "> -->
+            <div class="form-group row  ">
+              <label class="lable" for="">Edit Name </label>
+              <input type="text" class=" form-control text-box" type="text" placeholder="First Name" name="" id="">
+              <!-- <label class="lable" for=""></label>
+              <input type="text" class=" form-control text-box" placeholder="Last Name" name="" id="" /> -->
+            </div>
+  
+            <div class="form-group row user-name">
+              <!-- <label class="lable" for="">Edit Last Name</label> -->
+              <input type="text" class=" form-control text-box" placeholder="Last Name" name="" id="" />
+            </div>
+          <!-- </div> -->
+            <div class="form-group row ">
+              <label class="lable" for="">Edit Email </label>
+              <input type="email" class=" form-control text-box" placeholder="Enter Your Email" name="" id="" />
+            </div>
+            <div class="form-group row ">
+              <label class="lable" for="">Edit password</label>
+              <input type="password" class=" form-control text-box" placeholder="Password" name="" id="" />
+              <!-- <label class="lable" for=""></label>
+              <input type="password" class=" form-control text-box" placeholder="Confirmed Password" name="" id="" /> -->
+            </div>
+            <div class="form-group row ">
+              <!-- <label class="lable" for="">Confirmed Password</label> -->
+              <input type="password" class=" form-control text-box" placeholder="Confirmed Password" name="" id="" />
+            </div>
+            <div class="form-group row  ">
+              <label class="lable" for="">Edit birthdate</label>
+              <input type="date" class=" form-control text-box" name="" id="" />
+            </div>
+            <div class="form-group row ">
+  
+              <div class="col-form-label  pt-0">
+                <label class="lable">Gender</label>
+              </div>
+            </div>
+            <div class="">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked />
+                <label class="  form-check-label" for="gridRadios1">
+                  Male
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                <label class="form-check-label" for="gridRadios2">
+                  Female
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class=" form-group row justify-content-end">
+  
+            <div class=" col-auto">
+              <button href="#" id="button--cancel" class="">Cancel</button>
+            </div>
+            <div class=" col-auto">
+              <button href="#" class="">Save</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-1">
+        </div>
+      </div>
+    </form>
+  </div>

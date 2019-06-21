@@ -40,6 +40,8 @@ import { TagService } from './_services/Tag.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { ManagePetsComponent } from './features/user/manage-pets/manage-pets.component';
+import { CommentService } from './_services/Comment.service';
+import { CommentItemComponent } from './features/blog/comment-item/comment-item.component';
 
 
 @NgModule({
@@ -73,7 +75,8 @@ import { ManagePetsComponent } from './features/user/manage-pets/manage-pets.com
     PostDetailsComponent,
     AddPostComponent,
     NotFoundComponent,
-    ManagePetsComponent
+    ManagePetsComponent,
+    CommentItemComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -109,7 +112,7 @@ import { ManagePetsComponent } from './features/user/manage-pets/manage-pets.com
       { path: "pet-profile/:id", component: PetProfileComponent },
       { path: "manage-pets", component: ManagePetsComponent },
       { path: "Blog", component: PostListingComponent },
-      { path: "Blog/Post-details", component: PostDetailsComponent },
+      { path: "Blog/Post-details/:id", component: PostDetailsComponent },
       { path: "Blog/add-post", component: AddPostComponent }
 
       // , {
@@ -117,7 +120,7 @@ import { ManagePetsComponent } from './features/user/manage-pets/manage-pets.com
       // }
     ])
   ],
-  providers: [PetService, TypeService, CategoryService, PostsService, TagService],
+  providers: [PetService, TypeService, CategoryService, PostsService, TagService,CommentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

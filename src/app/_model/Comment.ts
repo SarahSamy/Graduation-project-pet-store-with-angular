@@ -8,6 +8,10 @@ export interface Comment {
     PostId: number;
     userId?:number;
     user?:User;
+    time?:string;
+    day?:string;
+    month?:string;
+    year?:string;
 
 
 }

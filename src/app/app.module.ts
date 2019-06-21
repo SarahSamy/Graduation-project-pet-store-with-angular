@@ -111,11 +111,10 @@ import { ManagePetsComponent } from './features/user/manage-pets/manage-pets.com
       { path: "Blog", component: PostListingComponent },
       { path: "Blog/Post-details", component: PostDetailsComponent },
       { path: "Blog/add-post", component: AddPostComponent }
-      
-     
-      , {
-        path: '**', component: NotFoundComponent
-      }
+
+      // , {
+      //   path: '**', component: NotFoundComponent
+      // }
     ])
   ],
   providers: [PetService, TypeService, CategoryService, PostsService, TagService],

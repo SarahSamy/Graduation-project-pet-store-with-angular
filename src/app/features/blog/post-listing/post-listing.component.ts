@@ -10,17 +10,14 @@ import { PostsService } from '../../../_services/Posts.service';
 export class PostListingComponent implements OnInit {
 
   data: Post[];
-  postCount: number;
   postService: PostsService;
-  postCountPerPage: number;
   config: any;
   constructor(test: PostsService) {
     this.postService = test;
-    this.postCountPerPage=2;
     if (!this.data) {
 
       this.data = this.postService.getAll();
-      this.postCount = this.data.length;
+     
     }
     this.config = {
       itemsPerPage: 2,
@@ -35,7 +32,7 @@ export class PostListingComponent implements OnInit {
     if (!this.data) {
 
       this.data = this.postService.getAll();
-      this.postCount = this.data.length;
+    
     }
   }
 

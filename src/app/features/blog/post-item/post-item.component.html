@@ -14,7 +14,6 @@
    {{post.body}}
   </p>
 
-  <span class="badge badge-primary post-tag mr-2">Dog</span>
-  <span class="badge badge-primary post-tag mr-2">Care</span>
-  <span class="badge badge-primary post-tag mr-2">Vitamins</span>
+  <span *ngFor="let tag of postTags" class="badge badge-primary post-tag mr-2">{{tag.name}}</span>
+
 </div>

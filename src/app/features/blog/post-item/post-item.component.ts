@@ -14,18 +14,17 @@ export class PostItemComponent implements OnInit {
   @Input()post:Post;
   username:string;
   postUser:User;
-  // postTags:Tag[];
-  // tagService:TagService;
+  postTags:Tag[];
+  tagService:TagService;
   userService: UserService;
-  constructor(test:UserService) {
+  constructor(test:UserService,tags:TagService) {
    this.userService=test;
- 
+   this.tagService=tags;
   }
   ngOnInit() {
     this.postUser=this.userService.getById(this.post.userId);
     this.username=this.postUser.firstName;
-  //   this.postTags=this.tagService.getTagsByPostId(this.post.id);
-  // console.log(this.postTags);
+    this.postTags=this.tagService.getTagsByPostId(this.post.id);
   }
 
 }

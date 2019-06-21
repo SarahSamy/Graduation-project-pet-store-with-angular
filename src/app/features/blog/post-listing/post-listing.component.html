@@ -8,10 +8,12 @@
         <div class="blog-posts-container mt-3">
           <h1 class="title text-center">Our Blog</h1>
         
-         <app-post-item *ngFor="let post of data" [post]='post'></app-post-item>
-         <pagination></pagination>
+         <app-post-item *ngFor="let post of data | paginate: config"  [post]='post'></app-post-item>
+         <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+         <!-- <pagination [buttonCounts]="postCount" [pageCount]="postCountPerPage"></pagination> -->
         </div>
       </div>
+     
       <div class="col-sm-1 mt-5" align="center" >
           <div class="form-group">
               <button class="theme-btn btn-style-one" type=" submit"

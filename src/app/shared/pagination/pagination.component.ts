@@ -1,4 +1,4 @@
-import { Component, OnInit, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'pagination',
@@ -6,15 +6,20 @@ import { Component, OnInit, Output,EventEmitter } from '@angular/core';
   styleUrls: ['./pagination.component.scss']
 })
 export class PaginationComponent implements OnInit {
-  page = 4;
-  
+  countPerPage: number;
+  currentIteration: number;
+  @Input() pageCount: number;
+  @Input() buttonCounts: number;
   @Output() pageClick = new EventEmitter<any>();
 
   constructor() {
-    
-   }
-
+    this.currentIteration = 0;
+  }
+  counter(i: number) {
+    return new Array(i);
+  }
   ngOnInit() {
+    this.countPerPage = Math.ceil(+this.buttonCounts / +this.pageCount);
   }
 
 }

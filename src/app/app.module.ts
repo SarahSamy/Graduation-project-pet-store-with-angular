@@ -109,9 +109,9 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
       { path: "Blog/Post-details", component: PostDetailsComponent },
       { path: "Blog/add-post", component: AddPostComponent }
 
-      , {
-        path: '**', component: NotFoundComponent
-      }
+      // , {
+      //   path: '**', component: NotFoundComponent
+      // }
     ])
   ],
   providers: [PetService, TypeService, CategoryService, PostsService, TagService],

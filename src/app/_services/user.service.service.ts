@@ -8,6 +8,7 @@ import { PetService } from '../_services/pet.service';
 })
 export class UserService {
   data: User[];
+  loginUser:User;
 
   constructor() {
     this.data= [
@@ -21,12 +22,14 @@ export class UserService {
       //   ]
       // },
       
-      {id:1,firstName:"alaa",lastName:"ibrahim",email : "alaa.ibrahim@aaa.com",password:123456,userGroupId:1,image:"../../../../assets/images/comments/John-Amaechi-OBE_portraitfeatured.jpg"},
-      {id:2,firstName:"sara",lastName:"refaat",email : "sara.refaat@aaa.com",password:123456,userGroupId:2,image:'../../../../assets/images/comments/images (1).jpg'},
+      {id:1,firstName:"alaa",lastName:"ibrahim",email : "alaaebrahim336@gmail.com",password:"123456",userGroupId:1,image:"../../../../assets/images/comments/John-Amaechi-OBE_portraitfeatured.jpg"},
+      {id:2,firstName:"sara",lastName:"refaat",email : "sara.refaat@aaa.com",password:"123456",userGroupId:2,image:'../../../../assets/images/comments/images (1).jpg'},
 
     ]
   }
- 
+ SearchForUser(email:string,password:string): User{
+  return this.loginUser= this.data.find(u => u.email === email && u.password==password);
+ }
   getAll(): User[] {
     return this.data;
   }

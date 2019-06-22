@@ -6,7 +6,7 @@ export interface User{
     firstName?: string ;
     lastName?: string ;
     email:string;
-    password:number;
+    password:string;
     birthDate?:string;
     gender?: string;
     pets?:Pet[];

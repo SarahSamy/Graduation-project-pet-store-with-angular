@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input} from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  @Input() images: string []
+  constructor() {
+    if(!this.images){
+      this.images=["../../../assets/images/care1.jpg","../../../assets/images/care3.jpg","../../../assets/images/care4.jpg"]
+     }
+   }
 
   ngOnInit() {
   }

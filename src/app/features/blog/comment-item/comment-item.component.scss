@@ -1,0 +1,12 @@
+textarea{
+    resize: none;
+    font-size: 1.4rem;
+    &:focus{
+        outline: none;
+    }
+}
+.comments__comment-info{
+    span{
+        cursor: pointer;
+    }
+}

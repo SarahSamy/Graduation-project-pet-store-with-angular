@@ -1,0 +1,24 @@
+<div class="row mt-5">
+    <div class="col-sm-12  col-lg-2 comments__comment-image">
+        <img height="100" width="100"
+        [src]="replyUser.image">
+    </div>
+    <div class="col-sm-12 col-lg-10 comments__comment">
+        <div class="row">
+            <div class="col-12 comments__comment-owner"> {{replyUser.firstName}} </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mt-3 comments__comment-text">
+         {{reply.body}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mt-3 comments__comment-info">
+                {{reply.month}} {{reply.day}}, {{reply.year}} at {{reply.time}} :
+
+               
+
+            </div>
+        </div>    
+  </div>
+</div>

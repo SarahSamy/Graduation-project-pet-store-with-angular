@@ -44,6 +44,8 @@ import { CommentService } from './_services/Comment.service';
 import { CommentItemComponent } from './features/blog/comment-item/comment-item.component';
 import { EditProfileComponent } from './features/user/edit-profile/edit-profile.component';
 import { CardWithCoverComponent } from './shared/card-with-cover/card-with-cover.component';
+import { ReplyItemComponent } from './features/blog/reply-item/reply-item.component';
+import { ReplyService } from './_services/reply.service';
 
 
 @NgModule({
@@ -80,7 +82,8 @@ import { CardWithCoverComponent } from './shared/card-with-cover/card-with-cover
     ManagePetsComponent,
     CommentItemComponent,
     EditProfileComponent,
-    CardWithCoverComponent
+    CardWithCoverComponent,
+    ReplyItemComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -125,7 +128,7 @@ import { CardWithCoverComponent } from './shared/card-with-cover/card-with-cover
       // }
     ])
   ],
-  providers: [PetService, TypeService, CategoryService, PostsService, TagService,CommentService],
+  providers: [PetService, TypeService, CategoryService, PostsService, TagService,CommentService,ReplyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

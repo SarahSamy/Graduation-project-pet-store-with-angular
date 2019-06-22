@@ -41,7 +41,6 @@ export class PostDetailsComponent implements OnInit {
     this.userService = test;
     this.commentService = comments;
     this.PostId = +this._Activatedroute.snapshot.paramMap.get("id");
-    this.loginUser=this.userService.loginUser;
     this.Post = this.postService.getById(this.PostId);
     this.postUser = this.userService.getById(this.Post.userId);
     this.postTags = this.tagService.getTagsByPostId(this.PostId);
@@ -78,10 +77,9 @@ export class PostDetailsComponent implements OnInit {
 ];
     this.newComment.month= monthNames[this.now. getMonth()];
     this.newComment.year= this.now.getFullYear()+"";
-  console.log(this.newComment);
   this.commentService.addComment(this.newComment);
   this.PostComments=this.commentService.getByPostId(this.PostId);
-  console.log(this.commentService.getAll());
+
   this.config = {
     itemsPerPage: 2,
     currentPage: 1,

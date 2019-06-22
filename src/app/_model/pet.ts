@@ -1,6 +1,6 @@
 import { Category } from './category';
 export interface Pet {
-    id: number;
+    petId: number;
     name: string;
     age: number;
     gender: string;

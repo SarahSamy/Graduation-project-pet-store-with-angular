@@ -12,15 +12,21 @@
       <div class="col-md-12">
         <div class="card acik-renk-form">
           <div class="card-body">
+            <div class="row justify-content-md-center mb-5">
+              <h2 class="title">
+                <i class=" title_fas fas fa-paw add-Green"></i>
+                Select Your Wanted Category First
+                <i class=" title_fas fas fa-paw add-Green"></i>
+              </h2>
+            </div>
             <div class="row">
               <!--select dropDown-->
               <div class="col-md-4">
                 <div class="form-group ">
                   <!-- iller -->
-                  <select id=" select " class=" select form-control" (change)="displayCategoryPets($event)">
-                    <option value="" disabled selected>Select Breed</option>
-                    <option *ngFor=" let category of selectedTypeCategories" [value]="category.categoryId"
-                      (change)="displayCategoryPets(category.categoryId)">
+                  <select #categorySelect id=" select" class=" select form-control">
+                    <option value="" disabled selected>Select Category</option>
+                    <option *ngFor=" let category of  selectedTypeCategories" [value]="category.categoryId">
                       {{category.name}}</option>
                   </select>
                 </div>
@@ -29,7 +35,7 @@
               <div class=" col-md-4">
                 <div class="form-group ">
                   <!-- ilceler -->
-                  <select id=" select" class="select form-control ">
+                  <select #genderSelect id=" select" class="select form-control ">
                     <option value="" disabled selected>Select Gender</option>
                     <option>Male</option>
                     <option>Female</option>
@@ -41,15 +47,11 @@
               <div class="col-md-4">
                 <div class="form-group ">
                   <!-- arac-turu -->
-                  <select id="select" class="select form-control ">
+                  <select #ageSelect id="select" class="select form-control ">
                     <option value="" disabled selected>Select age</option>
-
-                    <option>between 1-2 years old</option>
-                    <option>between 3-5 years old</option>
-                    <option>More than 6 years old</option>
-
-
-
+                    <option value="1">between 1-2 years old</option>
+                    <option value="2">between 3-5 years old</option>
+                    <option value="3">More than 6 years old</option>
                   </select>
                 </div>
               </div>
@@ -65,7 +67,8 @@
               </div>
               <!--Search Btn-->
               <div class="col col-md-3 ">
-                <button id="searchbtn" type="button" class="button">Search</button>
+                <button id="searchbtn" type="button" class="button"
+                  (click)="searchClick(categorySelect,genderSelect,ageSelect)">Search</button>
               </div>
             </div>
           </div>
@@ -100,14 +103,14 @@
 <section class="pets--box">
   <div class="container container-fluid ">
     <div class="row justify-content-md-center   ">
-      <div class="pets--box--catalog col-md-auto justify-content-md-center   ">
-        <div class="row justify-content-md-center ">
+      <div class="pets--box--catalog justify-content-md-center   ">
+        <div class="row justify-content-center ">
 
           <!--Animcal rounded Photo Crad-->
-          <div *ngFor="let category of selectedTypeCategories"
-            class="col-lg-2 col-md-3 col-sm-4 col-6 pets--box--catalog--info text-center  mb-5">
-            <img class=" rounded-circle pets--box--catalog--info__photo" [attr.src]="category.image">
-            <h4 class="">{{category.name}}</h4>
+          <div *ngFor="let item of displayed"
+            class="col-lg-2 col-lg-auto col-md-auto  col-md-3 col-sm-4 col-6 pets--box--catalog--info text-center  mb-5">
+            <img class=" rounded-circle pets--box--catalog--info__photo" [attr.src]="item.image">
+            <h4 class="">{{item.name}}</h4>
           </div>
 
         </div>

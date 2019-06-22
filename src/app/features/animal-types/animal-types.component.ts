@@ -14,10 +14,12 @@ import { Event } from '@angular/router';
 export class AnimalTypesComponent implements OnInit {
 
   allCategories: Category[];
-  selectedTypeCategories: Category[];
+  allPets: Pet[];
   // @Input()
+  selectedTypeCategories: Category[];
   selectedTypeId: number;
   selectedCategoryPets: Pet[];
+  displayed: any[];
 
 
   constructor(private categoryService: CategoryService, private petService: PetService) {
@@ -26,13 +28,46 @@ export class AnimalTypesComponent implements OnInit {
 
   ngOnInit() {
     this.allCategories = this.categoryService.getAll();
-    this.selectedTypeCategories = this.allCategories.filter(c => c.fkTypeId === this.selectedTypeId)
+    this.allPets = this.petService.getAll();
+    // display categoris of selected type in DiscoverAnimalPage when page first upload//
+    this.selectedTypeCategories = this.allCategories.filter(c => c.fkTypeId === this.selectedTypeId);
+    this.displayed = this.selectedTypeCategories;
   }
 
-  displayCategoryPets(e) {
-    // let id=(e.srcElement as HTMLInputElement).target.value;
-    let id = e.target.value;
-    // this.selectedCategoryPets = this.petService.getByCategory();
-    console.log(this.selectedCategoryPets);
+  searchClick(categorySelect, genderSelect, ageSelect) {
+
+    // display pets of selected categories//
+    let selectedCategory = +categorySelect.value;
+    if (selectedCategory) {
+      this.displayed = this.allPets.filter(pet => pet.category.categoryId == selectedCategory);
+      // display pets of selected gender//
+      let selectedGender = genderSelect.value;
+      if (selectedGender) {
+        this.displayed = this.displayed.filter(pet => pet.gender.toLowerCase() == selectedGender.toLowerCase());
+      }
+      // display pets of selected age//
+      let selectedAge = +ageSelect.value;
+      if (selectedAge) {
+        this.displayed = this.displayed.filter(pet => {
+          switch (selectedAge) {
+            case 1:
+              return pet.age >= 1 && pet.age <= 2
+
+            case 2:
+              return pet.age >= 3 && pet.age <= 5
+
+            case 3:
+              return pet.age >= 6
+
+            default:
+              return pet;
+          }
+        })
+      }
+    }
+    // console.log(this.displayed);
+    // console.log(selectedCategory);
+    // console.log(this.allPets);
   }
+
 }

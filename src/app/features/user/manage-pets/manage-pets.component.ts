@@ -9,10 +9,10 @@ import { PetService } from 'src/app/_services/pet.service';
   styleUrls: ['./manage-pets.component.scss']
 })
 export class ManagePetsComponent implements OnInit {
-  images:string[]
-  data:Pet[]
+  images: string[]
+  data: Pet[]
   config: any;
-  constructor(private userService:UserService,private petService:PetService) { 
+  constructor(private userService: UserService, private petService: PetService) {
     this.config = {
       itemsPerPage: 3,
       currentPage: 1,
@@ -21,15 +21,15 @@ export class ManagePetsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.data=this.petService.data.filter(p=>(p.id==5)||(p.id==6)||(p.id==9))
+    this.data = this.petService.data.filter(p => (p.petId == 5) || (p.petId == 6) || (p.petId == 9))
     // this.images=this.data.map(p=>p.image)
-    
+
   }
-  pageChanged(event){
+  pageChanged(event) {
     this.config.currentPage = event;
-    
+
   }
-  
+
 
 
 

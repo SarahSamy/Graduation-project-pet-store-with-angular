@@ -9,13 +9,15 @@ import {UserService} from '../../../../_services/user.service.service'
 })
 export class LowerHeaderComponent implements OnInit {
   @Input() users:User[];
-  login:boolean;
+  islogin:boolean=false;
 
   constructor(private userService:UserService) { 
     // if(!this.users){
       // this.users = this.userService.getAll();
     // }
-    this.login = this.userService.login();
+    this.islogin = this.userService.loginUser?true:false;
+    console.log(this.userService.loginUser);
+    console.log(this.islogin);
   }
   ngOnInit() {
  

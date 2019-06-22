@@ -4,10 +4,12 @@
 <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-center  user-profile__col  mx-4">
 
 <div class="  pets--box--catalog--info text-center  my-5">
-  <img class=" rounded-circle pets--box--catalog--info__photo  " src="../../../../assets/images/girl.jpg">
-  
+  <img class=" rounded-circle pets--box--catalog--info__photo  " src= {{user.image}}>
+  <!--
+    ../../../../assets/images/girl.jpg
+  -->
 </div>
-<a><h3 class="user-profile__name ">Emilia</h3></a>
+<a><h3 class="user-profile__name ">{{user.firstName}}</h3></a>
 <!-- <a><h3 class="user-profile__settings">Edit Profile</h3></a> -->
 </div>
 <div class="col-md-2">
@@ -41,24 +43,28 @@
 
 <!--------user pets-------------->
 <div class="container">
-    <div class="row justify-content-center my-4">
-         <h2 class=" row-title add-Bold"><i class="fas fa-paw add-Green"></i>  Your Pets  <i class="fas fa-paw add-Green"></i></h2>
+    <div class="row justify-content-center my-4" *ngIf=data>
+         <h2 class=" row-title add-Bold" ><i class="fas fa-paw add-Green"></i>  Your Pets  <i class="fas fa-paw add-Green"></i></h2>
       </div>
   <div class="row">
     <div class="col-md-3 col-sm-3 my-4 profile-options ">
-      <h3 ><a ><i class="fas fa-paw add-Green"></i>  Edit Profile</a></h3>
-      <h3 > <a ><i class="fas fa-paw add-Green"></i>  Add Pet</a></h3>
+      <h3 class="edit-link" ><a  [routerLink]="'/edit-profile'"><i class="fas fa-paw add-Green"></i>  Edit Profile</a></h3>
+      <h3 class="edit-link"  > <a [routerLink]="'/Add-Animal'"><i class="fas fa-paw add-Green"></i>  Add Pet</a></h3>
       
     </div>
 <div class="col-md-9 text-center m-auto">
   
-  <div class="row ">
+  <div class="row *ngIf=data ">
 
       <div *ngFor="let newpet of  data | paginate: config"  class="col-md-4  " >
         
         <pet-item  [pet]= 'newpet'></pet-item>
       
     </div>
+    <p *ngIf=!data>
+      <h4 class="text-center">{{message}}</h4>
+    
+
     </div>
   </div>
 </div>
@@ -66,7 +72,7 @@
 
 
 <!--------------------pagination----------------------->
-<div class="row mt-5">
+<div class="row mt-5"  *ngIf=data>
     <div class="col-12" align="center">
    <pagination-controls class="my-pagination" (pageChange)="pageChanged($event)"></pagination-controls>
   </div>

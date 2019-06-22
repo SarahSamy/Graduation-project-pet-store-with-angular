@@ -8,9 +8,10 @@ import { PetService } from '../_services/pet.service';
 })
 export class UserService {
   data: User[];
+  loginUser: User;
 
   constructor() {
-    this.data= [
+    this.data = [
       // { id: 1, firstName: "alaa", lastName: "ibrahim", email: "alaa.ibrahim@aaa.com", password: 123456, userGroupId: 1 },
       // {
       //   id: 2, firstName: "sara", lastName: "refaat", email: "sara.refaat@aaa.com", password: 123456, userGroupId: 2,
@@ -20,13 +21,23 @@ export class UserService {
       //     { id: 9, name: "Gamil", image: "assets/images/turtle.jpg", gender: "male", isToAdapted: true, age: 2, category: { categoryId: 12, name: " Eastern", fkTypeId: 4, type: { id: 4, name: "Turtle" } }, views: 2 },
       //   ]
       // },
-      
-      {id:1,firstName:"alaa",lastName:"ibrahim",email : "alaa.ibrahim@aaa.com",password:123456,userGroupId:1,image:"../../../../assets/images/comments/John-Amaechi-OBE_portraitfeatured.jpg"},
-      {id:2,firstName:"sara",lastName:"refaat",email : "sara.refaat@aaa.com",password:123456,userGroupId:2,image:'../../../../assets/images/comments/images (1).jpg'},
 
+      // {id:1,firstName:"alaa",lastName:"ibrahim",email : "alaaebrahim336@gmail.com",password:"123456",userGroupId:1,image:"../../../../assets/images/comments/John-Amaechi-OBE_portraitfeatured.jpg"},
+      // {id:2,firstName:"sara",lastName:"refaat",email : "sara.refaat@aaa.com",password:"123456",userGroupId:2,image:'../../../../assets/images/comments/images (1).jpg'},
+
+      { id: 1, firstName: "alaa", lastName: "ibrahim", email: "alaaebrahim336@gmail.com", password: "123456", userGroupId: 1, image: "../../../../assets/images/comments/John-Amaechi-OBE_portraitfeatured.jpg" },
+      {
+        id: 2, firstName: "sara", lastName: "refaat", email: "sara.refaat@aaa.com", password: "123456", userGroupId: 2, image: '../../../../assets/images/girl.jpg', pets: [
+          { petId: 1, name: "Bondok", image: "assets/images/dog1.jpg", gender: "male", isToAdapted: true, age: 2, category: { categoryId: 5, name: "Beagle", fkTypeId: 2, type: { id: 2, name: "dog" } }, views: 2 },
+          { petId: 5, name: "Browny", image: "assets/images/cat4.jpg", gender: "female", isToAdapted: true, age: 2, category: { categoryId: 3, name: "Scottish Fold", fkTypeId: 1, type: { id: 1, name: "Cat" } }, views: 5 },
+          { petId: 9, name: "Gamil", image: "assets/images/turtle.jpg", gender: "male", isToAdapted: true, age: 2, category: { categoryId: 12, name: " Eastern", fkTypeId: 4, type: { id: 4, name: "Turtle" } }, views: 2 },
+        ]
+      },
     ]
   }
- 
+  SearchForUser(email: string, password: string): User {
+    return this.loginUser = this.data.find(u => u.email === email && u.password == password);
+  }
   getAll(): User[] {
     return this.data;
   }
@@ -46,6 +57,11 @@ export class UserService {
     const i = this.data.findIndex(p => p.id === id);
     this.data.splice(id, 1);
   }
+
+  logout() {
+    this.loginUser = null;
+  }
+
 
   login(currentUser?: User): boolean {
     let result: boolean

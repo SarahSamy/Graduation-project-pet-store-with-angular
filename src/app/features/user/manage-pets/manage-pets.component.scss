@@ -25,3 +25,15 @@ font-family: 'Satisfy', cursive;
     font-size: 1.5rem;
 }
 
+.edit-link{
+    a{text-decoration: none !important;
+    color:black !important;
+    }
+    a:visited{
+     text-decoration: none !important;
+    color:black !important;
+    }
+    a:hover{
+        color: #94c13d !important;
+    }
+}

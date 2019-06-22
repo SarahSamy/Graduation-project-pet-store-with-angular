@@ -45,8 +45,8 @@ export class AddAnimalFormComponent implements OnInit {
       }),
       parentHistoryAndType: new FormControl('', Validators.required),
       food: new FormControl('', Validators.required),
-      gender: new FormControl('male', Validators.required),
-      isToAdapted: new FormControl(false, Validators.required),
+      gender: new FormControl(),
+      isToAdapted: new FormControl(),
       medicalCondition: new FormControl('', Validators.required),
       notes: new FormControl('', Validators.required),
     });
@@ -92,9 +92,9 @@ export class AddAnimalFormComponent implements OnInit {
       this.addAnimalForm.reset();
       // this.router.navigate(['/pet-listing']);//in future work
       console.log(this.pet);
-      console.log(this.addAnimalForm.value);
-      console.log(this.addAnimalForm.getRawValue());
-      console.log(this.addAnimalForm);
+      // console.log(this.addAnimalForm.value);
+      // console.log(this.addAnimalForm.getRawValue());
+      // console.log(this.addAnimalForm);
     }
   }
 

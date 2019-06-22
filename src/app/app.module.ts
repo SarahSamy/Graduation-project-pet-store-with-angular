@@ -42,6 +42,7 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { ManagePetsComponent } from './features/user/manage-pets/manage-pets.component';
 import { CommentService } from './_services/Comment.service';
 import { CommentItemComponent } from './features/blog/comment-item/comment-item.component';
+import { EditProfileComponent } from './features/user/edit-profile/edit-profile.component';
 
 
 @NgModule({
@@ -76,7 +77,8 @@ import { CommentItemComponent } from './features/blog/comment-item/comment-item.
     AddPostComponent,
     NotFoundComponent,
     ManagePetsComponent,
-    CommentItemComponent
+    CommentItemComponent,
+    EditProfileComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -111,6 +113,7 @@ import { CommentItemComponent } from './features/blog/comment-item/comment-item.
       { path: "pet-profile", component: PetProfileComponent },
       { path: "pet-profile/:id", component: PetProfileComponent },
       { path: "manage-pets", component: ManagePetsComponent },
+      { path: "edit-profile", component: EditProfileComponent },
       { path: "Blog", component: PostListingComponent },
       { path: "Blog/Post-details/:id", component: PostDetailsComponent },
       { path: "Blog/add-post", component: AddPostComponent }

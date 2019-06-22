@@ -1,9 +1,9 @@
 <!-------profile photo------------->
 <div class="container-fluid user-profile">
 <div class="row ">
-<div class="col-md-2 text-center  user-profile__col  mx-4">
+<div class="col-lg-2 col-md-3 col-sm-4 col-6 text-center  user-profile__col  mx-4">
 
-<div class=" pets--box--catalog--info text-center  my-5">
+<div class="  pets--box--catalog--info text-center  my-5">
   <img class=" rounded-circle pets--box--catalog--info__photo  " src="../../../../assets/images/girl.jpg">
   
 </div>
@@ -45,9 +45,9 @@
          <h2 class=" row-title add-Bold"><i class="fas fa-paw add-Green"></i>  Your Pets  <i class="fas fa-paw add-Green"></i></h2>
       </div>
   <div class="row">
-    <div class="col-md-3 my-4 profile-options ">
-      <h3 ><a ><i class="fas fa-paw add-Green"></i>  Edit Profile</a></h3>
-      <h3 > <a ><i class="fas fa-paw add-Green"></i>  Add Pet</a></h3>
+    <div class="col-md-3 col-sm-3 my-4 profile-options ">
+      <h3 class="edit-link" ><a  [routerLink]="'/edit-profile'"><i class="fas fa-paw add-Green"></i>  Edit Profile</a></h3>
+      <h3 class="edit-link"  > <a [routerLink]="'/Add-Animal'"><i class="fas fa-paw add-Green"></i>  Add Pet</a></h3>
       
     </div>
 <div class="col-md-9 text-center m-auto">

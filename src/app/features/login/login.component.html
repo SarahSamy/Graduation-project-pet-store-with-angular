@@ -30,17 +30,19 @@
                                         <p>Login in to PetStore</p>
                                     </div>
                                 </div>
-                                <div class="row mt-5 justify-content-center">
+                                <div class="row mt-3 justify-content-center">
                                     <div class="col-9 login-form__two-sides__inputs__form">
-                                        <form [formGroup]="logInForm">
+                                            <div align="center" class="mb-2 errorMessage">{{erroeMessage}}</div>
+
+                                        <form [formGroup]="logInForm" (ngSubmit)="onSubmit()">
                                             <div class="form-group">
 
-                                                <input type="email" class="form-control" id="formGroupExampleInput"
+                                                <input [formControlName]="'email'" type="email" class="form-control" id="formGroupExampleInput"
                                                     placeholder="Email">
                                             </div>
                                             <div class="form-group">
 
-                                                <input type="password" class="form-control" id="formGroupExampleInput2"
+                                                <input [formControlName]="'password'" type="password" class="form-control" id="formGroupExampleInput2"
                                                     placeholder="Password">
                                             </div>
                                             <div class="form-group">
@@ -62,8 +64,7 @@
                                     </div>
                                     <div class="col-9 mb-4">
                                         <div class="form-group">
-                                            <button type="submit" class="theme-btn btn-style-one type=" submit>Register
-                                                Now</button> </div>
+                                            <button type="submit" class="theme-btn btn-style-one type=" submit><a [routerLink]="'/Register'" >Register Now</a></button> </div>
                                     </div>
                                 </div>
                             </div>

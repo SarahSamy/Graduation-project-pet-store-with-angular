@@ -1,3 +1,12 @@
 .login-form__two-sides__advices{
     height: 50rem;
 }
+.errorMessage{
+    color: #d87171;
+    font-size: 1.3rem;
+}
+button{
+    & a{
+        color: white;   
+    }
+}

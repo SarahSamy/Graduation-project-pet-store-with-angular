@@ -1,7 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
-import { FormsModule } from "@angular/forms";
+//import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -43,6 +43,7 @@ import { ManagePetsComponent } from './features/user/manage-pets/manage-pets.com
 import { CommentService } from './_services/Comment.service';
 import { CommentItemComponent } from './features/blog/comment-item/comment-item.component';
 import { EditProfileComponent } from './features/user/edit-profile/edit-profile.component';
+import { CardWithCoverComponent } from './shared/card-with-cover/card-with-cover.component';
 
 
 @NgModule({
@@ -78,12 +79,13 @@ import { EditProfileComponent } from './features/user/edit-profile/edit-profile.
     NotFoundComponent,
     ManagePetsComponent,
     CommentItemComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    CardWithCoverComponent
   ],
   imports: [
     ReactiveFormsModule,
     BrowserModule,
-    FormsModule,
+   // FormsModule,
     NgxPaginationModule,
     AppRoutingModule,
     NgbModule.forRoot(),

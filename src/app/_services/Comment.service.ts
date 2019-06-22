@@ -28,8 +28,8 @@ export class CommentService {
         return this.data.find((com) => com.id === id);
     }
     addComment(comment: Comment) {
-        comment.id = this.data.length + 1;
-        this.data.push(comment);
+        
+        this.data.unshift(comment);
     }
     update(comment: Comment) {
         const i = this.data.findIndex(c => c.id === comment.id);

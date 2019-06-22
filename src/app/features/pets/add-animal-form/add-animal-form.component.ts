@@ -35,7 +35,7 @@ export class AddAnimalFormComponent implements OnInit {
 
   ngOnInit() {
     this.addAnimalForm = new FormGroup({
-      animalId: new FormControl(this.id),
+      petId: new FormControl(this.id),
       name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(10), Validators.pattern(/^[A-Za-z]+(?:[_-][A-Za-z]+)*$/)]),
       age: new FormControl('', [Validators.required, Validators.max(100), Validators.pattern(/^[0-9]*$/)]),
       image: new FormControl("assets/images/animal-19-512.png"),
@@ -66,27 +66,26 @@ export class AddAnimalFormComponent implements OnInit {
     this.editedPet = this.PetService.getById(petId);
     this.editPet(this.editedPet);
   }
-  editPet(Pet: Pet) {
+  editPet(editedPet: Pet) {
     this.addAnimalForm.patchValue({
-      name: Pet.name,
-      age: Pet.age,
-      image: Pet.image,
+      name: editedPet.name,
+      age: editedPet.age,
+      image: editedPet.image,
       category: {
-        categoryId: Pet.fkCategoryId,
-        fkTypeId: Pet.category.fkTypeId,
+        categoryId: editedPet.fkCategoryId,
+        fkTypeId: editedPet.category.fkTypeId,
       },
-      parentHistoryAndType: Pet.parentHistoryAndType,
-      food: Pet.food,
-      gender: Pet.gender,
-      isToAdapted: Pet.isToAdapted,
-      notes: Pet.notes,
-      medicalCondition: Pet.medicalCondition,
+      parentHistoryAndType: editedPet.parentHistoryAndType,
+      food: editedPet.food,
+      gender: editedPet.gender,
+      isToAdapted: editedPet.isToAdapted,
+      notes: editedPet.notes,
+      medicalCondition: editedPet.medicalCondition,
     })
   }
 
   onSubmit() {
     if (this.addAnimalForm.valid) {
-
       this.pet = this.addAnimalForm.value;
       this.PetService.addPet(this.pet);
       this.addAnimalForm.reset();

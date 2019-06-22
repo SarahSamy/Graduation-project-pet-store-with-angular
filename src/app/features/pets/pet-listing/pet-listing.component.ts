@@ -19,7 +19,7 @@ export class PetListingComponent implements OnInit {
   collectionSize: number;
   showed: number;
 
-  constructor( test: PetService) {
+  constructor(test: PetService) {
     this.page = 1;
     this.pageSize = 4;
     this.collectionSize = 9;
@@ -38,13 +38,13 @@ export class PetListingComponent implements OnInit {
     }
 
   }
-  pageChanged(event){
+  pageChanged(event) {
     this.config.currentPage = event;
-    
+
   }
- 
+
   ngOnInit() {
-    
+    this.getAllTypes();
   }
   // getCats() {
   //   this.data = this.petService.getAllCats();
@@ -90,7 +90,7 @@ export class PetListingComponent implements OnInit {
 
 
   getAllTypes() {
-    this.data = this.petService.getAll();
+    this.data = this.petService.getAll().filter(pet => pet.isToAdapted === true);
     this.config = {
       itemsPerPage: 6,
       currentPage: 1,

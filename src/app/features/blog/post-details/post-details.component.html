@@ -230,7 +230,7 @@
             <!-- comments-end -->
 
             <!-- post a comment-start -->
-            <div class="row">
+            <div class="row" *ngIf="loginUser">
                 <div class="col-12">
                     <div class="row">
                         <div class="col-12 comments">Post A comment</div>
@@ -247,14 +247,15 @@
                         </div>
                     </div>
                    
-                    <div class="row">
+                    <div class="row" *ngIf="loginUser">
                         <div class="col-12">
-                            <form >
+                            <form [formGroup]="addCommentForm" (ngSubmit)="onSubmit()" >
                                 <div class="form-group">
-                                    <textarea name="message" placeholder="Comment..."></textarea>
+                                    <textarea [formControlName]="'comment'" name="comment" placeholder="Comment..."></textarea>
                                 </div>
+                           
                                 <div class="form-group">
-                                    <button class="theme-btn btn-style-one" type=" submit"
+                                    <button class="theme-btn btn-style-one" type="submit"
                                        name="submit-form">Submit</button> </div>
                             </form>
                         </div>

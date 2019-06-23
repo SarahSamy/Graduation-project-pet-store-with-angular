@@ -26,8 +26,6 @@ import { DropdownComponent } from "./shared/dropdown/dropdown.component";
 import { MainSliderComponent } from "./shared/main-slider/main-slider.component";
 import { FourItemsSliderComponent } from "./shared/four-items-slider/four-items-slider.component";
 import { PetProfileComponent } from "./features/pets/pet-profile/pet-profile.component";
-import { CategoryItemComponent } from "./features/blog/categories/category-item/category-item.component";
-import { CategoryListingComponent } from "./features/blog/categories/category-listing/category-listing.component";
 import { TagListingComponent } from "./features/blog/tags/tag-listing/tag-listing.component";
 import { TagItemComponent } from "./features/blog/tags/tag-item/tag-item.component";
 import { PostItemComponent } from "./features/blog/post-item/post-item.component";
@@ -68,8 +66,6 @@ import { ReplyService } from "./_services/reply.service";
     MainSliderComponent,
     FourItemsSliderComponent,
     PetProfileComponent,
-    CategoryItemComponent,
-    CategoryListingComponent,
     TagListingComponent,
     TagItemComponent,
     PostItemComponent,

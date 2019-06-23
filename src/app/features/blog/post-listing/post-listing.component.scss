@@ -1,26 +1,106 @@
-.form-group{
-    button{
-        padding: 1rem 1.6rem;
-        a{
-         color: white;
-         text-decoration: none;   
-        }
+.form-group {
+  button {
+    padding: 1rem 1.6rem;
+    a {
+      color: white;
+      text-decoration: none;
     }
+  }
 }
 .ngx-pagination {
-    padding-left: 0px !important;
+  padding-left: 0px !important;
+}
+
+.ngx-pagination .current,
+.btn-info {
+  background: #17a2b8 !important;
+  border: transparent !important;
+  border-radius: 20px !important;
+}
+
+.ngx-pagination .current:hover {
+  background: #17a2b8 !important;
+  border-radius: 20px !important;
+  border: transparent !important;
+}
+
+$color-primary: #94c13d;
+.banner-image {
+  background-image: url(../../../../assets/images/resources-slide.jpg);
+}
+.tags {
+  a {
+    color: #94c13d;
   }
-  
-  .ngx-pagination .current,
-  .btn-info {
-    background: #17a2b8 !important;
-    border: transparent !important;
-    border-radius: 20px !important;
+  .first {
+    color: black;
+    text-decoration-line: underline;
   }
-  
-  .ngx-pagination .current:hover {
-    background: #17a2b8 !important;
-    border-radius: 20px !important; 
-    border: transparent !important;
+}
+.form-group {
+  button {
+    padding: 1rem 1.6rem;
+    a {
+      color: white;
+      text-decoration: none;
+    }
   }
-  
+}
+
+.blog-path ul li,
+.blog-path ul a {
+  font-size: 1.6rem;
+  font-weight: 600;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.btn {
+  &--irregular {
+    border-color: $color-primary;
+    background: $color-primary;
+    color: white !important;
+    border-radius: 15.5rem 4.5rem 22.5rem 7.5rem/1.5rem 12.5rem 1.5rem 15.5rem;
+    font-size: 1.4rem;
+    outline: none;
+    letter-spacing: 0.2px;
+    font-weight: 600;
+    color: #000;
+  }
+}
+.add-post__btn {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.add-post__btn div {
+  display: flex;
+  justify-content: space-around;
+  margin-right: -5rem;
+}
+
+a.vert-move {
+  -webkit-animation: mover 1s infinite alternate;
+  animation: mover 0.8s infinite alternate;
+}
+a.vert-move {
+  -webkit-animation: mover 0.8s infinite alternate;
+  animation: mover 0.8s infinite alternate;
+}
+@-webkit-keyframes mover {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-20px);
+  }
+}
+@keyframes mover {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-20px);
+  }
+}

@@ -15,4 +15,5 @@ export interface Pet {
     notes?: string;
     views?: Number;
     userId:number;
+    isDeleted?:boolean;
 }

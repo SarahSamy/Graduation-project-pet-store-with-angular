@@ -20,20 +20,32 @@ export class AnimalTypesComponent implements OnInit {
   selectedTypeId: number;
   selectedCategoryPets: Pet[];
   displayed: any[];
-
+  config:any;
 
   constructor(private categoryService: CategoryService, private petService: PetService) {
     this.selectedTypeId = 2;///temporary till come from israa component
-  }
-
-  ngOnInit() {
     this.allCategories = this.categoryService.getAll();
     this.allPets = this.petService.getAll();
     // display categoris of selected type in DiscoverAnimalPage when page first upload//
     this.selectedTypeCategories = this.allCategories.filter(c => c.fkTypeId === this.selectedTypeId);
     this.displayed = this.selectedTypeCategories;
+    this.config = {
+      itemsPerPage: 6,
+      currentPage: 1,
+      totalItems: this.displayed.length
+    }
   }
 
+  ngOnInit() {
+    // this.allCategories = this.categoryService.getAll();
+    // this.allPets = this.petService.getAll();
+    // // display categoris of selected type in DiscoverAnimalPage when page first upload//
+    // this.selectedTypeCategories = this.allCategories.filter(c => c.fkTypeId === this.selectedTypeId);
+    // this.displayed = this.selectedTypeCategories;
+  }
+  pageChanged(event){
+    this.config.currentPage = event;
+  }
   searchClick(categorySelect, genderSelect, ageSelect) {
 
     // display pets of selected categories//
@@ -65,9 +77,15 @@ export class AnimalTypesComponent implements OnInit {
         })
       }
     }
+    this.config = {
+      itemsPerPage: 6,
+      currentPage: 1,
+      totalItems: this.displayed.length
+    }
+  }
     // console.log(this.displayed);
     // console.log(selectedCategory);
     // console.log(this.allPets);
   }
 
-}
+

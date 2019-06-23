@@ -71,7 +71,7 @@ export class PostDetailsComponent implements OnInit {
     this.newComment.user=this.loginUser;
     this.newComment.userId=this.loginUser.id;
     this.newComment.time=this.now.toLocaleTimeString();
-    this.newComment.day=this.now.getDay()+"";
+    this.newComment.day=this.now.getDate()+"";
     const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];

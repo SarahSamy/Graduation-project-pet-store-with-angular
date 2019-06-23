@@ -47,7 +47,7 @@ export class CommentItemComponent implements OnInit {
       this.newReply.user = this.loginUser;
       this.newReply.userId = this.loginUser.id;
       this.newReply.time = this.now.toLocaleTimeString();
-      this.newReply.day = this.now.getDay() + "";
+      this.newReply.day = this.now.getDate()+ "";
       const monthNames = ["January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"
       ];

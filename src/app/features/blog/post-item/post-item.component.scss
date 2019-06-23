@@ -1,16 +1,55 @@
-h4{
-    & a{
-        color: black;
+$color-gray-light: #555;
+$color-black: #000;
+$color-primary: #94c13d;
+.blog-card {
+  &-info {
+    padding-bottom: 1rem;
+    font-weight: 600;
+    color: $color-gray-light;
+    font-size: 1.6rem;
+  }
+  & a {
+    color: $color-black;
+    text-decoration: none;
+  }
+  &-body {
+    &-title {
+      font-size: 2.4rem;
+      font-family: "Poppins", sans-serif;
+      transition: all 0.4s ease-in-out;
+      &:hover {
+        color: $color-primary;
+      }
     }
+  }
 }
-.post__meta{
-  ul{
-    li{
-        list-style: none;
-        font-size: 1.2rem;
-    }}
+
+.btn {
+  &--irregular {
+    border-color: $color-primary;
+    background: $color-primary;
+    color: white !important;
+    border-radius: 15.5rem 4.5rem 22.5rem 7.5rem/1.5rem 12.5rem 1.5rem 15.5rem;
+    font-size: 1.4rem;
+    outline: none;
+    letter-spacing: 0.2px;
+    font-weight: 600;
+  }
 }
-.post-tag{
-  
-  font-size:  1.3rem;
+
+h4 {
+  & a {
+    color: black;
+  }
+}
+.post__meta {
+  ul {
+    li {
+      list-style: none;
+      font-size: 1.2rem;
+    }
+  }
+}
+.post-tag {
+  font-size: 1.3rem;
 }

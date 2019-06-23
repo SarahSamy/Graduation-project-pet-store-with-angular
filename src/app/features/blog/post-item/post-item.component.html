@@ -1,4 +1,4 @@
-<div class="blog-posts-container__post post mt-5">
+<!-- <div class="blog-posts-container__post post mt-5">
   <h4 class="post__header mb-3"><a [routerLink]="['Post-details',post.id]">{{post.title}}</a></h4>
   <div class="post__meta">
     <ul>
@@ -16,4 +16,25 @@
 
   <span *ngFor="let tag of postTags" class="badge badge-primary post-tag mr-2">{{tag.name}}</span>
 
+</div> -->
+
+<div class="card blog-card">
+  <div class="blog-card-info  border-irregular2 text-muted">
+    <i class="fas fa-paw add-Green mr-1"></i>{{ post.month }} {{ post.day }}, {{ post.year }} by <a href="#">{{ username }}</a> /
+    <a><i class="fas fa-comment margin-icon"></i>10 comments</a>
+  </div>
+  <a>
+    <img class="card-img-top img-fluid" [src]="post.image" alt="" />
+  </a>
+  <div class="blog-card-body">
+    <a>
+      <h2 class="blog-card-body-title  mt-3">
+        <a [routerLink]="['Post-details', post.id]">{{ post.title }}</a>
+      </h2>
+    </a>
+    <p class="text mt-3">
+      {{ post.body }}
+    </p>
+    <a [routerLink]="['Post-details', post.id]" class="btn btn--irregular p-2 mb-5">Read More →</a>
+  </div>
 </div>

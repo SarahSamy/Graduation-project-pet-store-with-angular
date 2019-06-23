@@ -6,7 +6,7 @@ export interface Comment {
     body:string;
     Post?: Post;
     PostId: number;
-    userId?:number;
+    userId:number;
     user?:User;
     time?:string;
     day?:string;

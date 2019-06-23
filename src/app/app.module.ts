@@ -1,7 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
-import { FormsModule } from "@angular/forms";
+//import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -32,19 +32,20 @@ import { TagListingComponent } from "./features/blog/tags/tag-listing/tag-listin
 import { TagItemComponent } from "./features/blog/tags/tag-item/tag-item.component";
 import { PostItemComponent } from "./features/blog/post-item/post-item.component";
 import { PostListingComponent } from "./features/blog/post-listing/post-listing.component";
-import { SidebarComponent } from './features/blog/sidebar/sidebar.component';
-import { PostsService } from './_services/Posts.service';
-import { PostDetailsComponent } from './features/blog/post-details/post-details.component';
-import { AddPostComponent } from './features/blog/add-post/add-post.component';
-import { TagService } from './_services/Tag.service';
-import { NgxPaginationModule } from 'ngx-pagination';
-import { NotFoundComponent } from './shared/not-found/not-found.component';
-import { ManagePetsComponent } from './features/user/manage-pets/manage-pets.component';
-import { CommentService } from './_services/Comment.service';
-import { CommentItemComponent } from './features/blog/comment-item/comment-item.component';
-import { EditProfileComponent } from './features/user/edit-profile/edit-profile.component';
-import { CardWithCoverComponent } from './shared/card-with-cover/card-with-cover.component';
-
+import { SidebarComponent } from "./features/blog/sidebar/sidebar.component";
+import { PostsService } from "./_services/Posts.service";
+import { PostDetailsComponent } from "./features/blog/post-details/post-details.component";
+import { AddPostComponent } from "./features/blog/add-post/add-post.component";
+import { TagService } from "./_services/Tag.service";
+import { NgxPaginationModule } from "ngx-pagination";
+import { NotFoundComponent } from "./core/layout/not-found/not-found.component";
+import { ManagePetsComponent } from "./features/user/manage-pets/manage-pets.component";
+import { CommentService } from "./_services/Comment.service";
+import { CommentItemComponent } from "./features/blog/comment-item/comment-item.component";
+import { EditProfileComponent } from "./features/user/edit-profile/edit-profile.component";
+import { CardWithCoverComponent } from "./shared/card-with-cover/card-with-cover.component";
+import { ReplyItemComponent } from "./features/blog/reply-item/reply-item.component";
+import { ReplyService } from "./_services/reply.service";
 
 @NgModule({
   declarations: [
@@ -80,12 +81,13 @@ import { CardWithCoverComponent } from './shared/card-with-cover/card-with-cover
     ManagePetsComponent,
     CommentItemComponent,
     EditProfileComponent,
-    CardWithCoverComponent
+    CardWithCoverComponent,
+    ReplyItemComponent
   ],
   imports: [
     ReactiveFormsModule,
     BrowserModule,
-    FormsModule,
+    // FormsModule,
     NgxPaginationModule,
     AppRoutingModule,
     NgbModule.forRoot(),
@@ -104,9 +106,8 @@ import { CardWithCoverComponent } from './shared/card-with-cover/card-with-cover
       },
       {
         path: "",
-        redirectTo: '/Home', pathMatch: 'full'
-
-
+        redirectTo: "/Home",
+        pathMatch: "full"
       },
       { path: "pet-listing", component: PetListingComponent },
       { path: "Animal-Types", component: AnimalTypesComponent },
@@ -118,14 +119,15 @@ import { CardWithCoverComponent } from './shared/card-with-cover/card-with-cover
       { path: "edit-profile", component: EditProfileComponent },
       { path: "Blog", component: PostListingComponent },
       { path: "Blog/Post-details/:id", component: PostDetailsComponent },
-      { path: "Blog/add-post", component: AddPostComponent }
+      { path: "Blog/add-post", component: AddPostComponent },
 
-      // , {
-      //   path: '**', component: NotFoundComponent
-      // }
+      {
+        path: "**",
+        component: NotFoundComponent
+      }
     ])
   ],
-  providers: [PetService, TypeService, CategoryService, PostsService, TagService,CommentService],
+  providers: [PetService, TypeService, CategoryService, PostsService, TagService, CommentService, ReplyService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

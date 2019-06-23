@@ -29,13 +29,9 @@ export class AnimalTypesComponent implements OnInit {
 
   constructor(private typeService: TypeService, private categoryService: CategoryService, private petService: PetService) {
     this.selectedTypeId = 2;///temporary till come from israa component
-    this.allCategories = this.categoryService.getAll();
-    this.allPets = this.petService.getAll();
-    // display categoris of selected type in DiscoverAnimalPage when page first upload//
-    // this.TypeSelect.value=this.selectedTypeId;
-    this.displayTypeCategories();
 
   }
+
   // display categories of selected type //
   displayTypeCategories(TypeSelect?: HTMLSelectElement, categorySelect?: HTMLSelectElement, genderSelect?: HTMLSelectElement) {
     if (TypeSelect) {
@@ -54,11 +50,13 @@ export class AnimalTypesComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.allCategories = this.categoryService.getAll();
-    // this.allPets = this.petService.getAll();
-    // // display categoris of selected type in DiscoverAnimalPage when page first upload//
-    // this.selectedTypeCategories = this.allCategories.filter(c => c.fkTypeId === this.selectedTypeId);
-    // this.displayed = this.selectedTypeCategories;
+    this.alltypes = this.typeService.getAllTypes();
+    this.allCategories = this.categoryService.getAll();
+    this.allPets = this.petService.getAll();
+    // display categoris of selected type in DiscoverAnimalPage when page first upload//
+    // this.TypeSelect.value=this.selectedTypeId;
+    this.displayTypeCategories();
+
   }
   pageChanged(event) {
     this.config.currentPage = event;

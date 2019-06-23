@@ -27,14 +27,14 @@ export class UserService {
 
       { id: 1, firstName: "Alaa", lastName: "ibrahim", email: "alaaebrahim336@gmail.com", password: "123456", userGroupId: 1, image: "../../../../assets/images/comments/John-Amaechi-OBE_portraitfeatured.jpg" },
       {
-         id: 2, firstName: "Sarah", lastName: "refaat", email: "sara.refaat@aaa.com", password: "123456", userGroupId: 2, image: '../../../../assets/images/girl.jpg',
+        id: 2, firstName: "Sarah", lastName: "refaat", email: "sara.refaat@aaa.com", password: "123456", userGroupId: 2, image: '../../../../assets/images/girl.jpg',
         // pets: [
         //   { petId: 1, name: "Bondok", image: "assets/images/dog1.jpg", gender: "male", isToAdapted: true, age: 2, category: { categoryId: 5, name: "Beagle", fkTypeId: 2, type: { id: 2, name: "dog" } }, views: 2 },
         //   { petId: 10, name: "Browny", image: "assets/images/cat4.jpg", gender: "female", isToAdapted: true, age: 2, category: { categoryId: 3, name: "Scottish Fold", fkTypeId: 1, type: { id: 1, name: "Cat" } }, views: 5 },
         //   { petId: 14, name: "Gamil", image: "assets/images/turtle.jpg", gender: "male", isToAdapted: true, age: 2, category: { categoryId: 12, name: " Eastern", fkTypeId: 4, type: { id: 4, name: "Turtle" } }, views: 2 },
         // ]
       },
-      { id: 3, firstName: "Fatma", lastName: "shabana", email: "fatmashabana@gmail.com", password: "123456", userGroupId: 2, image: "../../../../assets/images/comments/John-Amaechi-OBE_portraitfeatured.jpg" },
+      { id: 3, firstName: "Fatima", lastName: "shabana", email: "fatimashabana@gmail.com", password: "123456", userGroupId: 2, image: '../../../../assets/images/girl.jpg' },
     ]
   }
   SearchForUser(email: string, password: string): User {
@@ -66,15 +66,15 @@ export class UserService {
 
 
   login() {
-    
+
     if (this.loginUser) {
       return this.loginUser;
 
     }
     else {
-     return null
+      return null
     }
-    
+
   }
 
 

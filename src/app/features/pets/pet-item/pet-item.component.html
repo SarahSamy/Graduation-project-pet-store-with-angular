@@ -10,8 +10,13 @@
     <!-- , {{pet.category.type}} -->
 
     <h4 *ngIf="pet.category.name"> {{pet.category.name}}</h4>
+<<<<<<< HEAD
     <a class="show" [routerLink]="['/pet-profile',this.data.getById(pet.petId).petId]"><i class="fa fa-eye "></i></a>
     <a class="edit"><i class="fa fa-edit " (click)="editButtonClick(pet.petId)"></i></a>
+=======
+    <a class="show" [routerLink]="['/pet-profile',pet.petId]"><i class="fa fa-eye "></i></a>
+    <a class="edit" *ngIf="(user) ? user.id==pet.userId : false"><i class="fa fa-edit " (click)="editButtonClick(pet.petId)"></i></a>
+>>>>>>> 674a688e1557b04945b02c706c680d75399f2015
 
 
   </div>

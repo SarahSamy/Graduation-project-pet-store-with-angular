@@ -11,3 +11,15 @@
     }
     .social {
         font-size: 1.2rem;}
+        textarea{
+            resize: none;
+            font-size: 1.4rem;
+            &:focus{
+                outline: none;
+            }
+        }
+        button:focus{
+  
+            outline: 0;
+        
+        }

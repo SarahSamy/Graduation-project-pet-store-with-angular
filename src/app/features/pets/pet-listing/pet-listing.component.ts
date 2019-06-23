@@ -32,7 +32,7 @@ export class PetListingComponent implements OnInit {
       this.mostViewed = this.petService.getMostViews();
     }
     this.config = {
-      itemsPerPage: 3,
+      itemsPerPage: 6,
       currentPage: 1,
       // totalItems: this.data.length
     }
@@ -66,7 +66,7 @@ export class PetListingComponent implements OnInit {
   getOthers() {
     this.data = this.petService.getAllOthers();
     this.config = {
-      itemsPerPage: 3,
+      itemsPerPage: 6,
       currentPage: 1,
       totalItems: this.data.length
     }
@@ -92,7 +92,7 @@ export class PetListingComponent implements OnInit {
   getAllTypes() {
     this.data = this.petService.getAll().filter(pet => pet.isToAdapted === true);
     this.config = {
-      itemsPerPage: 3,
+      itemsPerPage: 6,
       currentPage: 1,
       totalItems: this.data.length
     }
@@ -101,7 +101,7 @@ export class PetListingComponent implements OnInit {
   getByPetType(typeId: number) {
     this.data = this.petService.getByType(typeId);
     this.config = {
-      itemsPerPage: 3,
+      itemsPerPage: 6,
       currentPage: 1,
       totalItems: this.data.length
     }

@@ -1,5 +1,5 @@
-import { Pet } from '../_model/Pet';
-import { CategoryService } from './category.service';
+import { Pet } from "../_model/Pet";
+import { CategoryService } from "./category.service";
 
 export class PetService {
     data: Pet[];
@@ -60,25 +60,25 @@ export class PetService {
         return this.data.filter(t => t.category.type.id == categoryId)
     }
 
-    getMostViews() {
-        return this.data.filter(p => p.views > 3)
-    }
-    getByUserId(userId: number): Pet[] {
-        return this.data.filter((pet) => pet.userId === userId);
-    }
+  getMostViews() {
+    return this.data.filter(p => p.views > 3);
+  }
+  getByUserId(userId: number): Pet[] {
+    return this.data.filter(pet => pet.userId === userId);
+  }
 }
 
 //--------------------------------------------------------------
 
-    // getAllCats(): Pet[]{
+// getAllCats(): Pet[]{
 
-	// 	return this.data.filter(t=>t.category.type.id==1)
-    // }
-    // getAllDogs(): Pet[]{
+// 	return this.data.filter(t=>t.category.type.id==1)
+// }
+// getAllDogs(): Pet[]{
 
-	// 	return this.data.filter(t=>t.category.type.id==2)
-    // }
-    // getAllBirds(): Pet[]{
+// 	return this.data.filter(t=>t.category.type.id==2)
+// }
+// getAllBirds(): Pet[]{
 
-	// 	return this.data.filter(t=>t.category.type.id==3)
-    // }
+// 	return this.data.filter(t=>t.category.type.id==3)
+// }

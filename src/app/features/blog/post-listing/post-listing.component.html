@@ -1,53 +1,44 @@
-<head><style>
-   
-    .my-pagination /deep/ .ngx-pagination li {
-    background-color:#eff0ec;
-      font-size: 1.2rem;
-    padding: 1rem;
-    border-radius: 1rem;
-    margin: 0.2rem;
-    }
-    .my-pagination /deep/ .ngx-pagination .current {
-      background: #94c13d;
-      font-size: 1.2rem;
-      padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 1.1rem;
-    padding-bottom: 1.2rem;
-    }
-    .my-pagination /deep/ .ngx-pagination .pagination-next,
-    .my-pagination /deep/ .ngx-pagination .pagination-previous {
-      background-color: #eff0ec;
-    }
-   
-  </style></head>
-<section>
-
-  <div class="container-fliud no-gutters">
-    <div class="row no-gutters">
-      <div class="col-sm-12 col-md-12 col-lg-2 pl-5">
-        <app-sidebar></app-sidebar>
-      </div>
-      <div class="col-sm-12 col-md-12 col-lg-8 ml-5">
-        <div class="blog-posts-container mt-3">
-          <h1 class="title text-center">Our Blog</h1>
-        
-         <app-post-item *ngFor="let post of data | paginate: config"  [post]='post'></app-post-item>
-        <div class="row mt-5">
-          <div class="col-12" align="center">
-         <pagination-controls class="my-pagination" (pageChange)="pageChanged($event)"></pagination-controls>
+<div id="blog-home" class="page ">
+  <div class="container-fluid no-gutters p-0 ">
+    <div class="col-sm-12 banner-image ">
+      <div class="row align-items-center banner-image__banner-content">
+        <div class="align-self-center title">
+          <div><i class="fas fa-paw add-Green banner-icon mb-3"></i></div>
+          <p class="banner-title">Blog Home</p>
         </div>
       </div>
-         <!-- <pagination [buttonCounts]="postCount" [pageCount]="postCountPerPage"></pagination> -->
+    </div>
+    <!-- gray-part -->
+    <div class="col-sm-12 pt-3 pb-2 blog-path">
+      <div class="row">
+        <div class="col-sm-6 col-md-4  offset-1">
+          <ul class="clearfix">
+            <li>
+              <a href="index.html"><span class="fa fa-home"></span> Home / </a>
+            </li>
+            <li class="active new">Blog</li>
+          </ul>
         </div>
       </div>
-     
-      <div class="col-sm-1 mt-5" align="center" >
-          <div class="form-group">
-              <button class="theme-btn btn-style-one" type=" submit"
-                 name="submit-form"><a [routerLink]="'add-post'">Add Post</a></button> </div>
-        <!-- <button class="btn btn--primary add-post__btn m-4"><a [routerLink]="'add-post'">Add Post</a></button> -->
+    </div>
+    <!-- gray-part -->
+    <div class="col-sm-12  ">
+      <div class="row add-post__btn">
+        <div class="col-sm-6 col-md-4  ">
+          <a [routerLink]="'add-post'" class="btn btn--irregular p-2 mt-3 mb-2 vert-move">Add Post</a>
+        </div>
       </div>
     </div>
   </div>
-</section>
+
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col-lg-8">
+        <app-post-item *ngFor="let post of data" [post]="post"></app-post-item>
+      </div>
+      <div class="blog-sidebar bg-light-custom  h-50 border-irregular1 col-lg-3 ml-5 mt-3">
+        <app-sidebar></app-sidebar>
+      </div>
+    </div>
+  </div>
+</div>

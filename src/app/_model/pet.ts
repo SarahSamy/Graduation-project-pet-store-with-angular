@@ -1,4 +1,4 @@
-import { Category } from './category';
+import { Category } from "./category";
 export interface Pet {
     petId: number;
     name: string;

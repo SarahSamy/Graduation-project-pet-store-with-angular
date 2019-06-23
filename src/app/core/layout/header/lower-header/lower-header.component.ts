@@ -9,7 +9,7 @@ import { UserService } from 'src/app/_services/user.service.service';
 })
 export class LowerHeaderComponent implements OnInit {
   @Input() users:User[];
-  login:boolean;
+  login
   user:User;
   constructor(private userService:UserService) { 
     // if(!this.users){
@@ -20,7 +20,7 @@ export class LowerHeaderComponent implements OnInit {
       this.user= this.userService.loginUser;
     }
    
-    this.login = this.userService.login();
+    this.login = this.userService.login( );
   }
   ngOnInit() {
  

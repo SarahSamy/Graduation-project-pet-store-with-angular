@@ -14,4 +14,5 @@ export interface Pet {
     medicalCondition?: string;
     notes?: string;
     views?: Number;
+    userId:number;
 }

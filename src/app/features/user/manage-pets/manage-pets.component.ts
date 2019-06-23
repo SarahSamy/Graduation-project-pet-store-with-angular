@@ -28,13 +28,14 @@ export class ManagePetsComponent implements OnInit {
     // this.data = this.petService.data.filter(p => (p.petId == 5) || (p.petId == 6) || (p.petId == 9))
     // this.images=this.data.map(p=>p.image)
 
-    if (this.userService.loginUser.pets) {
-      this.data = this.userService.loginUser.pets;
+    if (this.userService.loginUser) {
+      this.user=this.userService.loginUser;
+      this.data = this.petService.data.filter(p=>p.userId==this.user.id)
     }
     else {
       this.message = "you don't have pets.You can add your pets";
     }
-    this.user = this.userService.loginUser;
+    // this.user = this.userService.loginUser;
 
 
   }
@@ -42,10 +43,5 @@ export class ManagePetsComponent implements OnInit {
     this.config.currentPage = event;
 
   }
-  // getImages(arr){
-  //   arr.array.forEach(element => {
-  //     this.data=this.petService.data.filter(p=>p.id==element)
-  //   });
-  //   this.images=this.data.map(p=>p.image)
-  // }
+ 
 }

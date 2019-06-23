@@ -9,7 +9,7 @@ export interface User{
     password:string;
     birthDate?:string;
     gender?: string;
-    pets?:Pet[];
+    // pets?:Pet[];
     userGroup?:userGroup;
     userGroupId:number;
     image?:string;

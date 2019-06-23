@@ -21,7 +21,19 @@
             </div>
             <div class="row">
               <!--select dropDown-->
-              <div class="col-md-4">
+              <div class="col-md-3">
+                <div class="form-group ">
+                  <!-- iller -->
+                  <select #TypeSelect id=" select" class=" select form-control"
+                    (change)="displayTypeCategories(TypeSelect,categorySelect,genderSelect)">
+                    <option value="-1" disabled [selected]="true">Select Type</option>
+                    <option *ngFor=" let type of  alltypes" [value]="type.id">
+                      {{type.name}}</option>
+                  </select>
+                </div>
+              </div>
+              <!--select dropDown-->
+              <div class="col-md-3">
                 <div class="form-group ">
                   <!-- iller -->
                   <select #categorySelect id=" select" class=" select form-control">
@@ -32,26 +44,28 @@
                 </div>
               </div>
               <!--select dropDown-->
-              <div class=" col-md-4">
+              <div class=" col-md-3">
                 <div class="form-group ">
                   <!-- ilceler -->
                   <select #genderSelect id=" select" class="select form-control ">
                     <option value="" disabled selected>Select Gender</option>
-                    <option>Male</option>
-                    <option>Female</option>
+                    <option value="A">All Gender</option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
 
                   </select>
                 </div>
               </div>
               <!--select dropDown-->
-              <div class="col-md-4">
+              <div class="col-md-3">
                 <div class="form-group ">
                   <!-- arac-turu -->
                   <select #ageSelect id="select" class="select form-control ">
                     <option value="" disabled selected>Select age</option>
-                    <option value="1">between 1-2 years old</option>
-                    <option value="2">between 3-5 years old</option>
-                    <option value="3">More than 6 years old</option>
+                    <option value="1">All Ages</option>
+                    <option value="2">between 1-2 years old</option>
+                    <option value="3">between 3-5 years old</option>
+                    <option value="4">More than 6 years old</option>
                   </select>
                 </div>
               </div>

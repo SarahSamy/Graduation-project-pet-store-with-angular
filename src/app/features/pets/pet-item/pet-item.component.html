@@ -10,7 +10,7 @@
     <!-- , {{pet.category.type}} -->
 
     <h4 *ngIf="pet.category.name"> {{pet.category.name}}</h4>
-    <a class="show" [routerLink]="['/pet-profile',this.data.getById(pet.petId).id]"><i class="fa fa-eye "></i></a>
+    <a class="show" [routerLink]="['/pet-profile',this.data.getById(pet.petId).petId]"><i class="fa fa-eye "></i></a>
     <a class="edit"><i class="fa fa-edit " (click)="editButtonClick(pet.petId)"></i></a>
 
 

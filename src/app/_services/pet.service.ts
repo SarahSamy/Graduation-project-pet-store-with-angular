@@ -54,7 +54,7 @@ export class PetService {
     // }
     getAllOthers(): Pet[] {
 
-        return this.data.filter(t => t.category.type.id > 3)
+        return this.data.filter(t => t.category.fkTypeId > 3)
     }
     getByType(typeId: number): Pet[] {
         return this.data.filter(t => t.category.fkTypeId == typeId)

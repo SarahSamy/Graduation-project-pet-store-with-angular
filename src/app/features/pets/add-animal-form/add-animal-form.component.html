@@ -1,5 +1,5 @@
 <div class=" container form-container">
-  <form [formGroup]="addAnimalForm" (ngSubmit)="onSubmit()" class="custom-form" id="add-animal-form">
+  <form [formGroup]="addAnimalForm" (ngSubmit)="onSubmit(categorySelect)" class="custom-form" id="add-animal-form">
     <div class="row">
       <div class="col-4">
       </div>
@@ -52,8 +52,9 @@
             <div class="col-sm-12 col-md-6">
               <div class="form-group ">
                 <label class="lable" for="">Type</label>
-                <select [formControlName]="'fkTypeId'" class=" form-control custom-select mb-3 form-drop_down"
-                  name="type" id="" required>
+                <select #typeSelect [formControlName]="'fkTypeId'"
+                  class=" form-control custom-select mb-3 form-drop_down" name="type" id=""
+                  (change)="displayTypeCategories(typeSelect)" required>
                   <option *ngFor="let type of types" [value]="type.id">{{type.name}}</option>
                 </select>
                 <!--pet Type validation-->
@@ -68,15 +69,16 @@
             <div class="col-sm-12 col-md-6">
               <div class="form-group">
                 <label class="lable" for="">Category</label>
-                <select [formControlName]="'categoryId'" class=" form-control custom-select mb-3 form-drop_down"
-                  name="category_name" id="">
-                  <option *ngFor="let Category of categories" [value]="Category.categoryId">{{Category.name}}</option>
+                <select #categorySelect [formControlName]="'categoryId'"
+                  class=" form-control custom-select mb-3 form-drop_down" name="category_name" id="">
+                  <option *ngFor="let Category of selectedTypeCategories" [value]="Category.categoryId">
+                    {{Category.name}}</option>
                 </select>
                 <!--pet category validation-->
                 <span class="error_msg" *ngIf="!addAnimalForm.get('category').get('categoryId').valid">
                   <span
                     *ngIf="addAnimalForm.get('category').get('categoryId').errors&&addAnimalForm.get('category').get('categoryId').touched">
-                    you should select pet type
+                    you should select pet category
                   </span>
                 </span>
               </div>

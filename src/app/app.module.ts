@@ -40,6 +40,7 @@ import { AddAnimalFormComponent } from "./features/pets/add-animal-form/add-anim
 import { PetItemComponent } from "./features/pets/pet-item/pet-item.component";
 import { PetListingComponent } from "./features/pets/pet-listing/pet-listing.component";
 import { PetProfileComponent } from "./features/pets/pet-profile/pet-profile.component";
+<<<<<<< HEAD
 import { EditProfileComponent } from "./features/user/edit-profile/edit-profile.component";
 import { ManagePetsComponent } from "./features/user/manage-pets/manage-pets.component";
 import { FullHeaderComponent } from "./core/layout/header/full-header/full-header.component";
@@ -47,6 +48,9 @@ import { LowerHeaderComponent } from "./core/layout/header/lower-header/lower-he
 import { UpperHeaderComponent } from "./core/layout/header/upper-header/upper-header.component";
 import { CategoryItemComponent } from "./features/blog/categories/category-item/category-item.component";
 import { CategoryListingComponent } from "./features/blog/categories/category-listing/category-listing.component";
+=======
+import { TagListingComponent } from "./features/blog/tags/tag-listing/tag-listing.component";
+>>>>>>> 592c413b28899c908e36e6d691d3c3d7fdef64c2
 import { TagItemComponent } from "./features/blog/tags/tag-item/tag-item.component";
 import { TagListingComponent } from "./features/blog/tags/tag-listing/tag-listing.component";
 
@@ -71,8 +75,6 @@ import { TagListingComponent } from "./features/blog/tags/tag-listing/tag-listin
     MainSliderComponent,
     FourItemsSliderComponent,
     PetProfileComponent,
-    CategoryItemComponent,
-    CategoryListingComponent,
     TagListingComponent,
     TagItemComponent,
     PostItemComponent,

@@ -19,9 +19,11 @@ export class AddAnimalFormComponent implements OnInit {
   pet: Pet;
   editedPet: Pet;
   categories: Category[];
+  selectedTypeCategories: Category[];
   types: Type[];
   addAnimalForm: FormGroup;
   id: number;
+  categoryName: string;
 
 
   constructor(private PetService: PetService,
@@ -41,7 +43,9 @@ export class AddAnimalFormComponent implements OnInit {
       image: new FormControl("assets/images/animal-19-512.png"),
       category: new FormGroup({
         categoryId: new FormControl('', Validators.required),
+        name: new FormControl(this.categoryName),
         fkTypeId: new FormControl('', Validators.required),
+
       }),
       parentHistoryAndType: new FormControl('', Validators.required),
       food: new FormControl('', Validators.required),
@@ -50,6 +54,10 @@ export class AddAnimalFormComponent implements OnInit {
       medicalCondition: new FormControl('', Validators.required),
       notes: new FormControl('', Validators.required),
     });
+
+    // let category=this.addAnimalForm.get('category').get('categoryId') as FormControl;
+    // console.log(category as HTMLElement);
+    console.log(this.categoryName);
 
     this.categories = this.CategoryService.getAll();
     this.types = this.TypeService.getAllTypes();
@@ -83,17 +91,27 @@ export class AddAnimalFormComponent implements OnInit {
       medicalCondition: editedPet.medicalCondition,
     })
   }
+  displayTypeCategories(typeSelect: HTMLSelectElement) {
+    let selectedTypeId = +typeSelect.value;
+    console.log(selectedTypeId);
+    this.selectedTypeCategories = this.categories.filter(c => c.fkTypeId === selectedTypeId);
+  }
 
-  onSubmit() {
+  onSubmit(categorySelect: HTMLSelectElement) {
     if (this.addAnimalForm.valid) {
+      let selectedCategory = categorySelect.options[categorySelect.selectedIndex].text;
+      this.addAnimalForm.get('category').get('name').setValue(selectedCategory);
+
       this.pet = this.addAnimalForm.value;
       this.PetService.addPet(this.pet);
       this.addAnimalForm.reset();
       // this.router.navigate(['/pet-listing']);//in future work
       console.log(this.pet);
+      console.log(this.categoryName);
+      console.log(this.addAnimalForm.get('category').get('name').value);
+
+
       // console.log(this.addAnimalForm.value);
-      // console.log(this.addAnimalForm.getRawValue());
-      // console.log(this.addAnimalForm);
     }
   }
 

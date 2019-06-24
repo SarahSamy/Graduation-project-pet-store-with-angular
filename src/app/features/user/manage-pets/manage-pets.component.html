@@ -58,7 +58,7 @@
 
       <div *ngFor="let newpet of  data | paginate: config"  class="col-md-4  " >
         
-        <pet-item  [pet]= 'newpet'></pet-item>
+        <pet-item  [pet]= 'newpet' (removeClick)="deletePet(newpet.petId)"></pet-item>
       
     </div>
     <p *ngIf=!data>

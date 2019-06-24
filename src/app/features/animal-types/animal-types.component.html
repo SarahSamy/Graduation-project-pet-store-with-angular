@@ -1,31 +1,35 @@
-<head><style>
-  .my-pagination /deep/ .ngx-pagination a {
-    outline: none;
-    cursor: pointer;
-    text-decoration: none;
-  }
-    .my-pagination /deep/ .ngx-pagination li {
-    background-color:#eff0ec;
-      font-size: 1.2rem;
-    padding: 1rem;
-    border-radius: 1rem;
-    margin: 0.2rem;
+<head>
+  <style>
+    .my-pagination /deep/ .ngx-pagination a {
+      outline: none;
+      cursor: pointer;
+      text-decoration: none;
     }
+
+    .my-pagination /deep/ .ngx-pagination li {
+      background-color: #eff0ec;
+      font-size: 1.2rem;
+      padding: 1rem;
+      border-radius: 1rem;
+      margin: 0.2rem;
+    }
+
     .my-pagination /deep/ .ngx-pagination .current {
       background: #94c13d;
       font-size: 1.2rem;
       padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 1.1rem;
-    padding-bottom: 1.2rem;
+      padding-right: 2rem;
+      padding-top: 1.1rem;
+      padding-bottom: 1.2rem;
     }
+
     .my-pagination /deep/ .ngx-pagination .pagination-next,
     .my-pagination /deep/ .ngx-pagination .pagination-previous {
       background-color: #eff0ec;
-    
-    }
 
-  </style></head>
+    }
+  </style>
+</head>
 
 <!--Search Banner-->
 <section class="search-banner text-white py-3 form-arka-plan  mb-5" id="search-banner">
@@ -50,7 +54,19 @@
             </div>
             <div class="row">
               <!--select dropDown-->
-              <div class="col-md-4">
+              <div class="col-md-3">
+                <div class="form-group ">
+                  <!-- iller -->
+                  <select #TypeSelect id=" select" class=" select form-control"
+                    (change)="displayTypeCategories(TypeSelect,categorySelect,genderSelect)">
+                    <option value="-1" disabled [selected]="true">Select Type</option>
+                    <option *ngFor=" let type of  alltypes" [value]="type.id">
+                      {{type.name}}</option>
+                  </select>
+                </div>
+              </div>
+              <!--select dropDown-->
+              <div class="col-md-3">
                 <div class="form-group ">
                   <!-- iller -->
                   <select #categorySelect id=" select" class=" select form-control">
@@ -61,26 +77,28 @@
                 </div>
               </div>
               <!--select dropDown-->
-              <div class=" col-md-4">
+              <div class=" col-md-3">
                 <div class="form-group ">
                   <!-- ilceler -->
                   <select #genderSelect id=" select" class="select form-control ">
                     <option value="" disabled selected>Select Gender</option>
-                    <option>Male</option>
-                    <option>Female</option>
+                    <option value="A">All Gender</option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
 
                   </select>
                 </div>
               </div>
               <!--select dropDown-->
-              <div class="col-md-4">
+              <div class="col-md-3">
                 <div class="form-group ">
                   <!-- arac-turu -->
                   <select #ageSelect id="select" class="select form-control ">
                     <option value="" disabled selected>Select age</option>
-                    <option value="1">between 1-2 years old</option>
-                    <option value="2">between 3-5 years old</option>
-                    <option value="3">More than 6 years old</option>
+                    <option value="1">All Ages</option>
+                    <option value="2">between 1-2 years old</option>
+                    <option value="3">between 3-5 years old</option>
+                    <option value="4">More than 6 years old</option>
                   </select>
                 </div>
               </div>
@@ -151,9 +169,10 @@
 
 <!--PAGINATION-->
 <section class="container-fluid ">
-    <div class="row mt-5">
-        <div class="col-12" align="center">
-       <pagination-controls *ngIf="displayed.length>0" class="my-pagination" (pageChange)="pageChanged($event)"></pagination-controls>
-      </div>
+  <div class="row mt-5">
+    <div class="col-12" align="center">
+      <pagination-controls *ngIf="displayed.length>0" class="my-pagination" (pageChange)="pageChanged($event)">
+      </pagination-controls>
     </div>
+  </div>
 </section>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Pet } from 'src/app/_model/pet';
 import { User } from 'src/app/_model/user';
 import { Router } from '@angular/router';
@@ -13,6 +13,7 @@ export class PetItemComponent implements OnInit {
 
   @Input() pet: Pet;
  // @Input() data;
+ @Output() removeClick= new EventEmitter<any>();
   user:User
   userPet:Pet[]
   constructor(private router: Router, private petService: PetService,private userService:UserService) {
@@ -37,6 +38,7 @@ export class PetItemComponent implements OnInit {
     this.router.navigate(['Edit-Animal', PetId])
   }
 
+  
   // getPetById(id){
     
   //   return this.data.data.filter(p=>p.PetId==id)

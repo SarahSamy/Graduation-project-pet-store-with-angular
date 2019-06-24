@@ -15,7 +15,7 @@ export class LowerHeaderComponent implements OnInit {
     // if(!this.users){
       // this.users = this.userService.getAll();
     // }
-  console.log
+  
     if(this.userService.loginUser){
       this.user= this.userService.loginUser;
     }

@@ -30,7 +30,7 @@ export class AnimalTypesComponent implements OnInit {
     this.selectedTypeCategories = this.allCategories.filter(c => c.fkTypeId === this.selectedTypeId);
     this.displayed = this.selectedTypeCategories;
     this.config = {
-      itemsPerPage: 6,
+      itemsPerPage:11,
       currentPage: 1,
       totalItems: this.displayed.length
     }
@@ -78,7 +78,7 @@ export class AnimalTypesComponent implements OnInit {
       }
     }
     this.config = {
-      itemsPerPage: 6,
+      itemsPerPage: 11,
       currentPage: 1,
       totalItems: this.displayed.length
     }

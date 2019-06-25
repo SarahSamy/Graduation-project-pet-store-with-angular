@@ -18,7 +18,7 @@ import { HomeComponent } from "./features/home/home.component";
 import { PetService } from "./_services/pet.service";
 import { FiltringListComponent } from "./shared/filtring-list/filtring-list.component";
 import { PaginationComponent } from "./shared/pagination/pagination.component";
-import { AnimalTypesComponent } from "./features/animal-types/animal-types.component";
+import { AnimalTypesComponent } from "./features/discover/animal-types/animal-types.component";
 import { AddAnimalFormComponent } from "./features/pets/add-animal-form/add-animal-form.component";
 import { TypeService } from "./_services/type.service";
 import { CategoryService } from "./_services/category.service";
@@ -46,6 +46,7 @@ import { EditProfileComponent } from "./features/user/edit-profile/edit-profile.
 import { CardWithCoverComponent } from "./shared/card-with-cover/card-with-cover.component";
 import { ReplyItemComponent } from "./features/blog/reply-item/reply-item.component";
 import { ReplyService } from "./_services/reply.service";
+import { DiscoverPetComponent } from './features/discover/discover-pet/discover-pet.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,8 @@ import { ReplyService } from "./_services/reply.service";
     CommentItemComponent,
     EditProfileComponent,
     CardWithCoverComponent,
-    ReplyItemComponent
+    ReplyItemComponent,
+    DiscoverPetComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -120,6 +122,7 @@ import { ReplyService } from "./_services/reply.service";
       { path: "Blog", component: PostListingComponent },
       { path: "Blog/Post-details/:id", component: PostDetailsComponent },
       { path: "Blog/add-post", component: AddPostComponent },
+      { path: "discover-pet", component: DiscoverPetComponent },
 
       {
         path: "**",

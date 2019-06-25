@@ -9,12 +9,20 @@ export class PetService {
         petId: 1,
         name: "Bondok",
         image: "assets/images/dog1.jpg",
-        gender: "male",
+        gender: "female",
         isToAdapted: false,
         age: 2,
-        category: { categoryId: 5, name: "Beagle", fkTypeId: 2, type: { id: 2, name: "dog" } },
+        category: {
+          categoryId: 5,
+          name: "Beagle",
+          fkTypeId: 2,
+          type: { id: 2, name: "dog" }
+        },
         views: 2,
-        userId: 3
+        userId: 3,
+        food: "bones,checken",
+        medicalCondition: "not infected by any disease",
+        parentHistoryAndType: "his parent also from same category"
       },
       {
         petId: 2,
@@ -23,7 +31,12 @@ export class PetService {
         gender: "male",
         isToAdapted: false,
         age: 2,
-        category: { categoryId: 5, name: "Beagle", fkTypeId: 2, type: { id: 2, name: "dog" } },
+        category: {
+          categoryId: 5,
+          name: "Beagle",
+          fkTypeId: 2,
+          type: { id: 2, name: "dog" }
+        },
         views: 2,
         userId: 3
       },
@@ -34,7 +47,12 @@ export class PetService {
         gender: "female",
         isToAdapted: true,
         age: 2,
-        category: { categoryId: 6, name: "Haski", fkTypeId: 2, type: { id: 2, name: "dog" } },
+        category: {
+          categoryId: 6,
+          name: "Haski",
+          fkTypeId: 2,
+          type: { id: 2, name: "dog" }
+        },
         views: 2,
         userId: 3
       },
@@ -45,7 +63,12 @@ export class PetService {
         gender: "male",
         isToAdapted: true,
         age: 2,
-        category: { categoryId: 6, name: "Haski", fkTypeId: 2, type: { id: 2, name: "dog" } },
+        category: {
+          categoryId: 6,
+          name: "Haski",
+          fkTypeId: 2,
+          type: { id: 2, name: "dog" }
+        },
         views: 2,
         userId: 3
       },
@@ -56,7 +79,12 @@ export class PetService {
         gender: "male",
         isToAdapted: true,
         age: 2,
-        category: { categoryId: 6, name: "Haski", fkTypeId: 2, type: { id: 2, name: "dog" } },
+        category: {
+          categoryId: 6,
+          name: "Haski",
+          fkTypeId: 2,
+          type: { id: 2, name: "dog" }
+        },
         views: 2,
         userId: 2
       },
@@ -67,7 +95,12 @@ export class PetService {
         gender: "female",
         isToAdapted: true,
         age: 2,
-        category: { categoryId: 7, name: "BullDog", fkTypeId: 2, type: { id: 2, name: "dog" } },
+        category: {
+          categoryId: 7,
+          name: "BullDog",
+          fkTypeId: 2,
+          type: { id: 2, name: "dog" }
+        },
         views: 2,
         userId: 3
       },
@@ -78,7 +111,12 @@ export class PetService {
         gender: "female",
         isToAdapted: true,
         age: 2,
-        category: { categoryId: 2, name: "Classic Persian", fkTypeId: 1, type: { id: 1, name: "Cat" } },
+        category: {
+          categoryId: 2,
+          name: "Classic Persian",
+          fkTypeId: 1,
+          type: { id: 1, name: "Cat" }
+        },
         views: 5,
         userId: 3
       },
@@ -89,7 +127,12 @@ export class PetService {
         gender: "male",
         isToAdapted: true,
         age: 2,
-        category: { categoryId: 1, name: "Ragamuffin", fkTypeId: 1, type: { id: 1, name: "Cat" } },
+        category: {
+          categoryId: 1,
+          name: "Ragamuffin",
+          fkTypeId: 1,
+          type: { id: 1, name: "Cat" }
+        },
         views: 3,
         userId: 3
       },
@@ -100,7 +143,12 @@ export class PetService {
         gender: "male",
         isToAdapted: true,
         age: 2,
-        category: { categoryId: 6, name: "Haski", fkTypeId: 2, type: { id: 2, name: "Dog" } },
+        category: {
+          categoryId: 6,
+          name: "Haski",
+          fkTypeId: 2,
+          type: { id: 2, name: "Dog" }
+        },
         views: 5,
         userId: 2
       },
@@ -111,7 +159,12 @@ export class PetService {
         gender: "female",
         isToAdapted: true,
         age: 2,
-        category: { categoryId: 3, name: "Scottish Fold", fkTypeId: 1, type: { id: 1, name: "Cat" } },
+        category: {
+          categoryId: 3,
+          name: "Scottish Fold",
+          fkTypeId: 1,
+          type: { id: 1, name: "Cat" }
+        },
         views: 5,
         userId: 2
       },
@@ -122,7 +175,12 @@ export class PetService {
         gender: "female",
         isToAdapted: true,
         age: 2,
-        category: { categoryId: 3, name: "Scottish Fold", fkTypeId: 1, type: { id: 1, name: "Cat" } },
+        category: {
+          categoryId: 3,
+          name: "Scottish Fold",
+          fkTypeId: 1,
+          type: { id: 1, name: "Cat" }
+        },
         views: 2,
         userId: 3
       },
@@ -133,7 +191,12 @@ export class PetService {
         gender: "female",
         isToAdapted: true,
         age: 2,
-        category: { categoryId: 11, name: "Finches ", fkTypeId: 3, type: { id: 3, name: "Bird" } },
+        category: {
+          categoryId: 11,
+          name: "Finches ",
+          fkTypeId: 3,
+          type: { id: 3, name: "Bird" }
+        },
         views: 6,
         userId: 3
       },
@@ -144,7 +207,12 @@ export class PetService {
         gender: "male",
         isToAdapted: true,
         age: 2,
-        category: { categoryId: 10, name: "Parrot ", fkTypeId: 3, type: { id: 3, name: "Bird" } },
+        category: {
+          categoryId: 10,
+          name: "Parrot ",
+          fkTypeId: 3,
+          type: { id: 3, name: "Bird" }
+        },
         views: 2,
         userId: 3
       },
@@ -155,7 +223,12 @@ export class PetService {
         gender: "male",
         isToAdapted: true,
         age: 2,
-        category: { categoryId: 12, name: " Eastern", fkTypeId: 4, type: { id: 4, name: "Turtle" } },
+        category: {
+          categoryId: 12,
+          name: " Eastern",
+          fkTypeId: 4,
+          type: { id: 4, name: "Turtle" }
+        },
         views: 2,
         userId: 2
       }
@@ -175,6 +248,7 @@ export class PetService {
     // const i = this.data.indexOf(pet);
     const i = this.data.findIndex(p => p.petId === pet.petId);
     this.data[i] = pet;
+    console.log(this.data[i], i);
   }
   delete(id: number) {
     const i = this.data.findIndex(p => p.petId === id);

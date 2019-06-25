@@ -28,6 +28,13 @@ export class TypeService {
         image: "../../../../assets/images/discover/Conure-Image.jpg"
       },
       {
+        id: 4,
+        name: "turtle",
+        motivationText:
+          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam ab quis consequatur? Architecto obcaecati expedita incidunt autem? Numquam tempore necessitatibus.",
+        image: "../../../../assets/images/turtle.jpg"
+      },
+      {
         id: 5,
         name: "Others",
         motivationText:

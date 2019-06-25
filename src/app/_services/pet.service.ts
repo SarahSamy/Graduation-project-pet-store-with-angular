@@ -30,8 +30,8 @@ export class PetService {
         isToAdapted: false,
         age: 2,
         category: {
-          categoryId: 5,
-          name: "Beagle",
+          categoryId: 7,
+          name: "BullDog",
           fkTypeId: 2,
           type: { id: 2, name: "dog" }
         },
@@ -149,8 +149,8 @@ export class PetService {
         isToAdapted: true,
         age: 2,
         category: {
-          categoryId: 6,
-          name: "Haski",
+          categoryId: 8,
+          name: "Boxer",
           fkTypeId: 2,
           type: { id: 2, name: "Dog" }
         },
@@ -282,7 +282,7 @@ export class PetService {
     );
   }
   getByCategory(categoryId: number): Pet[] {
-    return this.data.filter(t => t.category.type.id == categoryId);
+    return this.data.filter(t => t.category.categoryId == categoryId);
   }
 
   getMostViews() {

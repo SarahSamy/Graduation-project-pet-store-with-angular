@@ -153,7 +153,7 @@ import { ContactUsComponent } from "./shared/contact-us/contact-us.component";
         component: AnimalTypesComponent
       }, //after come from alaa page [discover/cat]
       {
-        path: "discover/Animal-Type/:typeId/category/:categoryId",
+        path: "discover/categories/:categoryId",
         component: DiscoverCategoryComponent
       },
       { path: "contact-us", component: ContactUsComponent },
@@ -164,7 +164,15 @@ import { ContactUsComponent } from "./shared/contact-us/contact-us.component";
       }
     ])
   ],
-  providers: [PetService, TypeService, CategoryService, PostsService, TagService, CommentService, ReplyService],
+  providers: [
+    PetService,
+    TypeService,
+    CategoryService,
+    PostsService,
+    TagService,
+    CommentService,
+    ReplyService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

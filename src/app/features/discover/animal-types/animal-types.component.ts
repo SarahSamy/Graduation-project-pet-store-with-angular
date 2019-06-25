@@ -39,8 +39,8 @@ export class AnimalTypesComponent implements OnInit {
     private router: Router,
     private _Activatedroute: ActivatedRoute
   ) {
-    this.selectedTypeId  = +this._Activatedroute.snapshot.paramMap.get("typeId");
-   //= 2; ///temporary till come from israa component
+    this.selectedTypeId = +this._Activatedroute.snapshot.paramMap.get("typeId");
+    //= 2; ///temporary till come from israa component
   }
 
   // display categories of selected type and reset ddl values with each type select //
@@ -137,7 +137,7 @@ export class AnimalTypesComponent implements OnInit {
   //function to route pet to pet profile /or/ category to category info
   routePage(item) {
     if (!item.petId) {
-      this.router.navigate(["/discover/Animal-Type/category", item.categoryId]);
+      this.router.navigate(["/discover/categories", item.categoryId]);
     } else {
       this.router.navigate(["/pet-profile", item.petId]);
     }

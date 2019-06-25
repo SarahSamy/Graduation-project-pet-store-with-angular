@@ -17,7 +17,7 @@ import { CategoryService } from "./_services/category.service";
 import { PetService } from "./_services/pet.service";
 import { ReplyService } from "./_services/reply.service";
 import { TypeService } from "./_services/type.service";
-import { AnimalTypesComponent } from "./features/animal-types/animal-types.component";
+import { AnimalTypesComponent } from "./features/discover/animal-types/animal-types.component";
 //import { DiscoverPetComponent } from "./features/discover/discover-pet.component";
 import { HomeComponent } from "./features/home/home.component";
 import { LoginComponent } from "./features/login/login.component";
@@ -52,7 +52,11 @@ import { LowerHeaderComponent } from "./core/layout/header/lower-header/lower-he
 import { UpperHeaderComponent } from "./core/layout/header/upper-header/upper-header.component";
 import { TagItemComponent } from "./features/blog/tags/tag-item/tag-item.component";
 import { TagListingComponent } from "./features/blog/tags/tag-listing/tag-listing.component";
+
 import { DiscoverPetComponent } from "./features/discover/discover-pet/discover-pet.component";
+import { DiscoverCategoryComponent } from "./features/discover/discover-category-info/discover-category/discover-category.component";
+import { CategoryRelatedPetsComponent } from "./features/discover/discover-category-info/category-related-pets/category-related-pets.component";
+
 import { ContactUsComponent } from "./shared/contact-us/contact-us.component";
 
 @NgModule({
@@ -73,6 +77,9 @@ import { ContactUsComponent } from "./shared/contact-us/contact-us.component";
     AddAnimalFormComponent,
     PetProfileComponent,
     DropdownComponent,
+    DiscoverPetComponent,
+    DiscoverCategoryComponent,
+    CategoryRelatedPetsComponent,
     MainSliderComponent,
     FourItemsSliderComponent,
     PetProfileComponent,
@@ -126,7 +133,10 @@ import { ContactUsComponent } from "./shared/contact-us/contact-us.component";
         pathMatch: "full"
       },
       { path: "pet-listing", component: PetListingComponent },
-      { path: "discover/Animal-Types/:typeId", component: AnimalTypesComponent },
+      {
+        path: "discover/Animal-Types/:typeId",
+        component: AnimalTypesComponent
+      },
       { path: "Add-Animal", component: AddAnimalFormComponent },
       { path: "Edit-Animal/:id", component: AddAnimalFormComponent },
       { path: "pet-profile", component: PetProfileComponent },
@@ -136,7 +146,15 @@ import { ContactUsComponent } from "./shared/contact-us/contact-us.component";
       { path: "Blog", component: PostListingComponent },
       { path: "Blog/Post-details/:id", component: PostDetailsComponent },
       { path: "Blog/add-post", component: AddPostComponent },
-      { path: "discover", component: DiscoverPetComponent },
+      { path: "discover", component: DiscoverPetComponent }, //alaa page best name discover i think
+      {
+        path: "discover/Animal-Types/:typeId",
+        component: AnimalTypesComponent
+      }, //after come from alaa page [discover/cat]
+      {
+        path: "discover/Animal-Type/:typeId/category/:categoryId",
+        component: DiscoverCategoryComponent
+      },
       { path: "contact-us", component: ContactUsComponent },
 
       {

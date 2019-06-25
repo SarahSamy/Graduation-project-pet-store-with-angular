@@ -15,12 +15,15 @@ export class ManagePetsComponent implements OnInit {
   config: any;
   message: string;
   user: User;
+  loginUser: User;
 
   constructor(private userService: UserService, private petService: PetService) {
+    this.loginUser = this.userService.loginUser;
     this.config = {
       itemsPerPage: 3,
       currentPage: 1,
-      // totalItems: this.data.length
+      
+       totalItems: this.data.length
     }
   }
 

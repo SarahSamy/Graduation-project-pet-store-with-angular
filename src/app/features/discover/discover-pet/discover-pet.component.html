@@ -2,40 +2,47 @@
   <div class="top-banner ">
     <div class="top-banner--text">
       <h1 class="col-12" align="center">PET GUIDE</h1>
-      <p>Discover Animals Pet Guide: An Online Animal Resource Created By Experts
-        DiscoverAnimals.org is a free online resource bringing together information
-        about all animals including text, images, video, sounds, maps, classifications
-        and more. Please explore our site to learn more and discover new animals you may
-        have never seen!</p>
+      <p>
+        Discover Animals Pet Guide: An Online Animal Resource Created By Experts
+        DiscoverAnimals.org is a free online resource bringing together
+        information about all animals including text, images, video, sounds,
+        maps, classifications and more. Please explore our site to learn more
+        and discover new animals you may have never seen!
+      </p>
     </div>
   </div>
 </div>
 <div class="container">
   <div class="row ">
     <div class="col-md-auto justify-content-md-center  ">
-      <h2 class="Introduction--Box--info__Question text-center">Discover Animals Pet Guide
+      <h2 class="Introduction--Box--info__Question text-center">
+        Discover Animals Pet Guide
       </h2>
-      <p class=" Introduction--Box--info__paragraph   text-center">Feathers? Fur? Scales?
-        Whatever type of pet holds your heart, we are here to guide you through
-        the process. From research and planning, to early life and geriatric
-        care, to maintaining health and treating illnesses, we can help you find
-        and care for a pet that is matched to your unique lifestyle and
-        preferences.</p>
+      <p class=" Introduction--Box--info__paragraph   text-center">
+        Feathers? Fur? Scales? Whatever type of pet holds your heart, we are
+        here to guide you through the process. From research and planning, to
+        early life and geriatric care, to maintaining health and treating
+        illnesses, we can help you find and care for a pet that is matched to
+        your unique lifestyle and preferences.
+      </p>
     </div>
   </div>
   <div class="row justify-content-center mt-5">
-    <div *ngFor="let type of data" class="col-lg-4 mb-5  col-md-5 col-sm-12">
+    <div class="col-lg-4 mb-5  col-md-5 col-sm-12">
       <div class="row">
         <div class="col-12">
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img [src]="type.image"  alt="Avatar">
+                <img
+                  src="../../../../assets/images/kitten-jumping-landing-on-feet.jpg"
+                  alt="Avatar"
+                />
               </div>
               <div class="flip-card-back">
-                <h1><a [routerLink]="'Animal-types'"></a>{{type.name}}</h1>
-                <p>{{type.motivationText}}</p>
-             
+                <h1>John Doe</h1>
+                <p>Architect & Engineer</p>
+                <p>We love that guy</p>
               </div>
             </div>
           </div>
@@ -45,25 +52,142 @@
         <div class="col-11">
           <div class="row mt-3 justify-content-center">
             <div class="col-auto">
-              <h2 class="type-name"> <a [routerLink]="['Animal-Types', type.id]">{{type.name}}</a></h2>
+              <h2 class="type-name">Cats</h2>
             </div>
           </div>
           <div class="row mt-2">
             <div class="col-12 cat-motivation">
-              <p>{{type.motivationText}} 
-                .</p>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Quibusdam ab quis consequatur? Architecto obcaecati expedita
+                incidunt autem? Numquam tempore necessitatibus .
+              </p>
             </div>
           </div>
-
         </div>
       </div>
     </div>
-  
+    <div class="col-lg-4 mb-5 col-md-5 col-sm-12">
+      <div class="row">
+        <div class="col-12">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img
+                  src="../../../../assets/images/discover/download.jpg"
+                  alt="Avatar"
+                />
+              </div>
+              <div class="flip-card-back">
+                <h1>John Doe</h1>
+                <p>Architect & Engineer</p>
+                <p>We love that guy</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center mt-2">
+        <div class="col-11">
+          <div class="row mt-3 justify-content-center">
+            <div class="col-auto">
+              <h2 class="type-name">Dogs</h2>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-12 cat-motivation">
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Quibusdam ab quis consequatur? Architecto obcaecati expedita
+                incidunt autem? Numquam tempore necessitatibus .
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 mb-5 col-md-5 col-sm-12">
+      <div class="row">
+        <div class="col-12">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img
+                  src="../../../../assets/images/discover/Conure-Image.jpg"
+                  alt="Avatar"
+                />
+              </div>
+              <div class="flip-card-back">
+                <h1>John Doe</h1>
+                <p>Architect & Engineer</p>
+                <p>We love that guy</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center mt-2">
+        <div class="col-11">
+          <div class="row mt-3 justify-content-center">
+            <div class="col-auto">
+              <h2 class="type-name">Birds</h2>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-12 cat-motivation">
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Quibusdam ab quis consequatur? Architecto obcaecati expedita
+                incidunt autem? Numquam tempore necessitatibus .
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 mb-5 col-md-5 col-sm-12">
+      <div class="row">
+        <div class="col-12">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img
+                  src="../../../../assets/images/kitten-jumping-landing-on-feet.jpg"
+                  alt="Avatar"
+                />
+              </div>
+              <div class="flip-card-back">
+                <h1>John Doe</h1>
+                <p>Architect & Engineer</p>
+                <p>We love that guy</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center mt-2">
+        <div class="col-11">
+          <div class="row mt-3 justify-content-center">
+            <div class="col-auto">
+              <h2 class="type-name">Cats</h2>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-12 cat-motivation">
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Quibusdam ab quis consequatur? Architecto obcaecati expedita
+                incidunt autem? Numquam tempore necessitatibus .
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="row justify-content-center mt-5">
-     
-      <!-- <div class="col-12" >
+    <!-- <div class="col-12" >
           <pagination-controls *ngIf="PostComments.length>0" class="my-pagination" (pageChange)="pageChanged($event)"></pagination-controls>
          </div> -->
-    </div>
+  </div>
 </div>

@@ -30,3 +30,88 @@
       animation: zoom 20s !important;
     }
 }
+$color-primary: #94c13d;
+$color-black: #111111;
+$color-gray: rgba(228, 228, 230, 0.836);
+$color-gray-light: #555;
+$color-gray-white: #f3f0f0;
+h2 {
+  color: $color-gray-light;
+  text-align: center;
+  margin-top: 2rem;
+  margin-right: 3.2rem;
+  font-weight: 600;
+}
+.btn {
+  &--irregular {
+    border-color: $color-primary;
+    background: $color-primary;
+    color: white;
+    border-radius: 15.5rem 4.5rem 22.5rem 7.5rem/1.5rem 12.5rem 1.5rem 15.5rem;
+    font-size: 1.2rem;
+    outline: none;
+    letter-spacing: 0.2px;
+    font-weight: 600;
+  }
+}
+.our-services {
+  position: relative;
+  z-index: 1;
+}
+
+.our-services__heading {
+  margin-bottom: 8rem;
+}
+
+.our-services__heading h2 {
+  color: $color-black;
+  margin-bottom: 0.8rem;
+  font-family: "Quicksand", sans-serif;
+  font-size: 4em;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.our-services__heading div i {
+  font-size: 3.5rem !important;
+}
+
+h3 {
+  font-family: "Quicksand", sans-serif;
+  font-size: 3em;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+ul.custom {
+  list-style: none;
+}
+
+ul.custom li {
+  padding: 0.5rem 0rem;
+  font-size: 1.4rem;
+  line-height: 2.5rem;
+}
+.border-double {
+  border: 1rem double $color-gray;
+}
+
+.banner-icon {
+  margin-top: 0.2rem;
+  margin-left: 0rem;
+  font-size: 1.4rem !important;
+}
+
+.service-icon {
+  color: $color-gray-light;
+  font-size: 8rem;
+}
+
+.service-box--icon {
+  display: flex;
+  justify-content: center;
+  height: 9rem;
+  margin-right: 6rem;
+}

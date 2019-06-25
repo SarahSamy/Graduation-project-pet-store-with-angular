@@ -1,3 +1,28 @@
+<head>
+    <style>
+      .my-pagination /deep/ .ngx-pagination li {
+        background-color: #eff0ec;
+        font-size: 1.2rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        margin: 0.2rem;
+      }
+  
+      .my-pagination /deep/ .ngx-pagination .current {
+        background: #94c13d;
+        font-size: 1.2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 1.1rem;
+        padding-bottom: 1.2rem;
+      }
+  
+      .my-pagination /deep/ .ngx-pagination .pagination-next,
+      .my-pagination /deep/ .ngx-pagination .pagination-previous {
+        background-color: #eff0ec;
+      }
+    </style>
+  </head>
 <div id="blog-home" class="page ">
   <div class="container-fluid no-gutters p-0 ">
     <div class="col-sm-12 banner-image ">
@@ -35,7 +60,7 @@
     <div class="row">
       <div class="col-lg-8">
         <p *ngIf="data.length == 0">error</p>
-        <app-post-item *ngFor="let post of filterData ? filterData : data" [post]="post"></app-post-item>
+        <app-post-item *ngFor="let post of filterData ? filterData : data | paginate: config" [post]="post"></app-post-item>
       </div>
       <div class="blog-sidebar bg-light-custom  h-50 border-irregular1 col-lg-3 ml-5 mt-3">
         <!-- <app-sidebar></app-sidebar> -->
@@ -48,6 +73,15 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-12" align="center">
+<<<<<<< HEAD
+       <pagination-controls *ngIf="filterData ? filterData>0 : data>0" class="my-pagination" (pageChange)="pageChanged($event)"></pagination-controls>
+=======
+       <pagination-controls  class="my-pagination" (pageChange)="pageChanged($event)"></pagination-controls>
+>>>>>>> ad4751235a1aee2ecdf0ef7f46239e54cb8f8a35
       </div>
     </div>
   </div>

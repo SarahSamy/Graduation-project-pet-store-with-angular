@@ -33,8 +33,8 @@ export class PostListingComponent implements OnInit {
     this.config = {
       itemsPerPage: 2,
       currentPage: 1,
-      totalItems: this.data.length
-    };
+      totalItems: (this.filterData?this.filterData.length:this.data.length),
+    }
   }
   pageChanged(event) {
     this.config.currentPage = event;
@@ -46,8 +46,13 @@ export class PostListingComponent implements OnInit {
   }
   filterPosts(tagId: number) {
     this.data = this.postService.getAll();
-    console.log(this.data);
+   
     this.data = this.postService.findPostByTag(tagId);
-    console.log(this.filterData);
+    this.config = {
+      itemsPerPage: 2,
+      currentPage: 1,
+      totalItems: (this.filterData?this.filterData.length:this.data.length),
+    }
+  
   }
 }

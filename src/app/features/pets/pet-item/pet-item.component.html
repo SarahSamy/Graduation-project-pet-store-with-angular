@@ -16,5 +16,8 @@
     <a class="edit" *ngIf="user && user.id == pet.userId ? true : false"
       ><i class="fa fa-edit " (click)="editButtonClick(pet.petId)"></i
     ></a>
+    <a class="delete" *ngIf="user ? user.id == pet.userId : false"
+      ><i class="fa fa-remove" (click)="removeClick.next()"></i>
+    </a>
   </div>
 </div>

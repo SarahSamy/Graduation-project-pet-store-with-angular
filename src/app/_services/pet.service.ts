@@ -20,9 +20,7 @@ export class PetService {
         },
         views: 2,
         userId: 3,
-        food: "bones,checken",
-        medicalCondition: "not infected by any disease",
-        parentHistoryAndType: "his parent also from same category"
+        isDeleted: false
       },
       {
         petId: 2,
@@ -38,7 +36,8 @@ export class PetService {
           type: { id: 2, name: "dog" }
         },
         views: 2,
-        userId: 3
+        userId: 3,
+        isDeleted: false
       },
       {
         petId: 3,
@@ -54,7 +53,8 @@ export class PetService {
           type: { id: 2, name: "dog" }
         },
         views: 2,
-        userId: 3
+        userId: 3,
+        isDeleted: false
       },
       {
         petId: 4,
@@ -70,7 +70,8 @@ export class PetService {
           type: { id: 2, name: "dog" }
         },
         views: 2,
-        userId: 3
+        userId: 3,
+        isDeleted: false
       },
       {
         petId: 5,
@@ -86,7 +87,8 @@ export class PetService {
           type: { id: 2, name: "dog" }
         },
         views: 2,
-        userId: 2
+        userId: 2,
+        isDeleted: false
       },
       {
         petId: 6,
@@ -102,7 +104,8 @@ export class PetService {
           type: { id: 2, name: "dog" }
         },
         views: 2,
-        userId: 3
+        userId: 3,
+        isDeleted: false
       },
       {
         petId: 7,
@@ -118,7 +121,8 @@ export class PetService {
           type: { id: 1, name: "Cat" }
         },
         views: 5,
-        userId: 3
+        userId: 3,
+        isDeleted: false
       },
       {
         petId: 8,
@@ -134,7 +138,8 @@ export class PetService {
           type: { id: 1, name: "Cat" }
         },
         views: 3,
-        userId: 3
+        userId: 3,
+        isDeleted: false
       },
       {
         petId: 9,
@@ -150,7 +155,8 @@ export class PetService {
           type: { id: 2, name: "Dog" }
         },
         views: 5,
-        userId: 2
+        userId: 2,
+        isDeleted: false
       },
       {
         petId: 10,
@@ -166,7 +172,8 @@ export class PetService {
           type: { id: 1, name: "Cat" }
         },
         views: 5,
-        userId: 2
+        userId: 2,
+        isDeleted: false
       },
       {
         petId: 11,
@@ -182,7 +189,8 @@ export class PetService {
           type: { id: 1, name: "Cat" }
         },
         views: 2,
-        userId: 3
+        userId: 3,
+        isDeleted: false
       },
       {
         petId: 12,
@@ -198,7 +206,8 @@ export class PetService {
           type: { id: 3, name: "Bird" }
         },
         views: 6,
-        userId: 3
+        userId: 3,
+        isDeleted: false
       },
       {
         petId: 13,
@@ -214,7 +223,8 @@ export class PetService {
           type: { id: 3, name: "Bird" }
         },
         views: 2,
-        userId: 3
+        userId: 3,
+        isDeleted: false
       },
       {
         petId: 14,
@@ -230,12 +240,16 @@ export class PetService {
           type: { id: 4, name: "Turtle" }
         },
         views: 2,
-        userId: 2
+        userId: 2,
+        isDeleted: false
       }
     ];
   }
   getAll(): Pet[] {
     return this.data;
+  }
+  getAllAdapted(): Pet[] {
+    return this.data.filter(p => p.isToAdapted === true);
   }
   getById(id: number): Pet {
     return this.data.find(pet => pet.petId === id);
@@ -248,30 +262,24 @@ export class PetService {
     // const i = this.data.indexOf(pet);
     const i = this.data.findIndex(p => p.petId === pet.petId);
     this.data[i] = pet;
-    console.log(this.data[i], i);
   }
   delete(id: number) {
-    const i = this.data.findIndex(p => p.petId === id);
-    this.data.splice(id, 1);
+    let i = this.data.find(p => p.petId === id);
+    // this.data.splice(id, 1);
+    i.isDeleted = true;
+    console.log(this.data);
   }
 
-  // getAllCats(): Pet[] {
-
-  //     return this.data.filter(t => t.category.type.id == 1)
-  // }
-  // getAllDogs(): Pet[] {
-
-  //     return this.data.filter(t => t.category.type.id == 2)
-  // }
-  // getAllBirds(): Pet[] {
-
-  //     return this.data.filter(t => t.category.type.id == 3)
-  // }
   getAllOthers(): Pet[] {
     return this.data.filter(t => t.category.fkTypeId > 3);
   }
   getByType(typeId: number): Pet[] {
     return this.data.filter(t => t.category.fkTypeId == typeId);
+  }
+  getByTypeAdapted(typeId: number): Pet[] {
+    return this.data.filter(
+      t => t.category.fkTypeId == typeId && t.isToAdapted == true
+    );
   }
   getByCategory(categoryId: number): Pet[] {
     return this.data.filter(t => t.category.type.id == categoryId);

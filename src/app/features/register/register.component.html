@@ -1,8 +1,8 @@
 <div class="container">
-	<form [formGroup]="registerForm" class="custom-form" action="">
+	
+	<form [formGroup]="registerForm" class="custom-form" (ngSubmit)="onSubmit()">
 		<div class="row no-gutters justify-content-end">
 			<div class="col-2 login-form__two-sides__inputs__exit">
-				<p> <i class="fas fa-times"></i></p>
 			</div>
 		</div>
 		<div class="row mx-4">
@@ -29,28 +29,39 @@
 				<div class="form-controls ">
 					<div class="form-group row ">
 						<label class="lable" for="">First Name</label>
-						<input type="text" class=" form-control text-box" type="text" placeholder="First Name" name="" id="">
+						<input type="text" formControlName="firstName" class=" form-control text-box" type="text" placeholder="First Name" name="" id="">
+					<span  class="input_error" *ngIf="!registerForm.get('firstName').valid && registerForm.get('firstName').touched">Please Enter a valid FirstName</span>
 					</div>
 
 					<div class="form-group row ">
 						<label class="lable" for="">Last Name</label>
-						<input type="text" class=" form-control text-box" placeholder="Last Name" name="" id="" />
+						<input type="text"formControlName="lastName" class=" form-control text-box" placeholder="Last Name" name="" id="" />
+						<span  class="input_error" *ngIf="!registerForm.get('lastName').valid && registerForm.get('lastName').touched" >Please Enter a valid LastName</span>
+					
 					</div>
 					<div class="form-group row ">
 						<label class="lable" for="">Your Email</label>
-						<input type="email" class=" form-control text-box" placeholder="Enter Your Email" name="" id="" />
+						<input type="email" formControlName="email" class=" form-control text-box" placeholder="Enter Your Email" name="" id="" />
+						<span class="input_error"  *ngIf="!registerForm.get('email').valid && registerForm.get('email').touched" >Please Enter a valid Email</span>
+					
 					</div>
 					<div class="form-group row ">
 						<label class="lable" for="">Password</label>
-						<input type="password" class=" form-control text-box" placeholder="Password" name="" id="" />
+						<input type="password" formControlName="password" class=" form-control text-box " placeholder="Password" name="" id="" />
+						<span class="input_error"  *ngIf="!registerForm.get('password').valid && registerForm.get('password').touched" >Please Enter a valid Password</span>
+					
 					</div>
 					<div class="form-group row ">
 						<label class="lable" for="">Confirmed Password</label>
-						<input type="password" class=" form-control text-box" placeholder="Confirmed Password" name="" id="" />
+						<input type="password" formControlName="confirmPassword" class=" form-control text-box" placeholder="Confirmed Password" name="" id="" />
+						<span class="input_error"  *ngIf="!registerForm.get('confirmPassword').valid && registerForm.get('confirmPassword').touched" >Please Enter a valid ConfirmPassword</span>
+					
 					</div>
 					<div class="form-group row ">
 						<label class="lable" for="">Birthdate</label>
-						<input type="date" class=" form-control text-box" name="" id="" />
+						<input type="date" formControlName="birthDate" class=" form-control text-box" name="" id="" />
+					<span  class="input_error" *ngIf="!registerForm.get('birthDate').valid && registerForm.get('birthDate').touched">Please Enter a valid birthDate</span>
+
 					</div>
 					<div class="form-group row ">
 
@@ -58,29 +69,26 @@
 							<label class="lable">Gender</label>
 						</div>
 					</div>
-					<div class="">
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked />
-							<label class="  form-check-label" for="gridRadios1">
-								Male
-							</label>
-						</div>
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-							<label class="form-check-label" for="gridRadios2">
-								Female
-							</label>
-						</div>
+					
+					<div class="form-check" *ngFor="let gender of genders">
+						<label class="form-check-label" for="gridRadios2">
+						<input class="form-check-input" formControlName="gender" type="radio" id="gridRadios2" [value]="gender" >
+						{{gender}}
+						</label>
 					</div>
+					
 				</div>
+				
+				<span class="input_error"  *ngIf="!registerForm.valid && registerForm.touched" >Please Enter a valid FormData</span>
 				<div class=" form-group row justify-content-end">
+					
+					<div class=" col-auto">
+						<button class="canclebtn" (mousedown)="Cancel()" id="button--cancel">Cancel</button>
+					</div>
+					<div class=" col-auto">
+						<button class="submitbtn" >Sign Up</button>
+					</div>
 
-					<div class=" col-auto">
-						<button href="#" id="button--cancel" class="">Cancel</button>
-					</div>
-					<div class=" col-auto">
-						<button href="#" class="">Sign Up</button>
-					</div>
 				</div>
 			</div>
 			<div class="col-sm-1">
@@ -88,3 +96,6 @@
 		</div>
 	</form>
 </div>
+
+
+

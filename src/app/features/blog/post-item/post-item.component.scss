@@ -53,3 +53,11 @@ h4 {
 .post-tag {
   font-size: 1.3rem;
 }
+
+div .text-overflow-elipses {
+  white-space: nowrap;
+  width: 60rem;
+  height: 5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

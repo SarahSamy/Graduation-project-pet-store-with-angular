@@ -2,6 +2,7 @@ import { Post } from "../_model/Post";
 
 export class PostsService {
   data: Post[];
+
   constructor() {
     this.data = [
       {
@@ -90,9 +91,15 @@ export class PostsService {
   getById(id: number): Post {
     return this.data.find(post => post.id === id);
   }
-  addPet(post: Post) {
+  addPost(post: Post) {
     post.id = this.data.length + 1;
+
     this.data.push(post);
+  }
+  findPostByTag(tagId: number): Post[] {
+    return this.getAll().filter(post => post.TagsId.includes(tagId));
+
+    console.log(this.data);
   }
   update(post: Post) {
     const i = this.data.findIndex(p => p.id === post.id);

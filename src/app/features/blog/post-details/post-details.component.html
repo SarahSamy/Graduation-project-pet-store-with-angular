@@ -40,9 +40,9 @@
 
                 <div class="col-sm-6 col-md-4  offset-1">
                     <ul class="clearfix">
-                        <li><a ><span class="fa fa-home"></span> Home /
+                        <li><a [routerLink]="'/Home'"><span class="fa fa-home"></span> Home /
                             </a></li>
-                        <li class="active new">News Details</li>
+                        <li class="active new">Blog /Details</li>
                     </ul>
                 </div>
             </div>
@@ -78,8 +78,8 @@
                             </div>
 
                         </div>
-                        <div class="col-sm-12 col-lg-7 post-paragrph">
-                            <p>
+                        <div class="col-sm-12 col-lg-7 post-paragrph align-items-center">
+                            <p class="text mt-2">
                                {{Post.body}}
                             </p>
                         </div>

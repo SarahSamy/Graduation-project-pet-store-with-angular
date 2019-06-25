@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { Tag } from "./../../../../_model/Tag";
 
 @Component({
@@ -8,6 +8,8 @@ import { Tag } from "./../../../../_model/Tag";
 })
 export class TagItemComponent implements OnInit {
   @Input() tag: Tag;
+  @Output() tagClick = new EventEmitter<any>();
+
   constructor() {}
 
   ngOnInit() {}

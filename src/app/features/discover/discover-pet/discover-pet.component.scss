@@ -83,6 +83,15 @@
   
   /* Style the back side */
   .flip-card-back {
+    p{
+      font-size: 1.2rem;
+      letter-spacing: 0.1rem;
+      padding: 0.2rem;
+    }
+    a{
+    color:white; 
+    text-decoration: none; 
+    }
     border-radius: 13%;
     background-color: #91bc3eed;
     //background-image: url("http://www.discoveranimals.org/uploads/general/cat.jpg");

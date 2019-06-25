@@ -50,5 +50,10 @@
         </div>
       </div>
     </div>
+    <div class="row mt-5">
+        <div class="col-12" align="center">
+       <pagination-controls *ngIf="filterData ? filterData>0 : data>0" class="my-pagination" (pageChange)="pageChanged($event)"></pagination-controls>
+      </div>
+    </div>
   </div>
 </div>

@@ -91,11 +91,14 @@
     transform: rotateY(180deg);
   }
   .type-name{
+    a{
     font-family: cursive;
     color: #94c13d;
     font-size: 2rem;
     line-height: 1.25;
     font-weight: bold;
+    text-decoration: none;
+  }
     
   }
   .cat-motivation{

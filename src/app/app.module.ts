@@ -91,16 +91,16 @@ import { ContactUsComponent } from './shared/contact-us/contact-us.component';
     ReplyItemComponent,
 
     DiscoverPetComponent,
-    ContactUsComponent
-  ]
-  //   DeleteModalComponent
-  // ],
-  // entryComponents: [
-  //   DeleteModalComponent,
-  //   DiscoverPetComponent
+    ContactUsComponent,
+ 
+    DeleteModalComponent
+  ],
+  entryComponents: [
+    DeleteModalComponent,
+    DiscoverPetComponent
 
-  // ],
-  ,
+  ],
+  
   imports: [
     ReactiveFormsModule,
     FormsModule,
@@ -130,7 +130,7 @@ import { ContactUsComponent } from './shared/contact-us/contact-us.component';
         pathMatch: "full"
       },
       { path: "pet-listing", component: PetListingComponent },
-      { path: "Animal-Types", component: AnimalTypesComponent },
+      { path: "discover/Animal-Types/:typeId", component: AnimalTypesComponent },
       { path: "Add-Animal", component: AddAnimalFormComponent },
       { path: "Edit-Animal/:id", component: AddAnimalFormComponent },
       { path: "pet-profile", component: PetProfileComponent },

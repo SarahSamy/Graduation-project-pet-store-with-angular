@@ -24,18 +24,18 @@
     </div>
   </div>
   <div class="row justify-content-center mt-5">
-    <div class="col-lg-4 mb-5  col-md-5 col-sm-12">
+    <div *ngFor="let type of data" class="col-lg-4 mb-5  col-md-5 col-sm-12">
       <div class="row">
         <div class="col-12">
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img src="../../../../assets/images/discover/kitten-jumping-landing-on-feet.jpg" alt="Avatar">
+                <img [src]="type.image"  alt="Avatar">
               </div>
               <div class="flip-card-back">
-                <h1>John Doe</h1>
-                <p>Architect & Engineer</p>
-                <p>We love that guy</p>
+                <h1><a [routerLink]="'Animal-types'"></a>{{type.name}}</h1>
+                <p>{{type.motivationText}}</p>
+             
               </div>
             </div>
           </div>
@@ -45,12 +45,12 @@
         <div class="col-11">
           <div class="row mt-3 justify-content-center">
             <div class="col-auto">
-              <h2 class="type-name"> Cats</h2>
+              <h2 class="type-name"> <a [routerLink]="['Animal-Types', type.id]">{{type.name}}</a></h2>
             </div>
           </div>
           <div class="row mt-2">
             <div class="col-12 cat-motivation">
-              <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam ab quis consequatur? Architecto obcaecati expedita incidunt autem? Numquam tempore necessitatibus 
+              <p>{{type.motivationText}} 
                 .</p>
             </div>
           </div>
@@ -58,108 +58,7 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-4 mb-5 col-md-5 col-sm-12">
-        <div class="row">
-          <div class="col-12">
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <img src="../../../../assets/images/discover/download.jpg" alt="Avatar">
-                </div>
-                <div class="flip-card-back">
-                  <h1>John Doe</h1>
-                  <p>Architect & Engineer</p>
-                  <p>We love that guy</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row justify-content-center mt-2">
-            <div class="col-11">
-              <div class="row mt-3 justify-content-center">
-                <div class="col-auto">
-                  <h2 class="type-name"> Dogs</h2>
-                </div>
-              </div>
-              <div class="row mt-2">
-                <div class="col-12 cat-motivation">
-                  <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam ab quis consequatur? Architecto obcaecati expedita incidunt autem? Numquam tempore necessitatibus
-                     .</p>
-                </div>
-              </div>
-    
-            </div>
-          </div>
-      </div>
-      <div class="col-lg-4 mb-5 col-md-5 col-sm-12">
-          <div class="row">
-            <div class="col-12">
-              <div class="flip-card">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <img src="../../../../assets/images/discover/Conure-Image.jpg" alt="Avatar">
-                  </div>
-                  <div class="flip-card-back">
-                    <h1>John Doe</h1>
-                    <p>Architect & Engineer</p>
-                    <p>We love that guy</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row justify-content-center mt-2">
-              <div class="col-11">
-                <div class="row mt-3 justify-content-center">
-                  <div class="col-auto">
-                    <h2 class="type-name"> Birds</h2>
-                  </div>
-                </div>
-                <div class="row mt-2">
-                  <div class="col-12 cat-motivation">
-                    <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam ab quis consequatur? Architecto obcaecati expedita incidunt autem? Numquam tempore necessitatibus 
-                     .</p>
-                  </div>
-                </div>
-      
-              </div>
-            </div>
-        </div>
-        <div class="col-lg-4 mb-5 col-md-5 col-sm-12">
-            <div class="row">
-              <div class="col-12">
-                <div class="flip-card">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                      <img src="../../../../assets/images/discover/kitten-jumping-landing-on-feet.jpg" alt="Avatar">
-                    </div>
-                    <div class="flip-card-back">
-                      <h1>John Doe</h1>
-                      <p>Architect & Engineer</p>
-                      <p>We love that guy</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row justify-content-center mt-2">
-              <div class="col-11">
-                <div class="row mt-3 justify-content-center">
-                  <div class="col-auto">
-                    <h2 class="type-name"> Cats</h2>
-                  </div>
-                </div>
-                <div class="row mt-2">
-                  <div class="col-12 cat-motivation">
-                    <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam ab quis consequatur? Architecto obcaecati expedita incidunt autem? Numquam tempore necessitatibus 
-                      .</p>
-                  </div>
-                </div>
-      
-              </div>
-            </div>
-          </div>
+  
   </div>
   <div class="row justify-content-center mt-5">
      

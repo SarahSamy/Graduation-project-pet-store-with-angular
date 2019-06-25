@@ -4,8 +4,6 @@ import { UserService } from "src/app/_services/user.service.service";
 import { User } from "src/app/_model/User";
 import { Tag } from "src/app/_model/Tag";
 import { TagService } from "src/app/_services/Tag.service";
-import { PostListingComponent } from "../post-listing/post-listing.component";
-import { PostsService } from "src/app/_services/Posts.service";
 import { CommentService } from "src/app/_services/Comment.service";
 
 @Component({

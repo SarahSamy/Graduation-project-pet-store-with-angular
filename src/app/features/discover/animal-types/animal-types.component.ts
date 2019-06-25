@@ -11,7 +11,7 @@ import { CategoryService } from "src/app/_services/category.service";
 import { Type } from "src/app/_model/type";
 import { Pet } from "src/app/_model/pet";
 import { PetService } from "src/app/_services/pet.service";
-import { Event, Router } from "@angular/router";
+import { Event, Router, ActivatedRoute } from "@angular/router";
 import { TypeService } from "src/app/_services/type.service";
 import { FormControl } from "@angular/forms";
 
@@ -30,14 +30,17 @@ export class AnimalTypesComponent implements OnInit {
   selectedCategoryPets: Pet[];
   displayed: any[];
   config: any;
+  route: ActivatedRoute;
 
   constructor(
     private typeService: TypeService,
     private categoryService: CategoryService,
     private petService: PetService,
-    private router: Router
+    private router: Router,
+    private _Activatedroute: ActivatedRoute
   ) {
-    this.selectedTypeId = 2; ///temporary till come from israa component
+    this.selectedTypeId  = +this._Activatedroute.snapshot.paramMap.get("typeId");
+   //= 2; ///temporary till come from israa component
   }
 
   // display categories of selected type and reset ddl values with each type select //

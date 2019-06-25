@@ -1,4 +1,4 @@
-<section class="AnimalDetails container-fluid ">
+<section class="AnimalDetails container-fluid mb-5 ">
   <div class="container   ">
     <div class="row  justify-content-around ">
       <!-- //category image -->
@@ -6,20 +6,21 @@
         <br />
         <div class="row  justify-content-md-center   ">
           <img
-            src="../../../../assets/images/bird2.jpg"
+            [attr.src]="category.image"
             alt=""
             class="img border-irregular1 border-double img-fade"
           />
         </div>
       </div>
       <!-- //category information -->
+      <div class="col-md-1 col-sm-12"></div>
 
       <div
-        class="col-md-6  mt-6 border-irregular1  bg-light-custom text-center category p-6 "
+        class="col-md-5  mt-6 border-irregular1  bg-light-custom text-center category p-6 "
       >
         <br />
         <h2 class="spanage-title img-fade  category_title ">
-          American English Coonhound
+          {{ category.name }}
         </h2>
         <br />
         <div class="row pl-5">
@@ -83,8 +84,14 @@
   </div>
 </section>
 
-<!-- //related animals -->
-<div class="row justify-content-center mb-4">
-  <h1 class="add-Green row-title add-Bold">Related Pets</h1>
+<div class="row mx-auto">
+  <div class="col-12" align="center">
+    <i class="fas fa-paw add-Green banner-icon mb-3 ml-5"></i>
+  </div>
 </div>
-<app-category-related-pets></app-category-related-pets>
+
+<!-- //related animals -->
+<div class="row justify-content-center mt-5">
+  <h1 class=" row-title ">Related Pets</h1>
+</div>
+<app-category-related-pets class="mt-5"></app-category-related-pets>

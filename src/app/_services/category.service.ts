@@ -177,4 +177,8 @@ export class CategoryService {
   getAll(): Category[] {
     return this.categories;
   }
+
+  getById(id: number): Category {
+    return this.categories.find(Category => Category.categoryId === id);
+  }
 }

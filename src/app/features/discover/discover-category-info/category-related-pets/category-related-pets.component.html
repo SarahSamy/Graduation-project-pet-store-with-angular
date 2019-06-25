@@ -1,19 +1,17 @@
 <div class="row justify-content-center mt-5">
-  <div class="col-lg-2 mb-5  col-md-2 col-sm-12">
+  <div *ngFor="let pet of relatedpets" class=" mb-5  col-md-2 col-sm-12">
     <div class="row">
       <div class="col-12">
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
-              <img
-                src="../../../../assets/images/kitten-jumping-landing-on-feet.jpg"
-                alt="Avatar"
-              />
+              <img [src]="pet.image" alt="Avatar" />
             </div>
             <div class="flip-card-back">
-              <h1>John Doe</h1>
-              <p>Architect & Engineer</p>
-              <p>We love that guy</p>
+              <h1>
+                <a [routerLink]="['pet-profile', pet.petId]">{{ pet.name }}</a>
+              </h1>
+              <h3>{{ pet.category.name }}</h3>
             </div>
           </div>
         </div>
@@ -23,94 +21,14 @@
       <div class="col-11">
         <div class="row mt-3 justify-content-center">
           <div class="col-auto">
-            <h2 class="type-name">Cats</h2>
+            <h2 class="type-name">
+              <a [routerLink]="['pet-profile', pet.petId]">{{ pet.name }}</a>
+            </h2>
           </div>
         </div>
-        <div class="row mt-2">
-          <div class="col-12 cat-motivation">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Quibusdam ab quis consequatur? Architecto obcaecati expedita
-              incidunt autem? Numquam tempore necessitatibus .
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-2 mb-5 col-md-2 col-sm-12">
-    <div class="row">
-      <div class="col-12">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img
-                src="../../../../assets/images/discover/download.jpg"
-                alt="Avatar"
-              />
-            </div>
-            <div class="flip-card-back">
-              <h1>John Doe</h1>
-              <p>Architect & Engineer</p>
-              <p>We love that guy</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row justify-content-center mt-2">
-      <div class="col-11">
-        <div class="row mt-3 justify-content-center">
-          <div class="col-auto">
-            <h2 class="type-name">Dogs</h2>
-          </div>
-        </div>
-        <div class="row mt-2">
-          <div class="col-12 cat-motivation">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Quibusdam ab quis consequatur? Architecto obcaecati expedita
-              incidunt autem? Numquam tempore necessitatibus .
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-2 mb-5 col-md-2 col-sm-12">
-    <div class="row">
-      <div class="col-12">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img
-                src="../../../../assets/images/discover/Conure-Image.jpg"
-                alt="Avatar"
-              />
-            </div>
-            <div class="flip-card-back">
-              <h1>John Doe</h1>
-              <p>Architect & Engineer</p>
-              <p>We love that guy</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row justify-content-center mt-2">
-      <div class="col-11">
-        <div class="row mt-3 justify-content-center">
-          <div class="col-auto">
-            <h2 class="type-name">Birds</h2>
-          </div>
-        </div>
-        <div class="row mt-2">
-          <div class="col-12 cat-motivation">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Quibusdam ab quis consequatur? Architecto obcaecati expedita
-              incidunt autem? Numquam tempore necessitatibus .
-            </p>
+        <div class="row mt-2 justify-content-center">
+          <div class="col-12 mt-4 cat-motivation">
+            <p class="mx-auto">{{ pet.category.name }} .</p>
           </div>
         </div>
       </div>

@@ -49,6 +49,7 @@ import { UpperHeaderComponent } from "./core/layout/header/upper-header/upper-he
 import { TagItemComponent } from "./features/blog/tags/tag-item/tag-item.component";
 import { TagListingComponent } from "./features/blog/tags/tag-listing/tag-listing.component";
 import { DiscoverPetComponent } from './features/discover/discover-pet/discover-pet.component';
+import { ContactUsComponent } from './shared/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -84,10 +85,12 @@ import { DiscoverPetComponent } from './features/discover/discover-pet/discover-
     EditProfileComponent,
     CardWithCoverComponent,
     ReplyItemComponent,
-    DiscoverPetComponent
+    DiscoverPetComponent,
+    ContactUsComponent
   ],
   imports: [
     ReactiveFormsModule,
+    FormsModule,
     BrowserModule,
     NgxPaginationModule,
     AppRoutingModule,
@@ -121,7 +124,8 @@ import { DiscoverPetComponent } from './features/discover/discover-pet/discover-
       { path: "Blog", component: PostListingComponent },
       { path: "Blog/Post-details/:id", component: PostDetailsComponent },
       { path: "Blog/add-post", component: AddPostComponent },
-      { path: "discover-pet", component: DiscoverPetComponent },
+      { path: "discover", component: DiscoverPetComponent },
+      { path: "contact-us", component: ContactUsComponent },
 
       {
         path: "**",

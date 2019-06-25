@@ -163,15 +163,7 @@ import { ContactUsComponent } from "./shared/contact-us/contact-us.component";
       }
     ])
   ],
-  providers: [
-    PetService,
-    TypeService,
-    CategoryService,
-    PostsService,
-    TagService,
-    CommentService,
-    ReplyService
-  ],
+  providers: [PetService, TypeService, CategoryService, PostsService, TagService, CommentService, ReplyService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

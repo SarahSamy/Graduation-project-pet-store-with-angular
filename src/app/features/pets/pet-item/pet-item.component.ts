@@ -23,12 +23,11 @@ import { DeleteModalComponent } from '../../../shared/delete-modal/delete-modal.
 
 
 @Component({
-  selector: 'pet-item',
-  templateUrl: './pet-item.component.html',
-  styleUrls: ['./pet-item.component.scss']
+  selector: "pet-item",
+  templateUrl: "./pet-item.component.html",
+  styleUrls: ["./pet-item.component.scss"]
 })
 export class PetItemComponent implements OnInit {
-
   @Input() pet: Pet;
  // @Input() data;
  @Output() removeClick= new EventEmitter<any>();
@@ -43,17 +42,17 @@ export class PetItemComponent implements OnInit {
     if(this.userService.loginUser){
       this.user=this.userService.loginUser;
       console.log(this.user);
-      this.userPet=this.petService.getByUserId(this.user.id);
+      this.userPet = this.petService.getByUserId(this.user.id);
       // return this.user
     }
-    console.log(this.pet);
+    // console.log(this.pet);
     // if (!this.data) {
     //   this.data = this.petService.getAll();
     //   return this.data
     // }
   }
   editButtonClick(PetId: Number) {
-    this.router.navigate(['Edit-Animal', PetId])
+    this.router.navigate(["Edit-Animal", PetId]);
   }
 
   // closeDialog():void{

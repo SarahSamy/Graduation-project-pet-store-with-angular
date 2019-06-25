@@ -1,0 +1,57 @@
+$color-primary: #94c13d;
+.banner-image {
+  background-image: url(../../../../assets/images/resources-slide.jpg);
+}
+.tags {
+  a {
+    color: #94c13d;
+  }
+  .first {
+    color: black;
+    text-decoration-line: underline;
+  }
+}
+
+.blog-path ul li,
+.blog-path ul a {
+  font-size: 1.6rem;
+  font-weight: 600;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.add-post-box label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  color: black;
+  font-weight: 600;
+}
+
+.form-control {
+  border: 0.14rem solid;
+  border-radius: 35.5rem 4.5rem 22.5rem 7.5rem/1.5rem 22.5rem 1.5rem 25.5rem;
+}
+.error_msg {
+  color: red;
+  font-size: 15px;
+}
+
+.btn {
+  &--irregular {
+    border-color: $color-primary;
+    background: $color-primary;
+    color: white !important;
+    border-radius: 15.5rem 4.5rem 22.5rem 7.5rem/1.5rem 12.5rem 1.5rem 15.5rem;
+    font-size: 1.4rem;
+    outline: none;
+    letter-spacing: 0.2px;
+    font-weight: 600;
+    color: #000;
+  }
+}
+
+.b {
+  display: flex;
+  justify-content: flex-end;
+}

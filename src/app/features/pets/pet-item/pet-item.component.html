@@ -13,7 +13,7 @@
     <a class="show" [routerLink]="['/pet-profile', pet.petId]"
       ><i class="fa fa-eye "></i
     ></a>
-    <a class="edit" *ngIf="user && user.id == pet.userId ? true : false"
+    <a class="edit" *ngIf="user ? user.id == pet.userId : false"
       ><i class="fa fa-edit " (click)="editButtonClick(pet.petId)"></i
     ></a>
     <a class="delete" *ngIf="user ? user.id == pet.userId : false"

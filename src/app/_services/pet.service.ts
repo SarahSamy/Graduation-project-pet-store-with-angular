@@ -234,7 +234,7 @@ export class PetService {
         isToAdapted: true,
         age: 2,
         category: {
-          categoryId: 12,
+          categoryId: 14,
           name: " Eastern",
           fkTypeId: 4,
           type: { id: 4, name: "Turtle" }

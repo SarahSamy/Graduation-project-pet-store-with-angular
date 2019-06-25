@@ -35,13 +35,17 @@ import { CommentItemComponent } from "./features/blog/comment-item/comment-item.
 import { PostDetailsComponent } from "./features/blog/post-details/post-details.component";
 import { PostItemComponent } from "./features/blog/post-item/post-item.component";
 import { PostListingComponent } from "./features/blog/post-listing/post-listing.component";
-import { ReplyItemComponent } from "./features/blog/reply-item/reply-item.component";
 import { SidebarComponent } from "./features/blog/sidebar/sidebar.component";
 import { AddAnimalFormComponent } from "./features/pets/add-animal-form/add-animal-form.component";
 import { PetItemComponent } from "./features/pets/pet-item/pet-item.component";
 import { PetListingComponent } from "./features/pets/pet-listing/pet-listing.component";
 import { PetProfileComponent } from "./features/pets/pet-profile/pet-profile.component";
 import { EditProfileComponent } from "./features/user/edit-profile/edit-profile.component";
+import { ReplyItemComponent } from "./features/blog/reply-item/reply-item.component";
+import { DeleteModalComponent } from './shared/delete-modal/delete-modal.component';
+import {MatDialogModule} from '@angular/material/dialog'; 
+import {MatButtonModule} from '@angular/material/button'; 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ManagePetsComponent } from "./features/user/manage-pets/manage-pets.component";
 import { FullHeaderComponent } from "./core/layout/header/full-header/full-header.component";
 import { LowerHeaderComponent } from "./core/layout/header/lower-header/lower-header.component";
@@ -85,15 +89,27 @@ import { ContactUsComponent } from './shared/contact-us/contact-us.component';
     EditProfileComponent,
     CardWithCoverComponent,
     ReplyItemComponent,
+
     DiscoverPetComponent,
     ContactUsComponent
-  ],
+  ]
+  //   DeleteModalComponent
+  // ],
+  // entryComponents: [
+  //   DeleteModalComponent,
+  //   DiscoverPetComponent
+
+  // ],
+  ,
   imports: [
     ReactiveFormsModule,
     FormsModule,
     BrowserModule,
     NgxPaginationModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatButtonModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
       {

@@ -33,7 +33,9 @@
     <title>navbar</title>
   </head>
   <body>
+    
     <app-full-header *ngIf="href != Login"></app-full-header>
+   
     <router-outlet></router-outlet>
     <!-- <pet-listing></pet-listing> -->
     <footer *ngIf="href != Login"></footer>

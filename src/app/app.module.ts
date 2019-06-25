@@ -44,6 +44,10 @@ import { EditProfileComponent } from "./features/user/edit-profile/edit-profile.
 import { CardWithCoverComponent } from "./shared/card-with-cover/card-with-cover.component";
 import { ReplyItemComponent } from "./features/blog/reply-item/reply-item.component";
 import { ReplyService } from "./_services/reply.service";
+import { DeleteModalComponent } from './shared/delete-modal/delete-modal.component';
+import {MatDialogModule} from '@angular/material/dialog'; 
+import {MatButtonModule} from '@angular/material/button'; 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -78,7 +82,11 @@ import { ReplyService } from "./_services/reply.service";
     CommentItemComponent,
     EditProfileComponent,
     CardWithCoverComponent,
-    ReplyItemComponent
+    ReplyItemComponent,
+    DeleteModalComponent
+  ],
+  entryComponents: [
+    DeleteModalComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -86,6 +94,9 @@ import { ReplyService } from "./_services/reply.service";
     // FormsModule,
     NgxPaginationModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatButtonModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
       {

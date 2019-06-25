@@ -3,6 +3,10 @@ import { Pet } from 'src/app/_model/pet';
 import { PetService } from 'src/app/_services/pet.service';
 import { TypeService } from 'src/app/_services/type.service';
 
+
+
+
+
 @Component({
   selector: 'pet-listing',
   templateUrl: './pet-listing.component.html',
@@ -116,9 +120,5 @@ export class PetListingComponent implements OnInit {
 
   }
 
-  myalert(text: string) {
-    alert(text);
-  }
-
-
+ 
 }

@@ -147,9 +147,12 @@ import { ContactUsComponent } from "./shared/contact-us/contact-us.component";
       { path: "Blog/Post-details/:id", component: PostDetailsComponent },
       { path: "Blog/add-post", component: AddPostComponent },
       { path: "discover", component: DiscoverPetComponent }, //alaa page best name discover i think
-      { path: "discover/Animal-Type/:typeId", component: AnimalTypesComponent }, //after come from alaa page [discover/cat]
       {
-        path: "discover/Animal-Type/category",
+        path: "discover/Animal-Types/:typeId",
+        component: AnimalTypesComponent
+      }, //after come from alaa page [discover/cat]
+      {
+        path: "discover/Animal-Type/:typeId/category/:categoryId",
         component: DiscoverCategoryComponent
       },
       { path: "contact-us", component: ContactUsComponent },

@@ -33,7 +33,7 @@
                 <img [src]="type.image"  alt="Avatar">
               </div>
               <div class="flip-card-back">
-                <h1><a [routerLink]="'Animal-types'"></a>{{type.name}}</h1>
+                <h1><a [routerLink]="['Animal-Types', type.id]">{{type.name}}</a></h1>
                 <p>{{type.motivationText}}</p>
              
               </div>

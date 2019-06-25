@@ -59,7 +59,7 @@ export class AnimalTypesComponent implements OnInit {
     );
     this.displayed = this.selectedTypeCategories;
     this.config = {
-      itemsPerPage:11,
+      itemsPerPage: 11,
       currentPage: 1,
       totalItems: this.displayed.length
     };
@@ -137,7 +137,7 @@ export class AnimalTypesComponent implements OnInit {
   //function to route pet to pet profile /or/ category to category info
   routePage(item) {
     if (!item.petId) {
-      this.router.navigate(["/pet-listing"]);
+      this.router.navigate(["/discover/Animal-Type/category", item.categoryId]);
     } else {
       this.router.navigate(["/pet-profile", item.petId]);
     }

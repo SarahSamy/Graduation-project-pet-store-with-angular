@@ -17,7 +17,7 @@ import { CategoryService } from "./_services/category.service";
 import { PetService } from "./_services/pet.service";
 import { ReplyService } from "./_services/reply.service";
 import { TypeService } from "./_services/type.service";
-import { AnimalTypesComponent } from "./features/animal-types/animal-types.component";
+import { AnimalTypesComponent } from "./features/discover/animal-types/animal-types.component";
 //import { DiscoverPetComponent } from "./features/discover/discover-pet.component";
 import { HomeComponent } from "./features/home/home.component";
 import { LoginComponent } from "./features/login/login.component";
@@ -42,18 +42,22 @@ import { PetListingComponent } from "./features/pets/pet-listing/pet-listing.com
 import { PetProfileComponent } from "./features/pets/pet-profile/pet-profile.component";
 import { EditProfileComponent } from "./features/user/edit-profile/edit-profile.component";
 import { ReplyItemComponent } from "./features/blog/reply-item/reply-item.component";
-import { DeleteModalComponent } from './shared/delete-modal/delete-modal.component';
-import {MatDialogModule} from '@angular/material/dialog'; 
-import {MatButtonModule} from '@angular/material/button'; 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { DeleteModalComponent } from "./shared/delete-modal/delete-modal.component";
+import { MatDialogModule } from "@angular/material/dialog";
+import { MatButtonModule } from "@angular/material/button";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ManagePetsComponent } from "./features/user/manage-pets/manage-pets.component";
 import { FullHeaderComponent } from "./core/layout/header/full-header/full-header.component";
 import { LowerHeaderComponent } from "./core/layout/header/lower-header/lower-header.component";
 import { UpperHeaderComponent } from "./core/layout/header/upper-header/upper-header.component";
 import { TagItemComponent } from "./features/blog/tags/tag-item/tag-item.component";
 import { TagListingComponent } from "./features/blog/tags/tag-listing/tag-listing.component";
-import { DiscoverPetComponent } from './features/discover/discover-pet/discover-pet.component';
-import { ContactUsComponent } from './shared/contact-us/contact-us.component';
+
+import { DiscoverPetComponent } from "./features/discover/discover-pet/discover-pet.component";
+import { DiscoverCategoryComponent } from "./features/discover/discover-category-info/discover-category/discover-category.component";
+import { CategoryRelatedPetsComponent } from "./features/discover/discover-category-info/category-related-pets/category-related-pets.component";
+
+import { ContactUsComponent } from "./shared/contact-us/contact-us.component";
 
 @NgModule({
   declarations: [
@@ -73,6 +77,9 @@ import { ContactUsComponent } from './shared/contact-us/contact-us.component';
     AddAnimalFormComponent,
     PetProfileComponent,
     DropdownComponent,
+    DiscoverPetComponent,
+    DiscoverCategoryComponent,
+    CategoryRelatedPetsComponent,
     MainSliderComponent,
     FourItemsSliderComponent,
     PetProfileComponent,
@@ -92,15 +99,11 @@ import { ContactUsComponent } from './shared/contact-us/contact-us.component';
 
     DiscoverPetComponent,
     ContactUsComponent,
- 
+
     DeleteModalComponent
   ],
-  entryComponents: [
-    DeleteModalComponent,
-    DiscoverPetComponent
+  entryComponents: [DeleteModalComponent, DiscoverPetComponent],
 
-  ],
-  
   imports: [
     ReactiveFormsModule,
     FormsModule,
@@ -130,7 +133,10 @@ import { ContactUsComponent } from './shared/contact-us/contact-us.component';
         pathMatch: "full"
       },
       { path: "pet-listing", component: PetListingComponent },
-      { path: "discover/Animal-Types/:typeId", component: AnimalTypesComponent },
+      {
+        path: "discover/Animal-Types/:typeId",
+        component: AnimalTypesComponent
+      },
       { path: "Add-Animal", component: AddAnimalFormComponent },
       { path: "Edit-Animal/:id", component: AddAnimalFormComponent },
       { path: "pet-profile", component: PetProfileComponent },
@@ -140,7 +146,12 @@ import { ContactUsComponent } from './shared/contact-us/contact-us.component';
       { path: "Blog", component: PostListingComponent },
       { path: "Blog/Post-details/:id", component: PostDetailsComponent },
       { path: "Blog/add-post", component: AddPostComponent },
-      { path: "discover", component: DiscoverPetComponent },
+      { path: "discover", component: DiscoverPetComponent }, //alaa page best name discover i think
+      { path: "discover/Animal-Type/:typeId", component: AnimalTypesComponent }, //after come from alaa page [discover/cat]
+      {
+        path: "discover/Animal-Type/category",
+        component: DiscoverCategoryComponent
+      },
       { path: "contact-us", component: ContactUsComponent },
 
       {
@@ -149,7 +160,15 @@ import { ContactUsComponent } from './shared/contact-us/contact-us.component';
       }
     ])
   ],
-  providers: [PetService, TypeService, CategoryService, PostsService, TagService, CommentService, ReplyService],
+  providers: [
+    PetService,
+    TypeService,
+    CategoryService,
+    PostsService,
+    TagService,
+    CommentService,
+    ReplyService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

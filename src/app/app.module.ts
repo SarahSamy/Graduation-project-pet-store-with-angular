@@ -47,6 +47,9 @@ import { LowerHeaderComponent } from "./core/layout/header/lower-header/lower-he
 import { UpperHeaderComponent } from "./core/layout/header/upper-header/upper-header.component";
 import { TagItemComponent } from "./features/blog/tags/tag-item/tag-item.component";
 import { TagListingComponent } from "./features/blog/tags/tag-listing/tag-listing.component";
+import { DiscoverPetComponent } from "./features/discover/discover-pet/discover-pet.component";
+import { ContactUsComponent } from "./shared/contact-us/contact-us.component";
+import { DeleteModalComponent } from "./shared/delete-modal/delete-modal.component";
 
 @NgModule({
   declarations: [
@@ -81,10 +84,19 @@ import { TagListingComponent } from "./features/blog/tags/tag-listing/tag-listin
     CommentItemComponent,
     EditProfileComponent,
     CardWithCoverComponent,
-    ReplyItemComponent
+
+    ReplyItemComponent,
+
+    DiscoverPetComponent,
+    ContactUsComponent,
+
+    DeleteModalComponent
   ],
+  entryComponents: [DeleteModalComponent, DiscoverPetComponent],
+
   imports: [
     ReactiveFormsModule,
+    FormsModule,
     BrowserModule,
     NgxPaginationModule,
     AppRoutingModule,
@@ -108,7 +120,7 @@ import { TagListingComponent } from "./features/blog/tags/tag-listing/tag-listin
         pathMatch: "full"
       },
       { path: "pet-listing", component: PetListingComponent },
-      { path: "Animal-Types", component: AnimalTypesComponent },
+      { path: "discover/Animal-Types/:typeId", component: AnimalTypesComponent },
       { path: "Add-Animal", component: AddAnimalFormComponent },
       { path: "Edit-Animal/:id", component: AddAnimalFormComponent },
       { path: "pet-profile", component: PetProfileComponent },
@@ -118,6 +130,8 @@ import { TagListingComponent } from "./features/blog/tags/tag-listing/tag-listin
       { path: "Blog", component: PostListingComponent },
       { path: "Blog/Post-details/:id", component: PostDetailsComponent },
       { path: "Blog/add-post", component: AddPostComponent },
+      { path: "discover", component: DiscoverPetComponent },
+      { path: "contact-us", component: ContactUsComponent },
 
       {
         path: "**",

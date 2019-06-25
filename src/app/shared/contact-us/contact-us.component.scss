@@ -1,0 +1,89 @@
+.banner-image {
+    background-image: url(../../../assets/images/resources-slide.jpg);
+  }
+  $color-primary: #94c13d;
+  .form-header{
+      h2{
+        font-family: 'Quicksand', sans-serif;
+        color: $color-primary;
+        font-size: 3.5rem;
+        font-weight: 700;
+      }
+      
+  }
+  .input-label{
+    color:#808080;
+    font-size: 1.8rem;
+  }
+  input{
+    height: 4.5rem;
+    border-radius: 35.5rem 4.5rem 22.5rem 7.5rem/1.5rem 22.5rem 1.5rem 25.5rem;
+    font-size: 1.4rem;
+    border: 0.2rem solid $color-primary;
+  }
+  textarea{
+     resize: none;
+    border-radius: 35.5rem 4.5rem 22.5rem 7.5rem/1.5rem 22.5rem 1.5rem 25.5rem;
+    font-size: 1.4rem;
+    border: 0.2rem solid $color-primary;  
+  }
+  .information-part{
+    max-height: 36rem;
+    padding: 3rem;
+    background: $color-primary;
+    border-radius: 35.5rem 4.5rem 22.5rem 7.5rem/1.5rem 22.5rem 1.5rem 25.5rem;
+  &__header{
+      color: white;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+     
+  }
+  &__text{
+      color:white;
+    font-family: "Quicksand", sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+
+  }
+ 
+    .input-submit{
+      height: auto;
+      color: #fff;
+      background: $color-primary;
+      font-size: 1.5rem;
+      padding: 1.5rem 2rem;
+      outline: none;
+      letter-spacing: 0.1rem;
+      font-family: 'Quicksand', sans-serif;
+      border-radius: 35.5rem 4.5rem 22.5rem 7.5rem/1.5rem 22.5rem 1.5rem 25.5rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .contacts{
+      margin-top: 7rem;
+      padding-left: 1rem;
+      &__email{
+        span{
+        color: white;
+        font-size: 1.7rem;
+        padding-left: 1rem;
+        }
+        i{
+          font-size: 1.5rem;
+          color: white;
+        }
+      }
+    }
+    .blog-path ul li,
+.blog-path ul a {
+  font-size: 1.6rem;
+  font-weight: 600;
+  &:hover {
+    text-decoration: none;
+  }
+}
+  

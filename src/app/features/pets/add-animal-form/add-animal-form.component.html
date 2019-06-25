@@ -1,14 +1,16 @@
 <div class=" container form-container">
-  <form [formGroup]="addAnimalForm" (ngSubmit)="onSubmit()" class="custom-form" id="add-animal-form">
+  <form
+    [formGroup]="addAnimalForm"
+    (ngSubmit)="onSubmit(categorySelect)"
+    class="custom-form"
+    id="add-animal-form"
+  >
     <div class="row">
-      <div class="col-4">
-      </div>
+      <div class="col-4"></div>
       <div class="col-6">
         <h1 class="form-title  m-auto">Add your Animal Information</h1>
       </div>
-      <div class="col-2">
-
-      </div>
+      <div class="col-2"></div>
     </div>
     <div class="row">
       <div class=" col-sm-12">
@@ -16,33 +18,55 @@
           <div class="row ">
             <div class="col-sm-12 col-md-6">
               <div class="form-group  ">
-                <input [formControlName]="'petId'" class="form-control text-box" type="hidden" />
+                <input
+                  [formControlName]="'petId'"
+                  class="form-control text-box"
+                  type="hidden"
+                />
               </div>
             </div>
           </div>
           <div class="row ">
             <div class="col-sm-12 col-md-6">
               <div class="form-group  ">
-                <label class="lable" for="">Name</label>
-                <input [formControlName]="'name'" class="form-control text-box" type="text" />
+                <label class="lable" for="">Name*</label>
+                <input
+                  [formControlName]="'name'"
+                  class="form-control text-box"
+                  type="text"
+                />
                 <!--pet Name validation-->
-                <span class="error_msg" *ngIf="!addAnimalForm.get('name').valid">
-                  <span *ngIf="addAnimalForm.get('name').errors&&addAnimalForm.get('name').touched">
-                    Pet Name should be only letters and minimum length(3) And maximum length(10)
-                  </span>
+                <span
+                  class="error_msg"
+                  *ngIf="
+                    addAnimalForm.get('name').errors &&
+                    !addAnimalForm.get('name').valid &&
+                    (addAnimalForm.get('name').touched || isSubmitted)
+                  "
+                >
+                  Pet Name should be only letters and minimum length(3) And
+                  maximum length(10)
                 </span>
               </div>
-
             </div>
             <div class=" col-sm-12 col-md-6">
               <div class="form-group   ">
-                <label class="lable" for="">Age</label>
-                <input [formControlName]="'age'" class=" form-control text-box" type="text" />
+                <label class="lable" for="">Age*</label>
+                <input
+                  [formControlName]="'age'"
+                  class=" form-control text-box"
+                  type="text"
+                />
                 <!--pet Age validation-->
-                <span class="error_msg" *ngIf="!addAnimalForm.get('age').valid">
-                  <span *ngIf="addAnimalForm.get('age').errors&&addAnimalForm.get('age').touched">
-                    Pet Age should be only numbers
-                  </span>
+                <span
+                  class="error_msg"
+                  *ngIf="
+                    addAnimalForm.get('age').errors &&
+                    !addAnimalForm.get('age').valid &&
+                    (addAnimalForm.get('age').touched || isSubmitted)
+                  "
+                >
+                  Pet Age should be only numbers and max(30)
                 </span>
               </div>
             </div>
@@ -51,33 +75,69 @@
           <div [formGroupName]="'category'" class="form-row ">
             <div class="col-sm-12 col-md-6">
               <div class="form-group ">
-                <label class="lable" for="">Type</label>
-                <select [formControlName]="'fkTypeId'" class=" form-control custom-select mb-3 form-drop_down"
-                  name="type" id="" required>
-                  <option *ngFor="let type of types" [value]="type.id">{{type.name}}</option>
+                <label class="lable" for="">Type*</label>
+                <select
+                  #typeSelect
+                  [formControlName]="'fkTypeId'"
+                  class=" form-control custom-select mb-3 form-drop_down"
+                  name="type"
+                  id=""
+                  (change)="displayTypeCategories(typeSelect.value)"
+                  required
+                >
+                  <option *ngFor="let type of types" [value]="type.id">{{
+                    type.name
+                  }}</option>
                 </select>
                 <!--pet Type validation-->
-                <span class="error_msg" *ngIf="!addAnimalForm.get('category').get('fkTypeId').valid">
-                  <span
-                    *ngIf="addAnimalForm.get('category').get('fkTypeId').errors&&addAnimalForm.get('category').get('fkTypeId').touched">
-                    you should select pet type
-                  </span>
+                <span
+                  class="error_msg"
+                  *ngIf="
+                    addAnimalForm.get('category').get('fkTypeId').errors &&
+                    !addAnimalForm.get('category').get('fkTypeId').valid &&
+                    (addAnimalForm.get('category').get('fkTypeId').touched ||
+                      isSubmitted)
+                  "
+                >
+                  you should select pet type
                 </span>
               </div>
             </div>
             <div class="col-sm-12 col-md-6">
               <div class="form-group">
-                <label class="lable" for="">Category</label>
-                <select [formControlName]="'categoryId'" class=" form-control custom-select mb-3 form-drop_down"
-                  name="category_name" id="">
-                  <option *ngFor="let Category of categories" [value]="Category.categoryId">{{Category.name}}</option>
+                <label class="lable" for=""
+                  >Category<span class="required">*</span></label
+                >
+                <select
+                  #categorySelect
+                  [formControlName]="'categoryId'"
+                  class=" form-control custom-select mb-3 form-drop_down"
+                  name="category_name"
+                  id=""
+                >
+                  <option
+                    *ngFor="let Category of selectedTypeCategories"
+                    [value]="Category.categoryId"
+                  >
+                    {{ Category.name }}</option
+                  >
                 </select>
+                <div>
+                  <span class="hint"
+                    >hint:you should select pet type first</span
+                  >
+                </div>
                 <!--pet category validation-->
-                <span class="error_msg" *ngIf="!addAnimalForm.get('category').get('categoryId').valid">
-                  <span
-                    *ngIf="addAnimalForm.get('category').get('categoryId').errors&&addAnimalForm.get('category').get('categoryId').touched">
-                    you should select pet type
-                  </span>
+                <span
+                  class="error_msg"
+                  *ngIf="
+                    addAnimalForm.get('category').get('categoryId').errors &&
+                    !addAnimalForm.get('category').get('categoryId').valid &&
+                    (addAnimalForm.get('category').get('categoryId').touched ||
+                      isSubmitted)
+                  "
+                >
+                  you should select pet category
                 </span>
               </div>
             </div>
@@ -85,23 +145,46 @@
           <div class="form-group form-row ">
             <div class="col-sm-12 col-md-6">
               <label class="lable" for="">Parents Types & History</label>
-              <textarea [formControlName]="'parentHistoryAndType'" class="form-control" name="" id="" cols="30"
-                rows="4"></textarea>
+              <textarea
+                [formControlName]="'parentHistoryAndType'"
+                class="form-control"
+                name=""
+                id=""
+                cols="30"
+                rows="4"
+              ></textarea>
               <!--pet Age validation-->
-              <span class="error_msg" *ngIf="!addAnimalForm.get('parentHistoryAndType').valid">
-                <span
-                  *ngIf="addAnimalForm.get('parentHistoryAndType').errors&&addAnimalForm.get('parentHistoryAndType').touched">
-                  you should enter animal's Parents Types & History
-                </span>
+              <span
+                class="error_msg"
+                *ngIf="
+                  addAnimalForm.get('parentHistoryAndType').errors &&
+                  !addAnimalForm.get('parentHistoryAndType').valid &&
+                  (addAnimalForm.get('parentHistoryAndType').touched ||
+                    isSubmitted)
+                "
+              >
+                you should enter animal's Parents Types & History
               </span>
             </div>
             <div class="col-sm-12 col-md-6">
               <label class="lable" for="">Food</label>
-              <textarea [formControlName]="'food'" class="form-control" name="" id="" cols="30" rows="4"></textarea>
-              <span class="error_msg" *ngIf="!addAnimalForm.get('food').valid">
-                <span *ngIf="addAnimalForm.get('food').errors&&addAnimalForm.get('food').touched">
-                  you should enter animal's Food
-                </span>
+              <textarea
+                [formControlName]="'food'"
+                class="form-control"
+                name=""
+                id=""
+                cols="30"
+                rows="4"
+              ></textarea>
+              <span
+                class="error_msg"
+                *ngIf="
+                  addAnimalForm.get('food').errors &&
+                  !addAnimalForm.get('food').valid &&
+                  (addAnimalForm.get('food').touched || isSubmitted)
+                "
+              >
+                you should enter animal's Food
               </span>
             </div>
           </div>
@@ -114,14 +197,23 @@
                 </div>
                 <div class="">
                   <div class="form-check">
-                    <input [formControlName]="'gender'" class="form-check-input" type="radio" [value]="'male'"
-                      [checked]="true">
+                    <input
+                      formControlName="gender"
+                      class="form-check-input"
+                      type="radio"
+                      [value]="'male'"
+                    />
                     <label class="form-check-label">
                       Male
                     </label>
                   </div>
                   <div class="form-check">
-                    <input [formControlName]="'gender'" class="form-check-input" type="radio" [value]="'female'">
+                    <input
+                      formControlName="gender"
+                      class="form-check-input"
+                      type="radio"
+                      [value]="'female'"
+                    />
                     <label class="form-check-label">
                       Female
                     </label>
@@ -136,15 +228,25 @@
                 </div>
                 <div class="">
                   <div class="form-check">
-                    <input [formControlName]="'isToAdapted'" class="form-check-input" type="radio" id="gridRadios1"
-                      [value]="true">
+                    <input
+                      [formControlName]="'isToAdapted'"
+                      class="form-check-input"
+                      type="radio"
+                      id="gridRadios1"
+                      [value]="true"
+                    />
                     <label class="form-check-label">
                       Yes
                     </label>
                   </div>
                   <div class="form-check">
-                    <input [formControlName]="'isToAdapted'" class="form-check-input" type="radio" id="gridRadios2"
-                      [value]="false" [checked]="true">
+                    <input
+                      [formControlName]="'isToAdapted'"
+                      class="form-check-input"
+                      type="radio"
+                      id="gridRadios2"
+                      [value]="false"
+                    />
                     <label class="form-check-label">
                       No
                     </label>
@@ -152,27 +254,45 @@
                 </div>
               </fieldset>
             </div>
-
-
           </div>
           <div class="form-group form-row ">
             <div class="col-sm-12 col-md-6">
               <label class="lable" for="">Medical Condition</label>
-              <textarea [formControlName]="'medicalCondition'" class="form-control" cols="30" rows="4"></textarea>
-              <span class="error_msg" *ngIf="!addAnimalForm.get('medicalCondition').valid">
-                <span
-                  *ngIf="addAnimalForm.get('medicalCondition').errors&&addAnimalForm.get('medicalCondition').touched">
-                  you should enter animal's Medical Condition
-                </span>
+              <textarea
+                [formControlName]="'medicalCondition'"
+                class="form-control"
+                cols="30"
+                rows="4"
+              ></textarea>
+              <span
+                class="error_msg"
+                *ngIf="
+                  addAnimalForm.get('medicalCondition').errors &&
+                  !addAnimalForm.get('medicalCondition').valid &&
+                  (addAnimalForm.get('medicalCondition').touched || isSubmitted)
+                "
+              >
+                you should enter animal's Medical Condition
               </span>
             </div>
             <div class="col-sm-12 col-md-6">
               <label class="lable" for="">Notes</label>
-              <textarea [formControlName]="'notes'" class="form-control" cols="30" rows="4"></textarea>
-              <span class="error_msg" *ngIf="!addAnimalForm.get('notes').valid">
-                <span *ngIf="addAnimalForm.get('notes').errors&&addAnimalForm.get('notes').touched">
-                  you should enter animal's Notes
-                </span>
+              <textarea
+                [formControlName]="'notes'"
+                class="form-control"
+                cols="30"
+                rows="4"
+              ></textarea>
+
+              <span
+                class="error_msg"
+                *ngIf="
+                  addAnimalForm.get('notes').errors &&
+                  !addAnimalForm.get('notes').valid &&
+                  (addAnimalForm.get('notes').touched || isSubmitted)
+                "
+              >
+                you should enter animal's Notes
               </span>
             </div>
           </div>
@@ -182,7 +302,7 @@
             <button id="button--cancel" class="  co-md-4">Cancel</button>
           </div>
           <button type="submit" class="">Save</button>
-          <div class="col-auto"> </div>
+          <div class="col-auto"></div>
         </div>
       </div>
     </div>

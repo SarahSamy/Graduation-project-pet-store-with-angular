@@ -25,23 +25,29 @@ export class ManagePetsComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.data = this.petService.data.filter(p => (p.petId == 5) || (p.petId == 6) || (p.petId == 9))
-    // this.images=this.data.map(p=>p.image)
+   
 
     if (this.userService.loginUser) {
       this.user=this.userService.loginUser;
-      this.data = this.petService.data.filter(p=>p.userId==this.user.id)
+      this.data = this.petService.data.filter(p=>p.userId==this.user.id);
+      if(this.data.length==0){
+        this.message = "you don't have pets.You can add your pets";
+      }
     }
-    else {
-      this.message = "you don't have pets.You can add your pets";
-    }
-    // this.user = this.userService.loginUser;
-
 
   }
   pageChanged(event) {
     this.config.currentPage = event;
 
   }
+
+  deletePet(id) {
+    this.petService.delete(id);
+    console.log(id);
+   
+      this.data = this.data.filter(p => p.isDeleted == false && p.isToAdapted === true)
+    }
+
+  
  
 }

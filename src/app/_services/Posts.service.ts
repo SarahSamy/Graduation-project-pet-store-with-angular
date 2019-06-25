@@ -2,6 +2,7 @@ import { Post } from "../_model/Post";
 
 export class PostsService {
   data: Post[];
+
   constructor() {
     this.data = [
       {
@@ -36,7 +37,7 @@ export class PostsService {
         body:
           "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
         userId: 1,
-        TagsId: [1, 2],
+        TagsId: [2],
         image: "../../../../assets/images/blog/adorable-animal-black-and-white-825947.jpg",
         time: "1:00pm",
         day: "10",
@@ -49,12 +50,38 @@ export class PostsService {
         body:
           "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
         userId: 2,
-        TagsId: [1, 2],
+        TagsId: [3],
         image: "../../../../assets/images/blog/adorable-animals-breed-374825.jpg",
         time: "10:00pm",
         day: "12",
         month: "DEC",
         year: "2013"
+      },
+      {
+        id: 5,
+        title: "How to Survive Giving Your Dog a Bath",
+        body:
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        userId: 2,
+        TagsId: [3],
+        image: "../../../../assets/images/blog/adorable-animals-breed-374825.jpg",
+        time: "3:40pm",
+        day: "1",
+        month: "DEC",
+        year: "2018"
+      },
+      {
+        id: 6,
+        title: "How to Survive Giving Your Dog a Bath",
+        body:
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        userId: 1,
+        TagsId: [4],
+        image: "../../../../assets/images/blog/adorable-animals-breed-374825.jpg",
+        time: "10:00pm",
+        day: "2",
+        month: "JAN",
+        year: "2019"
       }
     ];
   }
@@ -64,9 +91,15 @@ export class PostsService {
   getById(id: number): Post {
     return this.data.find(post => post.id === id);
   }
-  addPet(post: Post) {
+  addPost(post: Post) {
     post.id = this.data.length + 1;
+
     this.data.push(post);
+  }
+  findPostByTag(tagId: number): Post[] {
+    return this.getAll().filter(post => post.TagsId.includes(tagId));
+
+    console.log(this.data);
   }
   update(post: Post) {
     const i = this.data.findIndex(p => p.id === post.id);

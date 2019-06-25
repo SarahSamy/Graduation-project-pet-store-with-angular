@@ -1,0 +1,10 @@
+input.ng-invalid.ng-touched{
+    border:2px solid red;
+}
+.input_error
+{
+    color: red;
+    margin-top: 5px;
+    font-size: 14px;
+}
+.submitbtn:focus, .canclebtn:focus{outline:0 !important;}

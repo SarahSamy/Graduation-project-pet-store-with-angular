@@ -1,0 +1,233 @@
+<head>
+  <style>
+    .my-pagination /deep/ .ngx-pagination a {
+      outline: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .my-pagination /deep/ .ngx-pagination li {
+      background-color: #eff0ec;
+      font-size: 1.2rem;
+      padding: 1rem;
+      border-radius: 1rem;
+      margin: 0.2rem;
+    }
+
+    .my-pagination /deep/ .ngx-pagination .current {
+      background: #94c13d;
+      font-size: 1.2rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      padding-top: 1.1rem;
+      padding-bottom: 1.2rem;
+    }
+
+    .my-pagination /deep/ .ngx-pagination .pagination-next,
+    .my-pagination /deep/ .ngx-pagination .pagination-previous {
+      background-color: #eff0ec;
+    }
+  </style>
+</head>
+
+<!--Search Banner-->
+<section
+  class="search-banner text-white py-3 form-arka-plan  mb-5"
+  id="search-banner"
+>
+  <div class="container py-5 my-5">
+    <div class="row text-center pb-4">
+      <!--Banner Header-->
+      <div class="col-md-12">
+        <h1 class="text-white siyah-cerceve">Dogs</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card acik-renk-form">
+          <div class="card-body">
+            <div class="row justify-content-md-center mb-5">
+              <h2 class="title">
+                <i class=" title_fas fas fa-paw add-Green"></i>
+                Select Your Wanted Category First
+                <i class=" title_fas fas fa-paw add-Green"></i>
+              </h2>
+            </div>
+            <div class="row">
+              <!--select dropDown-->
+              <div class="col-md-3">
+                <div class="form-group ">
+                  <!-- iller -->
+                  <select
+                    #TypeSelect
+                    id=" select"
+                    class=" select form-control"
+                    (change)="
+                      displayTypeCategories(TypeSelect, ageSelect, genderSelect)
+                    "
+                    [value]="this.selectedTypeId"
+                  >
+                    <option value="0" selected>Select Type</option>
+                    <option *ngFor="let type of alltypes" [value]="type.id">
+                      {{ type.name }}</option
+                    >
+                  </select>
+                </div>
+              </div>
+              <!--select dropDown-->
+              <div class="col-md-3">
+                <div class="form-group ">
+                  <!-- iller -->
+                  <select
+                    #categorySelect
+                    id=" select"
+                    class=" select form-control"
+                  >
+                    <option value="0" selected>Select Category</option>
+                    <option
+                      *ngFor="let category of selectedTypeCategories"
+                      [value]="category.categoryId"
+                    >
+                      {{ category.name }}</option
+                    >
+                  </select>
+                </div>
+              </div>
+              <!--select dropDown-->
+              <div class=" col-md-3">
+                <div class="form-group ">
+                  <!-- ilceler -->
+                  <select
+                    #genderSelect
+                    id=" select"
+                    class="select form-control "
+                  >
+                    <option value="0" selected>Select Gender</option>
+                    <option value="A">All Gender</option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                  </select>
+                </div>
+              </div>
+              <!--select dropDown-->
+              <div class="col-md-3">
+                <div class="form-group ">
+                  <!-- arac-turu -->
+                  <select #ageSelect id="select" class="select form-control ">
+                    <option value="0" selected>Select age</option>
+                    <option value="1">All Ages</option>
+                    <option value="2">between 1-2 years old</option>
+                    <option value="3">between 3-5 years old</option>
+                    <option value="4">More than 6 years old</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!--Search -->
+            <div class="row">
+              <!--Search TextBox-->
+              <div class="col-md-9">
+                <div class="form-group ">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search for SomeThing else ?"
+                  />
+                </div>
+              </div>
+              <!--Search Btn-->
+              <div class="col col-md-3 ">
+                <button
+                  id="searchbtn"
+                  type="button"
+                  class="button"
+                  (click)="searchClick(categorySelect, genderSelect, ageSelect)"
+                >
+                  Search
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="Introduction--Box container-fluid mb-3">
+  <!-- Intoduction box component -->
+  <div class="container  Introduction--Box--info ">
+    <div class="row ">
+      <div class="col-md-auto justify-content-md-center  ">
+        <h1 class=" Introduction--Box--info__paragraph   text-center">
+          We have a range of pet information to help you look after your pet
+          which you can download or read online. If you can’t find what you are
+          looking for or you are concerned about your pet, we always recommend
+          that you contact your vet. Your pet might be entitled to veterinary
+          services through Blue Cross.
+        </h1>
+        <h2 class="Introduction--Box--info__Question text-center">
+          What animal are you seeking information for?
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Display Animal Types-->
+<section class="pets--box" *ngIf="displayed.length > 0">
+  <div class="container container-fluid ">
+    <div class="row justify-content-md-center   ">
+      <div class="pets--box--catalog justify-content-md-center   ">
+        <div class="row justify-content-center ">
+          <!--Animcal rounded Photo Crad-->
+          <div
+            *ngFor="let item of displayed | paginate: config"
+            class="col-lg-auto col-md-auto  col-md-3 col-sm-4 col-6 pets--box--catalog--info text-center  mb-5"
+            (click)="routePage(item)"
+          >
+            <img
+              class=" rounded-circle pets--box--catalog--info__photo"
+              [attr.src]="item.image"
+            />
+            <h4 class="">{{ item.name }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="pets--box" *ngIf="displayed.length < 1">
+  <div class="container">
+    <div class="row mt-5 mb-5 block-padding">
+      <div class="col-md-4 offset-md-1 ">
+        <img
+          src="../../../assets/images/angry.jpeg"
+          alt=""
+          class="center-block img-fluid float-right"
+        />
+      </div>
+      <div
+        class="col-md-5 h-50 ml-3  border-irregular1  bg-light-custom text-center p-6"
+      >
+        <h2 class="notFound-title">Your Selection is not added yet</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--PAGINATION-->
+<section class="container-fluid ">
+  <div class="row mt-5">
+    <div class="col-12" align="center">
+      <pagination-controls
+        *ngIf="displayed.length > 0"
+        class="my-pagination"
+        (pageChange)="pageChanged($event)"
+      >
+      </pagination-controls>
+    </div>
+  </div>
+</section>

@@ -1,4 +1,4 @@
-import { Category } from './category';
+import { Category } from "./category";
 export interface Pet {
     petId: number;
     name: string;
@@ -15,4 +15,5 @@ export interface Pet {
     notes?: string;
     views?: Number;
     userId:number;
+    isDeleted?:boolean;
 }

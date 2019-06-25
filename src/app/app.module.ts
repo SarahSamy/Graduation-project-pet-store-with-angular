@@ -53,6 +53,7 @@ import { UpperHeaderComponent } from "./core/layout/header/upper-header/upper-he
 import { TagItemComponent } from "./features/blog/tags/tag-item/tag-item.component";
 import { TagListingComponent } from "./features/blog/tags/tag-listing/tag-listing.component";
 import { DiscoverPetComponent } from './features/discover/discover-pet/discover-pet.component';
+import { ChoosePetComponent } from './features/choose-pet/choose-pet.component';
 
 @NgModule({
   declarations: [
@@ -88,7 +89,9 @@ import { DiscoverPetComponent } from './features/discover/discover-pet/discover-
     EditProfileComponent,
     CardWithCoverComponent,
     ReplyItemComponent,
-    DeleteModalComponent
+    DeleteModalComponent,
+    DiscoverPetComponent,
+    ChoosePetComponent
   ],
   entryComponents: [
     DeleteModalComponent,
@@ -133,7 +136,8 @@ import { DiscoverPetComponent } from './features/discover/discover-pet/discover-
       { path: "Blog/Post-details/:id", component: PostDetailsComponent },
       { path: "Blog/add-post", component: AddPostComponent },
       { path: "discover-pet", component: DiscoverPetComponent },
-
+      { path: "choose-pet", component: ChoosePetComponent },
+      
       {
         path: "**",
         component: NotFoundComponent

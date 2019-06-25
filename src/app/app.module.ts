@@ -18,7 +18,6 @@ import { PetService } from "./_services/pet.service";
 import { ReplyService } from "./_services/reply.service";
 import { TypeService } from "./_services/type.service";
 import { AnimalTypesComponent } from "./features/animal-types/animal-types.component";
-//import { DiscoverPetComponent } from "./features/discover/discover-pet.component";
 import { HomeComponent } from "./features/home/home.component";
 import { LoginComponent } from "./features/login/login.component";
 import { RegisterComponent } from "./features/register/register.component";
@@ -35,24 +34,19 @@ import { CommentItemComponent } from "./features/blog/comment-item/comment-item.
 import { PostDetailsComponent } from "./features/blog/post-details/post-details.component";
 import { PostItemComponent } from "./features/blog/post-item/post-item.component";
 import { PostListingComponent } from "./features/blog/post-listing/post-listing.component";
+import { ReplyItemComponent } from "./features/blog/reply-item/reply-item.component";
 import { SidebarComponent } from "./features/blog/sidebar/sidebar.component";
 import { AddAnimalFormComponent } from "./features/pets/add-animal-form/add-animal-form.component";
 import { PetItemComponent } from "./features/pets/pet-item/pet-item.component";
 import { PetListingComponent } from "./features/pets/pet-listing/pet-listing.component";
 import { PetProfileComponent } from "./features/pets/pet-profile/pet-profile.component";
 import { EditProfileComponent } from "./features/user/edit-profile/edit-profile.component";
-import { ReplyItemComponent } from "./features/blog/reply-item/reply-item.component";
-import { DeleteModalComponent } from './shared/delete-modal/delete-modal.component';
-import {MatDialogModule} from '@angular/material/dialog'; 
-import {MatButtonModule} from '@angular/material/button'; 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ManagePetsComponent } from "./features/user/manage-pets/manage-pets.component";
 import { FullHeaderComponent } from "./core/layout/header/full-header/full-header.component";
 import { LowerHeaderComponent } from "./core/layout/header/lower-header/lower-header.component";
 import { UpperHeaderComponent } from "./core/layout/header/upper-header/upper-header.component";
 import { TagItemComponent } from "./features/blog/tags/tag-item/tag-item.component";
 import { TagListingComponent } from "./features/blog/tags/tag-listing/tag-listing.component";
-import { DiscoverPetComponent } from './features/discover/discover-pet/discover-pet.component';
 
 @NgModule({
   declarations: [
@@ -87,21 +81,13 @@ import { DiscoverPetComponent } from './features/discover/discover-pet/discover-
     CommentItemComponent,
     EditProfileComponent,
     CardWithCoverComponent,
-    ReplyItemComponent,
-    DeleteModalComponent
-  ],
-  entryComponents: [
-    DeleteModalComponent,
-    DiscoverPetComponent
+    ReplyItemComponent
   ],
   imports: [
     ReactiveFormsModule,
     BrowserModule,
     NgxPaginationModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    MatDialogModule,
-    MatButtonModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
       {
@@ -132,7 +118,6 @@ import { DiscoverPetComponent } from './features/discover/discover-pet/discover-
       { path: "Blog", component: PostListingComponent },
       { path: "Blog/Post-details/:id", component: PostDetailsComponent },
       { path: "Blog/add-post", component: AddPostComponent },
-      { path: "discover-pet", component: DiscoverPetComponent },
 
       {
         path: "**",

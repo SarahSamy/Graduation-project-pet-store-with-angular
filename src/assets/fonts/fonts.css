@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Flaticon";
+  src: url("http://ingridkuhn.com/themes/woof!/fonts/flaticon/Flaticon.eot");
+  src: url("http://ingridkuhn.com/themes/woof!/fonts/flaticon/Flaticon.eot?#iefix") format("embedded-opentype"),
+    url("http://ingridkuhn.com/themes/woof!/fonts/flaticon/Flaticon.woff") format("woff"),
+    url("http://ingridkuhn.com/themes/woof!/fonts/flaticon/Flaticon.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

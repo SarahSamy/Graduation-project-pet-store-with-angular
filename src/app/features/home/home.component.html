@@ -1,58 +1,210 @@
 <!--------------------main slider-------------------------->
 <app-main-slider *ngIf="images">
-        <ngb-carousel >
-                <ng-template ngbSlide *ngFor= "let img of images">
-                  <img [src]="img" class="d-block w-100 " width="1260px" height="400px" alt="pet">
-
-                </ng-template>
-              
-              </ngb-carousel>
+  <ngb-carousel>
+    <ng-template ngbSlide *ngFor="let img of images">
+      <img [src]="img" class="d-block w-100 " width="1260px" height="400px" alt="pet" />
+    </ng-template>
+  </ngb-carousel>
 </app-main-slider>
 
 <!---------------------------------------------->
- <!-- Planning to Adopt a Pet? -->
- <div class="container">
-        <div class="row my-5">
-                <div class="col-md-12 text-center ">
-                        <img src="../../../assets/images/1810042.png" width="100rem"  height="40rem" alt="care">
-                        <h3>Planning to <span class="add-Green">Adopt</span> a Pet?</h3>
-                        <h5>Many pets are waiting for you </h5>
-                </div>
+<!-- Our Services -->
+<section id="services" class="our-services">
+  <div class="container">
+    <div class="our-services__heading text-center">
+      <div><i class="fas fa-paw add-Green banner-icon mb-3"></i></div>
+
+      <h2>Our Services</h2>
+    </div>
+    <div class="container block-padding pt-0">
+      <div class="row">
+        <div class="col-xl-6">
+          <h3>The best for your pet!</h3>
+          <p class="text">
+            Aliquam erat volutpat In id fermentum augue, ut pellentesque leo. Maecenas at arcu risus. Donec commodo sodales ex, scelerisque laoreet nibh
+            hendrerit id. In aliquet magna nec lobortis maximus. Etiam rhoncus leo a dolor placerat, nec elementum ipsum convall.
+          </p>
+          <p class="text"><strong>Etiam rhoncus leo a dolor placerat, nec elementum ipsum convall Maecenas at arcu risus scelerisque laoree.</strong></p>
+          <ul class="custom pl-0">
+            <li><i class="fas fa-paw add-Green banner-icon mr-2"></i>Aliquam erat volut pat.</li>
+            <li><i class="fas fa-paw add-Green banner-icon mr-2"></i>Ibu lum orci eget, viverra elit liquam erat volut pat phas ellus ac.</li>
+            <li><i class="fas fa-paw add-Green banner-icon mr-2"></i>Aliquam erat volut pat phas ellu</li>
+          </ul>
         </div>
+        <div class="col-xl-6">
+          <img
+            src="../../../assets/images/services.jpg"
+            alt=""
+            data-aos="fade-down"
+            data-aos-duration="1500"
+            class="img-fluid border-irregular1 border-double aos-init aos-animate"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="bg-light-custom block-padding border-irregular1">
+      <div id="owl-services" class="container owl-carousel owl-theme owl-loaded owl-drag">
+        <!--col-md-12  -->
+        <div class="owl-stage-outer">
+          <div class="owl-stage" style="transform: translate3d(-540px, 0px, 0px); transition: all 0.5s ease 0s; width: 1620px;">
+            <div class="owl-item active" style="width: 270px;">
+              <div class="col-md-12">
+                <div class="serviceBox">
+                  <!-- service icon -->
+                  <div class="service-icon">
+                    <i class="flaticon-people-1"></i>
+                  </div>
+                  <!-- service content -->
+                  <div class="service-content">
+                    <h2>Fun Activities</h2>
+                    <p class="text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dictum malesuada.
+                    </p>
+                    <a class="btn btn-primary " href="services-single.phtml">read more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="owl-item active" style="width: 270px;">
+              <div class="col-md-12">
+                <div class="serviceBox">
+                  <!-- service icon -->
+                  <div class="service-icon">
+                    <i class="flaticon-pet-shelter"></i>
+                  </div>
+                  <!-- service content -->
+                  <div class="service-content">
+                    <h2>Pet Hotel</h2>
+                    <p class="text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dictum malesuada.
+                    </p>
+                    <a class="btn btn-primary" href="services-single.phtml">read more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="owl-item active" style="width: 270px;">
+              <div class="col-md-12">
+                <div class="serviceBox">
+                  <!-- service icon -->
+                  <div class="service-box--icon mb-2">
+                    <img src="../../../assets/blogging.svg" alt="Kiwi standing on oval">
+                  </div>
+                  <!-- service content -->
+                  <div class="service-content">
+                    <h2>News about pets</h2>
+                    <p class="text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dictum malesuada.
+                    </p>
+                    <a class="btn btn--irregular" [routerLink]="'/Blog'">read more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="owl-item active" style="width: 270px;">
+              <div class="col-md-12">
+                <div class="serviceBox">
+                  <!-- service icon -->
+                 <div class="service-box--icon mb-2">
+                    <img src="../../../assets/pet (1).svg" alt="Kiwi standing on oval">
+                  </div>
+                  <!-- service content -->
+                  <div class="service-content">
+                    <h2>Surf pets categories</h2>
+                    <p class="text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dictum malesuada.
+                    </p>
+                    <a class="btn btn--irregular" [routerLink]="'/Animal-Types'">read more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="owl-item active" style="width: 270px;">
+              <div class="col-md-12">
+                <div class="serviceBox">
+                  <!-- service icon -->
+                                <div class="service-box--icon mb-2">
+                    <img src="../../../assets/veterinary.svg" alt="Kiwi standing on oval">
+                  </div>
+                  <!-- service content -->
+                  <div class="service-content">
+                    <h2>Vaccines</h2>
+                    <p class="text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dictum malesuada.
+                    </p>
+                    <a class="btn btn--irregular" href="services-single.phtml">read more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="owl-item active" style="width: 270px;">
+              <div class="col-md-12">
+                <div class="serviceBox">
+                  <div class="service-box--icon mb-2">
+                    <img src="../../../assets/family-group-of-father-and-mother-with-two-babies-and-a-dog.svg" alt="Kiwi standing on oval">
+                  </div>
+                  <div class="service-content">
+                    <h2>Pet Hosting</h2>
+                    <p class="text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dictum malesuada.
+                    </p>
+                    <a class="btn btn--irregular p-2" [routerLink]="'/pet-listing'">read more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- /owl-services -->
+    </div>
+    <!-- /bg-light-custom -->
+  </div>
+  <!-- /container -->
+</section>
+
+<!--------------------------------------->
+<!---------------------------------------------->
+<!-- Planning to Adopt a Pet? -->
+<div class="container">
+  <div class="row my-5">
+    <div class="col-md-12 text-center ">
+      <img src="../../../assets/images/1810042.png" width="100rem" height="40rem" alt="care" />
+      <h3>Planning to <span class="add-Green">Adopt</span> a Pet?</h3>
+      <h5>Many pets are waiting for you</h5>
+    </div>
+  </div>
 </div>
 
 <!--------------------------------------------->
 <card-with-cover></card-with-cover>
 
-
 <!--  Pets Available for Adoption -->
 <div class="container">
-        <div class="row my-5">
-                <div class="col-md-12 text-center ">
-                        <img src="../../../assets/images/1810042.png" width="100rem"  height="40rem" alt="care">
-                        <a href="#"><h3><span class="add-Green">Pets Available for Adoption</span> </h3></a>
-                        <h5>Many pets are waiting for you </h5>
-                </div>
-        </div>
+  <div class="row my-5">
+    <div class="col-md-12 text-center ">
+      <img src="../../../assets/images/1810042.png" width="100rem" height="40rem" alt="care" />
+      <a href="#">
+        <h3><span class="add-Green">Pets Available for Adoption</span></h3>
+      </a>
+      <h5>Many pets are waiting for you</h5>
+    </div>
+  </div>
 </div>
-
-
 
 <!------------------------------------->
 <div class="container">
-    <div class="row justify-content-center my-4">
-            <div *ngFor="let newpet of  data "  class="col-md-4  " >
-        
-                    <pet-item  [pet]= 'newpet'></pet-item>
-                  
-                </div>
-
+  <div class="row justify-content-center my-4">
+    <div *ngFor="let newpet of data" class="col-md-4  ">
+      <pet-item [pet]="newpet"></pet-item>
     </div>
+  </div>
 </div>
 
 
 <!---------------------------------------------->
-  <!-- <ng-template ngbSlide>
+<!-- <ng-template ngbSlide>
                   <img [src]="images[1]" class="d-block w-100 " width="1260px" height="400px" alt="pet">
 
                 </ng-template>
@@ -60,3 +212,4 @@
                   <img [src]="images[2]" class="d-block w-100 " width="1260px" height="400px" alt="pet">
 
                 </ng-template> -->
+

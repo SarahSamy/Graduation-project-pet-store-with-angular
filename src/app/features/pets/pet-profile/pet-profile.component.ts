@@ -1,7 +1,7 @@
 import { Component, OnInit ,Input} from '@angular/core';
 import { PetService } from 'src/app/_services/pet.service';
 import { Pet } from 'src/app/_model/pet';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { Category } from 'src/app/_model/category';
 import { CategoryService } from 'src/app/_services/category.service';
 
@@ -18,7 +18,7 @@ export class PetProfileComponent implements OnInit {
   petId
 
 
-  constructor( cat:CategoryService ,private petService:PetService, private route: ActivatedRoute) {
+  constructor( cat:CategoryService ,private petService:PetService, private route: ActivatedRoute,private router: Router) {
 this.categoryService=cat;
    }
 
@@ -30,9 +30,10 @@ this.categoryService=cat;
   
     if (!this.data) {
       this.data = this.petService.getById(Number(this.petId));
-      
+     if (!this.data){this.router.navigate(['/not-found'])}
      // this.category=this.categoryService.getById(this.data.ca)
-     return this.data
+     else{
+     return this.data}
     }
   }
 

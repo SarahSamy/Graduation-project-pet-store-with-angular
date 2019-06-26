@@ -79,9 +79,11 @@
               <div class="col-md-9">
                 <div class="form-group ">
                   <input
+                  #search
+                  (keyup)="searchFilter(search,categorySelect)"
                     type="text"
                     class="form-control"
-                    placeholder="Search for SomeThing else ?"
+                    placeholder="Search .. "
                   />
                 </div>
               </div>

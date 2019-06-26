@@ -15,7 +15,7 @@ export class AppComponent {
   constructor(private router: Router) {}
   ngOnInit() {
     this.href = this.router.url;
-    console.log(this.router.url);
+   
   }
 
  

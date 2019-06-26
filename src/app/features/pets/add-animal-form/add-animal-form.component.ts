@@ -137,7 +137,6 @@ export class AddAnimalFormComponent implements OnInit {
   }
   displayTypeCategories(typeSelect) {
     let selectedTypeId = +typeSelect;
-    // console.log(selectedTypeId);
     this.selectedTypeCategories = this.categories.filter(
       c => c.fkTypeId === selectedTypeId
     );

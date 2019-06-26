@@ -51,6 +51,9 @@ $color-primary: #94c13d;
   }
 }
 
+textarea {
+  resize: none;
+}
 .b {
   display: flex;
   justify-content: flex-end;

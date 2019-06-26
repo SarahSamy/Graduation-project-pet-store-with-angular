@@ -100,13 +100,13 @@ export class PetListingComponent implements OnInit {
 
   deletePet(id) {
     this.petService.delete(id);
-    console.log(id);
+   
     if (!this.flag) {
       this.data = this.petService.data.filter(p => p.isDeleted == false && p.isToAdapted === true)
     }
     else {
       this.data = this.dataByType.filter(p => p.isDeleted == false && p.isToAdapted === true);
-      console.log(this.data)
+     
     }
     this.getMostViews();
   }

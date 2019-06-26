@@ -27,7 +27,6 @@ export class PostItemComponent implements OnInit {
   }
   ngOnInit() {
     this.postUser = this.userService.getById(this.post.userId);
-    // console.log(this.post);
     this.username = this.postUser.firstName;
     this.postCommentsCount = this.commentService.getByPostId(this.post.id).length;
     this.postTags = this.tagService.getTagsByPostId(this.post.id);

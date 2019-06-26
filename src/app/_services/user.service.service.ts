@@ -18,8 +18,7 @@ export class UserService {
         email: "alaaebrahim336@gmail.com",
         password: "123456",
         userGroupId: 1,
-        image:
-          "../../../../assets/images/comments/John-Amaechi-OBE_portraitfeatured.jpg",
+        image: "../../../../assets/images/comments/John-Amaechi-OBE_portraitfeatured.jpg",
         cover: "../../../../assets/images/doc1.jpg"
       },
       {
@@ -45,9 +44,7 @@ export class UserService {
     ];
   }
   SearchForUser(email: string, password: string): User {
-    return (this.loginUser = this.data.find(
-      u => u.email === email && u.password == password
-    ));
+    return (this.loginUser = this.data.find(u => u.email === email && u.password == password));
   }
   getAll(): User[] {
     return this.data;

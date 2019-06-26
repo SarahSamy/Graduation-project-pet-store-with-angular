@@ -3,11 +3,33 @@ $color-primary: #94c13d;
   &--irregular {
     border-color: $color-primary;
     background: $color-primary;
-    color: white;
+    color: white !important;
     border-radius: 15.5rem 4.5rem 22.5rem 7.5rem/1.5rem 12.5rem 1.5rem 15.5rem;
     font-size: 1.2rem;
     outline: none;
     letter-spacing: 0.2px;
     font-weight: 600;
+  }
+}
+
+.banner-image {
+  background-image: url(../../../../assets/images/resources-slide.jpg);
+}
+.tags {
+  a {
+    color: #94c13d;
+  }
+  .first {
+    color: black;
+    text-decoration-line: underline;
+  }
+}
+
+.blog-path ul li,
+.blog-path ul a {
+  font-size: 1.6rem;
+  font-weight: 600;
+  &:hover {
+    text-decoration: none;
   }
 }

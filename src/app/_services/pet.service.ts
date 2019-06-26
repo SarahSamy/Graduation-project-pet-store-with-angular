@@ -265,9 +265,8 @@ export class PetService {
   }
   delete(id: number) {
     let i = this.data.find(p => p.petId === id);
-    // this.data.splice(id, 1);
     i.isDeleted = true;
-    console.log(this.data);
+  
   }
 
   getAllOthers(): Pet[] {

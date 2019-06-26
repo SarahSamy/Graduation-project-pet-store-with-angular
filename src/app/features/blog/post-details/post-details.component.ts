@@ -87,13 +87,12 @@ export class PostDetailsComponent implements OnInit {
   }
   this.addCommentForm.reset();}
   else{
-    console.log(this.addCommentForm.get('comment').errors);
+   
     Object.keys(this.addCommentForm.controls).forEach(key => {
 
       const controlErrors: ValidationErrors = this.addCommentForm.get(key).errors;
       if (controlErrors != null) {
             Object.keys(controlErrors).forEach(keyError => {
-              console.log('Key control: ' + key + ', keyError: ' + keyError + ', err value: ', controlErrors[keyError]);
             });
           }
         });

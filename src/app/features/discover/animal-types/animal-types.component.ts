@@ -1,8 +1,4 @@
-import {
-  Component,
-  OnInit,
-
-} from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Category } from "src/app/_model/category";
 import { CategoryService } from "src/app/_services/category.service";
 import { Type } from "src/app/_model/type";
@@ -10,7 +6,6 @@ import { Pet } from "src/app/_model/pet";
 import { PetService } from "src/app/_services/pet.service";
 import { Router, ActivatedRoute } from "@angular/router";
 import { TypeService } from "src/app/_services/type.service";
-
 
 @Component({
   selector: "app-animal-types",
@@ -79,9 +74,8 @@ export class AnimalTypesComponent implements OnInit {
     if (selectedCategory) {
       this.selectedCategoryPets = this.allPets.filter(
         pet => pet.category.categoryId == selectedCategory
-
       );
-      this.displayed=this.selectedCategoryPets;
+      this.displayed = this.selectedCategoryPets;
       // display pets of selected gender//
       let selectedGender = genderSelect.value;
       if (selectedGender) {
@@ -121,9 +115,7 @@ export class AnimalTypesComponent implements OnInit {
               return pet;
           }
         });
-
       }
-
     }
     this.config = {
       itemsPerPage: 11,
@@ -140,12 +132,14 @@ export class AnimalTypesComponent implements OnInit {
     }
   }
   searchFilter(search: HTMLInputElement, categorySelect: HTMLSelectElement) {
-    if (categorySelect.value == '0') {
-      this.displayed = this.selectedTypeCategories.filter(cat => cat.name.toLowerCase().includes(search.value.toLowerCase()))
-    }
-    else{
-      this.displayed = this.selectedCategoryPets.filter(pet => pet.name.toLowerCase().includes(search.value.toLowerCase()))
-
+    if (categorySelect.value == "0") {
+      this.displayed = this.selectedTypeCategories.filter(cat =>
+        cat.name.toLowerCase().includes(search.value.toLowerCase())
+      );
+    } else {
+      this.displayed = this.selectedCategoryPets.filter(pet =>
+        pet.name.toLowerCase().includes(search.value.toLowerCase())
+      );
     }
   }
 }

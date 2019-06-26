@@ -23,3 +23,11 @@
             outline: 0;
         
         }
+        .blog-path ul li,
+.blog-path ul a {
+  font-size: 1.6rem;
+  font-weight: 600;
+  &:hover {
+    text-decoration: none;
+  }
+}

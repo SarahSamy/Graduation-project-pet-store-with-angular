@@ -18,7 +18,14 @@ export class ManagePetsComponent implements OnInit {
   loginUser: User;
 
   constructor(private userService: UserService, private petService: PetService) {
-    this.loginUser = this.userService.loginUser;
+   
+    if (this.userService.loginUser) {
+      this.user=this.userService.loginUser;
+      this.data = this.petService.data.filter(p=>p.userId==this.user.id);
+      if(this.data.length==0){
+        this.message = "you don't have pets.You can add your pets";
+      }
+    }
     this.config = {
       itemsPerPage: 3,
       currentPage: 1,
@@ -46,7 +53,7 @@ export class ManagePetsComponent implements OnInit {
 
   deletePet(id) {
     this.petService.delete(id);
-    console.log(id);
+ 
    
       this.data = this.data.filter(p => p.isDeleted == false && p.isToAdapted === true)
     }

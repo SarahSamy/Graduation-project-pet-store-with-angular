@@ -41,7 +41,7 @@ export class PetItemComponent implements OnInit {
     
     if(this.userService.loginUser){
       this.user=this.userService.loginUser;
-      console.log(this.user);
+     
       this.userPet = this.petService.getByUserId(this.user.id);
       // return this.user
     }

@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   data: Pet []
   constructor(private petService: PetService) {
     if(!this.images){
-      this.images=["../../../assets/images/care1.jpg","../../../assets/images/care3.jpg","../../../assets/images/care4.jpg"]
+      this.images=["../../../assets/images/care5.jpg","../../../assets/images/care6.jpg","../../../assets/images/care7.png"]
      }
      if(!this.data){
       this.data=this.petService.getMostViews().slice(0,3)

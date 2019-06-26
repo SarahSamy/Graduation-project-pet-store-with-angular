@@ -14,12 +14,6 @@ export class DeleteModalComponent implements OnInit {
   ngOnInit() {
   }
   onNoClick(): void {
-  //   @ViewChild('#no').addEventListener('mousedown', e => {
-  //     e.stopPropagation()
-  
-    
-  // })
-  
   this.dialogRef.close();
 }
 

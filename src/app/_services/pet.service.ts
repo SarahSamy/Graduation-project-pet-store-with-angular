@@ -161,7 +161,7 @@ export class PetService {
       {
         petId: 10,
         name: "Browny",
-        image: "assets/images/cat4.jpg",
+        image: "assets/images/cat8.jpg",
         gender: "female",
         isToAdapted: true,
         age: 2,

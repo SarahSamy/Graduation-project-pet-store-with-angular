@@ -3,6 +3,7 @@ import { UserService } from 'src/app/_services/user.service.service';
 import { Pet } from 'src/app/_model/pet';
 import { PetService } from 'src/app/_services/pet.service';
 import { User } from 'src/app/_model/User';
+import { Router } from "@angular/router"
 
 @Component({
   selector: 'manage-pets',
@@ -17,21 +18,25 @@ export class ManagePetsComponent implements OnInit {
   user: User;
   loginUser: User;
 
-  constructor(private userService: UserService, private petService: PetService) {
-   
+  constructor(private userService: UserService, private petService: PetService,private router: Router) {
+   this.loginUser=this.userService.loginUser;
     if (this.userService.loginUser) {
       this.user=this.userService.loginUser;
       this.data = this.petService.data.filter(p=>p.userId==this.user.id);
+      this.config = {
+        itemsPerPage: 3,
+        currentPage: 1,
+        
+         totalItems: this.data.length
+      }
       if(this.data.length==0){
         this.message = "you don't have pets.You can add your pets";
       }
     }
-    this.config = {
-      itemsPerPage: 3,
-      currentPage: 1,
-      
-       totalItems: this.data.length
+    else{
+      this.router.navigate(['/Login']);
     }
+   
   }
 
   ngOnInit() {

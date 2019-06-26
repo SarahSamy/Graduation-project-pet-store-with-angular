@@ -62,7 +62,7 @@
   </div>
   
 </div>
-<div class="row mt-5" *ngIf="relatedpets>0">
+<div class="row mt-5" *ngIf="relatedpets.length>0">
     <div class="col-12" align="center">
    <pagination-controls *ngIf="relatedpets.length>0" class="my-pagination" (pageChange)="pageChanged($event)"></pagination-controls>
   </div>

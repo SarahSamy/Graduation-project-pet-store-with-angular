@@ -49,7 +49,7 @@ export class AddPostComponent implements OnInit {
     this.tags = this.TagService.getAll();
   }
   onSubmit() {
-    if (this.addPostForm.valid) {
+    if (this.addPostForm.valid && this.loginUser) {
       this.newPost.body = (this.addPostForm.get("body") as FormControl).value;
       this.newPost.title = (this.addPostForm.get("title") as FormControl).value;
       this.newPost.id = this.id;

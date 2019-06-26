@@ -12,11 +12,17 @@ import { PetService } from "src/app/_services/pet.service";
 export class CategoryRelatedPetsComponent implements OnInit {
   category: Category;
   relatedpets: Pet[];
+  config: any;
   constructor(
     private petService: PetService,
     private activatedroute: ActivatedRoute
-  ) {}
+  ) {
 
+   
+  }
+  pageChanged(event){
+    this.config.currentPage = event;
+  }
   ngOnInit() {
     this.activatedroute.paramMap.subscribe(params => {
       let Id = +params.get("categoryId");
@@ -24,5 +30,10 @@ export class CategoryRelatedPetsComponent implements OnInit {
         this.relatedpets = this.petService.getByCategory(Id);
       }
     });
+    this.config = {
+      itemsPerPage: 3,
+      currentPage: 1,
+      totalItems: this.relatedpets.length
+    }
   }
 }

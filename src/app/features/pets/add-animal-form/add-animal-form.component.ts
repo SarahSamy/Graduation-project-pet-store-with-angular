@@ -7,7 +7,7 @@ import { CategoryService } from "src/app/_services/category.service";
 import { TypeService } from "src/app/_services/type.service";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import { UserService } from 'src/app/_services/user.service.service';
+import { UserService } from "src/app/_services/user.service.service";
 
 @Component({
   selector: "app-add-animal-form",
@@ -24,7 +24,7 @@ export class AddAnimalFormComponent implements OnInit {
   categoryName: string;
   edit: boolean;
   isSubmitted: boolean;
-  userService:UserService;
+  userService: UserService;
 
   constructor(
     private PetService: PetService,
@@ -32,15 +32,15 @@ export class AddAnimalFormComponent implements OnInit {
     private TypeService: TypeService,
     private router: Router,
     private activatedroute: ActivatedRoute,
-     user: UserService,
+    user: UserService
   ) {
-    this.userService=user;
-    if(this.userService.loginUser){
-    this.id = this.PetService.getAll().length + 1;
-    this.edit = false;
-    this.isSubmitted = false;}
-    else{
-      this.router.navigate(['/Login']);
+    this.userService = user;
+    if (this.userService.loginUser) {
+      this.id = this.PetService.getAll().length + 1;
+      this.edit = false;
+      this.isSubmitted = false;
+    } else {
+      this.router.navigate(["/Login"]);
     }
   }
 
@@ -129,7 +129,6 @@ export class AddAnimalFormComponent implements OnInit {
         this.PetService.update(this.pet);
       } else {
         this.PetService.addPet(this.pet);
-        console.log(this.pet);
       }
       this.addAnimalForm.reset();
       this.router.navigate(["/pet-profile", this.pet.petId]);

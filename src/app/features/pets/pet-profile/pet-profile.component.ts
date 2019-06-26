@@ -2,6 +2,8 @@ import { Component, OnInit ,Input} from '@angular/core';
 import { PetService } from 'src/app/_services/pet.service';
 import { Pet } from 'src/app/_model/pet';
 import { ActivatedRoute } from "@angular/router";
+import { Category } from 'src/app/_model/category';
+import { CategoryService } from 'src/app/_services/category.service';
 
 @Component({
   selector: 'app-pet-profile',
@@ -11,11 +13,13 @@ import { ActivatedRoute } from "@angular/router";
 export class PetProfileComponent implements OnInit {
   @Input() pet : Pet;
   @Input() data
+  category:Category;
+  categoryService:CategoryService;
   petId
 
 
-  constructor(private petService:PetService , private route: ActivatedRoute) {
-
+  constructor( cat:CategoryService ,private petService:PetService, private route: ActivatedRoute) {
+this.categoryService=cat;
    }
 
   ngOnInit() {
@@ -25,7 +29,9 @@ export class PetProfileComponent implements OnInit {
   this.petId= this.petId.id;
   
     if (!this.data) {
-      this.data = this.petService.getById(Number(this.petId))
+      this.data = this.petService.getById(Number(this.petId));
+      
+     // this.category=this.categoryService.getById(this.data.ca)
      return this.data
     }
   }

@@ -16,7 +16,7 @@ export class DiscoverCategoryComponent implements OnInit {
   ) {
     this.activatedroute.paramMap.subscribe(params => {
       let Id = +params.get("categoryId");
-      console.log(Id);
+
       if (Id) {
         this.category = this.categoryService.getById(Id);
       }

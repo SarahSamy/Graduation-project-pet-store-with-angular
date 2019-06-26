@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+input.ng-invalid.ng-touched{
+    border:2px solid red;
+}
+.input_error
+{
+    color: red;
+    margin-top: 5px;
+    font-size: 14px;
+}
+.submitbtn:focus, .canclebtn:focus{outline:0 !important;}
+=======
 input.ng-invalid.ng-touched {
   border: 2px solid red;
 }
@@ -28,3 +40,4 @@ $color-primary: #94c13d;
     color: #000;
   }
 }
+>>>>>>> c0d9f6a01aebab9b4bd367b006f036a3a3218d1b

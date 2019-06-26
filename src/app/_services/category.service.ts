@@ -171,6 +171,13 @@ export class CategoryService {
         image: "../../assets/images/discover//dog9.jpg",
         fkTypeId: 2,
         type: { name: "dog" }
+      },
+      {
+        categoryId: 25,
+        name: " Terrier",
+        image: "../../../../assets/images/discover/DSC00723JPG_crop350x250.jpg",
+        fkTypeId: 5,
+        type: { name: "Others" }
       }
     ];
   }

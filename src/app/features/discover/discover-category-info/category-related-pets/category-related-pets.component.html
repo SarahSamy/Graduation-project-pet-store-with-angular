@@ -63,6 +63,7 @@
     </div>
   </div>
 </div>
+<<<<<<< HEAD
 <div class="row mt-5">
   <div class="col-12" align="center">
     <pagination-controls
@@ -70,6 +71,11 @@
       class="my-pagination"
       (pageChange)="pageChanged($event)"
     ></pagination-controls>
+=======
+<div class="row mt-5" *ngIf="relatedpets.length>0">
+    <div class="col-12" align="center">
+   <pagination-controls *ngIf="relatedpets.length>0" class="my-pagination" (pageChange)="pageChanged($event)"></pagination-controls>
+>>>>>>> e7929416fbe7653350d70e2c874bd3d32af0b8a3
   </div>
 </div>
 <!--Not found Selection-->

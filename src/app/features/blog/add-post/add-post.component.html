@@ -1,27 +1,88 @@
 <section>
+  <div class="container-fluid no-gutters p-0 ">
+    <div class="col-sm-12 banner-image ">
+      <div class="row align-items-center banner-image__banner-content">
+        <div class="align-self-center title">
+          <div><i class="fas fa-paw add-Green banner-icon mb-3"></i></div>
+          <p class="banner-title">Add Post</p>
+        </div>
+      </div>
+    </div>
+    <!-- gray-part -->
+    <div class="col-sm-12 pt-3 pb-2 blog-path">
+      <div class="row">
+        <div class="col-sm-6 col-md-4  offset-1">
+          <ul class="clearfix">
+            <li>
+              <a [routerLink]="'/Home'"><span class="fa fa-home"></span> Home / </a>
+            </li>
+            <li>
+              <a [routerLink]="'blog'"> <span></span>Blog </a>
+            </li>
+            <li class="active new">/ Add</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- gray-part -->
+  </div>
+
   <div class="container-fliud no-gutters">
     <div class="row no-gutters">
-      <div class="col-sm-12 col-md-12 col-lg-2 pl-5">
-        <app-sidebar></app-sidebar>
-      </div>
+      <div class="col-sm-12 col-md-12 col-lg-2 pl-5"></div>
       <div class="col-sm-8 ml-5 add-post">
-        <div class="replay-box">
+        <div class="add-post-box">
           <div class="row no-gutters">
-            <div class="col-sm-7">
-              <h1 class="title ">Add Post</h1>
-              <form  [formGroup]="addPostForm" class="add-post__form" style="display: flex;flex-direction:column">
-                <div class="blank-arrow mt-3">
-                  <label class="label">Post Title</label>
-                </div>
-                <input class="form-control post__title form-control-lg" type="text" placeholder="write The title of post...">
-                <div class="blank-arrow mt-3">
-                  <label class="label">Body</label>
+            <div class="col-sm-7 mt-5">
+              <form [formGroup]="addPostForm" (ngSubmit)="onSubmit()" class="add-post__form " style="display: flex;flex-direction:column">
+                <input [formControlName]="'postId'" class="form-control text-box" type="hidden" />
+
+                <label class="text">Title<span class="required">*</span></label>
+                <input [formControlName]="'title'" class="form-control  form-control-lg mb-1 " type="text" placeholder="write The title of post..." />
+
+                <!--post title validation-->
+                <span
+                  class="error_msg mb-4 ml-3"
+                  *ngIf="(!addPostForm.get('title').valid && addPostForm.get('title').errors && addPostForm.get('title').touched) || isSubmitted"
+                >
+                  Post title its minimum length(3) must be And maximum length(100)
+                </span>
+                <label class="text mt-3">Related animal<span class="required">*</span></label>
+                <div class="form-group ">
+                  <!-- arac-turu -->
+                  <select [formControlName]="'tag'" #tagSelect id="select" class="select form-control mb-3" multiple>
+                    <option value="" disabled selected>Select Post Tag</option>
+                    <option *ngFor="let tag of tags" [value]="tag.id">{{ tag.name }}</option>
+                  </select>
+                  <!-- Post Tag validation -->
+                  <span
+                    class="error_msg"
+                    *ngIf="
+                      (!addPostForm.get('tag').valid && addPostForm.get('tag').get('id').errors && addPostForm.get('tag').get('id').touched) || isSubmitted
+                    "
+                  >
+                    you should select related animal of your post
+                  </span>
                 </div>
                 <div class="form-group add-post--body">
-                  <textarea name="editor1" class="form-control" id="FormTextarea" rows="3"></textarea>
+                  <label class="text">Body<span class="required">*</span></label>
+                  <textarea
+                    [formControlName]="'body'"
+                    name="editor1"
+                    class="form-control"
+                    id="FormTextarea"
+                    rows="5"
+                    placeholder="write The body of post..."
+                  ></textarea>
+                  <span
+                    class="error_msg mt-2 ml-5"
+                    *ngIf="(!addPostForm.get('body').valid && addPostForm.get('body').errors && addPostForm.get('body').touched) || isSubmitted"
+                  >
+                    You must enter body of the post..
+                  </span>
                 </div>
-                <div class="form-group">
-                  <button class="theme-btn btn-style-one" type="submit">ADD</button>
+                <div class="form-group b mt-3">
+                  <button class="btn btn--irregular" type="submit">ADD</button>
                 </div>
               </form>
             </div>

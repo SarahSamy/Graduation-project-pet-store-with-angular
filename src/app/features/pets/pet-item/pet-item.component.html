@@ -1,18 +1,26 @@
 <div class="card">
   <div class="container-of-image ">
-    <img src="{{pet.image}}" alt="Avatar" class="image" />
+    <img src="{{ pet.image }}" alt="Avatar" class="image" />
     <!-- <div [ngStyle]="{'background-image':'url('+pet.image +')'}" class="image"></div> -->
     <div class="overlay"></div>
   </div>
   <div class="card-body text-center">
-    <h3 class="add-Green add-Bold">{{pet.name}}</h3>
-    <h4>{{pet.gender}}</h4>
+    <h3 class="add-Green add-Bold">{{ pet.name }}</h3>
+    <h4>{{ pet.gender }}</h4>
     <!-- , {{pet.category.type}} -->
 
-    <h4 *ngIf="pet.category.name"> {{pet.category.name}}</h4>
-    <a class="show" [routerLink]="['/pet-profile',pet.petId]"><i class="fa fa-eye "></i></a>
-    <a class="edit" *ngIf="(user) ? user.id==pet.userId : false"><i class="fa fa-edit " (click)="editButtonClick(pet.petId)"></i></a>
-
-
+    <h4 *ngIf="pet.category.name">{{ pet.category.name }}</h4>
+    <a class="show" [routerLink]="['/pet-profile', pet.petId]"
+      ><i class="fa fa-eye "></i
+    ></a>
+    <a class="edit" *ngIf="user ? user.id == pet.userId : false"
+      ><i class="fa fa-edit " (click)="editButtonClick(pet.petId)"></i
+    ></a>
+    <a class="delete " *ngIf="user ? user.id == pet.userId : false"
+      ><i class="fa fa-remove" mat-button #myModal (click)="openDialog()"></i>
+    </a>
+    <!-- (click)="removeClick.next()" -->
   </div>
 </div>
+
+<!-- <button mat-button (click)="openDialog()">Confirm box</button> -->

@@ -1,4 +1,5 @@
 <div class="container">
+<<<<<<< HEAD
 	
 	<form [formGroup]="registerForm" class="custom-form" (ngSubmit)="onSubmit()">
 		<div class="row no-gutters justify-content-end">
@@ -6,26 +7,74 @@
 			</div>
 		</div>
 		<div class="row mx-4">
+=======
+  <form [formGroup]="registerForm" class="custom-form" (ngSubmit)="onSubmit()">
+    <div class="row no-gutters justify-content-end">
+      <div class="col-2 login-form__two-sides__inputs__exit"></div>
+    </div>
+    <div class="row mx-4">
+      <div class="col-sm-4  ml-md-4  form-left-side">
+        <div class="row justify-content-center">
+          <div class="col-11">
+            <h1 class="p-5">Join Us!</h1>
+            <ul class="login-form__two-sides__advices__adv-list ">
+              <li class="pt-4">To Be One Of Our Big Community.</li>
+>>>>>>> c0d9f6a01aebab9b4bd367b006f036a3a3218d1b
 
-			<div class="col-sm-4  ml-md-4  form-left-side">
-				<div class="row justify-content-center">
-					<div class="col-11">
-						<h1 class="p-5">Join Us!</h1>
-						<ul class="login-form__two-sides__advices__adv-list ">
-							<li class="pt-4">To Be One Of Our Big Community.</li>
+              <li>To Be Able To Care Your Animal And Share Your Knowledge.</li>
+              <li>Please Fill This Simple Form.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-							<li>To Be Able To Care Your Animal
-								And Share Your Knowledge.</li>
-							<li>Please Fill This Simple Form.</li>
-						</ul>
-					</div>
-				</div>
-			</div>
+      <div class="col-sm-1"></div>
+      <div class="col-sm-6">
+        <div class="form-controls ">
+          <div class="form-group row ">
+            <label class="lable" for="">First Name</label>
+            <input type="text" formControlName="firstName" class=" form-control text-box" type="text" placeholder="First Name" name="" id="" />
+            <span class="input_error" *ngIf="!registerForm.get('firstName').valid && registerForm.get('firstName').touched"
+              >Please Enter a valid FirstName</span
+            >
+          </div>
 
-			<div class="col-sm-1">
-			</div>
-			<div class="col-sm-6">
+          <div class="form-group row ">
+            <label class="lable" for="">Last Name</label>
+            <input type="text" formControlName="lastName" class=" form-control text-box" placeholder="Last Name" name="" id="" />
+            <span class="input_error" *ngIf="!registerForm.get('lastName').valid && registerForm.get('lastName').touched">Please Enter a valid LastName</span>
+          </div>
+          <div class="form-group row ">
+            <label class="lable" for="">Your Email</label>
+            <input type="email" formControlName="email" class=" form-control text-box" placeholder="Enter Your Email" name="" id="" />
+            <span class="input_error" *ngIf="!registerForm.get('email').valid && registerForm.get('email').touched">Please Enter a valid Email</span>
+          </div>
+          <div class="form-group row ">
+            <label class="lable" for="">Password</label>
+            <input type="password" formControlName="password" class=" form-control text-box " placeholder="Password" name="" id="" />
+            <span class="input_error" *ngIf="!registerForm.get('password').valid && registerForm.get('password').touched">Please Enter a valid Password</span>
+          </div>
+          <div class="form-group row ">
+            <label class="lable" for="">Confirmed Password</label>
+            <input type="password" formControlName="confirmPassword" class=" form-control text-box" placeholder="Confirmed Password" name="" id="" />
+            <span class="input_error" *ngIf="!registerForm.get('confirmPassword').valid && registerForm.get('confirmPassword').touched"
+              >Please Enter a valid ConfirmPassword</span
+            >
+          </div>
+          <div class="form-group row ">
+            <label class="lable" for="">Birthdate</label>
+            <input type="date" formControlName="birthDate" class=" form-control text-box" name="" id="" />
+            <span class="input_error" *ngIf="!registerForm.get('birthDate').valid && registerForm.get('birthDate').touched"
+              >Please Enter a valid birthDate</span
+            >
+          </div>
+          <div class="form-group row ">
+            <div class="col-form-label  pt-0">
+              <label class="lable">Gender</label>
+            </div>
+          </div>
 
+<<<<<<< HEAD
 				<div class="form-controls ">
 					<div class="form-group row ">
 						<label class="lable" for="">First Name</label>
@@ -99,3 +148,27 @@
 
 
 
+=======
+          <div class="form-check" *ngFor="let gender of genders">
+            <label class="form-check-label" for="gridRadios2">
+              <input class="form-check-input" formControlName="gender" type="radio" id="gridRadios2" [value]="gender" />
+              {{ gender }}
+            </label>
+          </div>
+        </div>
+
+        <span class="input_error" *ngIf="!registerForm.valid && registerForm.touched">Please Enter a valid FormData</span>
+        <div class=" form-group row justify-content-end">
+          <div class=" col-auto">
+            <button class="btn btn--irregular" (mousedown)="Cancel()" id="button--cancel">Cancel</button>
+          </div>
+          <div class=" col-auto">
+            <button class="btn btn--irregular">Sign Up</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-1"></div>
+    </div>
+  </form>
+</div>
+>>>>>>> c0d9f6a01aebab9b4bd367b006f036a3a3218d1b

@@ -1,0 +1,37 @@
+$color-gray-light: #555;
+$color-black: #000;
+$color-primary: #94c13d;
+.blog-sidebar {
+  &-tages {
+    color: $color-black;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    margin-bottom: 5rem;
+    &-list {
+      font-weight: 700;
+      display: flex;
+      font-size: 1.8rem;
+      flex-direction: column;
+      padding-left: 0;
+      margin-bottom: 0;
+      &-item {
+        font-family: "Quicksand", sans-serif;
+        transition: all 0.4s ease-in-out;
+        margin-bottom: 0.4rem;
+        background-color: #fff;
+        border: 0px;
+        border-radius: 0.5rem !important;
+        position: relative;
+        display: block;
+        padding: 0.75rem 1.25rem;
+        &:hover {
+          background-color: $color-primary;
+          color: #fff !important;
+        }
+      }
+    }
+  }
+}
+a{
+  cursor: pointer;
+}

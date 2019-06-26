@@ -3,6 +3,10 @@ import { Pet } from 'src/app/_model/pet';
 import { PetService } from 'src/app/_services/pet.service';
 import { TypeService } from 'src/app/_services/type.service';
 
+
+
+
+
 @Component({
   selector: 'pet-listing',
   templateUrl: './pet-listing.component.html',
@@ -13,11 +17,14 @@ export class PetListingComponent implements OnInit {
   @Input() mostViewed: Pet[];
   petService: PetService;
   config: any;
+  flag: boolean;
   // id:Number
   page: number;
   pageSize: number;
   collectionSize: number;
   showed: number;
+  dataByType: Pet[];
+
 
   constructor(test: PetService) {
     this.page = 1;
@@ -36,7 +43,7 @@ export class PetListingComponent implements OnInit {
       currentPage: 1,
       // totalItems: this.data.length
     }
-
+    this.flag = false;
   }
   pageChanged(event) {
     this.config.currentPage = event;
@@ -46,51 +53,28 @@ export class PetListingComponent implements OnInit {
   ngOnInit() {
     this.getAllTypes();
   }
-  // getCats() {
-  //   this.data = this.petService.getAllCats();
-  //   // alert("cattttttt");
-  //   return this.petService.getAllCats();
-  // }
-  // getDogs() {
-  //   this.data = this.petService.getAllDogs();
-  //   return this.petService.getAllDogs();
-  // }
-  // getBirds() {
-  //   this.data = this.petService.getAllBirds();
-  //   return this.petService.getAllBirds();
-  // }
-  // getOthers() {
-  //   this.data = this.petService.getAllOthers();
-  //   return this.petService.getAllOthers();
-  // }
+
   getOthers() {
     this.data = this.petService.getAllOthers();
+    this.data = this.data.filter(p => p.isToAdapted == true && p.isDeleted == false);
     this.config = {
       itemsPerPage: 6,
       currentPage: 1,
       totalItems: this.data.length
     }
   }
-  // getAll() {
-  //   this.data = this.petService.getAll();
-  //   return this.petService.getAll();
-  // }
-  // getMostViews() {
-  //   this.mostViewed = this.petService.getMostViews();
-  //   return this.mostViewed;
-  // }
+
   getMostViews() {
-    this.mostViewed = this.petService.getMostViews();
+    this.mostViewed = this.petService.getMostViews().filter(p => p.isToAdapted == true && p.isDeleted == false);
     return this.mostViewed;
   }
 
-  // myalert(text: string) {
-  //   alert(text);
-  // }
 
 
   getAllTypes() {
-    this.data = this.petService.getAll().filter(pet => pet.isToAdapted === true);
+    // this.data = this.petService.getAll().filter(pet => pet.isToAdapted === true);
+    this.data = this.petService.getAllAdapted();
+    this.data = this.data.filter(p => p.isToAdapted == true && p.isDeleted == false);
     this.config = {
       itemsPerPage: 6,
       currentPage: 1,
@@ -99,20 +83,33 @@ export class PetListingComponent implements OnInit {
   }
 
   getByPetType(typeId: number) {
-    this.data = this.petService.getByType(typeId);
+
+    this.data = this.petService.getByTypeAdapted(typeId).filter(p => p.isToAdapted == true && p.isDeleted == false);
+    this.dataByType = this.data;
+    this.flag = true;
+    // this.data=this.data.filter(p=>p.isToAdapted==true && p.isDeleted==false);
     this.config = {
       itemsPerPage: 6,
       currentPage: 1,
       totalItems: this.data.length
     }
     //return this.data;
+    
   }
 
 
-
-
-
-
+  deletePet(id) {
+    this.petService.delete(id);
+   
+    if (!this.flag) {
+      this.data = this.petService.data.filter(p => p.isDeleted == false && p.isToAdapted === true)
+    }
+    else {
+      this.data = this.dataByType.filter(p => p.isDeleted == false && p.isToAdapted === true);
+     
+    }
+    this.getMostViews();
+  }
 
 
   nextPage() {
@@ -123,42 +120,5 @@ export class PetListingComponent implements OnInit {
 
   }
 
-  myalert(text: string) {
-    alert(text);
-  }
-
-
-  //-----------------------------------------------------------------
-  // getCats() {
-  //   this.data = this.petService.getAllCats();
-  //   // alert("cattttttt");
-  //   return this.petService.getAllCats();
-  // }
-  // getDogs() {
-  //   this.data = this.petService.getAllDogs();
-  //   return this.petService.getAllDogs();
-  // }
-  // getBirds() {
-  //   this.data = this.petService.getAllBirds();
-  //   return this.petService.getAllBirds();
-  // }
-
-  // getAll() {
-  //   this.data = this.petService.getAll();
-  //   return this.petService.getAll();
-  // }
-  //--------------------------------------------
-
-
-
-
-
-  // getId(range:number[]){
-  //   for(let i=0;i<range.length;i++){
-  //     return this.data.find((p) => p.id === i);
-  //   }
-
-  // }
-
-
+ 
 }

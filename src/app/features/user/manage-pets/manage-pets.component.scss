@@ -1,39 +1,36 @@
-
-.user-profile{
-background-image: url(../../../../assets/images/bg.jpg);
-//   
-
-
-
+.user-profile {
+  background-image: url("../../../../assets/images/blog/adorable-animals-beautiful-eyes-1643456.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: auto;
 }
-.user-profile__col{
-    background-color: white;
-    .rounded-circle{
-        width:15.4rem;
-    }
-    
+.user-profile__col {
+  background-color: white;
+  .rounded-circle {
+    width: 15.4rem;
+  }
 }
-.user-profile__name,.user-profile__settings{
-color: black;
-font-weight: bold;
-font-size: 2.5rem;
-font-family: 'Satisfy', cursive;
-
-
+.user-profile__name,
+.user-profile__settings {
+  color: black;
+  font-weight: bold;
+  font-size: 2.5rem;
+  font-family: "Satisfy", cursive;
 }
-.user-profile__settings{
-    font-size: 1.5rem;
+.user-profile__settings {
+  font-size: 1.5rem;
 }
 
-.edit-link{
-    a{text-decoration: none !important;
-    color:black !important;
-    }
-    a:visited{
-     text-decoration: none !important;
-    color:black !important;
-    }
-    a:hover{
-        color: #94c13d !important;
-    }
+.edit-link {
+  a {
+    text-decoration: none !important;
+    color: black !important;
+  }
+  a:visited {
+    text-decoration: none !important;
+    color: black !important;
+  }
+  a:hover {
+    color: #94c13d !important;
+  }
 }

@@ -4,7 +4,22 @@
       <div class="row align-items-center banner-image__banner-content">
         <div class="align-self-center title">
           <div><i class="fas fa-paw add-Green banner-icon mb-3"></i></div>
-          <p class="banner-title">Adopt a Pet</p>
+          <p class="banner-title">Pet Profile</p>
+        </div>
+      </div>
+    </div>
+    <!-- gray-part -->
+    <div class="col-sm-12 pt-3 pb-2 blog-path">
+      <div class="row">
+        <div class="col-sm-6 col-md-4  offset-1">
+          <ul class="clearfix">
+            <li>
+              <a [routerLink]="'/Home'"
+                ><span class="fa fa-home"></span> Home /
+              </a>
+            </li>
+            <li class="active new">Pet Profile</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -14,48 +29,49 @@
       <div class="col-lg-11 mx-auto mt-5">
         <div class="row bg-light-custom border-irregular1 block-padding ">
           <div class="col-lg-4 offset-lg-2">
-            <div id="owl-adopt-single" class="owl-carousel top-centered-nav owl-theme owl-loaded owl-drag">
+            <div
+              id="owl-adopt-single"
+              class="owl-carousel top-centered-nav owl-theme owl-loaded owl-drag"
+            >
               <div class="owl-stage-outer">
                 <div class="owl-stage">
                   <div class="owl-item active" style="width: 350px;">
                     <div class="col-md-12 irregular-image">
-                      <!-- image -->
-                      <a href="../../../../assets/images/adopt.jpg" title="your caption here">
-                        <!-- <img src="../../../../assets/images/adopt.jpg" class="border-irregular2 img-fluid hover-opacity" alt="" /> -->
-                        <img src={{data.image}} class="border-irregular2 img-fluid hover-opacity" alt="" />
+                      <a
+                        href="../../../../assets/images/adopt.jpg"
+                        title="your caption here"
+                      >
+                        <img
+                          src="{{ data.image }}"
+                          class="border-irregular2 img-fluid hover-opacity"
+                          alt=""
+                        />
                       </a>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="owl-nav">
-                <div class="owl-prev p-2"><i class="fas fa-chevron-left"></i></div>
-                <div class="owl-next p-2"><i class="fas fa-chevron-right"></i></div>
-              </div>
-              <div class="owl-dots">
-                <div class="owl-dot"><span></span></div>
-                <div class="owl-dot active"><span></span></div>
-                <div class="owl-dot"><span></span></div>
-              </div>
             </div>
-            <!-- /owl-carousel -->
           </div>
           <div class="col-lg-4 res-margin mt-5 text-xs-center">
-            <!-- <h2 class="mb-4"><strong>Pet name:</strong> Fluffy</h2> -->
-            <h2 class="mb-4"><strong>Pet name:</strong> {{data.name}}</h2>
+            <h2 class="mb-4"><strong>Pet name:</strong> {{ data.name }}</h2>
             <div class="row">
               <div class="col-sm-6">
                 <ul class="list-unstyled pet-adopt-info">
                   <li>
-                    <!-- <h5>Gender: <span>female</span></h5> -->
-                    <h5>Gender: <span>{{data.gender}}</span></h5>
+                    <h5>
+                      Gender: <span>{{ data.gender }}</span>
+                    </h5>
                   </li>
                   <li>
-                    <h5>Age: <span>{{data.age}} years</span></h5>
+                    <h5>
+                      Age: <span>{{ data.age }} years</span>
+                    </h5>
                   </li>
                   <li>
-                    <!-- <h5>Breed: <span>Poodle</span></h5> -->
-                    <h5>Breed: <span>{{data.category.name}}</span></h5>
+                    <h5>
+                      Breed: <span>{{ data.category.name }}</span>
+                    </h5>
                   </li>
                 </ul>
               </div>
@@ -73,38 +89,61 @@
                 </ul>
               </div>
             </div>
-            <p class="font-weight-bold pet-caption">{{data.name}} is a very sweet and active {{data.category.type.name}}, it is ready for a new home!</p>
-            <a href="#" class="btn btn--irregular mt-5" data-aos="zoom-in">Adopt now!</a>
+            <p class="font-weight-bold pet-caption text">
+              {{ data.name }} is a very sweet and active
+              {{ data.category.name }}, it is ready for a new home!
+            </p>
+            <a
+              *ngIf="data.isToAdapted"
+              class="btn btn--irregular mt-5"
+              data-aos="zoom-in"
+              >Adopt now!</a
+            >
           </div>
         </div>
 
         <div class="col-md-12 mt-5">
-          <h2 class="about-title">About {{data.name}}</h2>
+          <h2 class="about-title">About {{ data.name }}</h2>
           <ul class="custom list-inline font-weight-bold">
-            <li class="list-inline-item "><i class="fas fa-paw add-Green"></i> Friendly to other {{data.category.type.name}}s</li>
-            <li class="list-inline-item ml-2"><i class="fas fa-paw add-Green"></i> Good for Apartments</li>
-            <li class="list-inline-item ml-2"><i class="fas fa-paw add-Green"></i> Friendly with Kids</li>
+            <li class="list-inline-item ">
+              <i class="fas fa-paw add-Green"></i> Friendly to other
+              {{ data.category.name }}s
+            </li>
+            <li class="list-inline-item ml-2">
+              <i class="fas fa-paw add-Green"></i> Good for Apartments
+            </li>
+            <li class="list-inline-item ml-2">
+              <i class="fas fa-paw add-Green"></i> Friendly with Kids
+            </li>
           </ul>
           <p class="text">
-            Elit uasi quidem minus id omnis a nibh fusce mollis imperdie tlorem ipuset phas ellus ac sodales Lorem ipsum dolor Phas ellus ac sodales felis tiam
-            non metus. lorem ipsum dolor sit amet, consectetur adipisicing elit uasi quidem minus id omnis a nibh fusce mollis imperdie tlorem ipuset campas
-            fincas
+            Elit uasi quidem minus id omnis a nibh fusce mollis imperdie tlorem
+            ipuset phas ellus ac sodales Lorem ipsum dolor Phas ellus ac sodales
+            felis tiam non metus. lorem ipsum dolor sit amet, consectetur
+            adipisicing elit uasi quidem minus id omnis a nibh fusce mollis
+            imperdie tlorem ipuset campas fincas
           </p>
           <p class="text">
-            Elit uasi quidem minus id omnis a nibh fusce mollis imperdie tlorem ipuset phas ellus ac sodales Lorem ipsum dolor Phas ellus ac sodales felis tiam
-            non metus. lorem ipsum dolor sit amet, consectetur adipisicing elit uasi quidem minus id omnis a nibh fusce mollis imperdie tlorem ipuset campas
-            fincas
+            Elit uasi quidem minus id omnis a nibh fusce mollis imperdie tlorem
+            ipuset phas ellus ac sodales Lorem ipsum dolor Phas ellus ac sodales
+            felis tiam non metus. lorem ipsum dolor sit amet, consectetur
+            adipisicing elit uasi quidem minus id omnis a nibh fusce mollis
+            imperdie tlorem ipuset campas fincas
           </p>
           <div class="alert alert-dark mt-5" role="alert">
             <h2 class="text-dark">Adoption Rules</h2>
             <p class="text">
-              Elit uasi quidem minus id omnis a nibh fusce mollis imperdie tlorem ipuset phas ellus ac sodales Lorem ipsum dolor Phas ellus ac sodales felis
-              tiam non metus. lorem ipsum dolor sit amet, consectetur adipisicing elit uasi quidem minus id omnis a nibh fusce mollis imperdie tlorem ipuset
-              campas fincas
+              Elit uasi quidem minus id omnis a nibh fusce mollis imperdie
+              tlorem ipuset phas ellus ac sodales Lorem ipsum dolor Phas ellus
+              ac sodales felis tiam non metus. lorem ipsum dolor sit amet,
+              consectetur adipisicing elit uasi quidem minus id omnis a nibh
+              fusce mollis imperdie tlorem ipuset campas fincas
             </p>
           </div>
 
-          <p class="custom-link"><a [routerLink]="['/pet-listing']">« Go back to adoption gallery</a></p>
+          <p class="custom-link">
+            <a [routerLink]="['/pet-listing']">« Go back to adoption gallery</a>
+          </p>
         </div>
       </div>
     </div>

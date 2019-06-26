@@ -1,0 +1,94 @@
+<head>
+  <style>
+    .my-pagination /deep/ .ngx-pagination li {
+      background-color: #eff0ec;
+      font-size: 1.2rem;
+      padding: 1rem;
+      border-radius: 1rem;
+      margin: 0.2rem;
+    }
+
+    .my-pagination /deep/ .ngx-pagination .current {
+      background: #94c13d;
+      font-size: 1.2rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      padding-top: 1.1rem;
+      padding-bottom: 1.2rem;
+    }
+
+    .my-pagination /deep/ .ngx-pagination .pagination-next,
+    .my-pagination /deep/ .ngx-pagination .pagination-previous {
+      background-color: #eff0ec;
+    }
+  </style>
+</head>
+<div class="row justify-content-center mt-5">
+  <div
+    *ngFor="let pet of relatedpets | paginate: config"
+    class=" mb-5  col-md-2 col-sm-12"
+  >
+    <div class="row">
+      <div class="col-12">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img [src]="pet.image" alt="Avatar" />
+            </div>
+            <div class="flip-card-back">
+              <h1>
+                <a [routerLink]="['/pet-profile', pet.petId]">{{ pet.name }}</a>
+              </h1>
+              <h3>{{ pet.category.name }}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-2">
+      <div class="col-11">
+        <div class="row mt-3 justify-content-center">
+          <div class="col-auto">
+            <h2 class="type-name">
+              <a [routerLink]="['/pet-profile', pet.petId]">{{ pet.name }}</a>
+            </h2>
+          </div>
+        </div>
+        <div class="row mt-2 justify-content-center">
+          <div class="col-12 mt-4 cat-motivation">
+            <p class="mx-auto">{{ pet.category.name }} .</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mt-5" *ngIf="relatedpets.length > 0">
+  <div class="col-12" align="center">
+    <pagination-controls
+      *ngIf="relatedpets.length > 0"
+      class="my-pagination"
+      (pageChange)="pageChanged($event)"
+    ></pagination-controls>
+  </div>
+</div>
+<!--Not found Selection-->
+
+<section class="pets--box" *ngIf="relatedpets.length < 1">
+  <div class="container">
+    <div class="row mt-5 mb-5 block-padding">
+      <div class="col-md-4 offset-md-1 ">
+        <img
+          src="../../../assets/images/angry.jpeg"
+          alt=""
+          class="center-block img-fluid float-right"
+        />
+      </div>
+      <div
+        class="col-md-5 h-50 ml-3  border-irregular1  bg-light-custom text-center p-6"
+      >
+        <h2 class="notFound-title">No related Pets are added yet</h2>
+      </div>
+    </div>
+  </div>
+</section>

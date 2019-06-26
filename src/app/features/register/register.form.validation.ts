@@ -10,8 +10,12 @@ export function PasswordValidator(controlName: string, matchingControlName: stri
         }
 
         if (control.value !== matchingControl.value) {
+<<<<<<< HEAD
             console.log(control.value);
             console.log(matchingControl.value)
+=======
+           
+>>>>>>> c0d9f6a01aebab9b4bd367b006f036a3a3218d1b
 
             matchingControl.setErrors({ mustMatch: true });
         } else {

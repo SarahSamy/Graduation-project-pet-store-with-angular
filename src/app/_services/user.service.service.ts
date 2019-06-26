@@ -18,7 +18,8 @@ export class UserService {
         email: "alaaebrahim336@gmail.com",
         password: "123456",
         userGroupId: 1,
-        image: "../../../../assets/images/comments/John-Amaechi-OBE_portraitfeatured.jpg"
+        image: "../../../../assets/images/comments/John-Amaechi-OBE_portraitfeatured.jpg",
+        cover: "../../../../assets/images/doc1.jpg"
       },
       {
         id: 2,
@@ -27,7 +28,8 @@ export class UserService {
         email: "sara.refaat@aaa.com",
         password: "123456",
         userGroupId: 2,
-        image: "../../../../assets/images/girl.jpg"
+        image: "../../../../assets/images/girl.jpg",
+        cover: "../../../../assets/images/doc1.jpg"
       },
       {
         id: 3,
@@ -36,7 +38,8 @@ export class UserService {
         email: "fatimashabana@gmail.com",
         password: "123456",
         userGroupId: 2,
-        image: "../../../../assets/images/girl.jpg"
+        image: "../../../../assets/images/girl.jpg",
+        cover: "../../../../assets/images/doc1.jpg"
       }
     ];
   }

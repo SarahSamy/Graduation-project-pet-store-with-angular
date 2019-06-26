@@ -16,11 +16,8 @@ export class CategoryRelatedPetsComponent implements OnInit {
   constructor(
     private petService: PetService,
     private activatedroute: ActivatedRoute
-  ) {
-
-   
-  }
-  pageChanged(event){
+  ) {}
+  pageChanged(event) {
     this.config.currentPage = event;
   }
   ngOnInit() {
@@ -34,6 +31,6 @@ export class CategoryRelatedPetsComponent implements OnInit {
       itemsPerPage: 3,
       currentPage: 1,
       totalItems: this.relatedpets.length
-    }
+    };
   }
 }

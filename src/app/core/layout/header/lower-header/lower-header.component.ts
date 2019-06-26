@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from 'src/app/_model/User';
 import { UserService } from 'src/app/_services/user.service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lower-header',
@@ -11,7 +12,7 @@ export class LowerHeaderComponent implements OnInit {
   @Input() users:User[];
   login
   user:User;
-  constructor(private userService:UserService) { 
+  constructor(private userService:UserService,private router: Router) { 
     // if(!this.users){
       // this.users = this.userService.getAll();
     // }
@@ -28,6 +29,6 @@ export class LowerHeaderComponent implements OnInit {
   }
 logout(){
   this.userService.logout();
- 
+  this.router.navigate(['/Login']);
 }
 }

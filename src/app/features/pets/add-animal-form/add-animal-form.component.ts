@@ -129,6 +129,7 @@ export class AddAnimalFormComponent implements OnInit {
         this.PetService.update(this.pet);
       } else {
         this.PetService.addPet(this.pet);
+        console.log(this.pet);
       }
       this.addAnimalForm.reset();
       this.router.navigate(["/pet-profile", this.pet.petId]);

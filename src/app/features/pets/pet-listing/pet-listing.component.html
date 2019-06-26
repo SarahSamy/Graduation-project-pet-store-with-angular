@@ -29,36 +29,25 @@
   </style>
 </head>
 
-
 <div class="container">
   <div class="row my-5">
     <div class="col-md-3">
-      <!-- (catClick)="getCats()" (dogClick)="getDogs()" (birdClick)="getBirds()"   (othersClick)="getOthers()" -->
-      <filtring-list (allClick)="getAllTypes()" (catClick)="getByPetType(1)" (dogClick)="getByPetType(2)"
-        (birdClick)="getByPetType(3)" (othersClick)="getOthers()">
+      <filtring-list
+        (allClick)="getAllTypes()"
+        (catClick)="getByPetType(1)"
+        (dogClick)="getByPetType(2)"
+        (birdClick)="getByPetType(3)"
+        (othersClick)="getOthers()"
+      >
       </filtring-list>
     </div>
     <div class="col-md-9">
       <div class="row ">
-
-        <div *ngFor="let newpet of  data | paginate: config" class="col-md-4  ">
-          <!-- |slice: (page-1) * pageSize : (page-1) * pageSize + pageSize" -->
-          <!-- (pageClick)="nextPage()" -->
-          <pet-item [pet]='newpet' (removeClick)="deletePet(newpet.petId)"></pet-item>
-
+        <div *ngFor="let newpet of data | paginate: config" class="col-md-4  ">
+          <pet-item [pet]="newpet" (removeClick)="deletePet(newpet.petId)"></pet-item>
         </div>
       </div>
-
-      <!-- <div class="row ">
-    (data | slice:data.filter())
-              <div *ngFor="let newpet of data "  ng-repeat="i in range(4,6)" class="col-md-3  "  >
-              
-                <pet-item  [pet]= 'newpet'></pet-item>
-              
-            </div>
-        </div> -->
     </div>
-
   </div>
 </div>
 
@@ -78,7 +67,6 @@
   </div>
 </div>
 
-
 <!--Recently viewed pets -->
 
 <div class="container justify-content-center">
@@ -86,96 +74,11 @@
     <h1 class="add-Green row-title add-Bold">Most Viewed Pets</h1>
   </div>
   <div class="row  justify-content-center mb-4">
-
-    <div *ngFor="let pet of mostViewed  " class="col-md-3  ">
+    <div *ngFor="let pet of mostViewed" class="col-md-3  ">
       <!-- (data | slice:-3) -->
-      <pet-item [pet]='pet'></pet-item>
-
+      <pet-item [pet]="pet"></pet-item>
     </div>
   </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!--------------------------------------------------------------------------------------------->
-<!-- <div class="row my-5">
-    
-      <div *ngFor="let newpet of data "   class="col-md-3  "  >
-      
-        <pet-item  [pet]= 'newpet'></pet-item>
-      
-    </div>
-    <div class="row my-5">
-    
-        <div *ngFor="let newpet of data "   class="col-md-3 mx-3 "  >
-        
-          <pet-item  [pet]= 'newpet'></pet-item>
-        
-      </div>
-  </div>
-</div> -->
-<!-- <div class="col-md-3 card  mx-3">
-      <div class="container-of-image ">
-        <img src="./images/cat1.jpg" alt="Avatar" class="image" />
-        <div class="overlay"></div>
-      </div>
-      <div class="card-body text-center">
-        <h2 class="add-Green add-Bold">Bossy</h2>
-        <h4>Female , Adult</h4>
-        <h4>Classic Persian</h4>
-        <a class="show" href="#"><i class="fa fa-eye "></i></a>
-        <a class="edit" href="#"><i class="fa fa-edit "></i></a>
-      </div>
-    </div>
-    <div class="col-md-3 card  mx-3">
-      <div class="container-of-image ">
-        <img src="./images/cat2.jpg" alt="Avatar" class="image" />
-        <div class="overlay"></div>
-      </div>
-      <div class="card-body text-center">
-        <h2 class="add-Green add-Bold">Meshmesh</h2>
-        <h4>Male , Kitty</h4>
-        <h4>Ragamuffin</h4>
-        <a class="show" href="#"><i class="fa fa-eye "></i></a>
-        <a class="edit" href="#"><i class="fa fa-edit "></i></a>
-      </div>
-    </div> -->
-
-<!-- <div class="row my-5 ">
-    
-      <div *ngFor="let newpet of data "     >
-        <div class="col-md-12 card  ">
-        <pet-item  [pet]= 'newpet'></pet-item>
-      </div>
-    </div>
-   
-  </div> -->

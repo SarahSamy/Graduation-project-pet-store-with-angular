@@ -63,11 +63,9 @@
         <app-post-item *ngFor="let post of filterData ? filterData : (data | paginate: config)" [post]="post"></app-post-item>
       </div>
       <div class="blog-sidebar bg-light-custom  h-50 border-irregular1 col-lg-3 ml-5 mt-3">
-        <!-- <app-sidebar></app-sidebar> -->
         <div class="card mt-5">
           <h6 class="blog-sidebar-header pt-5">Tages</h6>
           <div class="blog-sidebar-tages">
-            <!-- <app-tag-listing></app-tag-listing> -->
             <div class="blog-sidebar-tages-list list-group">
               <app-tag-item *ngFor="let tag of tags" (tagClick)="filterPosts(tag.id)" [tag]="tag"></app-tag-item>
             </div>

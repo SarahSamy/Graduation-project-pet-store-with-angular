@@ -1,47 +1,47 @@
 <!-------profile photo------------->
 <head>
-    <style>
-      .my-pagination /deep/ .ngx-pagination li {
-        background-color: #eff0ec;
-        font-size: 1.2rem;
-        padding: 1rem;
-        border-radius: 1rem;
-        margin: 0.2rem;
-      }
-  
-      .my-pagination /deep/ .ngx-pagination .current {
-        background: #94c13d;
-        font-size: 1.2rem;
-        padding-left: 2rem;
-        padding-right: 2rem;
-        padding-top: 1.1rem;
-        padding-bottom: 1.2rem;
-      }
-  
-      .my-pagination /deep/ .ngx-pagination .pagination-next,
-      .my-pagination /deep/ .ngx-pagination .pagination-previous {
-        background-color: #eff0ec;
-      }
-    </style>
-  </head>
+  <style>
+    .my-pagination /deep/ .ngx-pagination li {
+      background-color: #eff0ec;
+      font-size: 1.2rem;
+      padding: 1rem;
+      border-radius: 1rem;
+      margin: 0.2rem;
+    }
+
+    .my-pagination /deep/ .ngx-pagination .current {
+      background: #94c13d;
+      font-size: 1.2rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      padding-top: 1.1rem;
+      padding-bottom: 1.2rem;
+    }
+
+    .my-pagination /deep/ .ngx-pagination .pagination-next,
+    .my-pagination /deep/ .ngx-pagination .pagination-previous {
+      background-color: #eff0ec;
+    }
+  </style>
+</head>
 <div class="container-fluid user-profile">
-<div class="row ">
-<div class="col-lg-2 col-md-3 col-sm-4 col-6 text-center  user-profile__col  mx-4">
-
-<div class="  pets--box--catalog--info text-center  my-5">
-  <img class=" rounded-circle pets--box--catalog--info__photo  " src= {{user.image}}>
-  <!--
-    ../../../../assets/images/girl.jpg
-  -->
-</div>
-<a><h3 class="user-profile__name ">{{user.firstName}}</h3></a>
-<!-- <a><h3 class="user-profile__settings">Edit Profile</h3></a> -->
-</div>
-<div class="col-md-2">
-
-</div>
-<div class="col-md-4  ">
-  <!-- <app-main-slider *ngIf="images">
+  <div class="row ">
+    <div
+      class="col-lg-2 col-md-3 col-sm-4 col-6 text-center  user-profile__col  mx-4"
+    >
+      <div class="  pets--box--catalog--info text-center  my-5">
+        <img
+          class=" rounded-circle pets--box--catalog--info__photo  "
+          src="{{ user.image }}"
+        />
+      </div>
+      <a
+        ><h3 class="user-profile__name ">{{ user.firstName }}</h3></a
+      >
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-4  ">
+      <!-- <app-main-slider *ngIf="images">
     <ngb-carousel   >
       <ng-template ngbSlide  *ngFor="let img of images">
         <img [src]="img" class="d-block w-100 " width="1260px" height="400px" alt="pet">
@@ -55,52 +55,54 @@
         <img [src]="images[2]" class="d-block w-100 " width="1260px" height="400px" alt="pet">
         
       </ng-template> -->
-    <!-- </ngb-carousel>
+      <!-- </ngb-carousel>
   </app-main-slider>  -->
+    </div>
+  </div>
 </div>
-
-</div>
-</div>
-
-
-
-
 
 <!--------user pets-------------->
 <div class="container">
-    <div class="row justify-content-center my-4" *ngIf=data>
-         <h2 class=" row-title add-Bold" ><i class="fas fa-paw add-Green"></i>  Your Pets  <i class="fas fa-paw add-Green"></i></h2>
-      </div>
+  <div class="row justify-content-center my-4" *ngIf="data">
+    <h2 class=" row-title add-Bold">
+      <i class="fas fa-paw add-Green"></i> Your Pets
+      <i class="fas fa-paw add-Green"></i>
+    </h2>
+  </div>
   <div class="row">
     <div class="col-md-3 col-sm-3 my-4 profile-options ">
-      <h3 class="edit-link" ><a  [routerLink]="'/edit-profile'"><i class="fas fa-paw add-Green"></i>  Edit Profile</a></h3>
-      <h3 class="edit-link"  > <a [routerLink]="'/Add-Animal'"><i class="fas fa-paw add-Green"></i>  Add Pet</a></h3>
-      
+      <h3 class="edit-link">
+        <a [routerLink]="'/edit-profile'"
+          ><i class="fas fa-paw add-Green"></i> Edit Profile</a
+        >
+      </h3>
+      <h3 class="edit-link">
+        <a [routerLink]="'/Add-Animal'"
+          ><i class="fas fa-paw add-Green"></i> Add Pet</a
+        >
+      </h3>
     </div>
-<div class="col-md-9 text-center m-auto">
-  
-  <div class="row *ngIf=data ">
-
-      <div *ngFor="let newpet of  data | paginate: config"  class="col-md-4  " >
-        
-        <pet-item  [pet]= 'newpet' (removeClick)="deletePet(newpet.petId)"></pet-item>
-      
-    </div>
-    <p *ngIf=!data>
-      <h4 class="text-center">{{message}}</h4>
-    
-
+    <div class="col-md-9 text-center m-auto">
+      <div class="row *ngIf=data ">
+        <div *ngFor="let newpet of data | paginate: config" class="col-md-4  ">
+          <pet-item
+            [pet]="newpet"
+            (removeClick)="deletePet(newpet.petId)"
+          ></pet-item>
+        </div>
+        <p *ngIf="!data"></p>
+        <h4 class="text-center">{{ message }}</h4>
+      </div>
     </div>
   </div>
 </div>
-</div>
-
 
 <!--------------------pagination----------------------->
-<div class="row mt-5"  *ngIf=data>
-    <div class="col-12" align="center">
-   <pagination-controls class="my-pagination" (pageChange)="pageChanged($event)"></pagination-controls>
+<div class="row mt-5" *ngIf="data">
+  <div class="col-12" align="center">
+    <pagination-controls
+      class="my-pagination"
+      (pageChange)="pageChanged($event)"
+    ></pagination-controls>
   </div>
 </div>
-
-

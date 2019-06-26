@@ -1,9 +1,16 @@
 <!-- <link rel="stylesheet" type="text/css" media="screen" href="node_modules/bootstrap/dist/css/bootstrap.css" />
 <link rel="stylesheet" href="myCss/style.css" /> -->
-<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU'
-        crossorigin='anonymous'>
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+  integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+  crossorigin="anonymous"
+/>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
 
 <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -15,29 +22,85 @@
 <div class="container-fluid no-gutters footer mt-5">
   <div class="row footer-row my-5  m-auto justify-content-center footer-font">
     <div class="col-md-3 text-left  my-5 ">
-      <div><img src="../../../../assets/images/logooooo.png" alt="girl" class="mt-3 footer-logo text-center" /><span class="logo-name add-Green"> Aleefy</span></div>
+      <div>
+        <img
+          src="../../../../assets/images/logooooo.png"
+          alt="girl"
+          class="mt-3 footer-logo text-center"
+        /><span class="logo-name add-Green"> Aleefy</span>
+      </div>
 
-      <p class="footer-font" style="color: white">We provide everything pets need to live a happy and healthy life.</p>
-      <a href="#"> <i class="fa fa-twitter padding-small  social-media my-5" style="color:white"></i></a>
-      <a href="#"> <i class="fa fa-facebook-f padding-small  f-aw  social-media" style="color:white"></i></a>
-      <a href="#"> <i class="fa fa-google-plus padding-small  f-aw  social-media" style="color:white"></i></a>
-      <a href="#"> <i class="fa fa-youtube-play padding-small  f-aw  social-media" style="color:white"></i></a>
-      <a href="#"> <i class="fa fa-pinterest-p padding-small  f-aw social-media" style="color:white"></i></a>
+      <p class="footer-font" style="color: white">
+        We provide everything pets need to live a happy and healthy life.
+      </p>
+      <a>
+        <i
+          class="fa fa-twitter padding-small  social-media my-5"
+          style="color:white"
+        ></i
+      ></a>
+      <a>
+        <i
+          class="fa fa-facebook-f padding-small  f-aw  social-media"
+          style="color:white"
+        ></i
+      ></a>
+      <a>
+        <i
+          class="fa fa-google-plus padding-small  f-aw  social-media"
+          style="color:white"
+        ></i
+      ></a>
+      <a>
+        <i
+          class="fa fa-youtube-play padding-small  f-aw  social-media"
+          style="color:white"
+        ></i
+      ></a>
+      <a>
+        <i
+          class="fa fa-pinterest-p padding-small  f-aw social-media"
+          style="color:white"
+        ></i
+      ></a>
     </div>
     <div class="col-md-2 text-left  my-5">
       <h2 class="my-3 col-title" style="color: white">Pets</h2>
       <div class="footer-border one mt-2 text-left add-Green"></div>
       <div class="footer-border two mb-2 mt-1 text-left add-Green"></div>
-      <div><i class="fas fa-paw add-Green"></i><a href="#" class="footer-info">Pet Care</a></div>
-      <div><i class="fas fa-paw add-Green"></i><a href="#" class="footer-info">Pet Talk</a></div>
+      <div>
+        <i class="fas fa-paw add-Green"></i
+        ><a [routerLink]="'Home'" class="footer-info">Home</a>
+      </div>
+      <div>
+        <i class="fas fa-paw add-Green"></i
+        ><a [routerLink]="'discover'" class="footer-info">Discover</a>
+      </div>
 
-      <div><i class="fas fa-paw add-Green"></i><a href="#" class="footer-info">Veterinary</a></div>
+      <div>
+        <i class="fas fa-paw add-Green"></i
+        ><a [routerLink]="'Blog'" class="footer-info">Blog</a>
+      </div>
 
-      <div><i class="fas fa-paw add-Green"></i><a href="#" class="footer-info">Dog</a></div>
+      <div>
+        <i class="fas fa-paw add-Green"></i
+        ><a [routerLink]="'pet-listing'" class="footer-info">Adoption</a>
+      </div>
 
-      <div><i class="fas fa-paw add-Green"></i><a href="#" class="footer-info">Cat</a></div>
+      <div>
+        <i class="fas fa-paw add-Green"></i
+        ><a [routerLink]="'contact-us'" class="footer-info">Contact</a>
+      </div>
 
-      <div><i class="fas fa-paw add-Green"></i><a href="#" class="footer-info">Login</a></div>
+      <div>
+        <i class="fas fa-paw add-Green"></i
+        ><a href="#" class="footer-info">About Us </a>
+      </div>
+
+      <div>
+        <i class="fas fa-paw add-Green"></i
+        ><a [routerLink]="'Login'" class="footer-info">Login</a>
+      </div>
     </div>
     <div class="col-md-4 text-left   my-5 ">
       <h3 class="my-3 col-title" style="color: white">Recent Posts</h3>
@@ -45,7 +108,11 @@
       <div class="footer-border two mb-2 mt-1 text-left"></div>
       <div class="row text-left">
         <div class="col-md-4">
-          <img src="../../../../assets/images/dog3.jpg" alt="dog" style="height:7rem;" />
+          <img
+            src="../../../../assets/images/dog3.jpg"
+            alt="dog"
+            style="height:7rem;"
+          />
         </div>
         <div class="col-md-8">
           <p>Nine-year old princess hair donating now</p>
@@ -59,7 +126,11 @@
       </div>
       <div class="row text-left">
         <div class="col-md-4">
-          <img src="../../../../assets/images/dog2.jpg" alt="dog" style="height:7rem;" />
+          <img
+            src="../../../../assets/images/dog2.jpg"
+            alt="dog"
+            style="height:7rem;"
+          />
         </div>
         <div class="col-md-8">
           <p>City town host charity 5km run for poor people</p>
@@ -74,14 +145,29 @@
           <div class="footer-border one mt-2 text-left "></div>
           <div class="footer-border two mb-2 mt-1 text-left"></div>
           <div>
-            <p><i class="fas fa-map-marker-alt " style="color:rgb(201, 193, 193)"></i> 3571 Ringer House, Cairo, Egypt</p>
+            <p>
+              <i
+                class="fas fa-map-marker-alt "
+                style="color:rgb(201, 193, 193)"
+              ></i>
+              3571 Ringer House, Cairo, Egypt
+            </p>
           </div>
           <div>
-            <p><i class="fas fa-phone fa-rotate-90 " style="color:rgb(201, 193, 193)"></i> Support: +(034) 256 7850</p>
+            <p>
+              <i
+                class="fas fa-phone fa-rotate-90 "
+                style="color:rgb(201, 193, 193)"
+              ></i>
+              Support: +(034) 256 7850
+            </p>
           </div>
 
           <div>
-            <p><i class="far fa-envelope  " style="color:rgb(201, 193, 193)"></i> Email: info@example.com</p>
+            <p>
+              <i class="far fa-envelope  " style="color:rgb(201, 193, 193)"></i>
+              Email: info@example.com
+            </p>
           </div>
         </div>
       </div>
@@ -89,7 +175,10 @@
   </div>
   <div class="row bottom-footer m-auto mt-5  m-auto justify-content-center ">
     <div class="col-md-4  my-5">
-      <div>Copyrights © 2018 <span class="add-Green">Aleefy</span>. All rights reserved.</div>
+      <div>
+        Copyrights © 2018 <span class="add-Green">Aleefy</span>. All rights
+        reserved.
+      </div>
     </div>
     <div class="col-md-4 my-5 offset-md-3">
       <div class="row ">

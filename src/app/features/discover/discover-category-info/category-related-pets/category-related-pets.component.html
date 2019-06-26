@@ -35,3 +35,23 @@
     </div>
   </div>
 </div>
+<!--Not found Selection-->
+
+<section class="pets--box" *ngIf="relatedpets.length < 1">
+  <div class="container">
+    <div class="row mt-5 mb-5 block-padding">
+      <div class="col-md-4 offset-md-1 ">
+        <img
+          src="../../../assets/images/angry.jpeg"
+          alt=""
+          class="center-block img-fluid float-right"
+        />
+      </div>
+      <div
+        class="col-md-5 h-50 ml-3  border-irregular1  bg-light-custom text-center p-6"
+      >
+        <h2 class="notFound-title">No related Pets are added yet</h2>
+      </div>
+    </div>
+  </div>
+</section>

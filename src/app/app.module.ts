@@ -1,11 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
-<<<<<<< HEAD
-import { ReactiveFormsModule,FormsModule } from "@angular/forms";
-=======
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
->>>>>>> c0d9f6a01aebab9b4bd367b006f036a3a3218d1b
 
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
@@ -21,13 +17,9 @@ import { CategoryService } from "./_services/category.service";
 import { PetService } from "./_services/pet.service";
 import { ReplyService } from "./_services/reply.service";
 import { TypeService } from "./_services/type.service";
-<<<<<<< HEAD
-import { AboutUsComponent } from './features/about-us/about-us.component';
-import { AnimalTypesComponent } from "./features/animal-types/animal-types.component";
-=======
+import { AboutUsComponent } from "./features/about-us/about-us.component";
 import { AnimalTypesComponent } from "./features/discover/animal-types/animal-types.component";
 //import { DiscoverPetComponent } from "./features/discover/discover-pet.component";
->>>>>>> c0d9f6a01aebab9b4bd367b006f036a3a3218d1b
 import { HomeComponent } from "./features/home/home.component";
 import { LoginComponent } from "./features/login/login.component";
 import { RegisterComponent } from "./features/register/register.component";
@@ -44,43 +36,31 @@ import { CommentItemComponent } from "./features/blog/comment-item/comment-item.
 import { PostDetailsComponent } from "./features/blog/post-details/post-details.component";
 import { PostItemComponent } from "./features/blog/post-item/post-item.component";
 import { PostListingComponent } from "./features/blog/post-listing/post-listing.component";
-<<<<<<< HEAD
-import { ReplyItemComponent } from "./features/blog/reply-item/reply-item.component";
-=======
->>>>>>> c0d9f6a01aebab9b4bd367b006f036a3a3218d1b
 import { SidebarComponent } from "./features/blog/sidebar/sidebar.component";
 import { AddAnimalFormComponent } from "./features/pets/add-animal-form/add-animal-form.component";
 import { PetItemComponent } from "./features/pets/pet-item/pet-item.component";
 import { PetListingComponent } from "./features/pets/pet-listing/pet-listing.component";
 import { PetProfileComponent } from "./features/pets/pet-profile/pet-profile.component";
 import { EditProfileComponent } from "./features/user/edit-profile/edit-profile.component";
-<<<<<<< HEAD
-=======
 import { ReplyItemComponent } from "./features/blog/reply-item/reply-item.component";
 import { DeleteModalComponent } from "./shared/delete-modal/delete-modal.component";
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatButtonModule } from "@angular/material/button";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
->>>>>>> c0d9f6a01aebab9b4bd367b006f036a3a3218d1b
 import { ManagePetsComponent } from "./features/user/manage-pets/manage-pets.component";
 import { FullHeaderComponent } from "./core/layout/header/full-header/full-header.component";
 import { LowerHeaderComponent } from "./core/layout/header/lower-header/lower-header.component";
 import { UpperHeaderComponent } from "./core/layout/header/upper-header/upper-header.component";
-<<<<<<< HEAD
-import { CategoryItemComponent } from "./features/blog/categories/category-item/category-item.component";
-import { CategoryListingComponent } from "./features/blog/categories/category-listing/category-listing.component";
+// import { CategoryItemComponent } from "./features/blog/categories/category-item/category-item.component";
+// import { CategoryListingComponent } from "./features/blog/categories/category-listing/category-listing.component";
 import { TagItemComponent } from "./features/blog/tags/tag-item/tag-item.component";
 import { TagListingComponent } from "./features/blog/tags/tag-listing/tag-listing.component";
-=======
-import { TagItemComponent } from "./features/blog/tags/tag-item/tag-item.component";
-import { TagListingComponent } from "./features/blog/tags/tag-listing/tag-listing.component";
-import { DiscoverPetComponent } from './features/discover/discover-pet/discover-pet.component';
-import { ChoosePetComponent } from './features/choose-pet/choose-pet.component';
+import { DiscoverPetComponent } from "./features/discover/discover-pet/discover-pet.component";
+import { ChoosePetComponent } from "./features/choose-pet/choose-pet.component";
 import { DiscoverCategoryComponent } from "./features/discover/discover-category-info/discover-category/discover-category.component";
 import { CategoryRelatedPetsComponent } from "./features/discover/discover-category-info/category-related-pets/category-related-pets.component";
 
 import { ContactUsComponent } from "./shared/contact-us/contact-us.component";
->>>>>>> c0d9f6a01aebab9b4bd367b006f036a3a3218d1b
 
 @NgModule({
   declarations: [
@@ -119,14 +99,11 @@ import { ContactUsComponent } from "./shared/contact-us/contact-us.component";
     EditProfileComponent,
     CardWithCoverComponent,
     ReplyItemComponent,
-<<<<<<< HEAD
-    AboutUsComponent
-=======
+    AboutUsComponent,
     DeleteModalComponent,
     DiscoverPetComponent,
     ContactUsComponent,
     ChoosePetComponent
->>>>>>> c0d9f6a01aebab9b4bd367b006f036a3a3218d1b
   ],
   entryComponents: [DeleteModalComponent, DiscoverPetComponent],
 
@@ -172,11 +149,9 @@ import { ContactUsComponent } from "./shared/contact-us/contact-us.component";
       { path: "Blog", component: PostListingComponent },
       { path: "Blog/Post-details/:id", component: PostDetailsComponent },
       { path: "Blog/add-post", component: AddPostComponent },
-<<<<<<< HEAD
       { path: "About_Us", component: AboutUsComponent },
-=======
       { path: "choose-pet", component: ChoosePetComponent },
-      
+
       { path: "discover", component: DiscoverPetComponent }, //alaa page best name discover i think
       {
         path: "discover/Animal-Types/:typeId",
@@ -187,7 +162,6 @@ import { ContactUsComponent } from "./shared/contact-us/contact-us.component";
         component: DiscoverCategoryComponent
       },
       { path: "contact-us", component: ContactUsComponent },
->>>>>>> c0d9f6a01aebab9b4bd367b006f036a3a3218d1b
 
       {
         path: "**",

@@ -41,15 +41,11 @@ export class PetItemComponent implements OnInit {
     
     if(this.userService.loginUser){
       this.user=this.userService.loginUser;
-      console.log(this.user);
+     
       this.userPet = this.petService.getByUserId(this.user.id);
       // return this.user
     }
-    // console.log(this.pet);
-    // if (!this.data) {
-    //   this.data = this.petService.getAll();
-    //   return this.data
-    // }
+  
   }
   editButtonClick(PetId: Number) {
     this.router.navigate(["Edit-Animal", PetId]);
@@ -78,13 +74,13 @@ export class PetItemComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       if(result) {
-        console.log('Yes clicked');
+        
         this.removeClick.next();
         // result.then.emit(true);
   
         // DO SOMETHING
       }
-      console.log('no clicked');
+      
       //  result.then.emit(false);
     });
 }

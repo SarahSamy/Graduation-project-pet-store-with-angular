@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/_services/user.service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'edit-profile',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditProfileComponent implements OnInit {
   url: string;
-  constructor() { }
+  userService:UserService;
+  constructor(user:UserService,private router: Router) {
+    this.userService=user;
+    if(!this.userService.loginUser){
+      this.router.navigate(['/Login']);
+    }
+   }
 
   ngOnInit() {
   }

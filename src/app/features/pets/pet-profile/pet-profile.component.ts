@@ -23,7 +23,7 @@ export class PetProfileComponent implements OnInit {
       this.petId = paramsId;
   });
   this.petId= this.petId.id;
-  console.log(this.petId);
+  
     if (!this.data) {
       this.data = this.petService.getById(Number(this.petId))
      return this.data

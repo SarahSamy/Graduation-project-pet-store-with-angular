@@ -10,8 +10,7 @@ export function PasswordValidator(controlName: string, matchingControlName: stri
         }
 
         if (control.value !== matchingControl.value) {
-            console.log(control.value);
-            console.log(matchingControl.value)
+           
 
             matchingControl.setErrors({ mustMatch: true });
         } else {

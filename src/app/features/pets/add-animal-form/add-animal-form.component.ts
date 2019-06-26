@@ -7,6 +7,7 @@ import { CategoryService } from "src/app/_services/category.service";
 import { TypeService } from "src/app/_services/type.service";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
+import { UserService } from 'src/app/_services/user.service.service';
 
 @Component({
   selector: "app-add-animal-form",
@@ -23,17 +24,24 @@ export class AddAnimalFormComponent implements OnInit {
   categoryName: string;
   edit: boolean;
   isSubmitted: boolean;
+  userService:UserService;
 
   constructor(
     private PetService: PetService,
     private CategoryService: CategoryService,
     private TypeService: TypeService,
     private router: Router,
-    private activatedroute: ActivatedRoute
+    private activatedroute: ActivatedRoute,
+     user: UserService,
   ) {
+    this.userService=user;
+    if(this.userService.loginUser){
     this.id = this.PetService.getAll().length + 1;
     this.edit = false;
-    this.isSubmitted = false;
+    this.isSubmitted = false;}
+    else{
+      this.router.navigate(['/Login']);
+    }
   }
 
   ngOnInit() {
@@ -129,7 +137,6 @@ export class AddAnimalFormComponent implements OnInit {
   }
   displayTypeCategories(typeSelect) {
     let selectedTypeId = +typeSelect;
-    // console.log(selectedTypeId);
     this.selectedTypeCategories = this.categories.filter(
       c => c.fkTypeId === selectedTypeId
     );

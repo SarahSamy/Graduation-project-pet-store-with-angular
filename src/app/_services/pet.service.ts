@@ -25,7 +25,7 @@ export class PetService {
       {
         petId: 2,
         name: "kpkp",
-        image: "assets/images/dog1.jpg",
+        image: "assets/images/dog2.jpg",
         gender: "male",
         isToAdapted: false,
         age: 2,
@@ -42,7 +42,7 @@ export class PetService {
       {
         petId: 3,
         name: "lolo",
-        image: "assets/images/dog1.jpg",
+        image: "assets/images/dog3.jpg",
         gender: "female",
         isToAdapted: true,
         age: 2,
@@ -59,7 +59,7 @@ export class PetService {
       {
         petId: 4,
         name: "Bon",
-        image: "assets/images/dog1.jpg",
+        image: "assets/images/dog4.jpg",
         gender: "male",
         isToAdapted: true,
         age: 2,
@@ -76,7 +76,7 @@ export class PetService {
       {
         petId: 5,
         name: "rose",
-        image: "assets/images/dog1.jpg",
+        image: "assets/images/dog5.jpg",
         gender: "male",
         isToAdapted: true,
         age: 2,
@@ -93,7 +93,7 @@ export class PetService {
       {
         petId: 6,
         name: "jack",
-        image: "assets/images/dog1.jpg",
+        image: "assets/images/dog9.jpg",
         gender: "female",
         isToAdapted: true,
         age: 2,
@@ -265,9 +265,8 @@ export class PetService {
   }
   delete(id: number) {
     let i = this.data.find(p => p.petId === id);
-    // this.data.splice(id, 1);
     i.isDeleted = true;
-    console.log(this.data);
+  
   }
 
   getAllOthers(): Pet[] {

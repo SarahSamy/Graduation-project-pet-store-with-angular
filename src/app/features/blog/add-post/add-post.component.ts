@@ -18,6 +18,7 @@ export class AddPostComponent implements OnInit {
   tags: Tag[];
   addPostForm: FormGroup;
   loginUser: User;
+  isSubmitted: boolean;
   id: number;
   now: Date = new Date();
   newPost: Post = {
@@ -36,6 +37,7 @@ export class AddPostComponent implements OnInit {
     this.id = this.PostService.getAll().length + 1;
     this.loginUser = this.userService.loginUser;
     this.tags = this.TagService.getAll();
+    this.isSubmitted = false;
   }
 
   ngOnInit() {
@@ -49,7 +51,9 @@ export class AddPostComponent implements OnInit {
     this.tags = this.TagService.getAll();
   }
   onSubmit() {
+    this.isSubmitted = true;
     if (this.addPostForm.valid) {
+      console.log("hiiiiiiiiiiiiiiiiii");
       this.newPost.body = (this.addPostForm.get("body") as FormControl).value;
       this.newPost.title = (this.addPostForm.get("title") as FormControl).value;
       this.newPost.id = this.id;

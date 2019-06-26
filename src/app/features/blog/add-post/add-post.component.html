@@ -39,11 +39,13 @@
 
                 <label class="text">Title<span class="required">*</span></label>
                 <input [formControlName]="'title'" class="form-control  form-control-lg mb-1 " type="text" placeholder="write The title of post..." />
+
                 <!--post title validation-->
-                <span class="error_msg mb-4 ml-3" *ngIf="!addPostForm.get('title').valid">
-                  <span *ngIf="addPostForm.get('title').errors && addPostForm.get('title').touched">
-                    Post title its minimum length(3) must be And maximum length(100)
-                  </span>
+                <span
+                  class="error_msg mb-4 ml-3"
+                  *ngIf="(!addPostForm.get('title').valid && addPostForm.get('title').errors && addPostForm.get('title').touched) || isSubmitted"
+                >
+                  Post title its minimum length(3) must be And maximum length(100)
                 </span>
                 <label class="text mt-3">Related animal<span class="required">*</span></label>
                 <div class="form-group ">
@@ -53,10 +55,13 @@
                     <option *ngFor="let tag of tags" [value]="tag.id">{{ tag.name }}</option>
                   </select>
                   <!-- Post Tag validation -->
-                  <span class="error_msg" *ngIf="!addPostForm.get('tag').valid">
-                    <span *ngIf="addPostForm.get('tag').get('id').errors && addPostForm.get('tag').get('id').touched">
-                      you should select related animal of your post
-                    </span>
+                  <span
+                    class="error_msg"
+                    *ngIf="
+                      (!addPostForm.get('tag').valid && addPostForm.get('tag').get('id').errors && addPostForm.get('tag').get('id').touched) || isSubmitted
+                    "
+                  >
+                    you should select related animal of your post
                   </span>
                 </div>
                 <div class="form-group add-post--body">
@@ -69,10 +74,11 @@
                     rows="5"
                     placeholder="write The body of post..."
                   ></textarea>
-                  <span class="error_msg mt-2 ml-5" *ngIf="!addPostForm.get('body').valid">
-                    <span *ngIf="addPostForm.get('body').errors && addPostForm.get('body').touched">
-                      You must enter body of the post..
-                    </span>
+                  <span
+                    class="error_msg mt-2 ml-5"
+                    *ngIf="(!addPostForm.get('body').valid && addPostForm.get('body').errors && addPostForm.get('body').touched) || isSubmitted"
+                  >
+                    You must enter body of the post..
                   </span>
                 </div>
                 <div class="form-group b mt-3">

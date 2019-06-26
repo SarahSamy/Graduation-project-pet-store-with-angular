@@ -9,7 +9,7 @@ export class DropdownComponent implements OnInit {
   isOpened:boolean;
   constructor() { 
     this.isOpened=false;
-    console.log(this.isOpened);
+   
   }
 
   ngOnInit() {

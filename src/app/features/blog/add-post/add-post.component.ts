@@ -65,7 +65,7 @@ export class AddPostComponent implements OnInit {
       const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
       this.newPost.month = monthNames[this.now.getMonth()];
       this.newPost.year = this.now.getFullYear() + "";
-      console.log(this.addPostForm);
+      
       this.post = this.addPostForm.value;
       this.PostService.addPost(this.newPost);
       this.router.navigate(["/Blog"]);

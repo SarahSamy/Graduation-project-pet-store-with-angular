@@ -1,19 +1,16 @@
 import {
   Component,
   OnInit,
-  Input,
-  EventEmitter,
-  ViewChild,
-  ElementRef
+
 } from "@angular/core";
 import { Category } from "src/app/_model/category";
 import { CategoryService } from "src/app/_services/category.service";
 import { Type } from "src/app/_model/type";
 import { Pet } from "src/app/_model/pet";
 import { PetService } from "src/app/_services/pet.service";
-import { Event, Router, ActivatedRoute } from "@angular/router";
+import {  Router, ActivatedRoute } from "@angular/router";
 import { TypeService } from "src/app/_services/type.service";
-import { FormControl } from "@angular/forms";
+
 
 @Component({
   selector: "app-animal-types",
@@ -70,7 +67,7 @@ export class AnimalTypesComponent implements OnInit {
     this.allCategories = this.categoryService.getAll();
     this.allPets = this.petService.getAll();
     // display categoris of selected type in DiscoverAnimalPage when page first upload//
-    // this.TypeSelect.value=this.selectedTypeId;
+    
     this.displayTypeCategories();
   }
   pageChanged(event) {
@@ -122,11 +119,9 @@ export class AnimalTypesComponent implements OnInit {
               return pet;
           }
         });
-        console.log(this.displayed);
+       
       }
-      // console.log(this.displayed);
-      // console.log(selectedCategory);
-      // console.log(this.allPets);
+     
     }
     this.config = {
       itemsPerPage: 11,

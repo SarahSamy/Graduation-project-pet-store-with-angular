@@ -9,8 +9,8 @@ export class PostsService {
         id: 1,
         title: "How to Survive Giving Your Dog a Bath",
         body:
-        "Ilana Pinto grew up around dogs in Canada — running dog sleds and spending ample time at the nearby dog park — but she never had her own. When she and Eric Pinto got married, she knew it was time. “I’m old enough to be married; I’m old enough to have a dog,” she told herself."
-        ,userId: 1,
+          "Ilana Pinto grew up around dogs in Canada — running dog sleds and spending ample time at the nearby dog park — but she never had her own. When she and Eric Pinto got married, she knew it was time. “I’m old enough to be married; I’m old enough to have a dog,” she told herself.",
+        userId: 1,
         TagsId: [1, 2],
         image: "../../../../assets/images/blog/adorable-animals-breed-374825.jpg",
         time: "11:00pm",
@@ -22,10 +22,10 @@ export class PostsService {
         id: 2,
         title: "Living with Cat Allergies",
         body:
-        "Keep Pet Food Bags Away From Dogs and Cats While your pet is probably excited to have what’s inside his bag of food, make sure you keep the opened bag in a place your pet can’t access, and dispose of it immediately once it’s empty. Doing so will help ensure "
-        ,userId: 2,
+          "Keep Pet Food Bags Away From Dogs and Cats While your pet is probably excited to have what’s inside his bag of food, make sure you keep the opened bag in a place your pet can’t access, and dispose of it immediately once it’s empty. Doing so will help ensure ",
+        userId: 2,
         TagsId: [1, 2],
-        image: "../../../../assets/images/blog/adorable-animals-beautiful-eyes-1643456.jpg",
+        image: "../../../../assets/images/c1.png",
         time: "12:00pm",
         day: "07",
         month: "NOV",
@@ -35,7 +35,7 @@ export class PostsService {
         id: 3,
         title: "How to Survive Giving Your Dog a Bath",
         body:
-        "When Mathé and Jordan visited the PS9 Pet Store hosting cats from New York Animal Care and Control last December, they knew they wanted a cat, but two? They didn’t see that coming. To their own surprise, the couple left with two young kittens, and now they can’t imagine it any other way. Two pets may sound like double",
+          "When Mathé and Jordan visited the PS9 Pet Store hosting cats from New York Animal Care and Control last December, they knew they wanted a cat, but two? They didn’t see that coming. To their own surprise, the couple left with two young kittens, and now they can’t imagine it any other way. Two pets may sound like double",
         userId: 1,
         TagsId: [2],
         image: "../../../../assets/images/blog/adorable-animal-black-and-white-825947.jpg",
@@ -51,7 +51,7 @@ export class PostsService {
           "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
         userId: 2,
         TagsId: [3],
-        image: "../../../../assets/images/blog/adorable-animals-breed-374825.jpg",
+        image: "../../../../assets/images/c12.jpg",
         time: "10:00pm",
         day: "12",
         month: "DEC",
@@ -61,10 +61,10 @@ export class PostsService {
         id: 5,
         title: "How to Survive Giving Your Dog a Bath",
         body:
-        "Monique Borrero had Princess, a Pug mix, for nine years when she decided to adopt Charlie, a Chihuahua mix. Charlie’s mother had been surrendered when she was pregnant, so Charlie had only known life in the shelter before his adoption, and he was happy in his new home",
+          "Monique Borrero had Princess, a Pug mix, for nine years when she decided to adopt Charlie, a Chihuahua mix. Charlie’s mother had been surrendered when she was pregnant, so Charlie had only known life in the shelter before his adoption, and he was happy in his new home",
         userId: 2,
         TagsId: [3],
-        image: "../../../../assets/images/blog/adorable-animals-breed-374825.jpg",
+        image: "../../../../assets/images/c4.jpg",
         time: "3:40pm",
         day: "1",
         month: "DEC",
@@ -74,10 +74,10 @@ export class PostsService {
         id: 6,
         title: "How to Survive Giving Your Dog a Bath",
         body:
-        "When Emily Burke stepped into her room just before Christmas, she knew someone had been there, and it wasn’t Santa Claus. Cellophane wrappers from caramels littered the floor. The family dogs",
+          "When Emily Burke stepped into her room just before Christmas, she knew someone had been there, and it wasn’t Santa Claus. Cellophane wrappers from caramels littered the floor. The family dogs",
         userId: 1,
         TagsId: [4],
-        image: "../../../../assets/images/blog/adorable-animals-breed-374825.jpg",
+        image: "../../../../assets/images/c21.jpg",
         time: "10:00pm",
         day: "2",
         month: "JAN",

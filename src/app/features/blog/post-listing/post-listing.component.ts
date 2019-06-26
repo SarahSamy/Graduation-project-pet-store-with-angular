@@ -24,17 +24,19 @@ export class PostListingComponent implements OnInit {
   constructor(test: PostsService, tags: TagService, user: UserService) {
     this.postService = test;
     this.userService = user;
+
     this.loginUser = this.userService.loginUser;
     this.tagService = tags;
     if (!this.data) {
       this.data = this.postService.getAll();
       this.tags = this.tagService.getAll();
     }
+
     this.config = {
       itemsPerPage: 2,
       currentPage: 1,
-      totalItems: (this.filterData?this.filterData.length:this.data.length),
-    }
+      totalItems: this.filterData ? this.filterData.length : this.data.length
+    };
   }
   pageChanged(event) {
     this.config.currentPage = event;
@@ -46,13 +48,11 @@ export class PostListingComponent implements OnInit {
   }
   filterPosts(tagId: number) {
     this.data = this.postService.getAll();
-   
     this.data = this.postService.findPostByTag(tagId);
     this.config = {
       itemsPerPage: 2,
       currentPage: 1,
-      totalItems: (this.filterData?this.filterData.length:this.data.length),
-    }
-  
+      totalItems: this.filterData ? this.filterData.length : this.data.length
+    };
   }
 }

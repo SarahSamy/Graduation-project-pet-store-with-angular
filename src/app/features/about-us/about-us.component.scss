@@ -1,0 +1,110 @@
+.about{
+    height :400px;
+ margin:10rem 0;   
+}
+.about_title
+{
+    font-family: 'Quicksand', sans-serif;
+        font-size: 3.7rem;
+        font-weight: 900;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        letter-spacing: -1px;
+}
+.about_content
+{
+list-style: none;
+padding: 0px;
+margin: 0px;
+font-size: 1.7rem;
+
+}
+.about_content li{
+    margin: 0px;
+
+}
+.about-img1{
+overflow: hidden;
+border-radius: 155px 45px 225px 75px/15px 125px 15px 155px;
+
+}
+
+.counter_section
+{ 
+  padding: 4.5rem;
+  background-color: #94c13d;
+}
+.card_container 
+// 
+{
+border-radius: 15px;
+text-align: center;
+padding-bottom: 3rem;
+}
+.card_container i{
+  font-size: 10rem;
+  margin: 2rem 0rem;
+}
+.card_container .cont
+{
+   font-size: 3rem; 
+//    margin-top: 2rem;
+   margin-bottom: 2rem;
+   
+
+}
+.card_container .card_type{
+    font-size: 2.5rem;
+    border-top: 3px solid #94c13d;
+    padding: 2rem 0rem;
+   
+}
+
+h2{
+    margin-bottom: 0px;
+    margin-top: 10rem;
+    font-size: 4rem;
+    color: #94c13d;
+    padding: 2rem;
+}
+.clients{
+    padding: 5rem;
+background-color: rgba(160, 93, 97, 0.158)
+
+}
+
+.description1,.description2
+{
+    font-size: 1.6rem;
+    padding: 2.2rem;
+    border-radius: 10px;
+    background-color: #94c13d;
+    color: white;
+    position: relative;
+}
+
+.quote_1
+{
+    position: absolute;
+    top:-17px;
+    left: -28px;
+    font-size: 2.5rem;
+    // color: cadetblue
+}
+.quote_2
+{
+    position: absolute;
+    top:-10px;
+    left:1.5rem;
+    font-size: 2.5rem;
+}
+
+
+.memberName ,.memberRole
+{
+font-size: 2.5rem;
+font-weight: 700;
+}
+.rounded-circle{
+    border: none;
+}

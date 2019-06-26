@@ -1,75 +1,70 @@
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-sm-12 col-md-12 login-form ">
-            <div class="row login-form__two-sides">
-                <div class="col-12">
-                    <div class="row ">
-                        <div class="col-sm-12 col-lg-6 login-form__two-sides__advices">
-                            <div class="row justify-content-center">
-                                <div class="col-9 login-form__two-sides__advices__advices-header">
-                                    <p>PetStore Makes Adopting Easier</p>
-                                </div>
-                            </div>
-                            <div class="row justify-content-center">
-                                <div class="col-11">
-                                    <ul class="login-form__two-sides__advices__adv-list ">
-                                        <li class="pt-4">Create and save your adopter profile.</li>
-                                        <li>Save and manage your pet searches and email communications.</li>
-                                        <li>Learn helpful pet care tips and receive expert advice.</li>
-                                        <li>Get involved and help promote adoptable pets in your area.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class=" col-sm-12 col-lg-6 login-form__two-sides__inputs">
-                            <div class="col-sm-12">
-                                <div class="row  justify-content-center mt-5">
-                                    <div class="col-9 login-form__two-sides__inputs__header">
-                                        <p>Login in to PetStore</p>
-                                    </div>
-                                </div>
-                                <div class="row mt-3 justify-content-center">
-                                    <div class="col-9 login-form__two-sides__inputs__form">
-                                            <div align="center" class="mb-2 errorMessage">{{erroeMessage}}</div>
-
-                                        <form [formGroup]="logInForm" (ngSubmit)="onSubmit()">
-                                            <div class="form-group">
-
-                                                <input [formControlName]="'email'" type="email" class="form-control" id="formGroupExampleInput"
-                                                    placeholder="Email">
-                                            </div>
-                                            <div class="form-group">
-
-                                                <input [formControlName]="'password'" type="password" class="form-control" id="formGroupExampleInput2"
-                                                    placeholder="Password">
-                                            </div>
-                                            <div class="form-group">
-                                                <button type="submit" class="theme-btn btn-style-one type=" submit>LOG
-                                                    In</button> </div>
-
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="row login-form__two-sides__inputs__forget justify-content-center">
-                                    <div class="col-12" align="center">
-                                        <a href="#">FORGOT PASSWORD ?</a>
-                                    </div>
-                                    <div class="col-9 login-form__two-sides__inputs__sperator mt-5" align="center">
-
-                                    </div>
-                                    <div class="col-10  mt-3" align="center">
-                                        <p>DON'T HAVE AN ACCOUNT?</p>
-                                    </div>
-                                    <div class="col-9 mb-4">
-                                        <div class="form-group">
-                                            <button type="submit" class="theme-btn btn-style-one type=" submit><a [routerLink]="'/Register'" >Register Now</a></button> </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<div class="container mt-5 ">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-12 login-form ">
+      <div class="row login-form__two-sides custom-container">
+        <div class="col-12">
+          <div class="row ">
+            <div class="col-sm-12 col-lg-6 login-form__two-sides__advices">
+              <div class="row justify-content-center">
+                <div class="col-9 login-form__two-sides__advices__advices-header">
+                  <p>PetStore Makes Adopting Easier</p>
                 </div>
-
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-11">
+                  <ul class="login-form__two-sides__advices__adv-list ">
+                    <li class="pt-4">Create and save your adopter profile.</li>
+                    <li>Save and manage your pet searches and email communications.</li>
+                    <li>Learn helpful pet care tips and receive expert advice.</li>
+                    <li>Get involved and help promote adoptable pets in your area.</li>
+                  </ul>
+                </div>
+              </div>
             </div>
+
+            <div class=" col-sm-12 col-lg-6 login-form__two-sides__inputs">
+              <div class="col-sm-12">
+                <div class="row  justify-content-center mt-5">
+                  <div class="col-9 login-form__two-sides__inputs__header">
+                    <p>Login in to PetStore</p>
+                  </div>
+                </div>
+                <div class="row mt-3 justify-content-center">
+                  <div class="col-9 login-form__two-sides__inputs__form">
+                    <div align="center" class="mb-2 errorMessage">{{ erroeMessage }}</div>
+
+                    <form [formGroup]="logInForm" (ngSubmit)="onSubmit()">
+                      <div class="form-group">
+                        <input [formControlName]="'email'" type="email" class="form-control" id="formGroupExampleInput" placeholder="Email" />
+                      </div>
+                      <div class="form-group">
+                        <input [formControlName]="'password'" type="password" class="form-control" id="formGroupExampleInput2" placeholder="Password" />
+                      </div>
+                      <div class="form-group">
+                        <button type="submit" class="btn btn--irregular type=" submit>LOG In</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="row login-form__two-sides__inputs__forget justify-content-center">
+                  <div class="col-12" align="center">
+                    <a href="#">FORGOT PASSWORD ?</a>
+                  </div>
+                  <div class="col-9 login-form__two-sides__inputs__sperator mt-5" align="center"></div>
+                  <div class="col-10  mt-3" align="center">
+                    <p>DON'T HAVE AN ACCOUNT?</p>
+                  </div>
+                  <div class="col-9 mb-4">
+                    <div class="form-group">
+                      <button type="submit" class="btn btn--irregular type=" submit><a [routerLink]="'/Register'">Register Now</a></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

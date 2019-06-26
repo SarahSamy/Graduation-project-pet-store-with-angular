@@ -1,6 +1,7 @@
 input.ng-invalid.ng-touched {
   border: 2px solid red;
 }
+$color-primary: #94c13d;
 .input_error {
   color: red;
   margin-top: 5px;
@@ -12,4 +13,18 @@ input.ng-invalid.ng-touched {
 }
 .custom-form {
   border-radius: 35.5rem 4.5rem 22.5rem 7.5rem/1.5rem 22.5rem 1.5rem 25.5rem;
+}
+
+.btn {
+  &--irregular {
+    border-color: $color-primary;
+    background: $color-primary;
+    color: white !important;
+    border-radius: 15.5rem 4.5rem 22.5rem 7.5rem/1.5rem 12.5rem 1.5rem 15.5rem;
+    font-size: 1.4rem;
+    outline: none;
+    letter-spacing: 0.2px;
+    font-weight: 600;
+    color: #000;
+  }
 }

@@ -1,38 +1,36 @@
 <head>
-    <style>
-      .my-pagination /deep/ .ngx-pagination li {
-        background-color: #eff0ec;
-        font-size: 1.2rem;
-        padding: 1rem;
-        border-radius: 1rem;
-        margin: 0.2rem;
-      }
-  
-      .my-pagination /deep/ .ngx-pagination .current {
-        background: #94c13d;
-        font-size: 1.2rem;
-        padding-left: 2rem;
-        padding-right: 2rem;
-        padding-top: 1.1rem;
-        padding-bottom: 1.2rem;
-      }
-  
-      .my-pagination /deep/ .ngx-pagination .pagination-next,
-      .my-pagination /deep/ .ngx-pagination .pagination-previous {
-        background-color: #eff0ec;
-      }
-    </style>
-  </head>
+  <style>
+    .my-pagination /deep/ .ngx-pagination li {
+      background-color: #eff0ec;
+      font-size: 1.2rem;
+      padding: 1rem;
+      border-radius: 1rem;
+      margin: 0.2rem;
+    }
+
+    .my-pagination /deep/ .ngx-pagination .current {
+      background: #94c13d;
+      font-size: 1.2rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      padding-top: 1.1rem;
+      padding-bottom: 1.2rem;
+    }
+
+    .my-pagination /deep/ .ngx-pagination .pagination-next,
+    .my-pagination /deep/ .ngx-pagination .pagination-previous {
+      background-color: #eff0ec;
+    }
+  </style>
+</head>
 <div class="box">
   <div class="top-banner ">
     <div class="top-banner--text">
-      <h1 class="col-12" align="center">PET GUIDE</h1>
+      <h1 class="col-12 " align="center">PET GUIDE</h1>
       <p>
-        Discover Animals Pet Guide: An Online Animal Resource Created By Experts
-        DiscoverAnimals.org is a free online resource bringing together
-        information about all animals including text, images, video, sounds,
-        maps, classifications and more. Please explore our site to learn more
-        and discover new animals you may have never seen!
+        Discover Animals Pet Guide: An Online Animal Resource Created By Experts DiscoverAnimals.org is a free online resource bringing together information
+        about all animals including text, images, video, sounds, maps, classifications and more. Please explore our site to learn more and discover new animals
+        you may have never seen!
       </p>
     </div>
   </div>
@@ -44,11 +42,9 @@
         Discover Animals Pet Guide
       </h2>
       <p class=" Introduction--Box--info__paragraph   text-center">
-        Feathers? Fur? Scales? Whatever type of pet holds your heart, we are
-        here to guide you through the process. From research and planning, to
-        early life and geriatric care, to maintaining health and treating
-        illnesses, we can help you find and care for a pet that is matched to
-        your unique lifestyle and preferences.
+        Feathers? Fur? Scales? Whatever type of pet holds your heart, we are here to guide you through the process. From research and planning, to early life
+        and geriatric care, to maintaining health and treating illnesses, we can help you find and care for a pet that is matched to your unique lifestyle and
+        preferences.
       </p>
     </div>
   </div>
@@ -63,9 +59,7 @@
               </div>
               <div class="flip-card-back">
                 <h1>
-                  <a [routerLink]="['Animal-Types', type.id]">{{
-                    type.name
-                  }}</a>
+                  <a [routerLink]="['Animal-Types', type.id]">{{ type.name }}</a>
                 </h1>
                 <p>{{ type.motivationText }}</p>
               </div>
@@ -91,9 +85,9 @@
       </div>
     </div>
   </div>
-  <div class="row mt-5" >
-      <div class="col-12" align="center">
-     <pagination-controls  class="my-pagination" (pageChange)="pageChanged($event)"></pagination-controls>
+  <div class="row mt-5">
+    <div class="col-12" align="center">
+      <pagination-controls class="my-pagination" (pageChange)="pageChanged($event)"></pagination-controls>
     </div>
   </div>
 </div>

@@ -1,13 +1,12 @@
 <!--------------------main slider-------------------------->
-<app-main-slider *ngIf="images">
-  <ngb-carousel>
-    <ng-template ngbSlide *ngFor="let img of images" class="carousel-zoom">
-      <img [src]="img" class="d-block w-100  " width="1920px" height="800px" alt="pet"
-        [ngStyle]="{'animation': 'zoom 20s'}">
+<app-main-slider *ngIf="images" >
+        <ngb-carousel  >
+                <ng-template ngbSlide *ngFor= "let img of images" class="carousel-zoom">
+                  <img [src]="img" class="d-block w-100  " width="1920px" height="600px" alt="pet" [ngStyle]="{'animation': 'zoom 20s'}">
 
-    </ng-template>
-
-  </ngb-carousel>
+                </ng-template>
+              
+              </ngb-carousel>
 </app-main-slider>
 
 <!---------------------------------------------->

@@ -11,15 +11,22 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DiscoverPetComponent implements OnInit {
   data: Type[];
- 
+  config:any;
   typeSerrvice:TypeService;
   constructor(types:TypeService) { 
     this.typeSerrvice=types;
    
     this.data=this.typeSerrvice.getAllTypes();
   }
-
+  pageChanged(event){
+    this.config.currentPage = event;
+  }
   ngOnInit() {
+    this.config = {
+      itemsPerPage: 3,
+      currentPage: 1,
+      totalItems: this.data.length
+    }
   }
 
 }

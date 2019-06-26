@@ -191,10 +191,15 @@
             class="col-lg-auto col-md-auto  col-md-3 col-sm-4 col-6 pets--box--catalog--info text-center  mb-5"
             (click)="routePage(item)"
           >
+            <!-- <a   [routerLink]="[
+            'discover/Animal-Type/:typeId/category',
+            item.id
+          ]"> -->
             <img
               class=" rounded-circle pets--box--catalog--info__photo"
               [attr.src]="item.image"
             />
+            <!-- </a> -->
             <h4 class="">{{ item.name }}</h4>
           </div>
         </div>

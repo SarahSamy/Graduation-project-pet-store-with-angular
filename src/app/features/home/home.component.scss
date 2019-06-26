@@ -1,3 +1,35 @@
+@-webkit-keyframes zoom {
+    from {
+      -webkit-transform: scale(1.5, 1.5);
+    }
+    to {
+      -webkit-transform: scale(1, 1);
+      transform:matrix3d(1,0,0,1,0,0)
+    }
+  }
+  
+  @keyframes zoom {
+    from {
+      transform: scale(1.5, 1.5);
+    }
+    to {
+      transform: scale(1, 1);
+      transform:matrix3d(1,0,0,1,0,0)
+    }
+  }
+
+.carousel-item.active{
+    img{
+      -webkit-animation: zoom 20s !important;
+      animation: zoom 20s !important;
+    }
+}
+.carousel-zoom.active{
+    img{
+      -webkit-animation: zoom 20s !important;
+      animation: zoom 20s !important;
+    }
+}
 $color-primary: #94c13d;
 $color-black: #111111;
 $color-gray: rgba(228, 228, 230, 0.836);

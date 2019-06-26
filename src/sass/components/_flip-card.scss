@@ -67,3 +67,22 @@
   font-family: sans-serif;
   letter-spacing: 0.03rem;
 }
+.flip-card-back {
+  h1 {
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+  p {
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    padding: 1rem;
+  }
+}
+.type-name {
+  a {
+    color: #94c13d;
+    text-decoration: none;
+  }
+}

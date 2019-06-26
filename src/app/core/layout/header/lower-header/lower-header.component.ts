@@ -28,5 +28,6 @@ export class LowerHeaderComponent implements OnInit {
   }
 logout(){
   this.userService.logout();
+ 
 }
 }

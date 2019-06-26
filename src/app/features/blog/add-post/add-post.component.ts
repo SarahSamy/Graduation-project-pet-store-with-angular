@@ -68,7 +68,7 @@ export class AddPostComponent implements OnInit {
       console.log(this.addPostForm);
       this.post = this.addPostForm.value;
       this.PostService.addPost(this.newPost);
-      this.router.navigate(["/Blog"]); //in future work
+      this.router.navigate(["/Blog"]);
     }
   }
 }

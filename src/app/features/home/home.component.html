@@ -1,9 +1,12 @@
 <!--------------------main slider-------------------------->
 <app-main-slider *ngIf="images">
   <ngb-carousel>
-    <ng-template ngbSlide *ngFor="let img of images">
-      <img [src]="img" class="d-block w-100 " width="1260px" height="400px" alt="pet" />
+    <ng-template ngbSlide *ngFor="let img of images" class="carousel-zoom">
+      <img [src]="img" class="d-block w-100  " width="1920px" height="800px" alt="pet"
+        [ngStyle]="{'animation': 'zoom 20s'}">
+
     </ng-template>
+
   </ngb-carousel>
 </app-main-slider>
 
@@ -166,24 +169,60 @@
 </section>
 
 <!--------------------------------------->
+
 <!---------------------------------------------->
 <!-- Planning to Adopt a Pet? -->
-<div class="container">
-  <div class="row my-5">
-    <div class="col-md-12 text-center ">
-      <img src="../../../assets/images/1810042.png" width="100rem" height="40rem" alt="care" />
-      <h3>Planning to <span class="add-Green">Adopt</span> a Pet?</h3>
-      <h5>Many pets are waiting for you</h5>
+
+
+<section id="services" class="our-services mt-5">
+  <div class="container mt-5">
+    <div class="our-services__heading text-center col-md-12 mt-5">
+      <div><i class="fas fa-paw add-Green banner-icon mb-1 mt-5"></i></div>
+
+
+      <h2>Planning to <span class="add-Green">Adopt</span> a Pet?</h2>
+      <!-- <h5>Many pets are waiting for you</h5> -->
     </div>
   </div>
-</div>
+</section>
 
 <!--------------------------------------------->
 <card-with-cover></card-with-cover>
 
+<!--  Pets Available for Adoption -->
+
+
+<section id="services" class="our-services mt-2">
+  <div class="container">
+    <div class="our-services__heading text-center col-md-12 mt-3">
+      <div><i class="fas fa-paw add-Green banner-icon mb-1"></i></div>
+      <h2><span >Pets Available for Adoption</span></h2>
+      <!-- <h5>Many pets are waiting for you</h5> -->
+    </div>
+  </div>
+</section>
+
+
+
+<!---------------------------------------------------------------------------------------------------->
+<!------------------------------------->
+<div class="container">
+  <div class="row justify-content-center my-4">
+    <div *ngFor="let newpet of  data " class="col-md-3  ">
+
+      <pet-item [pet]='newpet'></pet-item>
+
+    </div>
+
+  </div>
+</div>
+
+<!---------------------------------------------->
+
+
 <!--------------------------------------------- Our Team--------------------------------------------->
 
-<section id="team" class="our-team-box">
+<section id="team" class="our-team-box mt-4 mb-5">
   <div class="container mt-5">
     <div class="our-services__heading text-center mb-5">
       <div><i class="fas fa-paw add-Green banner-icon mb-3"></i></div>
@@ -332,28 +371,4 @@
   </div>
 
 </section>
-
 <!---------------------------------------------------------------------------------------------------->
-<!------------------------------------->
-<div class="container">
-      <div class="our-services__heading text-center mb-4 mt-5">
-      <div><i class="fas fa-paw add-Green banner-icon mb-3 mt-3"></i></div>
-      <h2>Our Pets</h2>
-    </div>
-  <div class="row justify-content-center my-4">
-    <div *ngFor="let newpet of data" class="col-md-4  ">
-      <pet-item [pet]="newpet"></pet-item>
-    </div>
-  </div>
-</div>
-
-
-<!---------------------------------------------->
-<!-- <ng-template ngbSlide>
-                  <img [src]="images[1]" class="d-block w-100 " width="1260px" height="400px" alt="pet">
-
-                </ng-template>
-                <ng-template ngbSlide>
-                  <img [src]="images[2]" class="d-block w-100 " width="1260px" height="400px" alt="pet">
-
-                </ng-template> -->

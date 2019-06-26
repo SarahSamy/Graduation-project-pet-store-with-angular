@@ -97,7 +97,7 @@
 
 
 <!--------------------pagination----------------------->
-<div class="row mt-5"  *ngIf=data>
+<div class="row mt-5"  *ngIf="data">
     <div class="col-12" align="center">
    <pagination-controls class="my-pagination" (pageChange)="pageChanged($event)"></pagination-controls>
   </div>

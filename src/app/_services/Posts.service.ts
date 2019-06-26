@@ -12,7 +12,7 @@ export class PostsService {
           "Ilana Pinto grew up around dogs in Canada — running dog sleds and spending ample time at the nearby dog park — but she never had her own. When she and Eric Pinto got married, she knew it was time. “I’m old enough to be married; I’m old enough to have a dog,” she told herself.",
         userId: 1,
         TagsId: [1, 2],
-        image: "../../../../assets/images/blog/adorable-animals-breed-374825.jpg",
+        image: "../../../../assets/images/c6.jpg",
         time: "11:00pm",
         day: "05",
         month: "DEC",

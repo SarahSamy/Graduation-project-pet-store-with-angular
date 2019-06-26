@@ -52,8 +52,8 @@ import { LowerHeaderComponent } from "./core/layout/header/lower-header/lower-he
 import { UpperHeaderComponent } from "./core/layout/header/upper-header/upper-header.component";
 import { TagItemComponent } from "./features/blog/tags/tag-item/tag-item.component";
 import { TagListingComponent } from "./features/blog/tags/tag-listing/tag-listing.component";
-
-import { DiscoverPetComponent } from "./features/discover/discover-pet/discover-pet.component";
+import { DiscoverPetComponent } from './features/discover/discover-pet/discover-pet.component';
+import { ChoosePetComponent } from './features/choose-pet/choose-pet.component';
 import { DiscoverCategoryComponent } from "./features/discover/discover-category-info/discover-category/discover-category.component";
 import { CategoryRelatedPetsComponent } from "./features/discover/discover-category-info/category-related-pets/category-related-pets.component";
 
@@ -96,11 +96,10 @@ import { ContactUsComponent } from "./shared/contact-us/contact-us.component";
     EditProfileComponent,
     CardWithCoverComponent,
     ReplyItemComponent,
-
+    DeleteModalComponent,
     DiscoverPetComponent,
     ContactUsComponent,
-
-    DeleteModalComponent
+    ChoosePetComponent
   ],
   entryComponents: [DeleteModalComponent, DiscoverPetComponent],
 
@@ -146,6 +145,8 @@ import { ContactUsComponent } from "./shared/contact-us/contact-us.component";
       { path: "Blog", component: PostListingComponent },
       { path: "Blog/Post-details/:id", component: PostDetailsComponent },
       { path: "Blog/add-post", component: AddPostComponent },
+      { path: "choose-pet", component: ChoosePetComponent },
+      
       { path: "discover", component: DiscoverPetComponent }, //alaa page best name discover i think
       {
         path: "discover/Animal-Types/:typeId",

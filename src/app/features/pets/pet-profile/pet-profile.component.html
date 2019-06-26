@@ -14,7 +14,9 @@
         <div class="col-sm-6 col-md-4  offset-1">
           <ul class="clearfix">
             <li>
-              <a [routerLink]="'/Home'"><span class="fa fa-home"></span> Home / </a>
+              <a [routerLink]="'/Home'"
+                ><span class="fa fa-home"></span> Home /
+              </a>
             </li>
             <li class="active new">Pet Profile</li>
           </ul>
@@ -27,13 +29,23 @@
       <div class="col-lg-11 mx-auto mt-5">
         <div class="row bg-light-custom border-irregular1 block-padding ">
           <div class="col-lg-4 offset-lg-2">
-            <div id="owl-adopt-single" class="owl-carousel top-centered-nav owl-theme owl-loaded owl-drag">
+            <div
+              id="owl-adopt-single"
+              class="owl-carousel top-centered-nav owl-theme owl-loaded owl-drag"
+            >
               <div class="owl-stage-outer">
                 <div class="owl-stage">
                   <div class="owl-item active" style="width: 350px;">
                     <div class="col-md-12 irregular-image">
-                      <a href="../../../../assets/images/adopt.jpg" title="your caption here">
-                        <img src="{{ data.image }}" class="border-irregular2 img-fluid hover-opacity" alt="" />
+                      <a
+                        href="../../../../assets/images/adopt.jpg"
+                        title="your caption here"
+                      >
+                        <img
+                          src="{{ data.image }}"
+                          class="border-irregular2 img-fluid hover-opacity"
+                          alt=""
+                        />
                       </a>
                     </div>
                   </div>
@@ -78,39 +90,60 @@
               </div>
             </div>
             <p class="font-weight-bold pet-caption text">
-              {{ data.name }} is a very sweet and active {{ data.category.type.name }}, it is ready for a new home!
+              {{ data.name }} is a very sweet and active
+              {{ data.category.type.name }}, it is ready for a new home!
             </p>
-            <a *ngIf="data.isToAdapted" class="btn btn--irregular mt-5" data-aos="zoom-in">Adopt now!</a>
+            <a
+              *ngIf="data.isToAdapted"
+              class="btn btn--irregular mt-5"
+              data-aos="zoom-in"
+              >Adopt now!</a
+            >
           </div>
         </div>
 
         <div class="col-md-12 mt-5">
           <h2 class="about-title">About {{ data.name }}</h2>
           <ul class="custom list-inline font-weight-bold">
-            <li class="list-inline-item "><i class="fas fa-paw add-Green"></i> Friendly to other {{ data.category.type.name }}s</li>
-            <li class="list-inline-item ml-2"><i class="fas fa-paw add-Green"></i> Good for Apartments</li>
-            <li class="list-inline-item ml-2"><i class="fas fa-paw add-Green"></i> Friendly with Kids</li>
+            <li class="list-inline-item ">
+              <i class="fas fa-paw add-Green"></i> Friendly to other
+              {{ data.category.type.name }}s
+            </li>
+            <li class="list-inline-item ml-2">
+              <i class="fas fa-paw add-Green"></i> Good for Apartments
+            </li>
+            <li class="list-inline-item ml-2">
+              <i class="fas fa-paw add-Green"></i> Friendly with Kids
+            </li>
           </ul>
           <p class="text">
-            Elit uasi quidem minus id omnis a nibh fusce mollis imperdie tlorem ipuset phas ellus ac sodales Lorem ipsum dolor Phas ellus ac sodales felis tiam
-            non metus. lorem ipsum dolor sit amet, consectetur adipisicing elit uasi quidem minus id omnis a nibh fusce mollis imperdie tlorem ipuset campas
-            fincas
+            Elit uasi quidem minus id omnis a nibh fusce mollis imperdie tlorem
+            ipuset phas ellus ac sodales Lorem ipsum dolor Phas ellus ac sodales
+            felis tiam non metus. lorem ipsum dolor sit amet, consectetur
+            adipisicing elit uasi quidem minus id omnis a nibh fusce mollis
+            imperdie tlorem ipuset campas fincas
           </p>
           <p class="text">
-            Elit uasi quidem minus id omnis a nibh fusce mollis imperdie tlorem ipuset phas ellus ac sodales Lorem ipsum dolor Phas ellus ac sodales felis tiam
-            non metus. lorem ipsum dolor sit amet, consectetur adipisicing elit uasi quidem minus id omnis a nibh fusce mollis imperdie tlorem ipuset campas
-            fincas
+            Elit uasi quidem minus id omnis a nibh fusce mollis imperdie tlorem
+            ipuset phas ellus ac sodales Lorem ipsum dolor Phas ellus ac sodales
+            felis tiam non metus. lorem ipsum dolor sit amet, consectetur
+            adipisicing elit uasi quidem minus id omnis a nibh fusce mollis
+            imperdie tlorem ipuset campas fincas
           </p>
           <div class="alert alert-dark mt-5" role="alert">
             <h2 class="text-dark">Adoption Rules</h2>
             <p class="text">
-              Elit uasi quidem minus id omnis a nibh fusce mollis imperdie tlorem ipuset phas ellus ac sodales Lorem ipsum dolor Phas ellus ac sodales felis
-              tiam non metus. lorem ipsum dolor sit amet, consectetur adipisicing elit uasi quidem minus id omnis a nibh fusce mollis imperdie tlorem ipuset
-              campas fincas
+              Elit uasi quidem minus id omnis a nibh fusce mollis imperdie
+              tlorem ipuset phas ellus ac sodales Lorem ipsum dolor Phas ellus
+              ac sodales felis tiam non metus. lorem ipsum dolor sit amet,
+              consectetur adipisicing elit uasi quidem minus id omnis a nibh
+              fusce mollis imperdie tlorem ipuset campas fincas
             </p>
           </div>
 
-          <p class="custom-link"><a [routerLink]="['/pet-listing']">« Go back to adoption gallery</a></p>
+          <p class="custom-link">
+            <a [routerLink]="['/pet-listing']">« Go back to adoption gallery</a>
+          </p>
         </div>
       </div>
     </div>

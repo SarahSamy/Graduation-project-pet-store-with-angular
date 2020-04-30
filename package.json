@@ -23,7 +23,7 @@
     "@angular/router": "~8.0.0",
     "@ng-bootstrap/ng-bootstrap": "^4.2.1",
     "bootstrap": "^4.3.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ngx-bootstrap": "^4.2.0",
     "ngx-pagination": "^4.0.0",
     "rxjs": "~6.4.0",

@@ -1,6 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Reply } from 'src/app/_model/Reply';
-import { User } from 'src/app/_model/user';
+import { User } from 'src/app/_model/User';
 import { UserService } from 'src/app/_services/user.service.service';
 import { ReplyService } from 'src/app/_services/reply.service';
 

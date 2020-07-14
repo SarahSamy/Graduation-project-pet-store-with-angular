@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { Category } from "src/app/_model/category";
+import { Category } from "src/app/_model/Category";
 import { CategoryService } from "src/app/_services/category.service";
-import { Type } from "src/app/_model/type";
-import { Pet } from "src/app/_model/pet";
+import { Type } from "src/app/_model/Type";
+import { Pet } from "src/app/_model/Pet";
 import { PetService } from "src/app/_services/pet.service";
 import { Router, ActivatedRoute } from "@angular/router";
 import { TypeService } from "src/app/_services/type.service";

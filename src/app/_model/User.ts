@@ -1,5 +1,5 @@
 import { Pet } from "./Pet";
-import { userGroup } from "./userGroup";
+import { userGroup } from "./UserGroup";
 
 export interface User {
   id?: number;

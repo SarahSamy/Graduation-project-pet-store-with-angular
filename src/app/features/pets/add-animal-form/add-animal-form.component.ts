@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Pet } from "src/app/_model/pet";
+import { Pet } from "src/app/_model/Pet";
 import { Category } from "src/app/_model/Category";
 import { Type } from "src/app/_model/Type";
 import { PetService } from "src/app/_services/pet.service";

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Pet } from 'src/app/_model/pet';
-import { User } from 'src/app/_model/user';
+import { Pet } from 'src/app/_model/Pet';
+import { User } from 'src/app/_model/User';
 import { Router } from '@angular/router';
 import {UserService} from 'src/app/_services/user.service.service';
 import { PetService } from 'src/app/_services/pet.service';

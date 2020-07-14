@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { Category } from "src/app/_model/category";
+import { Category } from "src/app/_model/Category";
 import { Pet } from "src/app/_model/Pet";
 import { PetService } from "src/app/_services/pet.service";
 

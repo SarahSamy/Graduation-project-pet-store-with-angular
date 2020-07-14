@@ -1,4 +1,4 @@
-import { User } from './user';
+import { User } from './User';
 import { Tag } from './Tag';
 
 export interface Post {
